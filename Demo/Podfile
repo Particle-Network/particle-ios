@@ -1,0 +1,9 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '12.0'
+
+target 'Demo' do
+  use_frameworks!
+  source 'https://github.com/CocoaPods/Specs.git'
+    pod 'ParticleNetworkGUI', '0.1.4'
+  
+end
