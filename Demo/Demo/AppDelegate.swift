@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // init ParticleNetwork
-        let projectUuid: String = "c49932d1-9389-4b79-a4a2-e83d1ce13239"
-        let projectClientKey: String = "cnYEof2j3C1U27qmt9OQkGeAxc5RfkNiTZlSeFrM"
-        let projectAppUuid: String = "06b25f79-fc97-4301-98e6-21bce45cdd4b"
+        let projectUuid: String = "your project uuid"
+        let projectClientKey: String = "your project client key"
+        let projectAppUuid: String = "your project app uuid"
         let chainName = ChainName.solana
         let chainEnv = ChainEnvironment.devnet
         let devEnv = DevEnvironment.debug
@@ -39,7 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return ParticleNetwork.handleUrl(url)
+    }
 
 
 }

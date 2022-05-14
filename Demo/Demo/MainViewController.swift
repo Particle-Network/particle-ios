@@ -28,6 +28,12 @@ class MainViewController: UIViewController {
         switchChainButton.titleLabel!.textAlignment = .center
         switchChainButton.transform = CGAffineTransform(rotationAngle: Double.pi / 4);
         switchChainButton.setTitle("Solana \n \(ParticleNetwork.getChainEnv().rawValue.lowercased())", for: .normal)
+        
+        if ParticleNetwork.isLogin() {
+            showLogin(false)
+        } else {
+            showLogin(true)
+        }
     }
     
     @IBAction func loginWithEmail() {

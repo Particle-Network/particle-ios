@@ -20,20 +20,20 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.2.1)
   - MJRefresh (3.4.0)
-  - ParticleNetwork (0.1.3):
+  - ParticleAuthService (0.1.12):
     - CryptoSwift (~> 1.4.1)
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.5.0)
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleNetworkGUI (0.1.4):
+  - ParticleWalletService (0.1.12):
     - GLTFSceneKit
     - GRDB.swift
     - JXPagingView/Paging
     - JXSegmentedView
     - MJRefresh (= 3.4.0)
-    - ParticleNetwork (= 0.1.3)
+    - ParticleAuthService
     - SDWebImage
     - SDWebImageSVGKitPlugin
     - SDWebImageWebPCoder
@@ -71,7 +71,7 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - ParticleNetworkGUI (= 0.1.4)
+  - ParticleWalletService (= 0.1.12)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -84,8 +84,8 @@ SPEC REPOS:
     - JXSegmentedView
     - libwebp
     - MJRefresh
-    - ParticleNetwork
-    - ParticleNetworkGUI
+    - ParticleAuthService
+    - ParticleWalletService
     - RxAlamofire
     - RxCocoa
     - RxRelay
@@ -110,8 +110,8 @@ SPEC CHECKSUMS:
   JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   MJRefresh: 95b08b3b8b6457d2c69510439e0349599050ea34
-  ParticleNetwork: 1c015d52ee1a5a6c88f7e7f448afbb8b36d57cbd
-  ParticleNetworkGUI: 9a0ae78ec2f5ba3b8137b618b017aaf14cd7e740
+  ParticleAuthService: 3b58099505e2dd8da2397a13464daea86c9878f6
+  ParticleWalletService: 7116aa998218876d8ded5c59d40e4fe3f1e77298
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -126,6 +126,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 459d7873ffcf185e2db654bb7308bc41040ac6f0
+PODFILE CHECKSUM: d3d8de2b26f589298dc2a066c2c0f6c4f7a9f308
 
 COCOAPODS: 1.11.3
