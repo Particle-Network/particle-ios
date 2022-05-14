@@ -5,19 +5,19 @@ This repository contains [Auth Service](https://docs.particle.network/auth-servi
 ## Getting Started
 
 * Clone the repo.
-* Create `local.properties` in project root dir if not exist.
+* Open Appdelegate.swift
 * Add below particle sdk config.   
 
 ```
-particle.network.project_id=xxx  
-particle.network.project_client_key=xxx      
-particle.network.app_id=xxx
+let projectUuid: String = "xxx"
+let projectClientKey: String = "xxx"
+let projectAppUuid: String = "xxx"
 ```
 Replace `xxx` with the new values created in the [Dashboard](https://particle.network/#/login).
 
 ## Build
 ```
-./gradlew assembleDebug
+pod install --repo-update
 ```
 
 ## Features
