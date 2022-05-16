@@ -19,6 +19,10 @@ class MainViewController: UIViewController {
     @IBOutlet var openWalletButton: UIButton!
     @IBOutlet var switchChainButton: UIButton!
     
+    @IBOutlet var welcomeLabel: UILabel!
+    @IBOutlet var welcomeImageView: UIImageView!
+    @IBOutlet var coreImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -111,7 +115,12 @@ class MainViewController: UIViewController {
     private func showLogin(_ isShow: Bool) {
         loginWithEmailButton.isHidden = !isShow
         loginWithPhoneButton.isHidden = !isShow
+        coreImageView.isHidden = !isShow
+        
         logoutButton.isHidden = isShow
         openWalletButton.isHidden = isShow
+        welcomeImageView.isHidden = isShow
+        welcomeLabel.isHidden = isShow
+        
     }
 }
