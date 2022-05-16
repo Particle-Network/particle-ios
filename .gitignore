@@ -114,3 +114,9 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+Demo/Gemfile
+Demo/fastlane/Appfile
+Demo/fastlane/Fastfile
+Demo/fastlane/Matchfile
+Demo/fastlane/README.md
+Demo/fastlane/report.xml
