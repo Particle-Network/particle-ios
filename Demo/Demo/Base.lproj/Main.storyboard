@@ -9,20 +9,227 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Reference View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="APIReferenceViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auth Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKA-hc-f1a">
+                                <rect key="frame" x="42" y="63" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1Q-or-ehA">
+                                <rect key="frame" x="42" y="329" width="167" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-fp-QES">
+                                <rect key="frame" x="42" y="113" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0Bh-8e-KjT"/>
+                                    <constraint firstAttribute="width" constant="320" id="OO2-50-oQy"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="SIGN AND SENDTRANSACTION">
+                                            <attributes>
+                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signAndSendTransaction" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ey-LY-Djt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9V-fe-jVE">
+                                <rect key="frame" x="42" y="185" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="5Ph-CJ-tvN"/>
+                                    <constraint firstAttribute="width" constant="320" id="lbP-d1-XfM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="SIGN TRANSACTION">
+                                            <attributes>
+                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signTransaction" destination="BYZ-38-t0r" eventType="touchUpInside" id="PXv-nP-cpH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymD-Pr-hMz">
+                                <rect key="frame" x="42" y="257" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JEJ-6h-UC3"/>
+                                    <constraint firstAttribute="width" constant="320" id="fzU-H4-HCu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="SIGN MESSAGE">
+                                            <attributes>
+                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="QVS-sb-Qgx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-fG-jAf">
+                                <rect key="frame" x="42" y="381" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HXW-Hs-aJf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="OPEN WALLET">
+                                            <attributes>
+                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="openWallet" destination="BYZ-38-t0r" eventType="touchUpInside" id="w1Q-Et-n5C"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-6v-3eq">
+                                <rect key="frame" x="42" y="453" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Aln-dp-7ll"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="OPEN SEND TOKEN">
+                                            <attributes>
+                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="openSendToken" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jmp-RH-RAB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1f-91-dMv">
+                                <rect key="frame" x="42" y="525" width="320" height="36"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="OPEN RECEIVE TOKEN">
+                                            <attributes>
+                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="openReceiveToken" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y6I-De-UM3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTg-Pe-noI">
+                                <rect key="frame" x="42" y="583" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="EM2-ZM-loy"/>
+                                    <constraint firstAttribute="height" constant="50" id="Feq-HT-v7u"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="OPEN TRANSACTION RECORDS">
+                                            <attributes>
+                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="openTransactionRecords" destination="BYZ-38-t0r" eventType="touchUpInside" id="wvc-8q-wAg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WTK-6v-3eq" firstAttribute="top" secondItem="bhA-fG-jAf" secondAttribute="bottom" constant="22" id="63a-PW-LgG"/>
+                            <constraint firstItem="WTK-6v-3eq" firstAttribute="trailing" secondItem="V1f-91-dMv" secondAttribute="trailing" id="8Ep-yK-h1l"/>
+                            <constraint firstItem="YTg-Pe-noI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="BaY-y3-PNr"/>
+                            <constraint firstItem="WTK-6v-3eq" firstAttribute="leading" secondItem="V1f-91-dMv" secondAttribute="leading" id="F6l-Yc-Lu6"/>
+                            <constraint firstItem="bhA-fG-jAf" firstAttribute="trailing" secondItem="ymD-Pr-hMz" secondAttribute="trailing" id="FVa-3m-28x"/>
+                            <constraint firstItem="0g2-fp-QES" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="GoD-e0-owB"/>
+                            <constraint firstItem="bhA-fG-jAf" firstAttribute="top" secondItem="H1Q-or-ehA" secondAttribute="bottom" constant="22" id="JMZ-Se-hJY"/>
+                            <constraint firstItem="bhA-fG-jAf" firstAttribute="trailing" secondItem="WTK-6v-3eq" secondAttribute="trailing" id="KSk-Pk-8ce"/>
+                            <constraint firstItem="V1f-91-dMv" firstAttribute="top" secondItem="WTK-6v-3eq" secondAttribute="bottom" constant="22" id="MXG-AL-5XP"/>
+                            <constraint firstItem="H1Q-or-ehA" firstAttribute="top" secondItem="ymD-Pr-hMz" secondAttribute="bottom" constant="22" id="TKI-Bf-4MK"/>
+                            <constraint firstItem="ymD-Pr-hMz" firstAttribute="top" secondItem="c9V-fe-jVE" secondAttribute="bottom" constant="22" id="XXT-o0-fLE"/>
+                            <constraint firstItem="ymD-Pr-hMz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="aVn-Yi-0BB"/>
+                            <constraint firstItem="c9V-fe-jVE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="axQ-5M-Msu"/>
+                            <constraint firstItem="YTg-Pe-noI" firstAttribute="top" secondItem="V1f-91-dMv" secondAttribute="bottom" constant="22" id="faQ-MX-NBm"/>
+                            <constraint firstItem="0g2-fp-QES" firstAttribute="top" secondItem="RKA-hc-f1a" secondAttribute="bottom" constant="20" id="g73-vB-Fdv"/>
+                            <constraint firstItem="H1Q-or-ehA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="gV3-gC-QHt"/>
+                            <constraint firstItem="RKA-hc-f1a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="iCD-Dx-pM6"/>
+                            <constraint firstItem="RKA-hc-f1a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="63" id="omH-KB-jtr"/>
+                            <constraint firstItem="bhA-fG-jAf" firstAttribute="leading" secondItem="H1Q-or-ehA" secondAttribute="leading" id="pHZ-0l-GTo"/>
+                            <constraint firstItem="bhA-fG-jAf" firstAttribute="leading" secondItem="WTK-6v-3eq" secondAttribute="leading" id="rK4-Zh-0so"/>
+                            <constraint firstItem="c9V-fe-jVE" firstAttribute="top" secondItem="0g2-fp-QES" secondAttribute="bottom" constant="22" id="xAF-pD-IaD"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="YRo-sN-eGY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="88"/>
+            <point key="canvasLocation" x="1755" y="83"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="oSI-uh-HrO">
@@ -54,7 +261,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Bl-spe">
                                 <rect key="frame" x="95" y="619" width="200" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="gsf-DV-Rt7"/>
+                                    <constraint firstAttribute="height" constant="50" id="eD4-Ix-qAG"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -77,7 +284,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zu-GL-3nJ">
                                 <rect key="frame" x="95" y="619" width="200" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="WAc-jr-vZz"/>
+                                    <constraint firstAttribute="height" constant="50" id="E84-X3-4yf"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -184,39 +391,64 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Et-NS-lcq">
+                                <rect key="frame" x="95" y="749" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eOT-QV-noH"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="l9F-Br-C3N"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </backgroundConfiguration>
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="API REFERENCE">
+                                            <attributes>
+                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="P9T-XT-dIe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SrX-O0-Dls"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="l59-o7-VGU" firstAttribute="top" secondItem="1zu-GL-3nJ" secondAttribute="bottom" constant="15" id="2zE-W0-9ZY"/>
                             <constraint firstItem="CZb-bh-J7I" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="topMargin" constant="39" id="5aq-pG-5uH"/>
-                            <constraint firstItem="1zu-GL-3nJ" firstAttribute="top" secondItem="Ip1-tH-bZY" secondAttribute="bottom" constant="231" id="8C8-V2-UWI"/>
+                            <constraint firstItem="1Et-NS-lcq" firstAttribute="top" secondItem="l59-o7-VGU" secondAttribute="bottom" constant="15" id="6lv-ZP-wcl"/>
                             <constraint firstItem="l59-o7-VGU" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="8Fi-FL-XXz"/>
+                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="WEi-Bl-spe" secondAttribute="trailing" constant="95" id="9TD-6h-kJg"/>
                             <constraint firstItem="SrX-O0-Dls" firstAttribute="bottom" secondItem="l59-o7-VGU" secondAttribute="bottom" constant="76" id="Big-r7-Qja"/>
                             <constraint firstItem="oYI-lh-xEq" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="ChW-yo-cwD"/>
                             <constraint firstItem="QzE-n5-iV2" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="top" id="GBU-94-mRe"/>
                             <constraint firstItem="Go3-vv-HZD" firstAttribute="trailing" secondItem="Ip1-tH-bZY" secondAttribute="trailing" id="IFr-s5-ftd"/>
                             <constraint firstItem="Ip1-tH-bZY" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="top" constant="260" id="KQj-nI-sgN"/>
-                            <constraint firstItem="WEi-Bl-spe" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="Oxa-SK-6xN"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="1zu-GL-3nJ" secondAttribute="trailing" constant="95" id="S8x-Z9-Nm7"/>
-                            <constraint firstItem="1zu-GL-3nJ" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="SdD-yx-jgh"/>
+                            <constraint firstItem="WEi-Bl-spe" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="LPL-M2-6dA"/>
+                            <constraint firstItem="1zu-GL-3nJ" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="SfS-jR-Etq"/>
                             <constraint firstItem="SrX-O0-Dls" firstAttribute="bottom" secondItem="oYI-lh-xEq" secondAttribute="bottom" constant="76" id="U1a-mJ-8cU"/>
                             <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="l59-o7-VGU" secondAttribute="trailing" constant="95" id="U8D-5L-3Eh"/>
                             <constraint firstItem="8wK-gx-X9W" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="topMargin" constant="260" id="a7K-cu-R09"/>
                             <constraint firstItem="2Aw-d2-ejV" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="aFY-xk-ckX"/>
                             <constraint firstItem="QzE-n5-iV2" firstAttribute="leading" secondItem="mIa-Qf-uBo" secondAttribute="leading" id="aNB-FW-yaW"/>
                             <constraint firstItem="Go3-vv-HZD" firstAttribute="leading" secondItem="mIa-Qf-uBo" secondAttribute="leadingMargin" constant="11" id="ays-I0-JSC"/>
-                            <constraint firstItem="WEi-Bl-spe" firstAttribute="top" secondItem="Ip1-tH-bZY" secondAttribute="bottom" constant="231" id="cAA-2X-oyL"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="1zu-GL-3nJ" secondAttribute="trailing" constant="95" id="g84-Qt-cR4"/>
+                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="1zu-GL-3nJ" secondAttribute="trailing" constant="95" id="clr-tz-uUS"/>
                             <constraint firstItem="Ip1-tH-bZY" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="gIr-zl-RtZ"/>
                             <constraint firstItem="CZb-bh-J7I" firstAttribute="trailing" secondItem="QzE-n5-iV2" secondAttribute="trailing" constant="51" id="iH2-YR-KI3"/>
                             <constraint firstItem="2Aw-d2-ejV" firstAttribute="top" secondItem="Ip1-tH-bZY" secondAttribute="bottom" constant="23" id="iX2-jd-jpn"/>
-                            <constraint firstItem="1zu-GL-3nJ" firstAttribute="top" secondItem="Ip1-tH-bZY" secondAttribute="bottom" constant="231" id="msE-Kp-YH2"/>
+                            <constraint firstItem="l59-o7-VGU" firstAttribute="top" secondItem="WEi-Bl-spe" secondAttribute="bottom" constant="15" id="jcj-WE-VK5"/>
                             <constraint firstAttribute="trailing" secondItem="QzE-n5-iV2" secondAttribute="trailing" id="qd2-xK-ecc"/>
+                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="1Et-NS-lcq" secondAttribute="trailing" constant="95" id="r8z-bE-cwP"/>
                             <constraint firstItem="8wK-gx-X9W" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="tJa-h8-ub1"/>
-                            <constraint firstItem="1zu-GL-3nJ" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="uNc-16-nku"/>
                             <constraint firstItem="Go3-vv-HZD" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="topMargin" constant="10" id="vjF-IK-bLV"/>
                             <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="oYI-lh-xEq" secondAttribute="trailing" constant="95" id="wXZ-3L-U3s"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="WEi-Bl-spe" secondAttribute="trailing" constant="95" id="xMy-gA-LGC"/>
+                            <constraint firstItem="1Et-NS-lcq" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="zzl-jy-6xv"/>
                         </constraints>
                     </view>
                     <connections>
