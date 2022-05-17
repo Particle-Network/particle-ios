@@ -20,14 +20,14 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.2.1)
   - MJRefresh (3.4.0)
-  - ParticleAuthService (0.1.13):
+  - ParticleAuthService (0.1.25):
     - CryptoSwift (~> 1.4.1)
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.5.0)
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletService (0.1.14):
+  - ParticleWalletService (0.1.25):
     - GLTFSceneKit
     - GRDB.swift
     - JXPagingView/Paging
@@ -71,7 +71,7 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - ParticleWalletService (= 0.1.14)
+  - ParticleWalletService (= 0.1.25)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -110,8 +110,8 @@ SPEC CHECKSUMS:
   JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   MJRefresh: 95b08b3b8b6457d2c69510439e0349599050ea34
-  ParticleAuthService: 81fdbeaccabbfb8f83e069c71659a29ae6285920
-  ParticleWalletService: 5504ea68c2b9467a0a2a88e01822ad0c13ab0958
+  ParticleAuthService: 634992c61a7e38e16a58212b2e8c02bb96e8015a
+  ParticleWalletService: 35c3e2e5a8e63cceed4b08522665176ed22a8482
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -126,6 +126,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: c619df6768bd18e7d607fb692a7c956942f0a545
+PODFILE CHECKSUM: 8f8040917262b3df2cbbf14ab5da71a98380d093
 
 COCOAPODS: 1.11.3

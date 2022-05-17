@@ -4,6 +4,6 @@
 target 'Demo' do
   use_frameworks!
   source 'https://github.com/CocoaPods/Specs.git'
-    pod 'ParticleWalletService', '0.1.14'
+    pod 'ParticleWalletService', '0.1.25'
   
 end
