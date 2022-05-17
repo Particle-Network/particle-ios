@@ -14,9 +14,6 @@ import UIKit
 class APIReferenceViewController: UIViewController {
     let bag = DisposeBag()
     
-    @IBAction func backToMainScreen(sender: AnyObject) {
-        dismiss(animated: true, completion: nil)
-    }
     
     @IBAction func signAndSendTransaction() {
         let transaction = "your transaction"
