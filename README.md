@@ -4,9 +4,13 @@ This repository contains [Auth Service](https://docs.particle.network/auth-servi
 
 # Prerequisites
 Install the following:
+
 Xcode 13.2 
+
 Make sure that your project meets the following requirements:
+
 Your project must target these platform versions or later:
+
 iOS 12
 
 
