@@ -2,6 +2,14 @@
 
 This repository contains [Auth Service](https://docs.particle.network/auth-service/introduction) and [Wallet Service](https://docs.particle.network/wallet-service/introduction) sample source. It supports Solana now, more chains and more features coming soon! Learn more visit [Particle Network](https://docs.particle.network/).
 
+# Prerequisites
+Install the following:
+Xcode 13.2 
+Make sure that your project meets the following requirements:
+Your project must target these platform versions or later:
+iOS 12
+
+
 ## Getting Started
 
 * Clone the repo.
