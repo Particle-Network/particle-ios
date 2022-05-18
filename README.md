@@ -50,7 +50,7 @@ pod install --repo-update
 ## Give Feedback
 Please report bugs or issues to [particle-ios/issues](https://github.com/Particle-Network/particle-ios/issues)
 
-You can also join our [Discord](https://discord.com/invite/qwysge6cgF).
+You can also join our [Discord](https://discord.gg/2y44qr6CR2).
 
 
 
