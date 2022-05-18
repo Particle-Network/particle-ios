@@ -52,7 +52,7 @@ class APIReferenceViewController: UIViewController {
     }
     
     @IBAction func openWallet() {
-        PNRouter.navigatorWallet()
+        PNRouter.navigatorWallet(display: .token)
     }
     
     @IBAction func openSendToken() {
@@ -62,7 +62,6 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func openReceiveToken() {
         let config = TokenReceiveConfig(tokenAddress: nil)
-        
         PNRouter.navigatorTokenReceive(tokenReceiveConfig: config)
     }
     
@@ -71,5 +70,17 @@ class APIReferenceViewController: UIViewController {
         let config = TokenTransactionRecordsConfig(tokenAddress: tokenAddress)
         
         PNRouter.navigatorTokenTransactionRecords(tokenTransactionRecordsConfig: config)
+    }
+    
+    @IBAction func openNFTDetail() {
+        let mintAddress = ""
+        let config = NFTDetailsConfig(mintAddress: mintAddress)
+        PNRouter.navigatorNFTDetails(nftDetailsConfig: config)
+    }
+    
+    @IBAction func openNFTSend() {
+        let mintAddress = ""
+        let config = NFTSendConfig(mintAddress: mintAddress, toAddress: nil)
+        PNRouter.navigatroNFTSend(nftSendConfig: config)
     }
 }

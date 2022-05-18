@@ -83,7 +83,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func openWallet() {
-        PNRouter.navigator(routhPath: .wallet)
+        PNRouter.navigatorWallet(display: .token)
     }
     
     @IBAction func switchChainClick() {
