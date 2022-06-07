@@ -6,8 +6,9 @@
 //
 
 import Foundation
-import ParticleNetwork
-import ParticleNetworkGUI
+import ParticleNetworkBase
+import ParticleWalletGUI
+import ParticleAuthService
 import RxSwift
 import UIKit
 
@@ -17,7 +18,7 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func signAndSendTransaction() {
         let transaction = "your transaction"
-        ParticleNetwork.signAndSendTransaction(transaction).subscribe { [weak self] result in
+        ParticleAuthService.signAndSendTransaction(transaction).subscribe { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -29,7 +30,7 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func signTransaction() {
         let transaction = "your transaction"
-        ParticleNetwork.signtransaction(transaction).subscribe { [weak self] result in
+        ParticleAuthService.signtransaction(transaction).subscribe { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -41,7 +42,7 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func signMessage() {
         let message = "your message"
-        ParticleNetwork.signMessage(message).subscribe { [weak self] result in
+        ParticleAuthService.signMessage(message).subscribe { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -74,13 +75,16 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func openNFTDetail() {
         let mintAddress = ""
-        let config = NFTDetailsConfig(mintAddress: mintAddress)
+        let tokenId = ""
+        let config = NFTDetailsConfig(address: mintAddress, tokenId: tokenId)
         PNRouter.navigatorNFTDetails(nftDetailsConfig: config)
     }
     
     @IBAction func openNFTSend() {
         let mintAddress = ""
-        let config = NFTSendConfig(mintAddress: mintAddress, toAddress: nil)
+        let toAddress = ""
+        let tokenId = ""
+        let config = NFTSendConfig(address: mintAddress, toAddress: toAddress, tokenId: tokenId)
         PNRouter.navigatroNFTSend(nftSendConfig: config)
     }
 }

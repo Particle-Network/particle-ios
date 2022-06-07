@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B19D51F284FA46900211FA4 /* SwitchChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B19D51E284FA46800211FA4 /* SwitchChainViewController.swift */; };
+		3B19D521284FA4E200211FA4 /* ParticleNetwork-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B19D520284FA4E200211FA4 /* ParticleNetwork-Info.plist */; };
 		3BE0ABE6282E49B600C05131 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0ABE5282E49B600C05131 /* MainViewController.swift */; };
 		3BE660F7283377CF006F464B /* APIReferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE660F6283377CF006F464B /* APIReferenceViewController.swift */; };
 		3BE71C27282D16C300E29FD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE71C26282D16C300E29FD4 /* AppDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B19D51E284FA46800211FA4 /* SwitchChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchChainViewController.swift; sourceTree = "<group>"; };
+		3B19D520284FA4E200211FA4 /* ParticleNetwork-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParticleNetwork-Info.plist"; sourceTree = "<group>"; };
 		3BE0ABE5282E49B600C05131 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3BE660F6283377CF006F464B /* APIReferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIReferenceViewController.swift; sourceTree = "<group>"; };
 		3BE71C23282D16C300E29FD4 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,10 +70,12 @@
 				3BE71C26282D16C300E29FD4 /* AppDelegate.swift */,
 				3BE0ABE5282E49B600C05131 /* MainViewController.swift */,
 				3BE660F6283377CF006F464B /* APIReferenceViewController.swift */,
+				3B19D51E284FA46800211FA4 /* SwitchChainViewController.swift */,
 				3BE71C2C282D16C300E29FD4 /* Main.storyboard */,
 				3BE71C2F282D16C500E29FD4 /* Assets.xcassets */,
 				3BE71C31282D16C500E29FD4 /* LaunchScreen.storyboard */,
 				3BE71C34282D16C500E29FD4 /* Info.plist */,
+				3B19D520284FA4E200211FA4 /* ParticleNetwork-Info.plist */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -155,6 +161,7 @@
 				3BE71C33282D16C500E29FD4 /* LaunchScreen.storyboard in Resources */,
 				3BE71C30282D16C500E29FD4 /* Assets.xcassets in Resources */,
 				3BE71C2E282D16C300E29FD4 /* Main.storyboard in Resources */,
+				3B19D521284FA4E200211FA4 /* ParticleNetwork-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +233,7 @@
 			files = (
 				3BE0ABE6282E49B600C05131 /* MainViewController.swift in Sources */,
 				3BE660F7283377CF006F464B /* APIReferenceViewController.swift in Sources */,
+				3B19D51F284FA46900211FA4 /* SwitchChainViewController.swift in Sources */,
 				3BE71C27282D16C300E29FD4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +393,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We needs to take photos for QRCode";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -395,7 +404,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.particle.wallet.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";
@@ -422,6 +431,7 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Demo/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We needs to take photos for QRCode";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -432,7 +442,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.particle.wallet.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";

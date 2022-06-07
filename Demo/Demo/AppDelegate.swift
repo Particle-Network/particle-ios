@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import ParticleNetwork
+import ParticleNetworkBase
+import ParticleAuthService
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,19 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // init ParticleNetwork
-        let projectUuid: String = "your project uuid"
-        let projectClientKey: String = "your project client key"
-        let projectAppUuid: String = "your project app uuid"
-        let chainName = ChainName.solana
-        let chainEnv = ChainEnvironment.devnet
-        let devEnv = DevEnvironment.debug
-        
-        ParticleNetwork.initialize(projectUuid: projectUuid,
-                                   projectClientKey: projectClientKey,
-                                   projectAppUuid: projectAppUuid,
-                                   chainName: chainName,
-                                   chainEnv: chainEnv,
-                                   devEnv: devEnv)
+        let config = ParticleNetworkConfiguration(chainName: .ethereum(.kovan), devEnv: .debug)
+        ParticleNetwork.initialize(config: config)
         
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
@@ -40,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return ParticleNetwork.handleUrl(url)
+        return ParticleAuthService.handleUrl(url)
     }
 
 

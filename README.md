@@ -17,20 +17,12 @@ iOS 12
 ## Getting Started
 
 * Clone the repo.
-* Open Appdelegate.swift
-* Add below particle sdk config.   
-
-```
-let projectUuid: String = "xxx"
-let projectClientKey: String = "xxx"
-let projectAppUuid: String = "xxx"
-```
-Replace `xxx` with the new values created in the [Dashboard](https://particle.network/#/login).
+* Replace ParticelNetwork.info with your project info in the [Dashboard](https://particle.network/#/login).
 
 Config your app scheme url, select your app target, in the info section, click add URL Type, past your scheme in URL Schemes. 
 your scheme url should be "pn" + your project app id.
 
-for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9828f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f".
+for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9826f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9826f".
 ![image](https://user-images.githubusercontent.com/18244874/168455432-f25796b0-3a6a-4fa7-8ec6-adc5f8a0c46e.png)
 
 Add Privacy - Camera Usage Description in your info.plist file

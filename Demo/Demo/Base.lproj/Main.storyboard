@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lQf-0j-PTw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lQf-0j-PTw">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,19 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auth Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKA-hc-f1a">
-                                <rect key="frame" x="42" y="63" width="150" height="30"/>
+                                <rect key="frame" x="42" y="107" width="150" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallet Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1Q-or-ehA">
-                                <rect key="frame" x="42" y="283" width="167" height="30"/>
+                                <rect key="frame" x="42" y="327" width="167" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-fp-QES">
-                                <rect key="frame" x="42" y="103" width="320" height="50"/>
+                                <rect key="frame" x="42" y="147" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Bh-8e-KjT"/>
                                     <constraint firstAttribute="width" constant="320" id="OO2-50-oQy"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9V-fe-jVE">
-                                <rect key="frame" x="42" y="163" width="320" height="50"/>
+                                <rect key="frame" x="42" y="207" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5Ph-CJ-tvN"/>
                                     <constraint firstAttribute="width" constant="320" id="lbP-d1-XfM"/>
@@ -80,7 +80,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymD-Pr-hMz">
-                                <rect key="frame" x="42" y="223" width="320" height="50"/>
+                                <rect key="frame" x="42" y="267" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JEJ-6h-UC3"/>
                                     <constraint firstAttribute="width" constant="320" id="fzU-H4-HCu"/>
@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-fG-jAf">
-                                <rect key="frame" x="42" y="323" width="320" height="50"/>
+                                <rect key="frame" x="42" y="367" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HXW-Hs-aJf"/>
                                 </constraints>
@@ -129,7 +129,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-6v-3eq">
-                                <rect key="frame" x="42" y="383" width="320" height="50"/>
+                                <rect key="frame" x="42" y="427" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Aln-dp-7ll"/>
                                 </constraints>
@@ -153,7 +153,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1f-91-dMv">
-                                <rect key="frame" x="42" y="443" width="320" height="50"/>
+                                <rect key="frame" x="42" y="487" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="OmH-dx-zYW"/>
                                     <constraint firstAttribute="width" constant="320" id="ZMI-Gk-geS"/>
@@ -178,7 +178,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTg-Pe-noI">
-                                <rect key="frame" x="42" y="503" width="320" height="50"/>
+                                <rect key="frame" x="42" y="547" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="Qvi-bb-RJw"/>
                                     <constraint firstAttribute="height" constant="50" id="WcJ-Ro-918"/>
@@ -203,7 +203,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-MZ-Hbu">
-                                <rect key="frame" x="42" y="563" width="320" height="50"/>
+                                <rect key="frame" x="42" y="607" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RFb-V7-1Q9"/>
                                     <constraint firstAttribute="width" constant="320" id="aQi-tA-pfW"/>
@@ -228,7 +228,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVJ-US-YYp">
-                                <rect key="frame" x="42" y="623" width="320" height="50"/>
+                                <rect key="frame" x="42" y="667" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="s1Y-gU-Vvu"/>
                                     <constraint firstAttribute="width" constant="320" id="vi3-KN-MWv"/>
@@ -418,18 +418,11 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="xYN-5e-fj7"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" title="Solana">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                                     </backgroundConfiguration>
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Solana">
-                                            <attributes>
-                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>

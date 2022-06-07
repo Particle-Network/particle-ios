@@ -6,8 +6,9 @@
 //
 
 import Foundation
-import ParticleNetwork
-import ParticleNetworkGUI
+import ParticleNetworkBase
+import ParticleWalletGUI
+import ParticleAuthService
 import RxSwift
 import UIKit
 
@@ -30,18 +31,22 @@ class MainViewController: UIViewController {
         switchChainButton.titleLabel!.lineBreakMode = .byWordWrapping
         switchChainButton.titleLabel!.numberOfLines = 2
         switchChainButton.titleLabel!.textAlignment = .center
-        switchChainButton.transform = CGAffineTransform(rotationAngle: Double.pi / 4);
-        switchChainButton.setTitle("Solana \n \(ParticleNetwork.getChainEnv().rawValue.lowercased())", for: .normal)
+        switchChainButton.transform = CGAffineTransform(rotationAngle: Double.pi / 4)
         
-        if ParticleNetwork.isLogin() {
+        if ParticleAuthService.isLogin() {
             showLogin(false)
         } else {
             showLogin(true)
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateUI()
+    }
+    
     @IBAction func loginWithEmail() {
-        ParticleNetwork.login(type: .email).subscribe { [weak self] result in
+        ParticleAuthService.login(type: .email).subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
@@ -55,7 +60,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithPhone() {
-        ParticleNetwork.login(type: .phone).subscribe { [weak self] result in
+        ParticleAuthService.login(type: .phone).subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
@@ -69,7 +74,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func logout() {
-        ParticleNetwork.logout().subscribe { [weak self] result in
+        ParticleAuthService.logout().subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
@@ -87,29 +92,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func switchChainClick() {
-        let alert = UIAlertController(title: "Choose Chain", message: nil, preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "solana-mainnet", style: .default , handler:{ (UIAlertAction)in
-                ParticleNetwork.setChainEnv(.main)
-                self.switchChainButton.setTitle("Solana \n \(ParticleNetwork.getChainEnv().rawValue.lowercased())", for: .normal)
-            }))
-            
-            alert.addAction(UIAlertAction(title: "solana-testnet", style: .default , handler:{ (UIAlertAction)in
-                ParticleNetwork.setChainEnv(.testnet)
-                self.switchChainButton.setTitle("Solana \n \(ParticleNetwork.getChainEnv().rawValue.lowercased())", for: .normal)
-            }))
-
-            alert.addAction(UIAlertAction(title: "solana-devnet", style: .default , handler:{ (UIAlertAction)in
-                ParticleNetwork.setChainEnv(.devnet)
-                self.switchChainButton.setTitle("Solana \n \(ParticleNetwork.getChainEnv().rawValue.lowercased())", for: .normal)
-            }))
-            
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{ (UIAlertAction)in
-            }))
-        
-            self.present(alert, animated: true, completion: {
-                
-            })
+        let vc = SwitchChainViewController()
+        vc.selectHandler = { [weak self] in
+            self?.updateUI()
+        }
+        present(vc, animated: true)
     }
     
     private func showLogin(_ isShow: Bool) {
@@ -121,6 +108,12 @@ class MainViewController: UIViewController {
         openWalletButton.isHidden = isShow
         welcomeImageView.isHidden = isShow
         welcomeLabel.isHidden = isShow
+    }
+    
+    private func updateUI() {
+        let name = ParticleNetwork.getChainName().name
+        let network = ParticleNetwork.getChainName().network
         
+        self.switchChainButton.setTitle("\(name) \n \(network.lowercased())", for: .normal)
     }
 }

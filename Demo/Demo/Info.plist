@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSCameraUsageDescription</key>
-	<string>We needs to take photos for QRCode</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -11,7 +9,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>pn63bfa427-cf5f-4742-9ff1-e8f5a1b9828f</string>
+				<string>pn63bfa427-cf5f-4742-9ff1-e8f5a1b9826f</string>
 			</array>
 		</dict>
 	</array>
