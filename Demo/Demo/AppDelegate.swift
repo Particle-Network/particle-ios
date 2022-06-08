@@ -18,13 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // init ParticleNetwork
-        let config = ParticleNetworkConfiguration(chainName: .ethereum(.kovan), devEnv: .debug)
+        let chainName = ParticleNetwork.ChainName.ethereum(.mainnet)
+        let devEnv = ParticleNetwork.DevEnvironment.debug
+        let config = ParticleNetworkConfiguration(chainName: chainName, devEnv: devEnv)
         ParticleNetwork.initialize(config: config)
         
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
+        
+        
         
         return true
     }
