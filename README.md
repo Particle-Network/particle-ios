@@ -18,11 +18,25 @@ iOS 12
 
 * Clone the repo.
 * Replace ParticelNetwork.info with your project info in the [Dashboard](https://particle.network/#/login).
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PROJECT_UUID</key>
+	<string>YOUR_PROJECT_UUID</string>
+	<key>PROJECT_CLIENT_KEY</key>
+	<string>YOUR_PROJECT_CLIENT_KEY</string>
+	<key>PROJECT_APP_UUID</key>
+	<string>YOUR_PROJECT_APP_UUID</string>
+</dict>
+</plist>
 
-Config your app scheme url, select your app target, in the info section, click add URL Type, past your scheme in URL Schemes. 
+```
+* Config your app scheme url, select your app target, in the info section, click add URL Type, past your scheme in URL Schemes. 
 your scheme url should be "pn" + your project app id.
 
-for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9826f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9826f".
+    for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9826f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9826f".
 ![image](https://user-images.githubusercontent.com/18244874/168455432-f25796b0-3a6a-4fa7-8ec6-adc5f8a0c46e.png)
 
 Add Privacy - Camera Usage Description in your info.plist file
