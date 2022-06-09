@@ -1,6 +1,6 @@
 # Particle iOS
 
-This repository contains [Auth Service](https://docs.particle.network/auth-service/introduction) and [Wallet Service](https://docs.particle.network/wallet-service/introduction) sample source. It supports Solana now, more chains and more features coming soon! Learn more visit [Particle Network](https://docs.particle.network/).
+This repository contains [Auth Service](https://docs.particle.network/auth-service/introduction) and [Wallet Service](https://docs.particle.network/wallet-service/introduction) sample source. It supports Solana and all EVM-compatiable chains now, more chains and more features coming soon! Learn more visit [Particle Network](https://docs.particle.network/).
 
 # Prerequisites
 Install the following:
@@ -38,6 +38,11 @@ pod install --repo-update
 2. Logout.
 3. Open Wallet.
 4. Change Chain Id.
+5. Check our official dev docs: https://docs.particle.network/
+
+## Docs
+1. https://docs.particle.network/auth-service/sdks/ios
+2. https://docs.particle.network/wallet-service/sdks/ios
 
 ## Give Feedback
 Please report bugs or issues to [particle-ios/issues](https://github.com/Particle-Network/particle-ios/issues)
