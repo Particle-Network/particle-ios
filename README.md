@@ -39,7 +39,7 @@ your scheme url should be "pn" + your project app id.
     for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9826f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9826f".
 ![image](https://user-images.githubusercontent.com/18244874/168455432-f25796b0-3a6a-4fa7-8ec6-adc5f8a0c46e.png)
 
-Add Privacy - Camera Usage Description in your info.plist file
+* Add Privacy - Camera Usage Description in your info.plist file
 
 ## Build
 ```
