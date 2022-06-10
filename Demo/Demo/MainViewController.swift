@@ -34,7 +34,7 @@ class MainViewController: UIViewController {
         switchChainButton.titleLabel!.textAlignment = .center
         switchChainButton.transform = CGAffineTransform(rotationAngle: Double.pi / 4)
         
-        if ParticleAuthService.isLogin() {
+        if ParticleAuthService.isUserLoggedIn() {
             showLogin(false)
         } else {
             showLogin(true)
@@ -85,6 +85,104 @@ class MainViewController: UIViewController {
                 self.showLogin(true)
             }
             
+        }.disposed(by: bag)
+    }
+
+    func signAndSendTransaction() {
+        // solana transaction should be base58 string
+        // evm transaction should be hex string
+        var transaction = ""
+        switch ParticleNetwork.getChainName() {
+        case .solana:
+            transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
+        default:
+            transaction = "0x7b2266726f6d223a22307831363338306130334632314535613545333339633135424138654245353831643139346530444233222c2274797065223a22307832222c226d61785072696f72697479466565506572476173223a2230783539363832463030222c2264617461223a223078222c226761734c696d6974223a22307835323038222c2276616c7565223a223078354146333130374134303030222c226d6178466565506572476173223a2230783539363832463041222c22746f223a22307835303446383344363530323966423630376663416134336562443062373032326162313631423043222c22636861696e4964223a2230783241222c226e6f6e6365223a22307830227d"
+        }
+        
+        ParticleAuthService.signAndSendTransaction(transaction).subscribe { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let signature):
+                print(signature)
+            }
+        }.disposed(by: bag)
+    }
+    
+    func signTransaction() {
+        // solana transaciton should be base58 string
+        // evm transaction is not support
+        var transaction = ""
+        switch ParticleNetwork.getChainName() {
+        case .solana:
+            transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
+        default:
+            transaction = "0x0"
+        }
+        
+        if transaction.isEmpty { return }
+        ParticleAuthService.signtransaction(transaction).subscribe { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let signed):
+                print(signed)
+            }
+        }.disposed(by: bag)
+    }
+    
+    @IBAction func signMessage() {
+        // sign any string
+        // solana message could be any string, no request
+        // evm message should be hex string
+        var message = ""
+        switch ParticleNetwork.getChainName() {
+        case .solana:
+            message = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
+        default:
+            let hello = "Hello world !"
+            let encoded = try! JSONSerialization.data(withJSONObject: hello, options: .fragmentsAllowed)
+
+            let hexString = "0x" + encoded.toHexString()
+            message = hexString
+        }
+        
+        if message.isEmpty { return }
+        
+        ParticleAuthService.signMessage(message).subscribe { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let signed):
+                print(signed)
+            }
+        }.disposed(by: bag)
+    }
+    
+    func signTypedData() {
+        // not support solana
+        // evm support typed data v1, v3, v4, you should encode to hex string
+        var message = ""
+        switch ParticleNetwork.getChainName() {
+        case .solana:
+            message = ""
+        default:
+            let typedData = [TypedDataV1(type: "string", name: "fullName", value: "John Doe"),
+                             TypedDataV1(type: "uint64", name: "Name", value: "Doe")]
+            let encoded = try! JSONEncoder().encode(typedData)
+            let hexString = "0x" + encoded.toHexString()
+            message = hexString
+        }
+        
+        if message.isEmpty { return }
+        
+        ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let signed):
+                print(signed)
+            }
         }.disposed(by: bag)
     }
     
@@ -212,11 +310,73 @@ extension MainViewController {
     }
     
     func evmRpc() {
-//        let method = "eth_getBalance"
-//        let params: [Encodable?] = ["0xfe3b557e8fb62b89f4916b721be55ceb828dbd73", "latest"]
-//        ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe { [weak self] _ in
-//            guard let self = self else { return }
-//            // hande result
-//        }.disposed(by: bag)
+        let method = "eth_getBalance"
+        let params: [Encodable?] = ["0xfe3b557e8fb62b89f4916b721be55ceb828dbd73", "latest"]
+        ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // hande result
+        }.disposed(by: bag)
     }
+    
+    func erc20Transfer() {
+        let contractAddress = ""
+        let to = ""
+        let amount = BInt(1)
+        ParticleWalletAPI.getEvmService().erc20Transfer(contractAddress: contractAddress, to: to, amount: amount).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // handle result
+        }.disposed(by: bag)
+    }
+
+    func erc20Approve() {
+        let contractAddress = ""
+        let spender = ""
+        let amount = BInt(1)
+        ParticleWalletAPI.getEvmService().erc20Approve(contractAddress: contractAddress, spender: spender, amount: amount).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // handle result
+        }.disposed(by: bag)
+    }
+
+    func erc20TransferFrom() {
+        let contractAddress = ""
+        let from = ""
+        let to = ""
+        let amount = BInt(1)
+        ParticleWalletAPI.getEvmService().erc20TransferFrom(contractAddress: contractAddress, from: from, to: to, amount: amount).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // handle result
+        }.disposed(by: bag)
+    }
+
+    func erc721SafeTransferFrom() {
+        let contractAddress = ""
+        let from = ""
+        let to = ""
+        let tokenId = ""
+        ParticleWalletAPI.getEvmService().erc721SafeTransferFrom(contractAddress: contractAddress, from: from, to: to, tokenId: tokenId).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // handle result
+        }.disposed(by: bag)
+    }
+
+    func erc1155SafeTransferFrom() {
+        let contractAddress = ""
+        let from = ""
+        let to = ""
+        let id = ""
+        let amount = BInt(0)
+        let data: [UInt8] = []
+        ParticleWalletAPI.getEvmService().erc1155SafeTransferFrom(contractAddress: contractAddress, from: from, to: to, id: id, amount: amount, data: data).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // handle result
+        }.disposed(by: bag)
+    }
+}
+
+
+struct TypedDataV1: Encodable {
+    let type: String
+    let name: String
+    let value: String
 }
