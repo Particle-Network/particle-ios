@@ -22,7 +22,7 @@ iOS 12
 ## Getting Started
 
 * Clone the repo.
-* Replace ParticelNetwork.info with your project info in the [Dashboard](https://particle.network/#/login).
+* Replace ParticelNetwork.info with your project info in the [Dashboard](https://dashboard.particle.network/#/login).
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
