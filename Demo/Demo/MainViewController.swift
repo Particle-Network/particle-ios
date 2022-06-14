@@ -39,6 +39,12 @@ class MainViewController: UIViewController {
         } else {
             showLogin(true)
         }
+        
+        NotificationCenter.default.rx.notification(Notification.Name(rawValue: ParticleAuthService.Notification.newUserInfo)).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            let userInfo = ParticleAuthService.getUserInfo()
+            print(userInfo)
+        }.disposed(by: bag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -222,7 +228,7 @@ class MainViewController: UIViewController {
 extension MainViewController {
     func getSolanaPrice() {
         let addresses = ["native"]
-        ParticleWalletAPI.getSolanaService().enhancedGetPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] _ in
+        ParticleWalletAPI.getSolanaService().getPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] _ in
             guard let self = self else { return }
             // hande result
         }.disposed(by: bag)
@@ -230,7 +236,7 @@ extension MainViewController {
     
     func getSolanaTokensAndNFTs() {
         let address = ""
-        ParticleWalletAPI.getSolanaService().enhancedGetTokensAndNFTs(by: address).subscribe { [weak self] _ in
+        ParticleWalletAPI.getSolanaService().getTokensAndNFTs(by: address).subscribe { [weak self] _ in
             guard let self = self else { return }
             // hande result
         }.disposed(by: bag)
@@ -238,7 +244,7 @@ extension MainViewController {
     
     func getSolanaTransactions() {
         let address = ""
-        ParticleWalletAPI.getSolanaService().enhancedGetTransactions(by: address, beforeSignature: nil, untilSignature: nil, limit: 1000).subscribe { [weak self] _ in
+        ParticleWalletAPI.getSolanaService().getTransactions(by: address, beforeSignature: nil, untilSignature: nil, limit: 1000).subscribe { [weak self] _ in
             guard let self = self else { return }
             // hande result
         }.disposed(by: bag)
@@ -267,7 +273,7 @@ extension MainViewController {
         let lamports = BInt(0)
         let mintAddress: String? = nil
         let payer: String? = nil
-        ParticleWalletAPI.getSolanaService().enhancedSerializeTransaction(type: transactionType, sender: sender, receiver: receiver, lamports: lamports, mintAddress: mintAddress, payer: payer).subscribe { [weak self] _ in
+        ParticleWalletAPI.getSolanaService().serializeTransaction(type: transactionType, sender: sender, receiver: receiver, lamports: lamports, mintAddress: mintAddress, payer: payer).subscribe { [weak self] _ in
             guard let self = self else { return }
             // hande result
         }.disposed(by: bag)
@@ -279,7 +285,7 @@ extension MainViewController {
 extension MainViewController {
     func getEvmPrice() {
         let addresses = ["native"]
-        ParticleWalletAPI.getEvmService().particleGetPrice(by: addresses, vsCurrencies: ["usd"]).subscribe { [weak self] _ in
+        ParticleWalletAPI.getEvmService().getPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] _ in
             guard let self = self else { return }
             // hande result
         }.disposed(by: bag)
@@ -287,7 +293,15 @@ extension MainViewController {
     
     func getEvmTokensAndNFTs() {
         let address = ""
-        ParticleWalletAPI.getEvmService().particleGetTokensAndNFTs(by: address).subscribe { [weak self] _ in
+        ParticleWalletAPI.getEvmService().getTokensAndNFTs(by: address).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // hande result
+        }.disposed(by: bag)
+    }
+    
+    func getEvmTokensAndNFTsFromDB() {
+        let address = ""
+        ParticleWalletAPI.getEvmService().getTokensAndNFTsFromDB(by: address).subscribe { [weak self] _ in
             guard let self = self else { return }
             // hande result
         }.disposed(by: bag)
@@ -295,7 +309,15 @@ extension MainViewController {
     
     func getEvmTransactions() {
         let address = ""
-        ParticleWalletAPI.getEvmService().particleGetTransactions(by: address).subscribe { [weak self] _ in
+        ParticleWalletAPI.getEvmService().getTransactions(by: address).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // hande result
+        }.disposed(by: bag)
+    }
+    
+    func getEvmTransactionsFromDB() {
+        let address = ""
+        ParticleWalletAPI.getEvmService().getTransactionsFromDB(by: address).subscribe { [weak self] _ in
             guard let self = self else { return }
             // hande result
         }.disposed(by: bag)
@@ -372,8 +394,18 @@ extension MainViewController {
             // handle result
         }.disposed(by: bag)
     }
+    
+    func customMethodAbiEncode() {
+        let contractAddress = ""
+        let methodName = ""
+        let params: [String] = []
+        let abiJsonString = ""
+        ParticleWalletAPI.getEvmService().abiEncodeFunctionCall(contractAddress: contractAddress, methodName: methodName, params: params, abiJsonString: abiJsonString).subscribe { [weak self] _ in
+            guard let self = self else { return }
+            // handle result
+        }.disposed(by: bag)
+    }
 }
-
 
 struct TypedDataV1: Encodable {
     let type: String
