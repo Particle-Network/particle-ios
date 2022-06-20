@@ -17,16 +17,16 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.2.1)
   - MJRefresh (3.4.0)
-  - ParticleAuthService (0.3.0.1):
+  - ParticleAuthService (0.3.0.2):
     - CryptoSwift (~> 1.5.1)
     - ParticleNetworkBase
     - RxCocoa (= 6.5.0)
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleNetworkBase (0.3.0.1):
+  - ParticleNetworkBase (0.3.0.2):
     - CryptoSwift (~> 1.5.1)
-  - ParticleWalletAPI (0.3.0.1):
+  - ParticleWalletAPI (0.3.0.2):
     - CryptoSwift (~> 1.5.1)
     - GRDB.swift
     - ParticleNetworkBase
@@ -35,7 +35,7 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletGUI (0.3.0.1):
+  - ParticleWalletGUI (0.3.0.2):
     - GLTFSceneKit
     - JXPagingView/Paging
     - JXSegmentedView
@@ -73,7 +73,7 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - ParticleWalletGUI (= 0.3.0.1)
+  - ParticleWalletGUI (= 0.3.0.2)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -110,10 +110,10 @@ SPEC CHECKSUMS:
   JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   MJRefresh: 95b08b3b8b6457d2c69510439e0349599050ea34
-  ParticleAuthService: 967db84ccd07acf845ad087ac718d2913b8db29c
-  ParticleNetworkBase: 35e4b975ed1617cc52ffbe6f36822970dbacb359
-  ParticleWalletAPI: 34852ef8dc94350e4aa139034eadeabd085691f8
-  ParticleWalletGUI: a39cd32748b70015b46ed30b17766d790a155a2f
+  ParticleAuthService: 200fead6e10d945b1dcd1705df59b295dab9ff63
+  ParticleNetworkBase: 7ecdada82c91ca3b15d3a5b297dfa91406c0022f
+  ParticleWalletAPI: a8ee26fee3ecb2374c57b7dc6a67377a6c9d0f0c
+  ParticleWalletGUI: 9b875d69ad22dab48a697bd4b3911b36e2320aa7
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -126,6 +126,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: c353d25a17f512d6ed0ccc803bb7971412ba3094
+PODFILE CHECKSUM: 372442943cde26ca2eeb793548f9ebd862bf0143
 
 COCOAPODS: 1.11.3
