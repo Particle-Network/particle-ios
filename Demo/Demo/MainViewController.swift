@@ -45,6 +45,10 @@ class MainViewController: UIViewController {
             let userInfo = ParticleAuthService.getUserInfo()
             print(userInfo)
         }.disposed(by: bag)
+        
+        
+        let user = ParticleAuthService.getUserInfo()
+        print(user)
     }
     
     override func viewDidAppear(_ animated: Bool) {
