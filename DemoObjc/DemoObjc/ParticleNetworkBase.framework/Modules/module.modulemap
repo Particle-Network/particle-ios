@@ -1,0 +1,4 @@
+framework module ParticleNetworkBase {
+  header "ParticleNetworkBase-Swift.h"
+  requires objc
+}

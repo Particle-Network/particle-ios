@@ -97,104 +97,12 @@ class MainViewController: UIViewController {
             
         }.disposed(by: bag)
     }
-
-    func signAndSendTransaction() {
-        // solana transaction should be base58 string
-        // evm transaction should be hex string
-        var transaction = ""
-        switch ParticleNetwork.getChainName() {
-        case .solana:
-            transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
-        default:
-            transaction = "0x7b2266726f6d223a22307831363338306130334632314535613545333339633135424138654245353831643139346530444233222c2274797065223a22307832222c226d61785072696f72697479466565506572476173223a2230783539363832463030222c2264617461223a223078222c226761734c696d6974223a22307835323038222c2276616c7565223a223078354146333130374134303030222c226d6178466565506572476173223a2230783539363832463041222c22746f223a22307835303446383344363530323966423630376663416134336562443062373032326162313631423043222c22636861696e4964223a2230783241222c226e6f6e6365223a22307830227d"
-        }
-        
-        ParticleAuthService.signAndSendTransaction(transaction).subscribe { [weak self] result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let signature):
-                print(signature)
-            }
-        }.disposed(by: bag)
-    }
     
-    func signTransaction() {
-        // solana transaciton should be base58 string
-        // evm transaction is not support
-        var transaction = ""
-        switch ParticleNetwork.getChainName() {
-        case .solana:
-            transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
-        default:
-            transaction = "0x0"
-        }
-        
-        if transaction.isEmpty { return }
-        ParticleAuthService.signtransaction(transaction).subscribe { [weak self] result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let signed):
-                print(signed)
-            }
-        }.disposed(by: bag)
-    }
     
-    @IBAction func signMessage() {
-        // sign any string
-        // solana message could be any string, no request
-        // evm message should be hex string
-        var message = ""
-        switch ParticleNetwork.getChainName() {
-        case .solana:
-            message = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
-        default:
-            let hello = "Hello world !"
-            let encoded = try! JSONSerialization.data(withJSONObject: hello, options: .fragmentsAllowed)
-
-            let hexString = "0x" + encoded.toHexString()
-            message = hexString
-        }
-        
-        if message.isEmpty { return }
-        
-        ParticleAuthService.signMessage(message).subscribe { [weak self] result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let signed):
-                print(signed)
-            }
-        }.disposed(by: bag)
-    }
     
-    func signTypedData() {
-        // not support solana
-        // evm support typed data v1, v3, v4, you should encode to hex string
-        var message = ""
-        switch ParticleNetwork.getChainName() {
-        case .solana:
-            message = ""
-        default:
-            let typedData = [TypedDataV1(type: "string", name: "fullName", value: "John Doe"),
-                             TypedDataV1(type: "uint64", name: "Name", value: "Doe")]
-            let encoded = try! JSONEncoder().encode(typedData)
-            let hexString = "0x" + encoded.toHexString()
-            message = hexString
-        }
-        
-        if message.isEmpty { return }
-        
-        ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self] result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let signed):
-                print(signed)
-            }
-        }.disposed(by: bag)
-    }
+   
+    
+    
     
     @IBAction func openWallet() {
         PNRouter.navigatorWallet(display: .token)

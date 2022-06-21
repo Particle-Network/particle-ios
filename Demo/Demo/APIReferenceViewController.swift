@@ -165,6 +165,33 @@ class APIReferenceViewController: UIViewController {
         }.disposed(by: bag)
     }
     
+    func signTypedData() {
+        // not support solana
+        // evm support typed data v1, v3, v4, you should encode to hex string
+        var message = ""
+        switch ParticleNetwork.getChainName() {
+        case .solana:
+            message = ""
+        default:
+            let typedData = [TypedDataV1(type: "string", name: "fullName", value: "John Doe"),
+                             TypedDataV1(type: "uint64", name: "Name", value: "Doe")]
+            let encoded = try! JSONEncoder().encode(typedData)
+            let hexString = "0x" + encoded.toHexString()
+            message = hexString
+        }
+        
+        if message.isEmpty { return }
+        
+        ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let signed):
+                print(signed)
+            }
+        }.disposed(by: bag)
+    }
+    
     @IBAction func openWallet() {
         PNRouter.navigatorWallet(display: .token)
     }
