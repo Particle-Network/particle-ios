@@ -14,6 +14,7 @@
 @import ParticleWalletGUI;
 
 @interface MainViewController ()
+
 @property (weak, nonatomic) IBOutlet UIButton *loginWithEmailButton;
 @property (weak, nonatomic) IBOutlet UIButton *loginWithPhoneButton;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
@@ -30,6 +31,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    ChainName *chainName = ParticleNetwork.getChainName;
+    NSString *nameString = chainName.nameString;
+    Name name = chainName.name;
+    NSString *network = chainName.network;
+    NSLog(@"%@, %@", nameString, network);
+    
     [self showLogin:true];
     self.switchChainButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.switchChainButton.titleLabel.numberOfLines = 2;
@@ -43,9 +50,7 @@
         [self showLogin:YES];
     }
     
-    NSString *name = @"";
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newUserInfo:) name:name object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newUserInfo:) name:[Notifications newUserInfo] object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -54,8 +59,7 @@
 }
 
 - (void)dealloc {
-    NSString *name = @"";
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:name object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:[Notifications newUserInfo] object:nil];
 }
 
 
@@ -66,6 +70,7 @@
 - (IBAction)loginWithEmail {
     [ParticleAuthService loginWithType:LoginTypeEmail successHandler:^(UserInfo * userInfo) {
         NSLog(@"%@", userInfo);
+        [self showLogin:NO];
     } failureHandler:^(NSError * error) {
         NSLog(@"%@", error);
     }];
@@ -74,6 +79,7 @@
 - (IBAction)loginWithPhone {
     [ParticleAuthService loginWithType:LoginTypePhone successHandler:^(UserInfo * userInfo) {
         NSLog(@"%@", userInfo);
+        [self showLogin:NO];
     } failureHandler:^(NSError * error) {
         NSLog(@"%@", error);
     }];
@@ -82,6 +88,7 @@
 - (IBAction)logout {
     [ParticleAuthService logoutWithSuccessHandler:^(NSString * result) {
         NSLog(@"%@", result);
+        [self showLogin:YES];
     } failureHandler:^(NSError * error) {
         NSLog(@"%@", error);
     }];
@@ -97,6 +104,8 @@
     vc.selectHandler = ^{
         [weakSelf updateUI];
     };
+    self.modalPresentationStyle = UIModalPresentationPageSheet;
+    [self presentViewController:vc animated:true completion:nil];
 }
 
 

@@ -25,8 +25,7 @@ typealias AuroraNetwork = ParticleNetwork.AuroraNetwork
 typealias HarmonyNetwork = ParticleNetwork.HarmonyNetwork
 
 class SwitchChainViewController: UIViewController {
-    
-    var selectHandler:(() -> Void)?
+    var selectHandler: (() -> Void)?
     let tableView = UITableView(frame: .zero, style: .grouped)
 
     var data: [[String: [String]]] = []
@@ -38,40 +37,40 @@ class SwitchChainViewController: UIViewController {
     }
 
     func configureData() {
-        data.append([Chain.solana(.mainnet).name: [
+        data.append([Chain.solana(.mainnet).nameString: [
             SolanaNetwork.mainnet.rawValue, SolanaNetwork.testnet.rawValue, SolanaNetwork.devnet.rawValue
         ]])
-        data.append([Chain.ethereum(.mainnet).name: [
+        data.append([Chain.ethereum(.mainnet).nameString: [
             EthereumNetwork.mainnet.rawValue, EthereumNetwork.kovan.rawValue
         ]])
-        data.append([Chain.bsc(.mainnet).name: [
+        data.append([Chain.bsc(.mainnet).nameString: [
             BscNetwork.mainnet.rawValue, BscNetwork.testnet.rawValue
         ]])
-        data.append([Chain.polygon(.mainnet).name: [
+        data.append([Chain.polygon(.mainnet).nameString: [
             PolygonNetwork.mainnet.rawValue, PolygonNetwork.testnet.rawValue
         ]])
-        data.append([Chain.avalanche(.mainnet).name: [
+        data.append([Chain.avalanche(.mainnet).nameString: [
             AvalancheNetwork.mainnet.rawValue, AvalancheNetwork.testnet.rawValue
         ]])
-        data.append([Chain.fantom(.mainnet).name: [
+        data.append([Chain.fantom(.mainnet).nameString: [
             FantomNetwork.mainnet.rawValue, FantomNetwork.testnet.rawValue
         ]])
-        data.append([Chain.arbitrum(.mainnet).name: [
+        data.append([Chain.arbitrum(.mainnet).nameString: [
             ArbitrumNetwork.mainnet.rawValue, ArbitrumNetwork.testnet.rawValue
         ]])
-        data.append([Chain.moonBeam(.mainnet).name: [
+        data.append([Chain.moonBeam(.mainnet).nameString: [
             MoonBeamNetwork.mainnet.rawValue, MoonBeamNetwork.testnet.rawValue
         ]])
-        data.append([Chain.moonRiver(.mainnet).name: [
+        data.append([Chain.moonRiver(.mainnet).nameString: [
             MoonRiverNetwork.mainnet.rawValue, MoonRiverNetwork.testnet.rawValue
         ]])
-        data.append([Chain.heco(.mainnet).name: [
+        data.append([Chain.heco(.mainnet).nameString: [
             HecoNetwork.mainnet.rawValue, HecoNetwork.testnet.rawValue
         ]])
-        data.append([Chain.aurora(.mainnet).name: [
+        data.append([Chain.aurora(.mainnet).nameString: [
             AuroraNetwork.mainnet.rawValue, AuroraNetwork.testnet.rawValue
         ]])
-        data.append([Chain.harmony(.mainnet).name: [
+        data.append([Chain.harmony(.mainnet).nameString: [
             HarmonyNetwork.mainnet.rawValue, HarmonyNetwork.testnet.rawValue
         ]])
     }
@@ -84,7 +83,7 @@ class SwitchChainViewController: UIViewController {
         }
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
-        
+
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -106,7 +105,7 @@ extension SwitchChainViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
-    
+
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        let label = UILabel()
 //        label.text = "    " + (data[section].keys.first ?? "")
@@ -114,7 +113,7 @@ extension SwitchChainViewController: UITableViewDataSource {
 //        label.font = UIFont.systemFont(ofSize: 20)
 //        return label
 //    }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         data[section].keys.first
     }
@@ -124,48 +123,47 @@ extension SwitchChainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let network = data[indexPath.section].values.first?[indexPath.row] ?? ""
         let name = data[indexPath.section].keys.first ?? ""
-    
+
         var chainName: Chain
         switch name {
-        case Chain.solana(.mainnet).name:
+        case Chain.solana(.mainnet).nameString:
             chainName = .solana(SolanaNetwork(rawValue: network)!)
-        case Chain.ethereum(.mainnet).name:
+        case Chain.ethereum(.mainnet).nameString:
             chainName = .ethereum(EthereumNetwork(rawValue: network)!)
-        case Chain.bsc(.mainnet).name:
+        case Chain.bsc(.mainnet).nameString:
             chainName = .bsc(BscNetwork(rawValue: network)!)
-        case Chain.polygon(.mainnet).name:
+        case Chain.polygon(.mainnet).nameString:
             chainName = .polygon(PolygonNetwork(rawValue: network)!)
-        case Chain.avalanche(.mainnet).name:
+        case Chain.avalanche(.mainnet).nameString:
             chainName = .avalanche(AvalancheNetwork(rawValue: network)!)
-        case Chain.fantom(.mainnet).name:
+        case Chain.fantom(.mainnet).nameString:
             chainName = .fantom(FantomNetwork(rawValue: network)!)
-        case Chain.arbitrum(.mainnet).name:
+        case Chain.arbitrum(.mainnet).nameString:
             chainName = .arbitrum(ArbitrumNetwork(rawValue: network)!)
-        case Chain.moonBeam(.mainnet).name:
+        case Chain.moonBeam(.mainnet).nameString:
             chainName = .moonBeam(MoonBeamNetwork(rawValue: network)!)
-        case Chain.moonRiver(.mainnet).name:
+        case Chain.moonRiver(.mainnet).nameString:
             chainName = .moonRiver(MoonRiverNetwork(rawValue: network)!)
-        case Chain.heco(.mainnet).name:
+        case Chain.heco(.mainnet).nameString:
             chainName = .heco(HecoNetwork(rawValue: network)!)
-        case Chain.aurora(.mainnet).name:
+        case Chain.aurora(.mainnet).nameString:
             chainName = .aurora(AuroraNetwork(rawValue: network)!)
-        case Chain.harmony(.mainnet).name:
+        case Chain.harmony(.mainnet).nameString:
             chainName = .harmony(HarmonyNetwork(rawValue: network)!)
         default:
             chainName = .ethereum(.mainnet)
         }
-        
+
         ParticleNetwork.setChainName(chainName)
-        
         let alert = UIAlertController(title: "Switch network", message: "current network is \(name) - \(network)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            
+
             if let selectHandler = self.selectHandler {
                 selectHandler()
             }
             self.dismiss(animated: true)
         }))
-        
+
         present(alert, animated: true)
     }
 }

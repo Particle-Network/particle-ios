@@ -6,10 +6,12 @@
 //
 
 #import "APIReferenceViewController.h"
+#import "NSData+Extensions.h"
 
 @import ParticleNetworkBase;
 @import ParticleAuthService;
 @import ParticleWalletAPI;
+@import ParticleWalletGUI;
 
 @interface APIReferenceViewController ()
 
@@ -40,7 +42,9 @@
             [self sendTransactionSolana];
           break;
        default :
-            [self sendNativeEVM];
+//            [self sendNativeEVM];
+            
+            [self sendErc20Token];
             break;
     }
 }
@@ -64,18 +68,21 @@
     NSString *sender = [ParticleAuthService getAddress];
     NSString *receiver = @"0xAC6d81182998EA5c196a4424EA6AB250C7eb175b";
     NSString *amount = @"0x5AF3107A4000";
-    
+    __weak APIReferenceViewController *weakSelf = self;
     [[ParticleWalletAPI getEvmService] createTransactionFrom:sender to:receiver value:amount contractParams: nil type:@"0x2" nonce:@"0x0" gasFeeLevel:GasFeeLevelMedium action:ActionNormal successHandler:^(NSString * transaction) {
         NSLog(@"%@", transaction);
         
         [ParticleAuthService signAndSendTransaction:transaction successHandler:^(NSString * signature) {
             NSLog(@"%@", signature);
+            [weakSelf hideLoading];
             } failureHandler:^(NSError * error) {
                 NSLog(@"%@", error);
+                [weakSelf hideLoading];
             }];
         
     } failureHandler:^(NSError * error) {
         NSLog(@"%@", error);
+        [weakSelf hideLoading];
     }];
 }
 
@@ -96,18 +103,132 @@
     
     // because you want to send erc20 token, interact with contact, 'to' should be the contract address.
     // and value could be nil.
+    __weak APIReferenceViewController *weakSelf = self;
     [[ParticleWalletAPI getEvmService] createTransactionFrom:from to:to value:nil contractParams:contractParams type:@"0x2" nonce:@"0x0" gasFeeLevel:GasFeeLevelMedium action:ActionNormal successHandler:^(NSString * transaction) {
             NSLog(@"%@", transaction);
-            
             [ParticleAuthService signAndSendTransaction:transaction successHandler:^(NSString * signature) {
                 NSLog(@"%@", signature);
+                [weakSelf hideLoading];
                 } failureHandler:^(NSError * error) {
                     NSLog(@"%@", error);
+                    [weakSelf hideLoading];
                 }];
         } failureHandler:^(NSError * error) {
             NSLog(@"%@", error);
+            [weakSelf hideLoading];
         }];
     
+}
+
+- (IBAction)signTransaction {
+    NSString *transaction;
+    switch ([ParticleNetwork getChainName].name) {
+        case NameSolana:
+            transaction = @"87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu";
+            break;
+        default:
+            transaction = @"0x0";
+            break;
+    }
+    if ([transaction isEqualToString: @""]) { return; }
+    
+    [ParticleAuthService signTransaction:transaction successHandler:^(NSString * signedTransaction) {
+        NSLog(@"%@", signedTransaction);
+        } failureHandler:^(NSError * error) {
+            NSLog(@"%@", error);
+        }];
+}
+
+- (IBAction)signMessage {
+    NSString *message;
+    NSString *hello;
+    switch ([ParticleNetwork getChainName].name) {
+        case NameSolana:
+            message = @"87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu";
+            break;
+        default:
+            hello = @"Hello world !";
+            NSData *encoded = [NSJSONSerialization dataWithJSONObject:hello options:NSJSONWritingFragmentsAllowed error:nil];
+            message = [@"0x" stringByAppendingString:[encoded hexString]];
+            break;
+    }
+    
+    if ([message isEqualToString: @""]) { return; }
+    
+    [ParticleAuthService signMessage:message successHandler:^(NSString * signedMessage) {
+        NSLog(@"%@", signedMessage);
+        } failureHandler:^(NSError * error) {
+            NSLog(@"%@", error);
+        }];
+}
+
+- (IBAction)signTypedData {
+    NSString *message;
+    
+    NSArray *dataArray = @[@{
+        @"type": @"string",
+        @"name": @"fullName",
+        @"value": @"John Doe",
+    }, @{
+        @"type": @"uint64",
+        @"name": @"Name",
+        @"value": @"Doe",
+    }];
+    
+    NSData *encoded = [NSJSONSerialization dataWithJSONObject:dataArray options:NSJSONWritingFragmentsAllowed error:nil];
+    
+    switch ([ParticleNetwork getChainName].name) {
+        case NameSolana:
+            message = @"";
+            break;
+        default:
+            message = [@"0x" stringByAppendingString:[encoded hexString]];
+            break;
+    }
+    
+    if ([message isEqualToString: @""]) { return; }
+    
+    [ParticleAuthService signMessage:message successHandler:^(NSString * signedMessage) {
+        NSLog(@"%@", signedMessage);
+        } failureHandler:^(NSError * error) {
+            NSLog(@"%@", error);
+        }];
+}
+    
+
+- (IBAction)openWallet {
+    [PNRouter navigatorWalletWithDisplay:DisplayToken];
+}
+
+- (IBAction)openSendToken {
+    TokenSendConfig *config = [[TokenSendConfig alloc] initWithTokenAddress:nil toAddress:nil amountString:nil];
+    [PNRouter navigatorTokenSendWithTokenSendConfig:config];
+}
+
+- (IBAction)openReceiveToken {
+    TokenReceiveConfig *config = [[TokenReceiveConfig alloc] initWithTokenAddress:nil];
+    [PNRouter navigatorTokenReceiveWithTokenReceiveConfig:config];
+}
+
+- (IBAction)openTransactionRecords {
+    NSString *tokenAddress = @"";
+    TokenTransactionRecordsConfig *config = [[TokenTransactionRecordsConfig alloc] initWithTokenAddress:tokenAddress];
+    [PNRouter navigatorTokenTransactionRecordsWithTokenTransactionRecordsConfig:config];
+}
+
+- (IBAction)openNFTDetail {
+    NSString *mintAddress = @"";
+    NSString *tokenId = @"";
+    NFTDetailsConfig *config = [[NFTDetailsConfig alloc] initWithAddress:mintAddress tokenId:tokenId];
+    [PNRouter navigatorNFTDetailsWithNftDetailsConfig:config];
+}
+
+- (IBAction)openNFTSend {
+    NSString *mintAddress = @"";
+    NSString *toAddress = @"";
+    NSString *tokenId = @"";
+    NFTSendConfig *config = [[NFTSendConfig alloc] initWithAddress:mintAddress toAddress:toAddress tokenId:tokenId];
+    [PNRouter navigatroNFTSendWithNftSendConfig:config];
 }
 
 - (void)showLoading {
@@ -119,4 +240,13 @@
     self.mask.hidden = YES;
     [self.loading stopAnimating];
 }
+
+- (IBAction)close {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass([APIReferenceViewController class]));
+}
+
 @end

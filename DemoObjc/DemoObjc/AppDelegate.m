@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 
 @import ParticleNetworkBase;
+@import ParticleAuthService;
 
 @interface AppDelegate ()
 
@@ -18,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // init ParticleNetwork
-    ChainName *chainName = [ChainName ethereum:EthereumNetworkKovan];
+    ChainName *chainName = [ChainName ethereum:EthereumNetworkMainnet];
     DevEnvironment devEnv = DevEnvironmentDebug;
     ParticleNetworkConfiguration *config = [[ParticleNetworkConfiguration alloc] initWithChainName:chainName devEnv:devEnv];
     [ParticleNetwork initializeWithConfig:config];
@@ -29,6 +30,10 @@
     [_window makeKeyAndVisible];
     
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    return [ParticleAuthService handleUrl:url];
 }
 
 @end

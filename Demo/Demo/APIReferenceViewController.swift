@@ -6,10 +6,10 @@
 //
 
 import Foundation
-import ParticleNetworkBase
-import ParticleWalletGUI
 import ParticleAuthService
+import ParticleNetworkBase
 import ParticleWalletAPI
+import ParticleWalletGUI
 import RxSwift
 import UIKit
 
@@ -19,7 +19,7 @@ class APIReferenceViewController: UIViewController {
     var loading: UIActivityIndicatorView?
     
     @IBAction func signAndSendTransaction() {
-        switch ParticleNetwork.getChainName() {
+        switch ParticleNetwork.getChainName().name {
         case .solana:
             let transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
             
@@ -40,7 +40,7 @@ class APIReferenceViewController: UIViewController {
             self.sendErc20Token()
             
             // test your custom contract function
-            self.sendCustomContractFunction()
+//            self.sendCustomContractFunction()
         }
     }
     
@@ -140,21 +140,44 @@ class APIReferenceViewController: UIViewController {
         let data: String
     }
     
-    
     @IBAction func signTransaction() {
-        let transaction = "your transaction"
-        ParticleAuthService.signtransaction(transaction).subscribe { [weak self] result in
+        // not support solana
+        var transaction = ""
+        switch ParticleNetwork.getChainName().name  {
+        case .solana:
+            transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
+        default:
+            transaction = "0x0"
+        }
+        
+        if transaction.isEmpty { return }
+        ParticleAuthService.signTransaction(transaction).subscribe { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let signed):
                 print(signed)
             }
-        }.disposed(by: bag)
+        }.disposed(by: self.bag)
     }
     
     @IBAction func signMessage() {
-        let message = "your message"
+        var message = ""
+        switch ParticleNetwork.getChainName().name  {
+        case .solana:
+            message = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
+        default:
+            let hello = "Hello world !"
+            let encoded = try! JSONSerialization.data(withJSONObject: hello, options: .fragmentsAllowed)
+//            let encoded = try! JSONEncoder().encode(hello)
+            // https://stackoverflow.com/questions/50257242/jsonencoder-wont-allow-type-encoded-to-primitive-value
+            
+            let hexString = "0x" + encoded.toHexString()
+            message = hexString
+        }
+        
+        if message.isEmpty { return }
+        
         ParticleAuthService.signMessage(message).subscribe { [weak self] result in
             switch result {
             case .failure(let error):
@@ -162,14 +185,14 @@ class APIReferenceViewController: UIViewController {
             case .success(let signed):
                 print(signed)
             }
-        }.disposed(by: bag)
+        }.disposed(by: self.bag)
     }
     
-    func signTypedData() {
+    @IBAction func signTypedData() {
         // not support solana
         // evm support typed data v1, v3, v4, you should encode to hex string
         var message = ""
-        switch ParticleNetwork.getChainName() {
+        switch ParticleNetwork.getChainName().name {
         case .solana:
             message = ""
         default:
@@ -189,7 +212,7 @@ class APIReferenceViewController: UIViewController {
             case .success(let signed):
                 print(signed)
             }
-        }.disposed(by: bag)
+        }.disposed(by: self.bag)
     }
     
     @IBAction func openWallet() {
@@ -226,6 +249,10 @@ class APIReferenceViewController: UIViewController {
         let tokenId = ""
         let config = NFTSendConfig(address: mintAddress, toAddress: toAddress, tokenId: tokenId)
         PNRouter.navigatroNFTSend(nftSendConfig: config)
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true)
     }
 }
 

@@ -9,19 +9,15 @@
 /* Begin PBXBuildFile section */
 		28852AA9628C2F635AEA8E89 /* Pods_DemoObjc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F656B22B1EE6D7139E9DF55 /* Pods_DemoObjc.framework */; };
 		3BCD63F42861729700AE4428 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD63F32861729700AE4428 /* AppDelegate.m */; };
-		3BCD63FA2861729700AE4428 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD63F92861729700AE4428 /* ViewController.m */; };
 		3BCD63FD2861729700AE4428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCD63FB2861729700AE4428 /* Main.storyboard */; };
 		3BCD63FF2861729A00AE4428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BCD63FE2861729A00AE4428 /* Assets.xcassets */; };
 		3BCD64022861729A00AE4428 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCD64002861729A00AE4428 /* LaunchScreen.storyboard */; };
 		3BCD64052861729A00AE4428 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD64042861729A00AE4428 /* main.m */; };
 		3BCD640C2861738A00AE4428 /* ParticleNetwork-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BCD640B2861738A00AE4428 /* ParticleNetwork-Info.plist */; };
-		3BCD640F28619FB300AE4428 /* ParticleNetworkBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCD640E28619FB200AE4428 /* ParticleNetworkBase.framework */; };
-		3BCD64132861D7D700AE4428 /* ParticleAuthService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCD64102861D7D700AE4428 /* ParticleAuthService.framework */; };
-		3BCD64142861D7D700AE4428 /* ParticleWalletAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCD64112861D7D700AE4428 /* ParticleWalletAPI.framework */; };
-		3BCD64152861D7D700AE4428 /* ParticleWalletGUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCD64122861D7D700AE4428 /* ParticleWalletGUI.framework */; };
 		3BCD64182861D84100AE4428 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD64172861D84100AE4428 /* MainViewController.m */; };
 		3BCD641B2861D85500AE4428 /* APIReferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD641A2861D85500AE4428 /* APIReferenceViewController.m */; };
 		3BCD641E2861D86000AE4428 /* SwitchChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD641D2861D86000AE4428 /* SwitchChainViewController.m */; };
+		3BEB77622862CB320000DBEB /* NSData+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB77612862CB320000DBEB /* NSData+Extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,24 +25,20 @@
 		3BCD63EF2861729700AE4428 /* DemoObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCD63F22861729700AE4428 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3BCD63F32861729700AE4428 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3BCD63F82861729700AE4428 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3BCD63F92861729700AE4428 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3BCD63FC2861729700AE4428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BCD63FE2861729A00AE4428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BCD64012861729A00AE4428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BCD64032861729A00AE4428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BCD64042861729A00AE4428 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3BCD640B2861738A00AE4428 /* ParticleNetwork-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParticleNetwork-Info.plist"; sourceTree = "<group>"; };
-		3BCD640E28619FB200AE4428 /* ParticleNetworkBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParticleNetworkBase.framework; sourceTree = "<group>"; };
-		3BCD64102861D7D700AE4428 /* ParticleAuthService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParticleAuthService.framework; sourceTree = "<group>"; };
-		3BCD64112861D7D700AE4428 /* ParticleWalletAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParticleWalletAPI.framework; sourceTree = "<group>"; };
-		3BCD64122861D7D700AE4428 /* ParticleWalletGUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParticleWalletGUI.framework; sourceTree = "<group>"; };
 		3BCD64162861D84100AE4428 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3BCD64172861D84100AE4428 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3BCD64192861D85500AE4428 /* APIReferenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIReferenceViewController.h; sourceTree = "<group>"; };
 		3BCD641A2861D85500AE4428 /* APIReferenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIReferenceViewController.m; sourceTree = "<group>"; };
 		3BCD641C2861D86000AE4428 /* SwitchChainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchChainViewController.h; sourceTree = "<group>"; };
 		3BCD641D2861D86000AE4428 /* SwitchChainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitchChainViewController.m; sourceTree = "<group>"; };
+		3BEB77602862CB320000DBEB /* NSData+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Extensions.h"; sourceTree = "<group>"; };
+		3BEB77612862CB320000DBEB /* NSData+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extensions.m"; sourceTree = "<group>"; };
 		539EF46C9583DAC8172BAFD1 /* Pods-DemoObjc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoObjc.debug.xcconfig"; path = "Target Support Files/Pods-DemoObjc/Pods-DemoObjc.debug.xcconfig"; sourceTree = "<group>"; };
 		91E6D42ED12625F8CFD07B35 /* Pods-DemoObjc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoObjc.release.xcconfig"; path = "Target Support Files/Pods-DemoObjc/Pods-DemoObjc.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,10 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BCD64132861D7D700AE4428 /* ParticleAuthService.framework in Frameworks */,
-				3BCD640F28619FB300AE4428 /* ParticleNetworkBase.framework in Frameworks */,
-				3BCD64152861D7D700AE4428 /* ParticleWalletGUI.framework in Frameworks */,
-				3BCD64142861D7D700AE4428 /* ParticleWalletAPI.framework in Frameworks */,
 				28852AA9628C2F635AEA8E89 /* Pods_DemoObjc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,8 +78,6 @@
 			children = (
 				3BCD63F22861729700AE4428 /* AppDelegate.h */,
 				3BCD63F32861729700AE4428 /* AppDelegate.m */,
-				3BCD63F82861729700AE4428 /* ViewController.h */,
-				3BCD63F92861729700AE4428 /* ViewController.m */,
 				3BCD63FB2861729700AE4428 /* Main.storyboard */,
 				3BCD63FE2861729A00AE4428 /* Assets.xcassets */,
 				3BCD64002861729A00AE4428 /* LaunchScreen.storyboard */,
@@ -104,10 +90,8 @@
 				3BCD641A2861D85500AE4428 /* APIReferenceViewController.m */,
 				3BCD641C2861D86000AE4428 /* SwitchChainViewController.h */,
 				3BCD641D2861D86000AE4428 /* SwitchChainViewController.m */,
-				3BCD640E28619FB200AE4428 /* ParticleNetworkBase.framework */,
-				3BCD64102861D7D700AE4428 /* ParticleAuthService.framework */,
-				3BCD64112861D7D700AE4428 /* ParticleWalletAPI.framework */,
-				3BCD64122861D7D700AE4428 /* ParticleWalletGUI.framework */,
+				3BEB77602862CB320000DBEB /* NSData+Extensions.h */,
+				3BEB77612862CB320000DBEB /* NSData+Extensions.m */,
 			);
 			path = DemoObjc;
 			sourceTree = "<group>";
@@ -141,6 +125,7 @@
 				3BCD63EC2861729700AE4428 /* Frameworks */,
 				3BCD63ED2861729700AE4428 /* Resources */,
 				F0756B9F8DA62A5AC6C76468 /* [CP] Embed Pods Frameworks */,
+				061ADA2B84A9A36F02C6A8B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,6 +183,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		061ADA2B84A9A36F02C6A8B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoObjc/Pods-DemoObjc-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoObjc/Pods-DemoObjc-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoObjc/Pods-DemoObjc-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A4B0698FEB77318C5AD234EA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,8 +246,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BEB77622862CB320000DBEB /* NSData+Extensions.m in Sources */,
 				3BCD641E2861D86000AE4428 /* SwitchChainViewController.m in Sources */,
-				3BCD63FA2861729700AE4428 /* ViewController.m in Sources */,
 				3BCD63F42861729700AE4428 /* AppDelegate.m in Sources */,
 				3BCD64052861729A00AE4428 /* main.m in Sources */,
 				3BCD641B2861D85500AE4428 /* APIReferenceViewController.m in Sources */,
@@ -391,14 +393,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4Z5S6BJZ8H;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DemoObjc",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoObjc/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We needs to take photos for QRCode";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -410,8 +416,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.particle.demo.DemoObjc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.particle.wallet.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -423,14 +430,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4Z5S6BJZ8H;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DemoObjc",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoObjc/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We needs to take photos for QRCode";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -442,8 +453,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.particle.demo.DemoObjc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.particle.wallet.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

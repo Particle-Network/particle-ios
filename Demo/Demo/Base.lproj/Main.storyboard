@@ -30,10 +30,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-fp-QES">
-                                <rect key="frame" x="42" y="147" width="320" height="50"/>
+                                <rect key="frame" x="42" y="147" width="306" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Bh-8e-KjT"/>
-                                    <constraint firstAttribute="width" constant="320" id="OO2-50-oQy"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -55,10 +55,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9V-fe-jVE">
-                                <rect key="frame" x="42" y="207" width="320" height="50"/>
+                                <rect key="frame" x="42" y="207" width="306" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5Ph-CJ-tvN"/>
-                                    <constraint firstAttribute="width" constant="320" id="lbP-d1-XfM"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -80,10 +80,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymD-Pr-hMz">
-                                <rect key="frame" x="42" y="267" width="320" height="50"/>
+                                <rect key="frame" x="42" y="267" width="306" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JEJ-6h-UC3"/>
-                                    <constraint firstAttribute="width" constant="320" id="fzU-H4-HCu"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -105,7 +105,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-fG-jAf">
-                                <rect key="frame" x="42" y="367" width="320" height="50"/>
+                                <rect key="frame" x="42" y="367" width="306" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HXW-Hs-aJf"/>
                                 </constraints>
@@ -129,7 +130,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-6v-3eq">
-                                <rect key="frame" x="42" y="427" width="320" height="50"/>
+                                <rect key="frame" x="42" y="427" width="306" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Aln-dp-7ll"/>
                                 </constraints>
@@ -153,10 +155,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1f-91-dMv">
-                                <rect key="frame" x="42" y="487" width="320" height="50"/>
+                                <rect key="frame" x="42" y="487" width="306" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="OmH-dx-zYW"/>
-                                    <constraint firstAttribute="width" constant="320" id="ZMI-Gk-geS"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -178,9 +180,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTg-Pe-noI">
-                                <rect key="frame" x="42" y="547" width="320" height="50"/>
+                                <rect key="frame" x="42" y="547" width="306" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Qvi-bb-RJw"/>
                                     <constraint firstAttribute="height" constant="50" id="WcJ-Ro-918"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -203,10 +205,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-MZ-Hbu">
-                                <rect key="frame" x="42" y="607" width="320" height="50"/>
+                                <rect key="frame" x="42" y="607" width="306" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RFb-V7-1Q9"/>
-                                    <constraint firstAttribute="width" constant="320" id="aQi-tA-pfW"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -228,10 +230,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVJ-US-YYp">
-                                <rect key="frame" x="42" y="667" width="320" height="50"/>
+                                <rect key="frame" x="42" y="667" width="306" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="s1Y-gU-Vvu"/>
-                                    <constraint firstAttribute="width" constant="320" id="vi3-KN-MWv"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -253,32 +255,60 @@
                                     <action selector="openTransactionRecords" destination="BYZ-38-t0r" eventType="touchUpInside" id="zxV-RT-y5u"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjg-uz-vj9" userLabel="Close">
+                                <rect key="frame" x="259" y="103" width="89" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="CLOSE">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SAr-MZ-Hbu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="2RT-kG-8oX"/>
+                            <constraint firstItem="SAr-MZ-Hbu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="5UW-Hn-YxY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CVJ-US-YYp" secondAttribute="trailing" constant="42" id="5vK-0C-pUy"/>
                             <constraint firstItem="WTK-6v-3eq" firstAttribute="top" secondItem="bhA-fG-jAf" secondAttribute="bottom" constant="10" id="63a-PW-LgG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V1f-91-dMv" secondAttribute="trailing" constant="42" id="7EL-dr-GiV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SAr-MZ-Hbu" secondAttribute="trailing" constant="42" id="9IL-1Y-IUi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0g2-fp-QES" secondAttribute="trailing" constant="42" id="ANy-D5-vIk"/>
+                            <constraint firstItem="V1f-91-dMv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="CM4-xV-ndp"/>
+                            <constraint firstItem="c9V-fe-jVE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="FRg-WW-ITl"/>
                             <constraint firstItem="bhA-fG-jAf" firstAttribute="trailing" secondItem="ymD-Pr-hMz" secondAttribute="trailing" id="FVa-3m-28x"/>
                             <constraint firstItem="0g2-fp-QES" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="GoD-e0-owB"/>
+                            <constraint firstItem="WTK-6v-3eq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="HE8-bu-3hH"/>
                             <constraint firstItem="bhA-fG-jAf" firstAttribute="top" secondItem="H1Q-or-ehA" secondAttribute="bottom" constant="10" id="JMZ-Se-hJY"/>
                             <constraint firstItem="YTg-Pe-noI" firstAttribute="top" secondItem="V1f-91-dMv" secondAttribute="bottom" constant="10" id="JQe-aZ-TwC"/>
                             <constraint firstItem="bhA-fG-jAf" firstAttribute="trailing" secondItem="WTK-6v-3eq" secondAttribute="trailing" id="KSk-Pk-8ce"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ymD-Pr-hMz" secondAttribute="trailing" constant="42" id="Kea-hc-n0Q"/>
                             <constraint firstItem="YTg-Pe-noI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="NlI-VE-wfg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YTg-Pe-noI" secondAttribute="trailing" constant="42" id="OBg-7q-yKx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c9V-fe-jVE" secondAttribute="trailing" constant="42" id="Onc-8Y-Dhw"/>
+                            <constraint firstItem="bhA-fG-jAf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="Pc0-09-YMK"/>
                             <constraint firstItem="H1Q-or-ehA" firstAttribute="top" secondItem="ymD-Pr-hMz" secondAttribute="bottom" constant="10" id="TKI-Bf-4MK"/>
                             <constraint firstItem="ymD-Pr-hMz" firstAttribute="top" secondItem="c9V-fe-jVE" secondAttribute="bottom" constant="10" id="XXT-o0-fLE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WTK-6v-3eq" secondAttribute="trailing" constant="42" id="Y3J-Bj-90I"/>
                             <constraint firstItem="CVJ-US-YYp" firstAttribute="top" secondItem="SAr-MZ-Hbu" secondAttribute="bottom" constant="10" id="YpQ-lE-Y7J"/>
                             <constraint firstItem="ymD-Pr-hMz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="aVn-Yi-0BB"/>
                             <constraint firstItem="c9V-fe-jVE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="axQ-5M-Msu"/>
+                            <constraint firstItem="ymD-Pr-hMz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="cWG-QX-k2u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bhA-fG-jAf" secondAttribute="trailing" constant="42" id="ccO-1a-2pm"/>
                             <constraint firstItem="V1f-91-dMv" firstAttribute="top" secondItem="WTK-6v-3eq" secondAttribute="bottom" constant="10" id="fWO-gE-Rbw"/>
                             <constraint firstItem="SAr-MZ-Hbu" firstAttribute="top" secondItem="YTg-Pe-noI" secondAttribute="bottom" constant="10" id="fxo-1h-HUq"/>
                             <constraint firstItem="0g2-fp-QES" firstAttribute="top" secondItem="RKA-hc-f1a" secondAttribute="bottom" constant="10" id="g73-vB-Fdv"/>
                             <constraint firstItem="H1Q-or-ehA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="gV3-gC-QHt"/>
+                            <constraint firstItem="Hjg-uz-vj9" firstAttribute="trailing" secondItem="0g2-fp-QES" secondAttribute="trailing" id="hQo-6c-Uf9"/>
                             <constraint firstItem="RKA-hc-f1a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="iCD-Dx-pM6"/>
+                            <constraint firstItem="YTg-Pe-noI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="oY8-Oz-UvW"/>
                             <constraint firstItem="RKA-hc-f1a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="63" id="omH-KB-jtr"/>
+                            <constraint firstItem="Hjg-uz-vj9" firstAttribute="centerY" secondItem="RKA-hc-f1a" secondAttribute="centerY" id="p88-PM-BP1"/>
                             <constraint firstItem="bhA-fG-jAf" firstAttribute="leading" secondItem="H1Q-or-ehA" secondAttribute="leading" id="pHZ-0l-GTo"/>
                             <constraint firstItem="bhA-fG-jAf" firstAttribute="leading" secondItem="WTK-6v-3eq" secondAttribute="leading" id="rK4-Zh-0so"/>
+                            <constraint firstItem="0g2-fp-QES" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="sZg-LZ-2OR"/>
                             <constraint firstItem="CVJ-US-YYp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="trs-ut-j8u"/>
+                            <constraint firstItem="CVJ-US-YYp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="tsF-sp-Xga"/>
                             <constraint firstItem="c9V-fe-jVE" firstAttribute="top" secondItem="0g2-fp-QES" secondAttribute="bottom" constant="10" id="xAF-pD-IaD"/>
                             <constraint firstItem="V1f-91-dMv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="zDE-Ur-NeQ"/>
                         </constraints>
@@ -287,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755" y="83"/>
+            <point key="canvasLocation" x="1753.8461538461538" y="82.464454976303315"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="oSI-uh-HrO">
@@ -318,21 +348,16 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Bl-spe">
                                 <rect key="frame" x="95" y="619" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eD4-Ix-qAG"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" title="EMAIL LOGIN">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                     </backgroundConfiguration>
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="EMAIL LOGIN">
-                                            <attributes>
-                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -341,22 +366,16 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zu-GL-3nJ">
                                 <rect key="frame" x="95" y="619" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="E84-X3-4yf"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" title="OPEN WALLET">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                     </backgroundConfiguration>
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="OPEN WALLET">
-                                            <attributes>
-                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -365,22 +384,16 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l59-o7-VGU">
                                 <rect key="frame" x="95" y="684" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5ar-W3-V38"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" title="PHONE LOGIN">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                     </backgroundConfiguration>
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="PHONE LOGIN">
-                                            <attributes>
-                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -389,22 +402,16 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYI-lh-xEq">
                                 <rect key="frame" x="95" y="684" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Oi2-Pn-drK"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" title="LOGOUT">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                     </backgroundConfiguration>
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="LOGOUT">
-                                            <attributes>
-                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -413,6 +420,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CZb-bh-J7I">
                                 <rect key="frame" x="241" y="39" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RQm-i2-rX4"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="xYN-5e-fj7"/>
@@ -444,23 +452,17 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Et-NS-lcq">
                                 <rect key="frame" x="95" y="749" width="200" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eOT-QV-noH"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="l9F-Br-C3N"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
+                                <buttonConfiguration key="configuration" style="plain" title="API REFERENCE">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                     </backgroundConfiguration>
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="API REFERENCE">
-                                            <attributes>
-                                                <font key="NSFont" size="19" name="Helvetica-Bold"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -528,6 +530,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

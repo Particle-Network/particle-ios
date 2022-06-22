@@ -17,6 +17,36 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.2.1)
   - MJRefresh (3.4.0)
+  - ParticleAuthService (0.3.3):
+    - CryptoSwift (~> 1.5.1)
+    - ParticleNetworkBase
+    - RxCocoa (= 6.5.0)
+    - RxSwift (= 6.5.0)
+    - SwiftyJSON (~> 5.0)
+    - SwiftyUserDefaults (~> 5.3.0)
+  - ParticleNetworkBase (0.3.3):
+    - CryptoSwift (~> 1.5.1)
+  - ParticleWalletAPI (0.3.3):
+    - CryptoSwift (~> 1.5.1)
+    - GRDB.swift
+    - ParticleNetworkBase
+    - RxAlamofire (~> 6.1.1)
+    - RxCocoa (= 6.5.0)
+    - RxSwift (= 6.5.0)
+    - SwiftyJSON (~> 5.0)
+    - SwiftyUserDefaults (~> 5.3.0)
+  - ParticleWalletGUI (0.3.3):
+    - GLTFSceneKit
+    - JXPagingView/Paging
+    - JXSegmentedView
+    - MJRefresh (= 3.4.0)
+    - ParticleAuthService
+    - ParticleWalletAPI
+    - SDWebImage
+    - SDWebImageWebPCoder
+    - SnapKit (~> 5.0.1)
+    - SwiftMessages
+    - Then
   - RxAlamofire (6.1.1):
     - RxAlamofire/Core (= 6.1.1)
   - RxAlamofire/Core (6.1.1):
@@ -31,7 +61,7 @@ PODS:
   - SDWebImage (5.12.6):
     - SDWebImage/Core (= 5.12.6)
   - SDWebImage/Core (5.12.6)
-  - SDWebImageWebPCoder (0.8.4):
+  - SDWebImageWebPCoder (0.8.5):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.10)
   - SnapKit (5.0.1)
@@ -43,22 +73,7 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - CryptoSwift (~> 1.5.1)
-  - GLTFSceneKit
-  - GRDB.swift
-  - JXPagingView/Paging
-  - JXSegmentedView
-  - MJRefresh (= 3.4.0)
-  - RxAlamofire (~> 6.1.1)
-  - RxCocoa (= 6.5.0)
-  - RxSwift (= 6.5.0)
-  - SDWebImage
-  - SDWebImageWebPCoder
-  - SnapKit (~> 5.0.1)
-  - SwiftMessages
-  - SwiftyJSON (~> 5.0)
-  - SwiftyUserDefaults (~> 5.3.0)
-  - Then
+  - ParticleWalletGUI (= 0.3.3)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -70,6 +85,10 @@ SPEC REPOS:
     - JXSegmentedView
     - libwebp
     - MJRefresh
+    - ParticleAuthService
+    - ParticleNetworkBase
+    - ParticleWalletAPI
+    - ParticleWalletGUI
     - RxAlamofire
     - RxCocoa
     - RxRelay
@@ -91,18 +110,22 @@ SPEC CHECKSUMS:
   JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
   libwebp: 98a37e597e40bfdb4c911fc98f2c53d0b12d05fc
   MJRefresh: 95b08b3b8b6457d2c69510439e0349599050ea34
+  ParticleAuthService: 6f8fdc79e51c29340c9a454cd07e0df4decd9b9e
+  ParticleNetworkBase: 4d88e420fe47d6ae89b0435ed0b455170b20c06e
+  ParticleWalletAPI: 69bb4dcb29516b0716c813e65f6ad349068a1f68
+  ParticleWalletGUI: 115eb02df226d8b2caaac9252349bbf0c124e21d
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: a47aea9e3d8816015db4e523daff50cfd294499d
-  SDWebImageWebPCoder: f93010f3f6c031e2f8fb3081ca4ee6966c539815
+  SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 3cd3b801d94cfd10f41555eeec82497cb24acce9
+PODFILE CHECKSUM: 1a337d8506bd8f859ce0cb077036b7c79f203600
 
 COCOAPODS: 1.11.3

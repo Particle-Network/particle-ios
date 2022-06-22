@@ -46,7 +46,6 @@ class MainViewController: UIViewController {
             print(userInfo)
         }.disposed(by: bag)
         
-        
         let user = ParticleAuthService.getUserInfo()
         print(user)
     }
@@ -98,12 +97,6 @@ class MainViewController: UIViewController {
         }.disposed(by: bag)
     }
     
-    
-    
-   
-    
-    
-    
     @IBAction func openWallet() {
         PNRouter.navigatorWallet(display: .token)
     }
@@ -128,7 +121,7 @@ class MainViewController: UIViewController {
     }
     
     private func updateUI() {
-        let name = ParticleNetwork.getChainName().name
+        let name = ParticleNetwork.getChainName().nameString
         let network = ParticleNetwork.getChainName().network
         
         switchChainButton.setTitle("\(name) \n \(network.lowercased())", for: .normal)
