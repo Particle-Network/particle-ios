@@ -43,7 +43,6 @@
           break;
        default :
 //            [self sendNativeEVM];
-            
             [self sendErc20Token];
             break;
     }

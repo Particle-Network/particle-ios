@@ -12,6 +12,7 @@
 @import ParticleAuthService;
 @import ParticleNetworkBase;
 @import ParticleWalletGUI;
+@import ParticleWalletAPI;
 
 @interface MainViewController ()
 
@@ -51,6 +52,8 @@
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newUserInfo:) name:[Notifications newUserInfo] object:nil];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -108,6 +111,70 @@
     [self presentViewController:vc animated:true completion:nil];
 }
 
+- (void)erc20Transfer {
+    NSString *contractAddress = @"";
+    NSString *to = @"";
+    NSString *amount = @"";
+    [[ParticleWalletAPI getEvmService] erc20TransferWithContractAddress:contractAddress to:to amount:amount successHandler:^(NSString * result) {
+            // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+
+
+- (void)erc20Approve {
+    NSString *contractAddress = @"";
+    NSString *spender = @"";
+    NSString *amount = @"";
+    [[ParticleWalletAPI getEvmService] erc20ApproveWithContractAddress:contractAddress spender:spender amount:amount successHandler:^(NSString * result) {
+            // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+
+- (void)erc20TransferFrom {
+    NSString *contractAddress = @"";
+    NSString *from = @"";
+    NSString *to = @"";
+    NSString *amount = @"";
+    
+    [[ParticleWalletAPI getEvmService] erc20TransferFromContractAddress:contractAddress from:from to:to amount:amount successHandler:^(NSString * result) {
+            // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+
+- (void)erc721SafeTransferFrom {
+    NSString *contractAddress = @"";
+    NSString *from = @"";
+    NSString *to = @"";
+    NSString *tokenId = @"";
+    
+    [[ParticleWalletAPI getEvmService] erc721SafeTransferFromContractAddress:contractAddress from:from to:to tokenId:tokenId successHandler:^(NSString * result) {
+            // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+
+- (void)erc1155SafeTransferFrom {
+    NSString *contractAddress = @"";
+    NSString *from = @"";
+    NSString *to = @"";
+    NSString *tokenId = @"";
+    NSString *amount = @"";
+    NSArray *data = [[NSArray alloc] init];
+    
+    [[ParticleWalletAPI getEvmService] erc1155SafeTransferFromContractAddress:contractAddress from:from to:to id:tokenId amount:amount data:data successHandler:^(NSString * result) {
+        // handle result
+    } failureHandler:^(NSError * error) {
+        // handle error
+    }];
+}
+
 
 - (void)showLogin:(BOOL)isShow {
     self.loginWithEmailButton.hidden = !isShow;
@@ -127,5 +194,7 @@
     NSString *title = [NSString stringWithFormat:@"%@ \n %@", name, network];
     [self.switchChainButton setTitle:title forState:UIControlStateNormal];
 }
+
+
 
 @end
