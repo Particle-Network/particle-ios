@@ -52,8 +52,13 @@
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newUserInfo:) name:[Notifications newUserInfo] object:nil];
+    UserInfo *userInfo = [ParticleAuthService getUserInfo];
+    NSString *address = userInfo.address;
+    NSString *uuid = userInfo.uuid;
+    NSString *token = userInfo.token;
+    NSString *publicKey = userInfo.publicKey;
     
-    
+    NSLog(@"uuid = %@, token = %@, address = %@, publicKey = %@", uuid, token, address, publicKey);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
