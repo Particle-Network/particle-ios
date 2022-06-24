@@ -19,7 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // init ParticleNetwork
+    // select a network
     ChainName *chainName = [ChainName ethereum:EthereumNetworkMainnet];
+    // and also and you can custom your evm network
+//    ChainName *chainName = [ChainName customEvmNetworkWithFullName:@"Ethereum" network:@"kovan" chainId:42 explorePath:@"https://kovan.etherscan.io/" symbol:@"ETH" isSupportEIP1159:YES];
+       
+//    ChainName *chainName = [ChainName customEvmNetworkWithFullName:@"Ethereum" network:@"rinkeby" chainId:4 explorePath:@"https://rinkeby.etherscan.io/" symbol:@"ETH" isSupportEIP1159:YES];
+
     DevEnvironment devEnv = DevEnvironmentDebug;
     ParticleNetworkConfiguration *config = [[ParticleNetworkConfiguration alloc] initWithChainName:chainName devEnv:devEnv];
     [ParticleNetwork initializeWithConfig:config];

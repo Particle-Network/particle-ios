@@ -5,6 +5,6 @@ target 'DemoObjc' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 source 'https://github.com/CocoaPods/Specs.git'
-    pod 'ParticleWalletGUI', '0.3.4'
+    pod 'ParticleWalletGUI', '0.3.5'
 
 end
