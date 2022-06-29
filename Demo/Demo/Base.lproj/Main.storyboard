@@ -29,17 +29,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-fp-QES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-fp-QES">
                                 <rect key="frame" x="42" y="147" width="306" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Bh-8e-KjT"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="SIGN AND SENDTRANSACTION">
                                             <attributes>
@@ -48,23 +45,20 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="signAndSendTransaction" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ey-LY-Djt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9V-fe-jVE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c9V-fe-jVE">
                                 <rect key="frame" x="42" y="207" width="306" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5Ph-CJ-tvN"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="SIGN TRANSACTION">
                                             <attributes>
@@ -73,23 +67,20 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="signTransaction" destination="BYZ-38-t0r" eventType="touchUpInside" id="PXv-nP-cpH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymD-Pr-hMz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ymD-Pr-hMz">
                                 <rect key="frame" x="42" y="267" width="306" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JEJ-6h-UC3"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="SIGN MESSAGE">
                                             <attributes>
@@ -98,23 +89,20 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="signMessage" destination="BYZ-38-t0r" eventType="touchUpInside" id="QVS-sb-Qgx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-fG-jAf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-fG-jAf">
                                 <rect key="frame" x="42" y="367" width="306" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="HXW-Hs-aJf"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="OPEN WALLET">
                                             <attributes>
@@ -123,23 +111,20 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="openWallet" destination="BYZ-38-t0r" eventType="touchUpInside" id="w1Q-Et-n5C"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-6v-3eq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-6v-3eq">
                                 <rect key="frame" x="42" y="427" width="306" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Aln-dp-7ll"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="OPEN SEND TOKEN">
                                             <attributes>
@@ -148,23 +133,20 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="openSendToken" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jmp-RH-RAB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1f-91-dMv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1f-91-dMv">
                                 <rect key="frame" x="42" y="487" width="306" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="OmH-dx-zYW"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="OPEN RECEIVE TOKEN">
                                             <attributes>
@@ -173,23 +155,20 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="openReceiveToken" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y6I-De-UM3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTg-Pe-noI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YTg-Pe-noI">
                                 <rect key="frame" x="42" y="547" width="306" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="WcJ-Ro-918"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="OPEN NFT DETAILS">
                                             <attributes>
@@ -198,23 +177,20 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="openNFTDetail" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZgS-oG-bHm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-MZ-Hbu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-MZ-Hbu">
                                 <rect key="frame" x="42" y="607" width="306" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RFb-V7-1Q9"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="OPEN NFT SEND">
                                             <attributes>
@@ -223,23 +199,20 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="openNFTSend" destination="BYZ-38-t0r" eventType="touchUpInside" id="hEz-QX-mzl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVJ-US-YYp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CVJ-US-YYp">
                                 <rect key="frame" x="42" y="667" width="306" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="s1Y-gU-Vvu"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
                                     <attributedString key="attributedTitle">
                                         <fragment content="OPEN TOKEN TRANSACTION RECORD">
                                             <attributes>
@@ -248,20 +221,20 @@
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="openNFTSend" destination="BYZ-38-t0r" eventType="touchUpInside" id="6O8-Ud-izQ"/>
                                     <action selector="openTransactionRecords" destination="BYZ-38-t0r" eventType="touchUpInside" id="zxV-RT-y5u"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hjg-uz-vj9" userLabel="Close">
-                                <rect key="frame" x="259" y="103" width="89" height="38"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="CLOSE">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <rect key="frame" x="283" y="104" width="65" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="CLOSE">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -346,74 +319,32 @@
                                     <constraint firstAttribute="width" constant="128" id="mqk-se-61Z"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEi-Bl-spe">
-                                <rect key="frame" x="95" y="619" width="200" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="eD4-Ix-qAG"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="EMAIL LOGIN">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="loginWithEmail" destination="lQf-0j-PTw" eventType="touchUpInside" id="dYo-rw-MNI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zu-GL-3nJ">
-                                <rect key="frame" x="95" y="619" width="200" height="50"/>
+                                <rect key="frame" x="95" y="630" width="200" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="E84-X3-4yf"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="OPEN WALLET">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="OPEN WALLET">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="openWallet" destination="lQf-0j-PTw" eventType="touchUpInside" id="NEH-pU-Rqo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l59-o7-VGU">
-                                <rect key="frame" x="95" y="684" width="200" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5ar-W3-V38"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="PHONE LOGIN">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="loginWithPhone" destination="lQf-0j-PTw" eventType="touchUpInside" id="NOq-zC-153"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYI-lh-xEq">
-                                <rect key="frame" x="95" y="684" width="200" height="50"/>
+                                <rect key="frame" x="95" y="690" width="200" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Oi2-Pn-drK"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="LOGOUT">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="LOGOUT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="logout" destination="lQf-0j-PTw" eventType="touchUpInside" id="vEg-tg-yDU"/>
                                 </connections>
@@ -425,14 +356,11 @@
                                     <constraint firstAttribute="height" constant="50" id="RQm-i2-rX4"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="xYN-5e-fj7"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Solana">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Solana">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="switchChainClick" destination="lQf-0j-PTw" eventType="touchUpInside" id="Vpx-bg-3g8"/>
                                 </connections>
@@ -445,57 +373,115 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Aw-d2-ejV">
-                                <rect key="frame" x="113.66666666666669" y="411" width="163" height="42"/>
+                                <rect key="frame" x="113.66666666666667" y="411" width="162.66666666666663" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Et-NS-lcq">
-                                <rect key="frame" x="95" y="749" width="200" height="50"/>
+                                <rect key="frame" x="95" y="750" width="200" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eOT-QV-noH"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="l9F-Br-C3N"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="API REFERENCE">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="linkColor"/>
-                                    </backgroundConfiguration>
-                                    <fontDescription key="titleFontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="API REFERENCE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="P9T-XT-dIe"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="rVA-JK-ePK">
+                                <rect key="frame" x="40" y="637" width="310" height="43"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydl-da-Ojy">
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="43"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="email">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginWithEmail" destination="lQf-0j-PTw" eventType="touchUpInside" id="xrk-W5-ZOe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zc4-8y-vLc">
+                                        <rect key="frame" x="66.666666666666671" y="0.0" width="43" height="43"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="phone">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginWithPhone" destination="lQf-0j-PTw" eventType="touchUpInside" id="4t0-5P-GdY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MP1-Za-PRW">
+                                        <rect key="frame" x="133.66666666666666" y="0.0" width="43" height="43"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="google">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginWithGoogle" destination="lQf-0j-PTw" eventType="touchUpInside" id="bvd-04-4DC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUg-4N-7Le">
+                                        <rect key="frame" x="200.33333333333334" y="0.0" width="43" height="43"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="apple">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginWithApple" destination="lQf-0j-PTw" eventType="touchUpInside" id="Saz-oC-pef"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdN-GF-8Xb">
+                                        <rect key="frame" x="267" y="0.0" width="43" height="43"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="facebook">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginWithFacebook" destination="lQf-0j-PTw" eventType="touchUpInside" id="iZr-X0-arn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="KUj-9Z-0jX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="zyR-lA-N4P"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SrX-O0-Dls"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="l59-o7-VGU" firstAttribute="top" secondItem="1zu-GL-3nJ" secondAttribute="bottom" constant="15" id="2zE-W0-9ZY"/>
+                            <constraint firstItem="SrX-O0-Dls" firstAttribute="bottom" secondItem="1Et-NS-lcq" secondAttribute="bottom" constant="10" id="5U8-kI-mhi"/>
                             <constraint firstItem="CZb-bh-J7I" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="topMargin" constant="39" id="5aq-pG-5uH"/>
-                            <constraint firstItem="1Et-NS-lcq" firstAttribute="top" secondItem="l59-o7-VGU" secondAttribute="bottom" constant="15" id="6lv-ZP-wcl"/>
-                            <constraint firstItem="l59-o7-VGU" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="8Fi-FL-XXz"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="WEi-Bl-spe" secondAttribute="trailing" constant="95" id="9TD-6h-kJg"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="bottom" secondItem="l59-o7-VGU" secondAttribute="bottom" constant="76" id="Big-r7-Qja"/>
+                            <constraint firstItem="oYI-lh-xEq" firstAttribute="top" secondItem="1zu-GL-3nJ" secondAttribute="bottom" constant="10" id="6IY-vy-Jyv"/>
                             <constraint firstItem="oYI-lh-xEq" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="ChW-yo-cwD"/>
+                            <constraint firstItem="1Et-NS-lcq" firstAttribute="top" secondItem="oYI-lh-xEq" secondAttribute="bottom" constant="10" id="DNJ-W9-OGN"/>
                             <constraint firstItem="QzE-n5-iV2" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="top" id="GBU-94-mRe"/>
                             <constraint firstItem="Go3-vv-HZD" firstAttribute="trailing" secondItem="Ip1-tH-bZY" secondAttribute="trailing" id="IFr-s5-ftd"/>
                             <constraint firstItem="Ip1-tH-bZY" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="top" constant="260" id="KQj-nI-sgN"/>
-                            <constraint firstItem="WEi-Bl-spe" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="LPL-M2-6dA"/>
+                            <constraint firstItem="rVA-JK-ePK" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="40" id="KwP-1u-aDR"/>
+                            <constraint firstItem="oYI-lh-xEq" firstAttribute="top" secondItem="rVA-JK-ePK" secondAttribute="bottom" constant="10" id="NSo-5Q-xfN"/>
                             <constraint firstItem="1zu-GL-3nJ" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="SfS-jR-Etq"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="bottom" secondItem="oYI-lh-xEq" secondAttribute="bottom" constant="76" id="U1a-mJ-8cU"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="l59-o7-VGU" secondAttribute="trailing" constant="95" id="U8D-5L-3Eh"/>
                             <constraint firstItem="8wK-gx-X9W" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="topMargin" constant="260" id="a7K-cu-R09"/>
                             <constraint firstItem="2Aw-d2-ejV" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="aFY-xk-ckX"/>
                             <constraint firstItem="QzE-n5-iV2" firstAttribute="leading" secondItem="mIa-Qf-uBo" secondAttribute="leading" id="aNB-FW-yaW"/>
                             <constraint firstItem="Go3-vv-HZD" firstAttribute="leading" secondItem="mIa-Qf-uBo" secondAttribute="leadingMargin" constant="11" id="ays-I0-JSC"/>
                             <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="1zu-GL-3nJ" secondAttribute="trailing" constant="95" id="clr-tz-uUS"/>
+                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="rVA-JK-ePK" secondAttribute="trailing" constant="40" id="dsQ-pp-Bv6"/>
                             <constraint firstItem="Ip1-tH-bZY" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="gIr-zl-RtZ"/>
                             <constraint firstItem="CZb-bh-J7I" firstAttribute="trailing" secondItem="QzE-n5-iV2" secondAttribute="trailing" constant="51" id="iH2-YR-KI3"/>
                             <constraint firstItem="2Aw-d2-ejV" firstAttribute="top" secondItem="Ip1-tH-bZY" secondAttribute="bottom" constant="23" id="iX2-jd-jpn"/>
-                            <constraint firstItem="l59-o7-VGU" firstAttribute="top" secondItem="WEi-Bl-spe" secondAttribute="bottom" constant="15" id="jcj-WE-VK5"/>
                             <constraint firstAttribute="trailing" secondItem="QzE-n5-iV2" secondAttribute="trailing" id="qd2-xK-ecc"/>
                             <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="1Et-NS-lcq" secondAttribute="trailing" constant="95" id="r8z-bE-cwP"/>
                             <constraint firstItem="8wK-gx-X9W" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="tJa-h8-ub1"/>
@@ -505,11 +491,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="apiReferenceButton" destination="1Et-NS-lcq" id="Hnw-0A-4W9"/>
+                        <outlet property="appleButton" destination="jUg-4N-7Le" id="wRT-ZW-jsZ"/>
                         <outlet property="coreImageView" destination="Ip1-tH-bZY" id="f76-7x-3yb"/>
-                        <outlet property="loginWithEmailButton" destination="WEi-Bl-spe" id="afG-8a-R4O"/>
-                        <outlet property="loginWithPhoneButton" destination="l59-o7-VGU" id="WLv-7R-Iqd"/>
+                        <outlet property="emailButton" destination="Ydl-da-Ojy" id="DOB-ju-99q"/>
+                        <outlet property="facebookButton" destination="jdN-GF-8Xb" id="njc-Tv-EFB"/>
+                        <outlet property="googleButton" destination="MP1-Za-PRW" id="oTp-g6-hfY"/>
                         <outlet property="logoutButton" destination="oYI-lh-xEq" id="OF4-Jd-F6K"/>
                         <outlet property="openWalletButton" destination="1zu-GL-3nJ" id="L4P-x7-l7r"/>
+                        <outlet property="phoneButton" destination="Zc4-8y-vLc" id="dz7-da-NbT"/>
+                        <outlet property="stackView" destination="rVA-JK-ePK" id="zjb-cY-Xen"/>
                         <outlet property="switchChainButton" destination="CZb-bh-J7I" id="OsZ-5y-odw"/>
                         <outlet property="welcomeImageView" destination="8wK-gx-X9W" id="kgn-nM-oEi"/>
                         <outlet property="welcomeLabel" destination="2Aw-d2-ejV" id="3ew-tF-bbA"/>
@@ -521,12 +512,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apple" width="43" height="43"/>
         <image name="background" width="1125" height="1007"/>
         <image name="core" width="394" height="452"/>
+        <image name="email" width="43" height="43"/>
+        <image name="facebook" width="43" height="43"/>
+        <image name="google" width="43" height="43"/>
         <image name="particle_network" width="680" height="106"/>
+        <image name="phone" width="43" height="43"/>
         <image name="welcome" width="407" height="419"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

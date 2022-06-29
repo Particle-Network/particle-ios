@@ -15,8 +15,13 @@ import UIKit
 
 class MainViewController: UIViewController {
     private let bag = DisposeBag()
-    @IBOutlet var loginWithEmailButton: UIButton!
-    @IBOutlet var loginWithPhoneButton: UIButton!
+    @IBOutlet var stackView: UIStackView!
+    @IBOutlet var emailButton: UIButton!
+    @IBOutlet var phoneButton: UIButton!
+    @IBOutlet var googleButton: UIButton!
+    @IBOutlet var appleButton: UIButton!
+    @IBOutlet var facebookButton: UIButton!
+    
     @IBOutlet var logoutButton: UIButton!
     @IBOutlet var openWalletButton: UIButton!
     @IBOutlet var switchChainButton: UIButton!
@@ -24,6 +29,7 @@ class MainViewController: UIViewController {
     @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var welcomeImageView: UIImageView!
     @IBOutlet var coreImageView: UIImageView!
+    @IBOutlet var apiReferenceButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +46,6 @@ class MainViewController: UIViewController {
             showLogin(true)
         }
         
-        NotificationCenter.default.rx.notification(Notification.Name(rawValue: ParticleAuthService.Notification.newUserInfo)).subscribe { [weak self] _ in
-            guard let self = self else { return }
-            let userInfo = ParticleAuthService.getUserInfo()
-            print(userInfo)
-        }.disposed(by: bag)
-        
         let user = ParticleAuthService.getUserInfo()
         print(user)
     }
@@ -56,31 +56,23 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithEmail() {
-        ParticleAuthService.login(type: .email).subscribe { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let userinfo):
-                print(userinfo)
-                
-                self.showLogin(false)
-            }
-        }.disposed(by: bag)
+        login(type: .email)
     }
     
     @IBAction func loginWithPhone() {
-        ParticleAuthService.login(type: .phone).subscribe { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .failure(let error):
-                print(error)
-            case .success(let userinfo):
-                print(userinfo)
-                self.showLogin(false)
-            }
-            
-        }.disposed(by: bag)
+        login(type: .phone)
+    }
+    
+    @IBAction func loginWithGoogle() {
+        login(type: .google)
+    }
+    
+    @IBAction func loginWithApple() {
+        login(type: .apple)
+    }
+    
+    @IBAction func loginWithFacebook() {
+        login(type: .facebook)
     }
     
     @IBAction func logout() {
@@ -110,14 +102,18 @@ class MainViewController: UIViewController {
     }
     
     private func showLogin(_ isShow: Bool) {
-        loginWithEmailButton.isHidden = !isShow
-        loginWithPhoneButton.isHidden = !isShow
+        stackView.isHidden = !isShow
         coreImageView.isHidden = !isShow
-        
         logoutButton.isHidden = isShow
         openWalletButton.isHidden = isShow
         welcomeImageView.isHidden = isShow
-        welcomeLabel.isHidden = isShow
+        apiReferenceButton.isHidden = isShow
+        if isShow {
+            welcomeLabel.text = "Sign in to \nParticle Wallet"
+            welcomeLabel.numberOfLines = 2
+        } else {
+            welcomeLabel.text = "Welcome!"
+        }
     }
     
     private func updateUI() {
@@ -135,7 +131,7 @@ extension MainViewController {
         let addresses = ["native"]
         ParticleWalletAPI.getSolanaService().getPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
@@ -143,7 +139,7 @@ extension MainViewController {
         let address = ""
         ParticleWalletAPI.getSolanaService().getTokensAndNFTs(by: address).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
@@ -151,14 +147,14 @@ extension MainViewController {
         let address = ""
         ParticleWalletAPI.getSolanaService().getTransactions(by: address, beforeSignature: nil, untilSignature: nil, limit: 1000).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
     func getSolanaTokenList() {
         ParticleWalletAPI.getSolanaService().getTokenList().subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
@@ -167,7 +163,7 @@ extension MainViewController {
         let params: [Encodable?] = ["8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"]
         ParticleWalletAPI.getSolanaService().rpc(method: method, params: params).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
@@ -180,7 +176,33 @@ extension MainViewController {
         let payer: String? = nil
         ParticleWalletAPI.getSolanaService().serializeTransaction(type: transactionType, sender: sender, receiver: receiver, lamports: lamports, mintAddress: mintAddress, payer: payer).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
+        }.disposed(by: bag)
+    }
+    
+    func evmAddCustomToken() {
+        let address = ParticleAuthService.getAddress()
+        let tokenAddresses: [String] = ["0xFab46E002BbF0b4509813474841E0716E6730136", "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa"]
+        ParticleWalletAPI.getEvmService().addCustomTokens(address: address, tokenAddresses: tokenAddresses).subscribe { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let tokenModels):
+                print(tokenModels)
+            }
+        }.disposed(by: bag)
+    }
+    
+    func solanaAddCustomToken() {
+        let address = ParticleAuthService.getAddress()
+        let tokenAddresses = ["8FE27ioQh3T7o22QsYVT5Re8NnHFqmFNbdqwiF3ywuZQ"]
+        ParticleWalletAPI.getSolanaService().addCustomTokens(address: address, tokenAddresses: tokenAddresses).subscribe { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let tokenModels):
+                print(tokenModels)
+            }
         }.disposed(by: bag)
     }
 }
@@ -192,7 +214,7 @@ extension MainViewController {
         let addresses = ["native"]
         ParticleWalletAPI.getEvmService().getPrice(by: addresses, currencies: ["usd"]).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
@@ -200,7 +222,7 @@ extension MainViewController {
         let address = ""
         ParticleWalletAPI.getEvmService().getTokensAndNFTs(by: address).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
@@ -208,7 +230,7 @@ extension MainViewController {
         let address = ""
         ParticleWalletAPI.getEvmService().getTokensAndNFTsFromDB(by: address).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
@@ -216,7 +238,7 @@ extension MainViewController {
         let address = ""
         ParticleWalletAPI.getEvmService().getTransactions(by: address).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
@@ -224,14 +246,14 @@ extension MainViewController {
         let address = ""
         ParticleWalletAPI.getEvmService().getTransactionsFromDB(by: address).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
     func getEvmTokenList() {
         ParticleWalletAPI.getEvmService().getTokenList().subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
 
         }.disposed(by: bag)
     }
@@ -241,7 +263,7 @@ extension MainViewController {
         let params: [Encodable?] = ["0xfe3b557e8fb62b89f4916b721be55ceb828dbd73", "latest"]
         ParticleWalletAPI.getEvmService().rpc(method: method, params: params).subscribe { [weak self] _ in
             guard let self = self else { return }
-            // hande result
+            // handle result
         }.disposed(by: bag)
     }
     
@@ -309,6 +331,38 @@ extension MainViewController {
             guard let self = self else { return }
             // handle result
         }.disposed(by: bag)
+    }
+}
+
+extension MainViewController {
+    private func login(type: LoginType) {
+        ParticleAuthService.login(type: type).subscribe { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                if let error = error as? ParticleNetwork.Error {
+                    if case .authService(let responseError) = error {
+                        let title = responseError.code?.description ?? ""
+                        self.showToast(title: title, message: responseError.message)
+                    }
+                }
+                print(error)
+            case .success(let userinfo):
+                print(userinfo)
+                self.showLogin(false)
+            }
+            
+        }.disposed(by: bag)
+    }
+}
+
+extension UIViewController {
+    func showToast(title: String, message: String?) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            
+        }))
+        present(alert, animated: true)
     }
 }
 

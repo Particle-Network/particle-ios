@@ -161,6 +161,18 @@ class APIReferenceViewController: UIViewController {
         }.disposed(by: self.bag)
     }
     
+    func signAllTransactions() {
+        let transactions: [String] = []
+        ParticleAuthService.signAllTransactions(transactions).subscribe { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let signature):
+                print(signature)
+            }
+        }.disposed(by: self.bag)
+    }
+    
     @IBAction func signMessage() {
         var message = ""
         switch ParticleNetwork.getChainName().name  {

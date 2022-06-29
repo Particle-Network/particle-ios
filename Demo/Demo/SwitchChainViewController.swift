@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import ParticleAuthService
 import ParticleNetworkBase
+import RxSwift
 import UIKit
 
 typealias Chain = ParticleNetwork.ChainName
@@ -25,6 +27,7 @@ typealias AuroraNetwork = ParticleNetwork.AuroraNetwork
 typealias HarmonyNetwork = ParticleNetwork.HarmonyNetwork
 
 class SwitchChainViewController: UIViewController {
+    let bag = DisposeBag()
     var selectHandler: (() -> Void)?
     let tableView = UITableView(frame: .zero, style: .grouped)
 
@@ -106,14 +109,6 @@ extension SwitchChainViewController: UITableViewDataSource {
         return cell
     }
 
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let label = UILabel()
-//        label.text = "    " + (data[section].keys.first ?? "")
-//        label.textColor = UIColor.black
-//        label.font = UIFont.systemFont(ofSize: 20)
-//        return label
-//    }
-
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         data[section].keys.first
     }
@@ -153,17 +148,41 @@ extension SwitchChainViewController: UITableViewDelegate {
         default:
             chainName = .ethereum(.mainnet)
         }
+        if ParticleAuthService.isUserLoggedIn() {
+            ParticleAuthService.setChainName(chainName).subscribe {
+                [weak self] result in
+                    guard let self = self else { return }
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let userInfo):
+                        print(String(describing: userInfo))
 
-        ParticleNetwork.setChainName(chainName)
-        let alert = UIAlertController(title: "Switch network", message: "current network is \(name) - \(network)", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                        let alert = UIAlertController(title: "Switch network", message: "current network is \(name) - \(network)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
 
-            if let selectHandler = self.selectHandler {
-                selectHandler()
-            }
-            self.dismiss(animated: true)
-        }))
+                            if let selectHandler = self.selectHandler {
+                                selectHandler()
+                            }
+                            self.dismiss(animated: true)
+                        }))
 
-        present(alert, animated: true)
+                        self.present(alert, animated: true)
+                    }
+            }.disposed(by: bag)
+        } else {
+            ParticleNetwork.setChainName(chainName)
+
+            let alert = UIAlertController(title: "Switch network", message: "current network is \(name) - \(network)", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+
+                if let selectHandler = self.selectHandler {
+                    selectHandler()
+                }
+                self.dismiss(animated: true)
+            }))
+
+            present(alert, animated: true)
+        }
     }
 }
