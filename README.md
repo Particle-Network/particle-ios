@@ -53,7 +53,7 @@ pod install --repo-update
 
 ## Features
 
-1. Auth login with email or phone.
+1. Auth login with email, phone, facebook, google, apple etc.
 2. Logout.
 3. Open Wallet.
 4. Change Chain Id.
