@@ -1,2 +1,2 @@
-* linguist-vendored
+DemoObjc/* linguist-vendored
 *.swift linguist-vendored=false
