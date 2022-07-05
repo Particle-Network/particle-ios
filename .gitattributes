@@ -1,2 +1,4 @@
-DemoObjc/* linguist-vendored
-*.swift linguist-vendored=false
+*.m linguist-detectable=false
+*.h linguist-detectable=false
+*.json linguist-detectable=false
+*.swift  linguist-detectable=true
