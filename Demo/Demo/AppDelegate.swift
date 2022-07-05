@@ -7,6 +7,7 @@
 
 import ParticleAuthService
 import ParticleNetworkBase
+import ParticleWalletGUI
 import UIKit
 
 @main
@@ -27,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let devEnv = ParticleNetwork.DevEnvironment.debug
         let config = ParticleNetworkConfiguration(chainName: chainName, devEnv: devEnv)
         ParticleNetwork.initialize(config: config)
+        
+        // You can disable pay feature, default is true
+//        ParticleWalletGUI.enablePay(false)
 
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
