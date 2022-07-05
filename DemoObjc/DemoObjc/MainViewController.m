@@ -16,14 +16,22 @@
 
 @interface MainViewController ()
 
-@property (weak, nonatomic) IBOutlet UIButton *loginWithEmailButton;
-@property (weak, nonatomic) IBOutlet UIButton *loginWithPhoneButton;
+@property (weak, nonatomic) IBOutlet UIButton *emailButton;
+@property (weak, nonatomic) IBOutlet UIButton *phoneButton;
+@property (weak, nonatomic) IBOutlet UIButton *googleButton;
+@property (weak, nonatomic) IBOutlet UIButton *appleButton;
+@property (weak, nonatomic) IBOutlet UIButton *facebookButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *apiReferenceButton;
+@property (weak, nonatomic) IBOutlet UIStackView *stackView;
+
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UIButton *openWalletButton;
 @property (weak, nonatomic) IBOutlet UIButton *switchChainButton;
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *welcomeImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *coreImageView;
+
 
 @end
 
@@ -34,7 +42,7 @@
     
     ChainName *chainName = ParticleNetwork.getChainName;
     NSString *nameString = chainName.nameString;
-    Name name = chainName.name;
+    
     NSString *network = chainName.network;
     NSLog(@"%@, %@", nameString, network);
     
@@ -51,14 +59,14 @@
         [self showLogin:YES];
     }
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newUserInfo:) name:[Notifications newUserInfo] object:nil];
+    
     UserInfo *userInfo = [ParticleAuthService getUserInfo];
-    NSString *address = userInfo.address;
+    NSArray *wallets = userInfo.wallets;
     NSString *uuid = userInfo.uuid;
     NSString *token = userInfo.token;
-    NSString *publicKey = userInfo.publicKey;
     
-    NSLog(@"uuid = %@, token = %@, address = %@, publicKey = %@", uuid, token, address, publicKey);
+    
+    NSLog(@"uuid = %@, token = %@, wallets = %@", uuid, token, wallets);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -66,32 +74,39 @@
     [self updateUI];
 }
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:[Notifications newUserInfo] object:nil];
+
+- (IBAction) loginWithEmail {
+    [self login:LoginTypeEmail];
 }
 
+- (IBAction) loginWithPhone {
+    [self login:LoginTypePhone];
+}
 
-- (void)newUserInfo:(NSNotification *)notification {
+- (IBAction) loginWithGoogle {
+    [self login:LoginTypeGoogle];
+}
+
+- (IBAction) loginWithApple {
+    [self login:LoginTypeApple];
+}
+
+- (IBAction) loginWithFacebook {
+    [self login:LoginTypeFacebook];
+}
+
+- (void)login:(LoginType)type {
     
+    NSArray *supportAuthTypes = @[[SupportAuthType google], [SupportAuthType facebook], [SupportAuthType apple]];
+    
+    [ParticleAuthService loginWithType:type account:nil supportAuthType:supportAuthTypes successHandler:^(UserInfo * userInfo) {
+            NSLog(@"%@", userInfo);
+            [self showLogin:NO];
+        } failureHandler:^(NSError * error) {
+            NSLog(@"%@", error);
+        }];
 }
 
-- (IBAction)loginWithEmail {
-    [ParticleAuthService loginWithType:LoginTypeEmail successHandler:^(UserInfo * userInfo) {
-        NSLog(@"%@", userInfo);
-        [self showLogin:NO];
-    } failureHandler:^(NSError * error) {
-        NSLog(@"%@", error);
-    }];
-}
-
-- (IBAction)loginWithPhone {
-    [ParticleAuthService loginWithType:LoginTypePhone successHandler:^(UserInfo * userInfo) {
-        NSLog(@"%@", userInfo);
-        [self showLogin:NO];
-    } failureHandler:^(NSError * error) {
-        NSLog(@"%@", error);
-    }];
-}
 
 - (IBAction)logout {
     [ParticleAuthService logoutWithSuccessHandler:^(NSString * result) {
@@ -182,14 +197,20 @@
 
 
 - (void)showLogin:(BOOL)isShow {
-    self.loginWithEmailButton.hidden = !isShow;
-    self.loginWithPhoneButton.hidden = !isShow;
-    self.coreImageView.hidden = !isShow;
     
+    self.stackView.hidden = !isShow;
+    self.coreImageView.hidden = !isShow;
     self.logoutButton.hidden = isShow;
     self.openWalletButton.hidden = isShow;
     self.welcomeImageView.hidden = isShow;
-    self.welcomeLabel.hidden = isShow;
+    self.apiReferenceButton.hidden = isShow;
+    
+    if (isShow) {
+        self.welcomeLabel.text = @"Sign in to \nParticle Wallet";
+        self.welcomeLabel.numberOfLines = 2;
+    } else {
+        self.welcomeLabel.text = @"Welcome!";
+    }
 }
 
 - (void)updateUI {
