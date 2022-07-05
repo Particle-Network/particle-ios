@@ -341,7 +341,7 @@ extension MainViewController {
             switch result {
             case .failure(let error):
                 if let error = error as? ParticleNetwork.Error {
-                    if case .authService(let responseError) = error {
+                    if case .invalidResponse(let responseError) = error {
                         let title = responseError.code?.description ?? ""
                         self.showToast(title: title, message: responseError.message)
                     }
