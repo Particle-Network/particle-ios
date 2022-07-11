@@ -20,8 +20,8 @@ typealias PolygonNetwork = ParticleNetwork.PolygonNetwork
 typealias AvalancheNetwork = ParticleNetwork.AvalancheNetwork
 typealias FantomNetwork = ParticleNetwork.FantomNetwork
 typealias ArbitrumNetwork = ParticleNetwork.ArbitrumNetwork
-typealias MoonBeamNetwork = ParticleNetwork.MoonBeamNetwork
-typealias MoonRiverNetwork = ParticleNetwork.MoonRiverNetwork
+typealias MoonbeamNetwork = ParticleNetwork.MoonbeamNetwork
+typealias MoonriverNetwork = ParticleNetwork.MoonriverNetwork
 typealias HecoNetwork = ParticleNetwork.HecoNetwork
 typealias AuroraNetwork = ParticleNetwork.AuroraNetwork
 typealias HarmonyNetwork = ParticleNetwork.HarmonyNetwork
@@ -50,7 +50,7 @@ class SwitchChainViewController: UIViewController {
             BscNetwork.mainnet.rawValue, BscNetwork.testnet.rawValue
         ]])
         data.append([Chain.polygon(.mainnet).nameString: [
-            PolygonNetwork.mainnet.rawValue, PolygonNetwork.testnet.rawValue
+            PolygonNetwork.mainnet.rawValue, PolygonNetwork.mumbai.rawValue
         ]])
         data.append([Chain.avalanche(.mainnet).nameString: [
             AvalancheNetwork.mainnet.rawValue, AvalancheNetwork.testnet.rawValue
@@ -61,11 +61,11 @@ class SwitchChainViewController: UIViewController {
         data.append([Chain.arbitrum(.mainnet).nameString: [
             ArbitrumNetwork.mainnet.rawValue, ArbitrumNetwork.testnet.rawValue
         ]])
-        data.append([Chain.moonBeam(.mainnet).nameString: [
-            MoonBeamNetwork.mainnet.rawValue, MoonBeamNetwork.testnet.rawValue
+        data.append([Chain.moonbeam(.mainnet).nameString: [
+            MoonbeamNetwork.mainnet.rawValue, MoonbeamNetwork.testnet.rawValue
         ]])
-        data.append([Chain.moonRiver(.mainnet).nameString: [
-            MoonRiverNetwork.mainnet.rawValue, MoonRiverNetwork.testnet.rawValue
+        data.append([Chain.moonriver(.mainnet).nameString: [
+            MoonriverNetwork.mainnet.rawValue, MoonriverNetwork.testnet.rawValue
         ]])
         data.append([Chain.heco(.mainnet).nameString: [
             HecoNetwork.mainnet.rawValue, HecoNetwork.testnet.rawValue
@@ -135,10 +135,10 @@ extension SwitchChainViewController: UITableViewDelegate {
             chainName = .fantom(FantomNetwork(rawValue: network)!)
         case Chain.arbitrum(.mainnet).nameString:
             chainName = .arbitrum(ArbitrumNetwork(rawValue: network)!)
-        case Chain.moonBeam(.mainnet).nameString:
-            chainName = .moonBeam(MoonBeamNetwork(rawValue: network)!)
-        case Chain.moonRiver(.mainnet).nameString:
-            chainName = .moonRiver(MoonRiverNetwork(rawValue: network)!)
+        case Chain.moonbeam(.mainnet).nameString:
+            chainName = .moonbeam(MoonbeamNetwork(rawValue: network)!)
+        case Chain.moonriver(.mainnet).nameString:
+            chainName = .moonriver(MoonriverNetwork(rawValue: network)!)
         case Chain.heco(.mainnet).nameString:
             chainName = .heco(HecoNetwork(rawValue: network)!)
         case Chain.aurora(.mainnet).nameString:
@@ -148,7 +148,7 @@ extension SwitchChainViewController: UITableViewDelegate {
         default:
             chainName = .ethereum(.mainnet)
         }
-        if ParticleAuthService.isUserLoggedIn() {
+        if ParticleAuthService.isLogin() {
             ParticleAuthService.setChainName(chainName).subscribe {
                 [weak self] result in
                     guard let self = self else { return }

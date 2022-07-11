@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
         switchChainButton.titleLabel!.textAlignment = .center
         switchChainButton.transform = CGAffineTransform(rotationAngle: Double.pi / 4)
         
-        if ParticleAuthService.isUserLoggedIn() {
+        if ParticleAuthService.isLogin() {
             showLogin(false)
         } else {
             showLogin(true)
