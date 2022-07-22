@@ -25,6 +25,7 @@ typealias MoonriverNetwork = ParticleNetwork.MoonriverNetwork
 typealias HecoNetwork = ParticleNetwork.HecoNetwork
 typealias AuroraNetwork = ParticleNetwork.AuroraNetwork
 typealias HarmonyNetwork = ParticleNetwork.HarmonyNetwork
+typealias KccNetwork = ParticleNetwork.KccNetwork
 
 class SwitchChainViewController: UIViewController {
     let bag = DisposeBag()
@@ -75,6 +76,9 @@ class SwitchChainViewController: UIViewController {
         ]])
         data.append([Chain.harmony(.mainnet).nameString: [
             HarmonyNetwork.mainnet.rawValue, HarmonyNetwork.testnet.rawValue
+        ]])
+        data.append([Chain.kcc(.mainnet).nameString: [
+            KccNetwork.mainnet.rawValue, KccNetwork.testnet.rawValue
         ]])
     }
 
@@ -145,6 +149,8 @@ extension SwitchChainViewController: UITableViewDelegate {
             chainName = .aurora(AuroraNetwork(rawValue: network)!)
         case Chain.harmony(.mainnet).nameString:
             chainName = .harmony(HarmonyNetwork(rawValue: network)!)
+        case Chain.kcc(.mainnet).nameString:
+            chainName = .kcc(KccNetwork(rawValue: network)!)
         default:
             chainName = .ethereum(.mainnet)
         }
