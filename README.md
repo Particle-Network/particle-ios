@@ -16,7 +16,7 @@ Make sure that your project meets the following requirements:
 
 Your project must target these platform versions or later:
 
-iOS 12
+iOS 13
 
 
 ## Getting Started
@@ -71,6 +71,8 @@ For everyone with an M1 (Silicon) device who want run their projects on a simula
 post_install do |installer|
   installer.pods_project.build_configurations.each do |config|
     config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    config.build_settings["ARCHS[sdk=iphonesimulator*]"] = "x86_64"
+    config.build_settings["ARCHS[sdk=iphoneos*]"] = "arm64"
   end
 end
 ```
