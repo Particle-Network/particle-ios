@@ -15,6 +15,7 @@
 		3BE71C2E282D16C300E29FD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE71C2C282D16C300E29FD4 /* Main.storyboard */; };
 		3BE71C30282D16C500E29FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE71C2F282D16C500E29FD4 /* Assets.xcassets */; };
 		3BE71C33282D16C500E29FD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE71C31282D16C500E29FD4 /* LaunchScreen.storyboard */; };
+		5FA268D628A13C410003B805 /* AccountChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA268D528A13C410003B805 /* AccountChecker.swift */; };
 		C2629DC01FDB31881DB558DC /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D560A8CCB763F838B477B3C5 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		3BE71C32282D16C500E29FD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BE71C34282D16C500E29FD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B46FB42E9A83EA4AC910099 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		5FA268D528A13C410003B805 /* AccountChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountChecker.swift; sourceTree = "<group>"; };
 		D560A8CCB763F838B477B3C5 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C580C9B8731EE4CD4BC48D /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 				3BE71C31282D16C500E29FD4 /* LaunchScreen.storyboard */,
 				3BE71C34282D16C500E29FD4 /* Info.plist */,
 				3B19D520284FA4E200211FA4 /* ParticleNetwork-Info.plist */,
+				5FA268D528A13C410003B805 /* AccountChecker.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				3BE660F7283377CF006F464B /* APIReferenceViewController.swift in Sources */,
 				3B19D51F284FA46900211FA4 /* SwitchChainViewController.swift in Sources */,
 				3BE71C27282D16C300E29FD4 /* AppDelegate.swift in Sources */,
+				5FA268D628A13C410003B805 /* AccountChecker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,15 +407,15 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.particle.wallet.demo;
+				MARKETING_VERSION = 0.6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = network.particle.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development network.particle.wallet";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -442,15 +446,15 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.particle.wallet.demo;
+				MARKETING_VERSION = 0.6.0;
+				PRODUCT_BUNDLE_IDENTIFIER = network.particle.wallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development network.particle.wallet";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

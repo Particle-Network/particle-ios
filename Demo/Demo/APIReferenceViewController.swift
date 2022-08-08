@@ -13,6 +13,14 @@ import ParticleWalletGUI
 import RxSwift
 import UIKit
 
+
+struct TypedDataV1: Encodable {
+    let type: String
+    let name: String
+    let value: String
+}
+
+
 class APIReferenceViewController: UIViewController {
     let bag = DisposeBag()
     var mask: UIView?

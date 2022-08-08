@@ -9,9 +9,17 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>pn63bfa427-cf5f-4742-9ff1-e8f5a1b9826f</string>
+				<string>pn2db718b1-5e1e-4184-849f-b4efc606e782</string>
 			</array>
 		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>metamask</string>
+		<string>phantom</string>
+		<string>rainbow</string>
+		<string>bitkeep</string>
+		<string>imtokenv2</string>
 	</array>
 </dict>
 </plist>

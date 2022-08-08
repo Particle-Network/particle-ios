@@ -5,7 +5,13 @@
 //  Created by link on 2022/5/12.
 //
 
+import ConnectCommon
+import ConnectEVMAdapter
+import ConnectPhantomAdapter
+import ConnectSolanaAdapter
+import ConnectWalletConnectAdapter
 import ParticleAuthService
+import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletGUI
 import UIKit
@@ -15,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
 
         // init ParticleNetwork
         // select a network
@@ -25,12 +30,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        let chainName = ParticleNetwork.ChainName.customEvmNetwork(fullName: "Ethereum", network: "rinkeby", chainId: 4, explorePath: "https://rinkeby.etherscan.io/", symbol: "ETH")
 
-        let devEnv = ParticleNetwork.DevEnvironment.debug
-        let config = ParticleNetworkConfiguration(chainName: chainName, devEnv: devEnv)
-        ParticleNetwork.initialize(config: config)
-        
         // You can disable pay feature, default is true
 //        ParticleWalletGUI.enablePay(false)
+
+        let dAppData = DAppMetaData(name: "Test", icon: URL(string: "https://static.particle.network/wallet-icons/Particle.png")!, url: URL(string: "https://static.particle.network")!)
+        var adapters: [ConnectAdapter] = [
+            MetaMaskConnectAdapter(),
+            ParticleConnectAdapter(),
+            PhantomConnectAdapter(),
+            WalletConnectAdapter(),
+            RainbowConnectAdapter(),
+            BitkeepConnectAdapter(),
+            ImtokenConnectAdapter()
+        ]
+        if ParticleNetwork.getDevEnv() == .production {
+            adapters.append(EVMConnectAdapter())
+            adapters.append(SolanaConnectAdapter())
+        } else {
+            adapters.append(EVMConnectAdapter(rpcUrl: "http://api-debug.app-link.network/evm-chain/rpc/"))
+            adapters.append(SolanaConnectAdapter(rpcUrl: "http://api-debug.app-link.network/solana/rpc/"))
+        }
+
+        ParticleConnect.initialize(env: .debug, chainName: .solana(.devnet), dAppData: dAppData) {
+            adapters
+        }
 
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
