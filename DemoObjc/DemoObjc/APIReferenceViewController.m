@@ -37,15 +37,14 @@
 }
 
 - (IBAction)signAndSendTransaction {
-    switch([ParticleNetwork getChainName].name){
-       case NameSolana:
-            [self sendTransactionSolana];
-          break;
-       default :
-//            [self sendNativeEVM];
-            [self sendErc20Token];
-            break;
+    Chain *chain = [ParticleNetwork getChainInfo].chain;
+    if (chain == [Chain solana]) {
+        [self sendTransactionSolana];
+    } else {
+        // [self sendNativeEVM];
+        [self sendErc20Token];
     }
+    
 }
 
 - (void)sendTransactionSolana {
@@ -121,14 +120,16 @@
 
 - (IBAction)signTransaction {
     NSString *transaction;
-    switch ([ParticleNetwork getChainName].name) {
-        case NameSolana:
-            transaction = @"87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu";
-            break;
-        default:
-            transaction = @"0x0";
-            break;
+    
+    Chain *chain = [ParticleNetwork getChainInfo].chain;
+    if (chain == [Chain solana]) {
+        transaction = @"87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu";
+        
+    } else {
+        transaction = @"0x0";
+        
     }
+    
     if ([transaction isEqualToString: @""]) { return; }
     
     [ParticleAuthService signTransaction:transaction successHandler:^(NSString * signedTransaction) {
@@ -141,16 +142,19 @@
 - (IBAction)signMessage {
     NSString *message;
     NSString *hello;
-    switch ([ParticleNetwork getChainName].name) {
-        case NameSolana:
-            message = @"87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu";
-            break;
-        default:
-            hello = @"Hello world !";
-            NSData *encoded = [NSJSONSerialization dataWithJSONObject:hello options:NSJSONWritingFragmentsAllowed error:nil];
-            message = [@"0x" stringByAppendingString:[encoded hexString]];
-            break;
+    
+    Chain *chain = [ParticleNetwork getChainInfo].chain;
+    if (chain == [Chain solana]) {
+        message = @"87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu";
+        
+    } else {
+        hello = @"Hello world !";
+        NSData *encoded = [NSJSONSerialization dataWithJSONObject:hello options:NSJSONWritingFragmentsAllowed error:nil];
+        message = [@"0x" stringByAppendingString:[encoded hexString]];
+        
     }
+    
+    
     
     if ([message isEqualToString: @""]) { return; }
     
@@ -176,14 +180,16 @@
     
     NSData *encoded = [NSJSONSerialization dataWithJSONObject:dataArray options:NSJSONWritingFragmentsAllowed error:nil];
     
-    switch ([ParticleNetwork getChainName].name) {
-        case NameSolana:
-            message = @"";
-            break;
-        default:
-            message = [@"0x" stringByAppendingString:[encoded hexString]];
-            break;
+    
+    Chain *chain = [ParticleNetwork getChainInfo].chain;
+    if (chain == [Chain solana]) {
+        message = @"";
+        
+    } else {
+        message = [@"0x" stringByAppendingString:[encoded hexString]];
+        
     }
+   
     
     if ([message isEqualToString: @""]) { return; }
     

@@ -6,9 +6,7 @@
 //
 
 #import "AppDelegate.h"
-
-@import ParticleNetworkBase;
-@import ParticleAuthService;
+#import "DemoObjc-Swift.h"
 
 @interface AppDelegate ()
 
@@ -18,17 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // init ParticleNetwork
-    // select a network
-    ChainName *chainName = [ChainName ethereum:EthereumNetworkMainnet];
-    // and also and you can custom your evm network
-//    ChainName *chainName = [ChainName customEvmNetworkWithFullName:@"Ethereum" network:@"kovan" chainId:42 explorePath:@"https://kovan.etherscan.io/" symbol:@"ETH" isSupportEIP1159:YES];
-       
-//    ChainName *chainName = [ChainName customEvmNetworkWithFullName:@"Ethereum" network:@"rinkeby" chainId:4 explorePath:@"https://rinkeby.etherscan.io/" symbol:@"ETH" isSupportEIP1159:YES];
-
-    DevEnvironment devEnv = DevEnvironmentDebug;
-    ParticleNetworkConfiguration *config = [[ParticleNetworkConfiguration alloc] initWithChainName:chainName devEnv:devEnv];
-    [ParticleNetwork initializeWithConfig:config];
+    [ParticleConnectWrapper initParticleConnect];
     
     UIViewController *rootVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
     _window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
@@ -39,7 +27,7 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-    return [ParticleAuthService handleUrl:url];
+    return [ParticleConnectWrapper handleUrlWithUrl:url];
 }
 
 @end

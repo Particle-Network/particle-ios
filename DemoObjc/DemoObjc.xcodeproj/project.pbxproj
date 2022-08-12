@@ -18,6 +18,7 @@
 		3BCD641B2861D85500AE4428 /* APIReferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD641A2861D85500AE4428 /* APIReferenceViewController.m */; };
 		3BCD641E2861D86000AE4428 /* SwitchChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD641D2861D86000AE4428 /* SwitchChainViewController.m */; };
 		3BEB77622862CB320000DBEB /* NSData+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB77612862CB320000DBEB /* NSData+Extensions.m */; };
+		5F2722E528A601310057BFD0 /* ParticleConnectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2722E428A601310057BFD0 /* ParticleConnectWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		3BEB77602862CB320000DBEB /* NSData+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Extensions.h"; sourceTree = "<group>"; };
 		3BEB77612862CB320000DBEB /* NSData+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extensions.m"; sourceTree = "<group>"; };
 		539EF46C9583DAC8172BAFD1 /* Pods-DemoObjc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoObjc.debug.xcconfig"; path = "Target Support Files/Pods-DemoObjc/Pods-DemoObjc.debug.xcconfig"; sourceTree = "<group>"; };
+		5F2722E328A601300057BFD0 /* DemoObjc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoObjc-Bridging-Header.h"; sourceTree = "<group>"; };
+		5F2722E428A601310057BFD0 /* ParticleConnectWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleConnectWrapper.swift; sourceTree = "<group>"; };
 		91E6D42ED12625F8CFD07B35 /* Pods-DemoObjc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoObjc.release.xcconfig"; path = "Target Support Files/Pods-DemoObjc/Pods-DemoObjc.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +95,8 @@
 				3BCD641D2861D86000AE4428 /* SwitchChainViewController.m */,
 				3BEB77602862CB320000DBEB /* NSData+Extensions.h */,
 				3BEB77612862CB320000DBEB /* NSData+Extensions.m */,
+				5F2722E428A601310057BFD0 /* ParticleConnectWrapper.swift */,
+				5F2722E328A601300057BFD0 /* DemoObjc-Bridging-Header.h */,
 			);
 			path = DemoObjc;
 			sourceTree = "<group>";
@@ -125,7 +130,7 @@
 				3BCD63EC2861729700AE4428 /* Frameworks */,
 				3BCD63ED2861729700AE4428 /* Resources */,
 				F0756B9F8DA62A5AC6C76468 /* [CP] Embed Pods Frameworks */,
-				061ADA2B84A9A36F02C6A8B9 /* [CP] Copy Pods Resources */,
+				D71256C8855EB4D38D13B167 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -147,6 +152,7 @@
 				TargetAttributes = {
 					3BCD63EE2861729700AE4428 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -183,23 +189,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		061ADA2B84A9A36F02C6A8B9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DemoObjc/Pods-DemoObjc-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DemoObjc/Pods-DemoObjc-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoObjc/Pods-DemoObjc-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A4B0698FEB77318C5AD234EA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,6 +209,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D71256C8855EB4D38D13B167 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoObjc/Pods-DemoObjc-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoObjc/Pods-DemoObjc-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoObjc/Pods-DemoObjc-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F0756B9F8DA62A5AC6C76468 /* [CP] Embed Pods Frameworks */ = {
@@ -248,6 +254,7 @@
 			files = (
 				3BEB77622862CB320000DBEB /* NSData+Extensions.m in Sources */,
 				3BCD641E2861D86000AE4428 /* SwitchChainViewController.m in Sources */,
+				5F2722E528A601310057BFD0 /* ParticleConnectWrapper.swift in Sources */,
 				3BCD63F42861729700AE4428 /* AppDelegate.m in Sources */,
 				3BCD64052861729A00AE4428 /* main.m in Sources */,
 				3BCD641B2861D85500AE4428 /* APIReferenceViewController.m in Sources */,
@@ -393,6 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -411,7 +419,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,6 +429,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoObjc/DemoObjc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -431,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -449,7 +461,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +471,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoObjc/DemoObjc-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

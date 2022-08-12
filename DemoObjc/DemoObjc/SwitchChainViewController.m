@@ -106,83 +106,83 @@
     NSString *name = [[dict allKeys] firstObject];
     
     NSLog(@"%@, %@", name, network);
-    ChainName *chainName;
+    ChainInfo *chainInfo;
     if ([name  isEqual: @"Solana"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName solana:SolanaNetworkMainnet];
+            chainInfo = [ChainInfo solana:SolanaNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName solana:SolanaNetworkTestnet];
+            chainInfo = [ChainInfo solana:SolanaNetworkTestnet];
         } else if ([network  isEqual: @"devnet"]) {
-            chainName = [ChainName solana:SolanaNetworkDevnet];
+            chainInfo = [ChainInfo solana:SolanaNetworkDevnet];
         }
     } else if ([name  isEqual: @"Ethereum"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName ethereum:EthereumNetworkMainnet];
+            chainInfo = [ChainInfo ethereum:EthereumNetworkMainnet];
         } else if ([network  isEqual: @"kovan"]) {
-            chainName = [ChainName ethereum:EthereumNetworkKovan];
+            chainInfo = [ChainInfo ethereum:EthereumNetworkKovan];
         }
     } else if ([name  isEqual: @"Bsc"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName bsc:BscNetworkMainnet];
+            chainInfo = [ChainInfo bsc:BscNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName bsc:BscNetworkTestnet];
+            chainInfo = [ChainInfo bsc:BscNetworkTestnet];
         }
     } else if ([name  isEqual: @"Polygon"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName polygon:PolygonNetworkMainnet];
+            chainInfo = [ChainInfo polygon:PolygonNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName polygon:PolygonNetworkTestnet];
+            chainInfo = [ChainInfo polygon:PolygonNetworkMumbai];
         }
     } else if ([name  isEqual: @"Avalanche"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName avalanche:AvalancheNetworkMainnet];
+            chainInfo = [ChainInfo avalanche:AvalancheNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName avalanche:AvalancheNetworkTestnet];
+            chainInfo = [ChainInfo avalanche:AvalancheNetworkTestnet];
         }
     } else if ([name  isEqual: @"Fantom"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName fantom:FantomNetworkMainnet];
+            chainInfo = [ChainInfo fantom:FantomNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName fantom:FantomNetworkTestnet];
+            chainInfo = [ChainInfo fantom:FantomNetworkTestnet];
         }
     } else if ([name  isEqual: @"Arbitrum"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName arbitrum:ArbitrumNetworkMainnet];
+            chainInfo = [ChainInfo arbitrum:ArbitrumNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName arbitrum:ArbitrumNetworkTestnet];
+            chainInfo = [ChainInfo arbitrum:ArbitrumNetworkTestnet];
         }
     } else if ([name  isEqual: @"MoonBeam"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName moonBeam:MoonBeamNetworkMainnet];
+            chainInfo = [ChainInfo moonbeam:MoonbeamNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName moonBeam:MoonBeamNetworkTestnet];
+            chainInfo = [ChainInfo moonbeam:MoonbeamNetworkTestnet];
         }
     } else if ([name  isEqual: @"MoonRiver"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName moonRiver:MoonRiverNetworkMainnet];
+            chainInfo = [ChainInfo moonriver:MoonriverNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName moonRiver:MoonRiverNetworkTestnet];
+            chainInfo = [ChainInfo moonriver:MoonriverNetworkTestnet];
         }
     } else if ([name  isEqual: @"Heco"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName heco:HecoNetworkMainnet];
+            chainInfo = [ChainInfo heco:HecoNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName heco:HecoNetworkTestnet];
+            chainInfo = [ChainInfo heco:HecoNetworkTestnet];
         }
     } else if ([name  isEqual: @"Aurora"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName aurora:AuroraNetworkMainnet];
+            chainInfo = [ChainInfo aurora:AuroraNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName aurora:AuroraNetworkTestnet];
+            chainInfo = [ChainInfo aurora:AuroraNetworkTestnet];
         }
     } else if ([name  isEqual: @"Harmony"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainName = [ChainName harmony:HarmonyNetworkMainnet];
+            chainInfo = [ChainInfo harmony:HarmonyNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainName = [ChainName harmony:HarmonyNetworkTestnet];
+            chainInfo = [ChainInfo harmony:HarmonyNetworkTestnet];
         }
     }
-    [ParticleNetwork setChainName:chainName];
+    [ParticleNetwork setChainInfo:chainInfo];
     
     NSString *message = [NSString stringWithFormat:@"current network is %@ - %@", name, network];
     

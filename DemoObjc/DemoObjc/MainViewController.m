@@ -40,11 +40,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    ChainName *chainName = ParticleNetwork.getChainName;
-    NSString *nameString = chainName.nameString;
+    ChainInfo *chainInfo = ParticleNetwork.getChainInfo;
+    NSString *name = chainInfo.name;
     
-    NSString *network = chainName.network;
-    NSLog(@"%@, %@", nameString, network);
+    NSString *network = chainInfo.network;
+    NSLog(@"%@, %@", name, network);
     
     [self showLogin:true];
     self.switchChainButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
@@ -53,7 +53,7 @@
     self.switchChainButton.transform = CGAffineTransformMakeRotation(M_PI / 4);
     
     
-    if ([ParticleAuthService isUserLoggedIn]) {
+    if ([ParticleAuthService isLogin]) {
         [self showLogin:NO];
     } else {
         [self showLogin:YES];
@@ -98,13 +98,12 @@
 - (void)login:(LoginType)type {
     
     NSArray *supportAuthTypes = @[[SupportAuthType google], [SupportAuthType facebook], [SupportAuthType apple]];
-    
-    [ParticleAuthService loginWithType:type account:nil supportAuthType:supportAuthTypes successHandler:^(UserInfo * userInfo) {
-            NSLog(@"%@", userInfo);
-            [self showLogin:NO];
-        } failureHandler:^(NSError * error) {
-            NSLog(@"%@", error);
-        }];
+    [ParticleAuthService loginWithType:type account:nil supportAuthType:supportAuthTypes loginFormMode:NO successHandler:^(UserInfo * userInfo) {
+        NSLog(@"%@", userInfo);
+        [self showLogin:NO];
+    } failureHandler:^(NSError * error) {
+        NSLog(@"%@", error);
+    }];
 }
 
 
@@ -214,8 +213,8 @@
 }
 
 - (void)updateUI {
-    NSString *name = [ParticleNetwork getChainName].nameString;
-    NSString *network = [ParticleNetwork getChainName].network;
+    NSString *name = [ParticleNetwork getChainInfo].name;
+    NSString *network = [ParticleNetwork getChainInfo].network;
     
     NSString *title = [NSString stringWithFormat:@"%@ \n %@", name, network];
     [self.switchChainButton setTitle:title forState:UIControlStateNormal];
