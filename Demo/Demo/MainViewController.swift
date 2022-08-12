@@ -250,8 +250,8 @@ class MainViewController: UIViewController {
     }
     
     private func switchChangeName() {
-        let chainName = ParticleNetwork.ChainName.ethereum(.kovan)
-        ParticleAuthService.setChainName(chainName).subscribe { [weak self] result in
+        let chainInfo = ParticleNetwork.ChainInfo.ethereum(.kovan)
+        ParticleAuthService.setChainInfo(chainInfo).subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
@@ -279,8 +279,8 @@ class MainViewController: UIViewController {
     }
     
     private func updateUI() {
-        let name = ParticleNetwork.getChainName().nameString
-        let network = ParticleNetwork.getChainName().network
+        let name = ParticleNetwork.getChainInfo().name
+        let network = ParticleNetwork.getChainInfo().network
         
         switchChainButton.setTitle("\(name) \n \(network.lowercased())", for: .normal)
     }
@@ -321,8 +321,8 @@ extension MainViewController {
     }
     
     func getChainName() -> String {
-        let chainName = ParticleNetwork.getChainName()
-        return ["chain_name": chainName.nameString, "chain_id": chainName.chainId, "chain_id_name": chainName.network].jsonString() ?? ""
+        let chainName = ParticleNetwork.getChainInfo()
+        return ["chain_name": chainName.name, "chain_id": chainName.chainId, "chain_id_name": chainName.network].jsonString() ?? ""
     }
 }
 

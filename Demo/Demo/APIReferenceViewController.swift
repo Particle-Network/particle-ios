@@ -20,14 +20,13 @@ struct TypedDataV1: Encodable {
     let value: String
 }
 
-
 class APIReferenceViewController: UIViewController {
     let bag = DisposeBag()
     var mask: UIView?
     var loading: UIActivityIndicatorView?
     
     @IBAction func signAndSendTransaction() {
-        switch ParticleNetwork.getChainName().name {
+        switch ParticleNetwork.getChainInfo().chain {
         case .solana:
             let transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
             
@@ -151,7 +150,7 @@ class APIReferenceViewController: UIViewController {
     @IBAction func signTransaction() {
         // not support solana
         var transaction = ""
-        switch ParticleNetwork.getChainName().name  {
+        switch ParticleNetwork.getChainInfo().chain  {
         case .solana:
             transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
         default:
@@ -183,7 +182,7 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func signMessage() {
         var message = ""
-        switch ParticleNetwork.getChainName().name  {
+        switch ParticleNetwork.getChainInfo().chain  {
         case .solana:
             message = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
         default:
@@ -212,7 +211,7 @@ class APIReferenceViewController: UIViewController {
         // not support solana
         // evm support typed data v1, v3, v4, you should encode to hex string
         var message = ""
-        switch ParticleNetwork.getChainName().name {
+        switch ParticleNetwork.getChainInfo().chain {
         case .solana:
             message = ""
         default:

@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // init ParticleNetwork
         // select a network
-        let chainName = ParticleNetwork.ChainName.ethereum(.mainnet)
+//        let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
         // and also and you can custom your evm network
-//        let chainName = ParticleNetwork.ChainName.customEvmNetwork(fullName: "Ethereum", network: "kovan", chainId: 42, explorePath: "https://kovan.etherscan.io/", symbol: "ETH")
+//        let chainInfo = ParticleNetwork.ChainInfo.customEvmNetwork(fullName: "Ethereum", network: "kovan", chainId: 42, explorePath: "https://kovan.etherscan.io/", symbol: "ETH")
 
-//        let chainName = ParticleNetwork.ChainName.customEvmNetwork(fullName: "Ethereum", network: "rinkeby", chainId: 4, explorePath: "https://rinkeby.etherscan.io/", symbol: "ETH")
+//        let chainInfo = ParticleNetwork.ChainInfo.customEvmNetwork(fullName: "Ethereum", network: "rinkeby", chainId: 4, explorePath: "https://rinkeby.etherscan.io/", symbol: "ETH")
 
         // You can disable pay feature, default is true
 //        ParticleWalletGUI.enablePay(false)
@@ -51,9 +51,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             adapters.append(SolanaConnectAdapter(rpcUrl: "http://api-debug.app-link.network/solana/rpc/"))
         }
 
-        ParticleConnect.initialize(env: .debug, chainName: .solana(.devnet), dAppData: dAppData) {
+        ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: dAppData) {
             adapters
         }
+        
+        // Custom Wallet GUI
+        ParticleWalletGUI.showTestNetwork(false)
+        ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
+        ParticleWalletGUI.showManageWallet(true)
 
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)

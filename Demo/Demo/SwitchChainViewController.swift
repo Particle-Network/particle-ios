@@ -12,7 +12,7 @@ import ParticleNetworkBase
 import RxSwift
 import UIKit
 
-typealias Chain = ParticleNetwork.ChainName
+typealias Chain = ParticleNetwork.ChainInfo
 typealias SolanaNetwork = ParticleNetwork.SolanaNetwork
 typealias EthereumNetwork = ParticleNetwork.EthereumNetwork
 typealias BscNetwork = ParticleNetwork.BscNetwork
@@ -42,46 +42,46 @@ class SwitchChainViewController: UIViewController {
     }
 
     func configureData() {
-        data.append([Chain.solana(.mainnet).nameString: [
+        data.append([Chain.solana(.mainnet).name: [
             SolanaNetwork.mainnet.rawValue, SolanaNetwork.testnet.rawValue, SolanaNetwork.devnet.rawValue
         ]])
-        data.append([Chain.ethereum(.mainnet).nameString: [
+        data.append([Chain.ethereum(.mainnet).name: [
             EthereumNetwork.mainnet.rawValue, EthereumNetwork.kovan.rawValue, EthereumNetwork.ropsten.rawValue, EthereumNetwork.rinkeby.rawValue, EthereumNetwork.goerli.rawValue
         ]])
-        data.append([Chain.bsc(.mainnet).nameString: [
+        data.append([Chain.bsc(.mainnet).name: [
             BscNetwork.mainnet.rawValue, BscNetwork.testnet.rawValue
         ]])
-        data.append([Chain.polygon(.mainnet).nameString: [
+        data.append([Chain.polygon(.mainnet).name: [
             PolygonNetwork.mainnet.rawValue, PolygonNetwork.mumbai.rawValue
         ]])
-        data.append([Chain.avalanche(.mainnet).nameString: [
+        data.append([Chain.avalanche(.mainnet).name: [
             AvalancheNetwork.mainnet.rawValue, AvalancheNetwork.testnet.rawValue
         ]])
-        data.append([Chain.fantom(.mainnet).nameString: [
+        data.append([Chain.fantom(.mainnet).name: [
             FantomNetwork.mainnet.rawValue, FantomNetwork.testnet.rawValue
         ]])
-        data.append([Chain.arbitrum(.mainnet).nameString: [
+        data.append([Chain.arbitrum(.mainnet).name: [
             ArbitrumNetwork.mainnet.rawValue, ArbitrumNetwork.testnet.rawValue
         ]])
-        data.append([Chain.moonbeam(.mainnet).nameString: [
+        data.append([Chain.moonbeam(.mainnet).name: [
             MoonbeamNetwork.mainnet.rawValue, MoonbeamNetwork.testnet.rawValue
         ]])
-        data.append([Chain.moonriver(.mainnet).nameString: [
+        data.append([Chain.moonriver(.mainnet).name: [
             MoonriverNetwork.mainnet.rawValue, MoonriverNetwork.testnet.rawValue
         ]])
-        data.append([Chain.heco(.mainnet).nameString: [
+        data.append([Chain.heco(.mainnet).name: [
             HecoNetwork.mainnet.rawValue, HecoNetwork.testnet.rawValue
         ]])
-        data.append([Chain.aurora(.mainnet).nameString: [
+        data.append([Chain.aurora(.mainnet).name: [
             AuroraNetwork.mainnet.rawValue, AuroraNetwork.testnet.rawValue
         ]])
-        data.append([Chain.harmony(.mainnet).nameString: [
+        data.append([Chain.harmony(.mainnet).name: [
             HarmonyNetwork.mainnet.rawValue, HarmonyNetwork.testnet.rawValue
         ]])
-        data.append([Chain.kcc(.mainnet).nameString: [
+        data.append([Chain.kcc(.mainnet).name: [
             KccNetwork.mainnet.rawValue, KccNetwork.testnet.rawValue
         ]])
-        data.append([Chain.optimism(.mainnet).nameString: [
+        data.append([Chain.optimism(.mainnet).name: [
             KccNetwork.mainnet.rawValue, KccNetwork.testnet.rawValue
         ]])
     }
@@ -127,41 +127,41 @@ extension SwitchChainViewController: UITableViewDelegate {
         let network = data[indexPath.section].values.first?[indexPath.row] ?? ""
         let name = data[indexPath.section].keys.first ?? ""
 
-        var chainName: Chain
+        var chainInfo: Chain
         switch name {
-        case Chain.solana(.mainnet).nameString:
-            chainName = .solana(SolanaNetwork(rawValue: network)!)
-        case Chain.ethereum(.mainnet).nameString:
-            chainName = .ethereum(EthereumNetwork(rawValue: network)!)
-        case Chain.bsc(.mainnet).nameString:
-            chainName = .bsc(BscNetwork(rawValue: network)!)
-        case Chain.polygon(.mainnet).nameString:
-            chainName = .polygon(PolygonNetwork(rawValue: network)!)
-        case Chain.avalanche(.mainnet).nameString:
-            chainName = .avalanche(AvalancheNetwork(rawValue: network)!)
-        case Chain.fantom(.mainnet).nameString:
-            chainName = .fantom(FantomNetwork(rawValue: network)!)
-        case Chain.arbitrum(.mainnet).nameString:
-            chainName = .arbitrum(ArbitrumNetwork(rawValue: network)!)
-        case Chain.moonbeam(.mainnet).nameString:
-            chainName = .moonbeam(MoonbeamNetwork(rawValue: network)!)
-        case Chain.moonriver(.mainnet).nameString:
-            chainName = .moonriver(MoonriverNetwork(rawValue: network)!)
-        case Chain.heco(.mainnet).nameString:
-            chainName = .heco(HecoNetwork(rawValue: network)!)
-        case Chain.aurora(.mainnet).nameString:
-            chainName = .aurora(AuroraNetwork(rawValue: network)!)
-        case Chain.harmony(.mainnet).nameString:
-            chainName = .harmony(HarmonyNetwork(rawValue: network)!)
-        case Chain.kcc(.mainnet).nameString:
-            chainName = .kcc(KccNetwork(rawValue: network)!)
-        case Chain.optimism(.mainnet).nameString:
-            chainName = .optimism(OptimismNetwork(rawValue: network)!)
+        case Chain.solana(.mainnet).name:
+            chainInfo = .solana(SolanaNetwork(rawValue: network)!)
+        case Chain.ethereum(.mainnet).name:
+            chainInfo = .ethereum(EthereumNetwork(rawValue: network)!)
+        case Chain.bsc(.mainnet).name:
+            chainInfo = .bsc(BscNetwork(rawValue: network)!)
+        case Chain.polygon(.mainnet).name:
+            chainInfo = .polygon(PolygonNetwork(rawValue: network)!)
+        case Chain.avalanche(.mainnet).name:
+            chainInfo = .avalanche(AvalancheNetwork(rawValue: network)!)
+        case Chain.fantom(.mainnet).name:
+            chainInfo = .fantom(FantomNetwork(rawValue: network)!)
+        case Chain.arbitrum(.mainnet).name:
+            chainInfo = .arbitrum(ArbitrumNetwork(rawValue: network)!)
+        case Chain.moonbeam(.mainnet).name:
+            chainInfo = .moonbeam(MoonbeamNetwork(rawValue: network)!)
+        case Chain.moonriver(.mainnet).name:
+            chainInfo = .moonriver(MoonriverNetwork(rawValue: network)!)
+        case Chain.heco(.mainnet).name:
+            chainInfo = .heco(HecoNetwork(rawValue: network)!)
+        case Chain.aurora(.mainnet).name:
+            chainInfo = .aurora(AuroraNetwork(rawValue: network)!)
+        case Chain.harmony(.mainnet).name:
+            chainInfo = .harmony(HarmonyNetwork(rawValue: network)!)
+        case Chain.kcc(.mainnet).name:
+            chainInfo = .kcc(KccNetwork(rawValue: network)!)
+        case Chain.optimism(.mainnet).name:
+            chainInfo = .optimism(OptimismNetwork(rawValue: network)!)
         default:
-            chainName = .ethereum(.mainnet)
+            chainInfo = .ethereum(.mainnet)
         }
         if ParticleAuthService.isLogin() {
-            ParticleAuthService.setChainName(chainName).subscribe {
+            ParticleAuthService.setChainInfo(chainInfo).subscribe {
                 [weak self] result in
                     guard let self = self else { return }
                     switch result {
@@ -183,7 +183,7 @@ extension SwitchChainViewController: UITableViewDelegate {
                     }
             }.disposed(by: bag)
         } else {
-            ParticleNetwork.setChainName(chainName)
+            ParticleNetwork.setChainInfo(chainInfo)
 
             let alert = UIAlertController(title: "Switch network", message: "current network is \(name) - \(network)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
