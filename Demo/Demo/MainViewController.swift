@@ -175,7 +175,7 @@ class MainViewController: UIViewController {
     }
     
     private func connectAdapter(adapter: ConnectAdapter) {
-        adapter.connect().subscribe { [weak self] result in
+        adapter.connect(.none).subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
