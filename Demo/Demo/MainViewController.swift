@@ -167,11 +167,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func connectSolanaPrivateKey() {
-        PNRouter.navigator(routhPath: .importPrivateKey, values: ["chainType": ChainType.solana])
+        PNRouter.navigatorImportSolanaPrivateKey()
     }
     
     @IBAction func connectEVMPrivateKey() {
-        PNRouter.navigator(routhPath: .importPrivateKey, values: ["chainType": ChainType.evm])
+        PNRouter.navigatorImportSolanaPrivateKey()
     }
     
     private func connectAdapter(adapter: ConnectAdapter) {
