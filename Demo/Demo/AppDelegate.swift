@@ -41,7 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             WalletConnectAdapter(),
             RainbowConnectAdapter(),
             BitkeepConnectAdapter(),
-            ImtokenConnectAdapter()
+            ImtokenConnectAdapter(),
+            TrustConnectAdapter()
         ]
         if ParticleNetwork.getDevEnv() == .production {
             adapters.append(EVMConnectAdapter())

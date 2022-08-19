@@ -99,7 +99,7 @@ class MainViewController: UIViewController {
         login(type: .facebook)
     }
     
-    private func login(type: LoginType, supportAuthType: [SupportAuthType] = SupportAuthType.allCases) {
+    private func login(type: LoginType, supportAuthType: [SupportAuthType] = [SupportAuthType.all]) {
         ParticleAuthService.login(type: type, supportAuthType: supportAuthType).subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -213,6 +213,11 @@ class MainViewController: UIViewController {
     
     @IBAction func openWallet() {
         PNRouter.navigatorWallet()
+    }
+    
+    // Open buy crypto page.
+    func openPay() {
+        PNRouter.navigatorPay()
     }
     
     @IBAction func switchChainClick() {

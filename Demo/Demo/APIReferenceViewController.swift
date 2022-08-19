@@ -10,6 +10,8 @@ import ParticleAuthService
 import ParticleNetworkBase
 import ParticleWalletAPI
 import ParticleWalletGUI
+import ParticleConnect
+import ConnectCommon
 import RxSwift
 import UIKit
 
@@ -127,25 +129,60 @@ class APIReferenceViewController: UIViewController {
         }.disposed(by: self.bag)
     }
     
+    
     func readContract() {
-        let from = ParticleAuthService.getAddress()
-        let to = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
-        let data = "0x"
-        let txData = ReadContractData(from: from, to: to, data: data)
-        
-        // Integer block number, or the string 'latest', 'earliest' or 'pending'
-        let quantity = "latest"
-        
-        ParticleWalletAPI.getEvmService().rpc(method: "eth_call", params: [txData, quantity]).subscribe { response in
-            print(response)
+        // example for evm read contract
+        let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "balanceOf", params: ["0xBbc1CA8776EfDeC12C75e218C64e96ce52aC6671"])
+        ParticleWalletAPI.getEvmService().readContract(contractParams: params).subscribe {
+            [weak self] result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let json):
+                    print(json)
+                }
         }.disposed(by: self.bag)
     }
     
-    struct ReadContractData: Codable {
-        let from: String
-        let to: String
-        let data: String
+    func writeContract1() {
+        let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "mint", params: ["1"])
+        let from = "0x0cf3ffe33e45ad43fcd0aa7016c590b5f629d9aa"
+        ParticleWalletAPI.getEvmService().writeContract(contractParams: params, from: from).flatMap { transaction -> Single<String> in
+            let adapters = ParticleConnect.getAdapterByAddress(publicAddress: from)
+            
+            guard let adapter = adapters.first else { return .error(ParticleNetwork.Error.invalidData(reason: "adapter is nil")) }
+            return adapter.signAndSendTransaction(publicAddress: from, transaction: transaction)
+        }.subscribe {
+            [weak self] result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let signature):
+                    print(signature)
+                }
+        }.disposed(by: self.bag)
     }
+    
+    func writeContract2() {
+        let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "safeTransferFrom", params: ["0xbbc1ca8776efdec12c75e218c64e96ce52ac6671", "0x2D2164e5D004c804C47fb39c97e67fd447a49c0D", "3586"])
+        let from = "0xbbc1ca8776efdec12c75e218c64e96ce52ac6671"
+        ParticleWalletAPI.getEvmService().writeContract(contractParams: params, from: from).flatMap { transaction -> Single<String> in
+            let adapters = ParticleConnect.getAllAdapters().filter {
+                $0.walletType == .metaMask
+            }
+            guard let adapter = adapters.first else { return .error(ParticleNetwork.Error.invalidData(reason: "adapter is nil")) }
+            return adapter.signAndSendTransaction(publicAddress: from, transaction: transaction)
+        }.subscribe {
+            [weak self] result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let signature):
+                    print(signature)
+                }
+        }.disposed(by: self.bag)
+    }
+    
     
     @IBAction func signTransaction() {
         // not support solana
