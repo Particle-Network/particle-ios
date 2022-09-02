@@ -4,7 +4,7 @@ platform :ios, '13.0'
 target 'Demo' do
   use_frameworks!
   source 'https://github.com/CocoaPods/Specs.git'
-    pod 'ParticleWalletGUI', '0.6.9'
+    pod 'ParticleWalletGUI', '0.7.0'
   
 end
 

@@ -80,7 +80,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithEmail() {
-        login(type: .email, supportAuthType: [])
+        login(type: .email)
     }
     
     @IBAction func loginWithPhone() {
