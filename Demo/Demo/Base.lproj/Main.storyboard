@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lQf-0j-PTw">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="APIReferenceViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auth Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKA-hc-f1a">
@@ -30,13 +30,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UI Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLm-7W-v3P">
-                                <rect key="frame" x="41.999999999999993" y="684" width="118.33333333333331" height="30"/>
+                                <rect key="frame" x="42.000000000000007" y="684" width="118.66666666666669" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-fp-QES">
-                                <rect key="frame" x="40" y="104" width="348" height="50"/>
+                                <rect key="frame" x="40" y="104" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Tjp-KE-QrU"/>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9V-fe-jVE">
-                                <rect key="frame" x="40" y="164" width="348" height="50"/>
+                                <rect key="frame" x="40" y="164" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="KER-H1-kgC"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ymD-Pr-hMz">
-                                <rect key="frame" x="40" y="224" width="348" height="50"/>
+                                <rect key="frame" x="40" y="224" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ibv-lB-Pcm"/>
@@ -81,7 +81,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhA-fG-jAf">
-                                <rect key="frame" x="40" y="384" width="348" height="50"/>
+                                <rect key="frame" x="40" y="384" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JHt-r2-NyM"/>
@@ -96,7 +96,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-6v-3eq">
-                                <rect key="frame" x="40" y="444" width="348" height="50"/>
+                                <rect key="frame" x="40" y="444" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Oaj-U8-P1M"/>
@@ -111,7 +111,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1f-91-dMv">
-                                <rect key="frame" x="40" y="504" width="348" height="50"/>
+                                <rect key="frame" x="40" y="504" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="NGk-gN-xcg"/>
@@ -126,7 +126,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTg-Pe-noI">
-                                <rect key="frame" x="40" y="564" width="348" height="50"/>
+                                <rect key="frame" x="40" y="564" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3Kn-ei-pjK"/>
@@ -141,7 +141,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eT-Ak-RdL">
-                                <rect key="frame" x="40" y="624" width="348" height="50"/>
+                                <rect key="frame" x="40" y="624" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3bz-hX-gqD"/>
@@ -156,7 +156,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqP-8e-AiG">
-                                <rect key="frame" x="40" y="284" width="348" height="50"/>
+                                <rect key="frame" x="40" y="284" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Qel-xW-IVd"/>
@@ -171,7 +171,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4U-n9-QMu" userLabel="Close">
-                                <rect key="frame" x="323" y="61" width="65" height="36"/>
+                                <rect key="frame" x="309" y="61" width="65" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="CLOSE">
@@ -182,7 +182,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X82-sD-BkJ">
-                                <rect key="frame" x="40" y="724" width="348" height="50"/>
+                                <rect key="frame" x="40" y="724" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="rIF-jB-rn4"/>
@@ -248,254 +248,195 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1856" y="84"/>
+            <point key="canvasLocation" x="1888" y="84"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="oSI-uh-HrO">
             <objects>
                 <viewController id="lQf-0j-PTw" customClass="MainViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mIa-Qf-uBo">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="QzE-n5-iV2">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="350"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="350" id="skW-tX-HXR"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_bg" translatesAutoresizingMaskIntoConstraints="NO" id="QzE-n5-iV2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="particle_network" translatesAutoresizingMaskIntoConstraints="NO" id="Go3-vv-HZD">
-                                <rect key="frame" x="31" y="10" width="247" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oYI-lh-xEq">
+                                <rect key="frame" x="37" y="624" width="340" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="bon-b3-h1B"/>
+                                    <constraint firstAttribute="height" constant="45" id="1T4-p7-aTM"/>
                                 </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="core" translatesAutoresizingMaskIntoConstraints="NO" id="Ip1-tH-bZY">
-                                <rect key="frame" x="150" y="260" width="128" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="6vN-Kl-NEm"/>
-                                    <constraint firstAttribute="width" constant="128" id="mqk-se-61Z"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="CZb-bh-J7I">
-                                <rect key="frame" x="238" y="39" width="250" height="50"/>
-                                <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="RQm-i2-rX4"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="xYN-5e-fj7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Solana devnet">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Login with Email" image="email">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="switchChainClick" destination="lQf-0j-PTw" eventType="touchUpInside" id="Vpx-bg-3g8"/>
+                                    <action selector="loginWithEmail" destination="lQf-0j-PTw" eventType="touchUpInside" id="cvQ-a5-HY3"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="8wK-gx-X9W">
-                                <rect key="frame" x="150" y="260" width="128" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Emb-Jn-X9N">
+                                <rect key="frame" x="37" y="694" width="340" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="4Id-65-o0L"/>
-                                    <constraint firstAttribute="width" constant="128" id="wEP-nT-F1U"/>
+                                    <constraint firstAttribute="height" constant="45" id="Qmz-hk-5Yh"/>
                                 </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Aw-d2-ejV">
-                                <rect key="frame" x="132.66666666666669" y="411" width="162.66666666666669" height="42"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-oR-p6f">
-                                <rect key="frame" x="40" y="719" width="348" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Login with MetaMask" image="demo_metamask">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginWithMetaMask" destination="lQf-0j-PTw" eventType="touchUpInside" id="AZG-cO-Uiy"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="zbC-oR-p6f">
+                                <rect key="frame" x="37" y="764" width="340" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SH-1f-Y4x">
-                                        <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="43"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="email">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginWithEmail" destination="lQf-0j-PTw" eventType="touchUpInside" id="mdH-rn-g8o"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl1-mZ-TKe">
-                                        <rect key="frame" x="69.666666666666657" y="0.0" width="69.666666666666657" height="43"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="phone">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginWithPhone" destination="lQf-0j-PTw" eventType="touchUpInside" id="Lea-H7-lfv"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQh-eN-Htx">
-                                        <rect key="frame" x="139.33333333333334" y="0.0" width="69.333333333333343" height="43"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="google">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="loginWithGoogle" destination="lQf-0j-PTw" eventType="touchUpInside" id="HGg-JV-H9j"/>
+                                            <action selector="loginWithGoogle" destination="lQf-0j-PTw" eventType="touchUpInside" id="ImM-RB-Nsh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dQ-Lr-B34">
-                                        <rect key="frame" x="208.66666666666666" y="0.0" width="69.666666666666657" height="43"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="apple">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginWithApple" destination="lQf-0j-PTw" eventType="touchUpInside" id="lfB-oo-24f"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCJ-H8-oFk">
-                                        <rect key="frame" x="278.33333333333331" y="0.0" width="69.666666666666686" height="43"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl1-mZ-TKe">
+                                        <rect key="frame" x="74.333333333333329" y="0.0" width="43" height="46"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="facebook">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="loginWithFacebook" destination="lQf-0j-PTw" eventType="touchUpInside" id="KyW-pi-Y2Q"/>
+                                            <action selector="loginWithFacebook" destination="lQf-0j-PTw" eventType="touchUpInside" id="Wmi-GN-62G"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQh-eN-Htx">
+                                        <rect key="frame" x="148.66666666666666" y="0.0" width="43" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="apple">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginWithApple" destination="lQf-0j-PTw" eventType="touchUpInside" id="fHj-Qd-lh8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfT-P4-V0m">
+                                        <rect key="frame" x="222.66666666666669" y="0.0" width="43" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="discord">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginWithDiscord" destination="lQf-0j-PTw" eventType="touchUpInside" id="aRn-hs-3ke"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCJ-H8-oFk">
+                                        <rect key="frame" x="297" y="0.0" width="43" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="more_wallet">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginMore" destination="lQf-0j-PTw" eventType="touchUpInside" id="lti-Jt-iMy"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="dui-J4-iIt"/>
+                                    <constraint firstAttribute="height" constant="46" id="dui-J4-iIt"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zu-GL-3nJ">
-                                <rect key="frame" x="95" y="712" width="238" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnI-6F-Vju" customClass="CarouselCollectionView" customModule="Demo" customModuleProvider="target">
+                                <rect key="frame" x="47" y="170.33333333333337" width="320" height="290"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="E84-X3-4yf"/>
+                                    <constraint firstAttribute="width" constant="320" id="Igd-Vt-hd4"/>
+                                    <constraint firstAttribute="height" constant="290" id="YAs-rY-3Td"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="OPEN WALLET">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
                                 <connections>
-                                    <action selector="openWallet" destination="lQf-0j-PTw" eventType="touchUpInside" id="NEH-pU-Rqo"/>
+                                    <outlet property="carouselDataSource" destination="lQf-0j-PTw" id="4cd-VQ-N5B"/>
                                 </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="u9P-Ib-Iae">
-                                <rect key="frame" x="40" y="779" width="348" height="43"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXy-Zp-GGs">
-                                        <rect key="frame" x="0.0" y="0.0" width="69.666666666666671" height="43"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="demo_metamask">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="connectMetaMask" destination="lQf-0j-PTw" eventType="touchUpInside" id="416-vD-rgr"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9di-ZE-hMe">
-                                        <rect key="frame" x="69.666666666666657" y="0.0" width="69.666666666666657" height="43"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="demo_walletconnect">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="connectWallet" destination="lQf-0j-PTw" eventType="touchUpInside" id="4wi-nl-Dro"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-r9-ETQ">
-                                        <rect key="frame" x="139.33333333333334" y="0.0" width="69.333333333333343" height="43"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="demo_phantom">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="connectPhantom" destination="lQf-0j-PTw" eventType="touchUpInside" id="ZJO-60-Puh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRf-BA-2mi">
-                                        <rect key="frame" x="208.66666666666666" y="0.0" width="69.666666666666657" height="43"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="ethereum">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="connectEVMPrivateKey" destination="lQf-0j-PTw" eventType="touchUpInside" id="B4M-9Z-wI6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYN-DJ-gsJ">
-                                        <rect key="frame" x="278.33333333333331" y="0.0" width="69.666666666666686" height="43"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="solana">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="connectSolanaPrivateKey" destination="lQf-0j-PTw" eventType="touchUpInside" id="YVF-vK-oYR"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Particle Wallet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Z4-YL-3tN">
+                                <rect key="frame" x="120" y="102" width="174" height="31.333333333333343"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One Wallet Manages Multi-Chain Assets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aig-dQ-Nbl">
+                                <rect key="frame" x="74.666666666666657" y="143.33333333333334" width="264.66666666666674" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="YgF-4k-7c2">
+                                <rect key="frame" x="142.33333333333337" y="463.33333333333331" width="129.66666666666663" height="25"/>
+                            </pageControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hZJ-p9-Efw">
+                                <rect key="frame" x="121.66666666666669" y="862" width="171" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="96w-WL-TKE"/>
+                                    <constraint firstAttribute="width" constant="171" id="lhA-2a-Kv3"/>
+                                    <constraint firstAttribute="height" constant="17" id="otO-yz-1s2"/>
                                 </constraints>
-                            </stackView>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="SrX-O0-Dls"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CZb-bh-J7I" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="topMargin" constant="39" id="5aq-pG-5uH"/>
-                            <constraint firstItem="u9P-Ib-Iae" firstAttribute="top" secondItem="1zu-GL-3nJ" secondAttribute="bottom" constant="17" id="66m-9e-wAi"/>
+                            <constraint firstItem="YgF-4k-7c2" firstAttribute="top" secondItem="SnI-6F-Vju" secondAttribute="bottom" constant="3" id="3Cl-b2-Nav"/>
+                            <constraint firstItem="hZJ-p9-Efw" firstAttribute="top" secondItem="zbC-oR-p6f" secondAttribute="bottom" constant="52" id="Af8-m3-oGd"/>
                             <constraint firstItem="QzE-n5-iV2" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="top" id="GBU-94-mRe"/>
-                            <constraint firstItem="Go3-vv-HZD" firstAttribute="trailing" secondItem="Ip1-tH-bZY" secondAttribute="trailing" id="IFr-s5-ftd"/>
-                            <constraint firstItem="Ip1-tH-bZY" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="top" constant="260" id="KQj-nI-sgN"/>
-                            <constraint firstItem="1zu-GL-3nJ" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="95" id="SfS-jR-Etq"/>
-                            <constraint firstItem="8wK-gx-X9W" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="topMargin" constant="260" id="a7K-cu-R09"/>
-                            <constraint firstItem="1zu-GL-3nJ" firstAttribute="bottom" secondItem="zbC-oR-p6f" secondAttribute="bottom" id="aBD-nM-JSk"/>
-                            <constraint firstItem="2Aw-d2-ejV" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="aFY-xk-ckX"/>
+                            <constraint firstItem="4Z4-YL-3tN" firstAttribute="top" secondItem="SrX-O0-Dls" secondAttribute="top" constant="58" id="H29-Zb-CtL"/>
+                            <constraint firstItem="YgF-4k-7c2" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="Ook-Ev-ihI"/>
+                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="oYI-lh-xEq" secondAttribute="trailing" constant="37" id="Ql4-rF-IHa"/>
+                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="Emb-Jn-X9N" secondAttribute="trailing" constant="37" id="Tmb-ZZ-UqB"/>
+                            <constraint firstItem="SnI-6F-Vju" firstAttribute="top" secondItem="aig-dQ-Nbl" secondAttribute="bottom" constant="10" id="W6y-vR-odK"/>
+                            <constraint firstItem="zbC-oR-p6f" firstAttribute="top" secondItem="Emb-Jn-X9N" secondAttribute="bottom" constant="25" id="YWy-aV-1cY"/>
                             <constraint firstItem="QzE-n5-iV2" firstAttribute="leading" secondItem="mIa-Qf-uBo" secondAttribute="leading" id="aNB-FW-yaW"/>
-                            <constraint firstItem="Go3-vv-HZD" firstAttribute="leading" secondItem="mIa-Qf-uBo" secondAttribute="leadingMargin" constant="11" id="ays-I0-JSC"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="1zu-GL-3nJ" secondAttribute="trailing" constant="95" id="clr-tz-uUS"/>
-                            <constraint firstItem="Ip1-tH-bZY" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="gIr-zl-RtZ"/>
-                            <constraint firstItem="zbC-oR-p6f" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="40" id="i9T-fg-g7B"/>
-                            <constraint firstItem="CZb-bh-J7I" firstAttribute="trailing" secondItem="QzE-n5-iV2" secondAttribute="trailing" constant="60" id="iH2-YR-KI3"/>
-                            <constraint firstItem="2Aw-d2-ejV" firstAttribute="top" secondItem="Ip1-tH-bZY" secondAttribute="bottom" constant="23" id="iX2-jd-jpn"/>
+                            <constraint firstItem="aig-dQ-Nbl" firstAttribute="top" secondItem="4Z4-YL-3tN" secondAttribute="bottom" constant="10" id="b9Q-1U-6qF"/>
+                            <constraint firstAttribute="bottom" secondItem="hZJ-p9-Efw" secondAttribute="bottom" constant="17" id="cGx-85-ceT"/>
+                            <constraint firstItem="zbC-oR-p6f" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="37" id="i9T-fg-g7B"/>
+                            <constraint firstItem="hZJ-p9-Efw" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="iFg-GV-b9V"/>
+                            <constraint firstItem="SnI-6F-Vju" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="jFg-wx-CoE"/>
+                            <constraint firstItem="Emb-Jn-X9N" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="37" id="m3U-xG-z84"/>
+                            <constraint firstItem="oYI-lh-xEq" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="37" id="mPq-4T-SiY"/>
+                            <constraint firstItem="4Z4-YL-3tN" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="nM5-qA-K8M"/>
+                            <constraint firstItem="aig-dQ-Nbl" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="nSj-HU-tR9"/>
                             <constraint firstAttribute="trailing" secondItem="QzE-n5-iV2" secondAttribute="trailing" id="qd2-xK-ecc"/>
-                            <constraint firstItem="u9P-Ib-Iae" firstAttribute="leading" secondItem="SrX-O0-Dls" secondAttribute="leading" constant="40" id="quf-Nt-RIJ"/>
-                            <constraint firstItem="8wK-gx-X9W" firstAttribute="centerX" secondItem="mIa-Qf-uBo" secondAttribute="centerX" id="tJa-h8-ub1"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="zbC-oR-p6f" secondAttribute="trailing" constant="40" id="u5B-jR-zTY"/>
-                            <constraint firstItem="Go3-vv-HZD" firstAttribute="top" secondItem="mIa-Qf-uBo" secondAttribute="topMargin" constant="10" id="vjF-IK-bLV"/>
-                            <constraint firstAttribute="bottom" secondItem="1zu-GL-3nJ" secondAttribute="bottom" constant="164" id="zhb-tA-En0"/>
-                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="u9P-Ib-Iae" secondAttribute="trailing" constant="40" id="zoM-DD-mMc"/>
+                            <constraint firstItem="Emb-Jn-X9N" firstAttribute="top" secondItem="oYI-lh-xEq" secondAttribute="bottom" constant="25" id="qmN-Pz-rYK"/>
+                            <constraint firstItem="SrX-O0-Dls" firstAttribute="trailing" secondItem="zbC-oR-p6f" secondAttribute="trailing" constant="37" id="u5B-jR-zTY"/>
+                            <constraint firstAttribute="bottom" secondItem="QzE-n5-iV2" secondAttribute="bottom" id="zw7-eM-thj"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="appleButton" destination="6dQ-Lr-B34" id="HhH-fJ-jr9"/>
-                        <outlet property="connectStackView" destination="u9P-Ib-Iae" id="d6a-5e-AVj"/>
-                        <outlet property="coreImageView" destination="Ip1-tH-bZY" id="f76-7x-3yb"/>
-                        <outlet property="emailButton" destination="6SH-1f-Y4x" id="25l-aB-v0n"/>
-                        <outlet property="evmButton" destination="jRf-BA-2mi" id="hwr-qv-dM6"/>
-                        <outlet property="facebookButton" destination="JCJ-H8-oFk" id="OHi-Wy-mvX"/>
-                        <outlet property="googleButton" destination="WQh-eN-Htx" id="sYt-LR-9EP"/>
-                        <outlet property="metamaskButton" destination="jXy-Zp-GGs" id="Nho-EJ-vHv"/>
-                        <outlet property="openWalletButton" destination="1zu-GL-3nJ" id="L4P-x7-l7r"/>
-                        <outlet property="phantomButton" destination="rKf-r9-ETQ" id="g2p-vu-red"/>
-                        <outlet property="phoneButton" destination="Xl1-mZ-TKe" id="LrL-aa-36S"/>
-                        <outlet property="solanaButton" destination="mYN-DJ-gsJ" id="Fqy-0T-HwV"/>
+                        <outlet property="appleButton" destination="WQh-eN-Htx" id="xc8-rB-hdO"/>
+                        <outlet property="bgView" destination="QzE-n5-iV2" id="GDg-wn-8az"/>
+                        <outlet property="collecionViewHeightConstraint" destination="YAs-rY-3Td" id="9Hi-Y7-GK9"/>
+                        <outlet property="collecionViewWidthConstraint" destination="Igd-Vt-hd4" id="K9H-pY-kZX"/>
+                        <outlet property="collectionView" destination="SnI-6F-Vju" id="gK6-e6-qLo"/>
+                        <outlet property="discordButton" destination="rfT-P4-V0m" id="OFO-Jq-oAT"/>
+                        <outlet property="emailButton" destination="oYI-lh-xEq" id="6bu-SS-p1Q"/>
+                        <outlet property="facebookButton" destination="Xl1-mZ-TKe" id="HOC-m3-FPA"/>
+                        <outlet property="googleButton" destination="6SH-1f-Y4x" id="uo6-k5-70Z"/>
+                        <outlet property="logoBottomConstraint" destination="cGx-85-ceT" id="Hk3-kY-1OU"/>
+                        <outlet property="logoImageView" destination="hZJ-p9-Efw" id="j0r-66-C4s"/>
+                        <outlet property="messageLabel" destination="aig-dQ-Nbl" id="EQQ-PS-hxH"/>
+                        <outlet property="metamaskButton" destination="Emb-Jn-X9N" id="iCQ-cS-H64"/>
+                        <outlet property="moreButton" destination="JCJ-H8-oFk" id="Uvu-RL-YmE"/>
+                        <outlet property="pageControl" destination="YgF-4k-7c2" id="9nl-Cd-EBR"/>
+                        <outlet property="stackBottomConstarint" destination="Af8-m3-oGd" id="CM3-SQ-ag9"/>
                         <outlet property="stackView" destination="zbC-oR-p6f" id="cLY-A4-Taa"/>
-                        <outlet property="switchChainButton" destination="CZb-bh-J7I" id="OsZ-5y-odw"/>
-                        <outlet property="walletConnectButton" destination="9di-ZE-hMe" id="9vH-W5-xEZ"/>
-                        <outlet property="welcomeImageView" destination="8wK-gx-X9W" id="kgn-nM-oEi"/>
-                        <outlet property="welcomeLabel" destination="2Aw-d2-ejV" id="3ew-tF-bbA"/>
+                        <outlet property="titleLabel" destination="4Z4-YL-3tN" id="TAF-RD-9Be"/>
+                        <outlet property="titleTopConstraint" destination="H29-Zb-CtL" id="n6e-vm-cZO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zds-Gl-jdI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -504,20 +445,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apple" width="35" height="35"/>
-        <image name="background" width="375" height="335.66665649414062"/>
-        <image name="core" width="131.33332824707031" height="150.66667175292969"/>
+        <image name="apple" width="43" height="43"/>
         <image name="demo_metamask" width="35" height="35"/>
-        <image name="demo_phantom" width="35" height="35"/>
-        <image name="demo_walletconnect" width="35" height="35"/>
+        <image name="discord" width="43" height="43"/>
         <image name="email" width="35" height="35"/>
-        <image name="ethereum" width="36" height="36"/>
-        <image name="facebook" width="35" height="35"/>
-        <image name="google" width="35" height="35"/>
-        <image name="particle_network" width="226.66667175292969" height="35.333332061767578"/>
-        <image name="phone" width="35" height="35"/>
-        <image name="solana" width="36" height="36"/>
-        <image name="welcome" width="135.66667175292969" height="139.66667175292969"/>
+        <image name="facebook" width="43" height="43"/>
+        <image name="google" width="43" height="43"/>
+        <image name="main_bg" width="375" height="812"/>
+        <image name="main_logo" width="171.33332824707031" height="17"/>
+        <image name="more_wallet" width="43" height="43"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -526,9 +462,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

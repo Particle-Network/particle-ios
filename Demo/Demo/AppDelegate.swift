@@ -30,10 +30,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        let chainInfo = ParticleNetwork.ChainInfo.customEvmNetwork(fullName: "Ethereum", network: "rinkeby", chainId: 4, explorePath: "https://rinkeby.etherscan.io/", symbol: "ETH")
 
-        // You can disable pay feature, default is true
-//        ParticleWalletGUI.enablePay(false)
 
-        let dAppData = DAppMetaData(name: "Test", icon: URL(string: "https://static.particle.network/wallet-icons/Particle.png")!, url: URL(string: "https://static.particle.network")!)
+
+        let dAppData = DAppMetaData(
+            name: "Particle Connect",
+            icon: URL(string: "https://connect.particle.network/icons/512.png")!,
+            url: URL(string: "https://connect.particle.network")!)
+
         var adapters: [ConnectAdapter] = [
             MetaMaskConnectAdapter(),
             ParticleConnectAdapter(),
@@ -44,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ImtokenConnectAdapter(),
             TrustConnectAdapter()
         ]
+        
         if ParticleNetwork.getDevEnv() == .production {
             adapters.append(EVMConnectAdapter())
             adapters.append(SolanaConnectAdapter())
@@ -61,6 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
         ParticleWalletGUI.showManageWallet(true)
 
+        // You can disable pay feature, default is true
+//        ParticleWalletGUI.enablePay(false)
+        // You can disable swap feature, default is true
+//        ParticleWalletGUI.enableSwap(false)
+        
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootVC
@@ -68,8 +77,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        return ParticleAuthService.handleUrl(url)
+        return ParticleConnect.handleUrl(url)
     }
 }
