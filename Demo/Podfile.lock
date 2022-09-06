@@ -52,7 +52,7 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.2.3)
   - MJRefresh (3.4.0)
-  - ParticleAuthService (0.7.2):
+  - ParticleAuthService (0.7.4):
     - CryptoSwift (~> 1.5.1)
     - ParticleNetworkBase
     - RxCocoa (= 6.5.0)
@@ -62,9 +62,9 @@ PODS:
   - ParticleConnect (0.1.14):
     - ConnectCommon
     - ParticleAuthService
-  - ParticleNetworkBase (0.7.2):
+  - ParticleNetworkBase (0.7.4):
     - CryptoSwift (~> 1.5.1)
-  - ParticleWalletAPI (0.7.2):
+  - ParticleWalletAPI (0.7.4):
     - CryptoSwift (~> 1.5.1)
     - GRDB.swift
     - ParticleNetworkBase
@@ -73,7 +73,7 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletGUI (0.7.2):
+  - ParticleWalletGUI (0.7.4):
     - ConnectEVMAdapter
     - ConnectPhantomAdapter
     - ConnectSolanaAdapter
@@ -119,7 +119,7 @@ PODS:
   - TweetNacl (1.0.2)
 
 DEPENDENCIES:
-  - ParticleWalletGUI (= 0.7.2)
+  - ParticleWalletGUI (= 0.7.4)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -174,11 +174,11 @@ SPEC CHECKSUMS:
   JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
   libwebp: 60305b2e989864154bd9be3d772730f08fc6a59c
   MJRefresh: 95b08b3b8b6457d2c69510439e0349599050ea34
-  ParticleAuthService: d05c63e0bd30b28172c9a9a0ccf7eaae9a7b9c24
+  ParticleAuthService: 7251d9dbd9e1bbd5027635788800572f121049d9
   ParticleConnect: 5054f462fd21b386e778aac2719dbd1c576b29db
-  ParticleNetworkBase: afdd4b327ab7c797c6e8d84553b2d33776d121d1
-  ParticleWalletAPI: 7b9ca5edb08645c7c25c2f2b8032a2d67e84e1fa
-  ParticleWalletGUI: 0f6a4c0c34a24c5862d694ac38ee8ea513e9b369
+  ParticleNetworkBase: eebf11cfa3e8929488f7749a2c8557d4ee7fc6e6
+  ParticleWalletAPI: 54db23efb09d4c1d6aa26796fab3f2e22b480693
+  ParticleWalletGUI: 7ed80b19a17686fbc27c167dbec290d0860b7823
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -194,6 +194,6 @@ SPEC CHECKSUMS:
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
 
-PODFILE CHECKSUM: eacbf8129dc4cfa635f5a8df96ccc2f8b1da0ba8
+PODFILE CHECKSUM: 479365abdec76b5f3ba609b8243ad1ed39988efc
 
 COCOAPODS: 1.11.3

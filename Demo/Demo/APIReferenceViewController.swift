@@ -5,22 +5,15 @@
 //  Created by link on 2022/5/17.
 //
 
+import ConnectCommon
 import Foundation
 import ParticleAuthService
+import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletAPI
 import ParticleWalletGUI
-import ParticleConnect
-import ConnectCommon
 import RxSwift
 import UIKit
-
-
-struct TypedDataV1: Encodable {
-    let type: String
-    let name: String
-    let value: String
-}
 
 class APIReferenceViewController: UIViewController {
     let bag = DisposeBag()
@@ -129,7 +122,6 @@ class APIReferenceViewController: UIViewController {
         }.disposed(by: self.bag)
     }
     
-    
     func readContract() {
         // example for evm read contract
         let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "balanceOf", params: ["0xBbc1CA8776EfDeC12C75e218C64e96ce52aC6671"])
@@ -183,11 +175,10 @@ class APIReferenceViewController: UIViewController {
         }.disposed(by: self.bag)
     }
     
-    
     @IBAction func signTransaction() {
         // not support solana
         var transaction = ""
-        switch ParticleNetwork.getChainInfo().chain  {
+        switch ParticleNetwork.getChainInfo().chain {
         case .solana:
             transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
         default:
@@ -219,7 +210,7 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func signMessage() {
         var message = ""
-        switch ParticleNetwork.getChainInfo().chain  {
+        switch ParticleNetwork.getChainInfo().chain {
         case .solana:
             message = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
         default:
@@ -335,4 +326,10 @@ extension APIReferenceViewController {
         self.mask?.isHidden = true
         self.loading?.stopAnimating()
     }
+}
+
+struct TypedDataV1: Encodable {
+    let type: String
+    let name: String
+    let value: String
 }

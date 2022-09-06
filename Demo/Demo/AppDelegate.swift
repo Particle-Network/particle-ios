@@ -45,7 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             RainbowConnectAdapter(),
             BitkeepConnectAdapter(),
             ImtokenConnectAdapter(),
-            TrustConnectAdapter()
+            TrustConnectAdapter(),
+            GnosisConnectAdapter()
         ]
         
         if ParticleNetwork.getDevEnv() == .production {
