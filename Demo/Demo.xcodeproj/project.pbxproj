@@ -510,10 +510,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.0;
-				PRODUCT_BUNDLE_IDENTIFIER = network.particle.wallet;
+				MARKETING_VERSION = 0.7.2;
+				PRODUCT_BUNDLE_IDENTIFIER = network.particle.auth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development network.particle.wallet";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development network.particle.auth";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -550,10 +550,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.7.0;
-				PRODUCT_BUNDLE_IDENTIFIER = network.particle.wallet;
+				MARKETING_VERSION = 0.7.2;
+				PRODUCT_BUNDLE_IDENTIFIER = network.particle.auth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development network.particle.wallet";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development network.particle.auth";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
