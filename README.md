@@ -21,12 +21,7 @@ Please select right SDK version.
 | ParticleAuthService          | 0.7.11        | 0.7.10.1 |
 | ParticleWalletAPI            | 0.7.11        | 0.7.10.1 |
 | ParticleWalletGUI            | 0.7.11        | 0.7.10.1 |
-| ConnectCommon                | 0.1.19        | 0.1.18.1 |
-| ParticleConnect              | 0.1.19        | 0.1.18.1 |
-| ConnectWalletConnectAdapter  | 0.1.19        | 0.1.18.1 |
-| ConnectEVMConnectAdapter     | 0.1.19        | 0.1.18.1 |
-| ConnectPhantomConnectAdapter | 0.1.19        | 0.1.18.1 |
-| ConnectSolanaConnectAdapter  | 0.1.19        | 0.1.18.1 |
+
 
 Make sure that your project meets the following requirements:
 
