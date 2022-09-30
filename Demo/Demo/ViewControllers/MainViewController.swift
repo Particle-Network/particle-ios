@@ -145,11 +145,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithEmail() {
-//        if AccountChecker.hasAccount() {
-//        openWallet()
-//        } else {
         login(type: .email)
-//        }
     }
     
     @IBAction func loginWithMetaMask() {
@@ -199,7 +195,6 @@ class MainViewController: UIViewController {
             guard let self = self else { return }
             switch result {
             case .failure(let error):
-                
                 print(error)
             case .success(let userinfo):
                 print(userinfo)

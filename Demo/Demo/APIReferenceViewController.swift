@@ -43,6 +43,9 @@ class APIReferenceViewController: UIViewController {
             
             // test your custom contract function
 //            self.sendCustomContractFunction()
+            
+            // test deploy contract
+//            self.deployContract()
         }
     }
     
@@ -54,7 +57,7 @@ class APIReferenceViewController: UIViewController {
         let receiver = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
         let amount = BDouble(0.0001 * pow(10, 18)).rounded()
         
-        ParticleWalletAPI.getEvmService().createTransaction(from: sender, to: receiver, value: amount.toHexString()).flatMap { transaction -> Single<String> in
+        ParticleWalletAPI.getEvmService().createTransaction(from: sender, to: receiver, value: amount.toHexString(), contractParams: nil).flatMap { transaction -> Single<String> in
             print(transaction)
             return ParticleAuthService.signAndSendTransaction(transaction)
         }.subscribe { [weak self] result in
@@ -301,6 +304,25 @@ class APIReferenceViewController: UIViewController {
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true)
     }
+    
+    func deployContract() {
+        let data = getContractData()
+        let from = ParticleAuthService.getAddress()
+        let to: String? = nil
+        ParticleWalletAPI.getEvmService().createTransaction(from: from, to: to, data: data).flatMap {
+            transaction -> Single<String> in
+            print("transaction = \(transaction)")
+            return ParticleAuthService.signAndSendTransaction(transaction)
+        }.subscribe { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let signature):
+                print(signature)
+            }
+        }.disposed(by: bag)
+    }
+   
 }
 
 extension APIReferenceViewController {
@@ -332,4 +354,12 @@ struct TypedDataV1: Encodable {
     let type: String
     let name: String
     let value: String
+}
+
+extension APIReferenceViewController {
+    func getContractData() -> String {
+        return """
+        0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a723058204bf1accefb2526a5077bcdfeaeb8020162814272245a9741cc2fddd89191af1c0029
+        """
+    }
 }
