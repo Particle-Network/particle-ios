@@ -17,10 +17,10 @@ Xcode 13.3.1 - 13.4.1
 Please select right SDK version.
 | Xcode version                | 13.3.1~13.4.1 | 14.0     |
 |------------------------------|---------------|----------|
-| ParticleNetworkBase          | 0.7.14        | 0.7.13.1 |
-| ParticleAuthService          | 0.7.14        | 0.7.13.1 |
-| ParticleWalletAPI            | 0.7.14        | 0.7.13.1 |
-| ParticleWalletGUI            | 0.7.14        | 0.7.13.1 |
+| ParticleNetworkBase          | 0.7.16        | 0.7.15.1 |
+| ParticleAuthService          | 0.7.16        | 0.7.15.1 |
+| ParticleWalletAPI            | 0.7.16        | 0.7.15.1 |
+| ParticleWalletGUI            | 0.7.16        | 0.7.15.1 |
 
 
 Make sure that your project meets the following requirements:
