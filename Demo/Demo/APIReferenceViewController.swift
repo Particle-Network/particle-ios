@@ -308,7 +308,7 @@ class APIReferenceViewController: UIViewController {
     func deployContract() {
         let data = getContractData()
         let from = ParticleAuthService.getAddress()
-        let to: String? = nil
+        let to = ""
         ParticleWalletAPI.getEvmService().createTransaction(from: from, to: to, data: data).flatMap {
             transaction -> Single<String> in
             print("transaction = \(transaction)")
