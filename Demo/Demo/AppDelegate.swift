@@ -23,15 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         // init ParticleNetwork
-        // select a network
-//        let chainInfo = ParticleNetwork.ChainInfo.ethereum(.mainnet)
-        // and also and you can custom your evm network
-//        let chainInfo = ParticleNetwork.ChainInfo.customEvmNetwork(fullName: "Ethereum", network: "kovan", chainId: 42, explorePath: "https://kovan.etherscan.io/", symbol: "ETH")
-
-//        let chainInfo = ParticleNetwork.ChainInfo.customEvmNetwork(fullName: "Ethereum", network: "rinkeby", chainId: 4, explorePath: "https://rinkeby.etherscan.io/", symbol: "ETH")
-
-
-
+        
         let dAppData = DAppMetaData(
             name: "Particle Connect",
             icon: URL(string: "https://connect.particle.network/icons/512.png")!,
@@ -57,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             adapters.append(SolanaConnectAdapter(rpcUrl: "http://api-debug.app-link.network/solana/rpc/"))
         }
 
+        // select a network
         ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: dAppData) {
             adapters
         }
