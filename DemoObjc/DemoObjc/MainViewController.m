@@ -117,7 +117,7 @@
 }
 
 - (IBAction)openWallet {
-    [PNRouter navigatorWalletWithDisplay:DisplayToken];
+    [PNRouter navigatorWalletWithDisplay:DisplayToken hiddenBackButton:YES animated:YES];
 }
 
 - (IBAction)switchChainClick {

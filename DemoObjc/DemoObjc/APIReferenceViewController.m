@@ -67,7 +67,8 @@
     NSString *receiver = @"0xAC6d81182998EA5c196a4424EA6AB250C7eb175b";
     NSString *amount = @"0x5AF3107A4000";
     __weak APIReferenceViewController *weakSelf = self;
-    [[ParticleWalletAPI getEvmService] createTransactionFrom:sender to:receiver value:amount contractParams: nil type:@"0x2" nonce:@"0x0" gasFeeLevel:GasFeeLevelMedium action:ActionNormal successHandler:^(NSString * transaction) {
+    
+    [[ParticleWalletAPI getEvmService] createTransactionFrom:sender to:receiver value:amount contractParams: nil type:@"0x2" gasFeeLevel:GasFeeLevelMedium action:ActionNormal successHandler:^(NSString * transaction) {
         NSLog(@"%@", transaction);
         
         [ParticleAuthService signAndSendTransaction:transaction successHandler:^(NSString * signature) {
@@ -102,7 +103,7 @@
     // because you want to send erc20 token, interact with contact, 'to' should be the contract address.
     // and value could be nil.
     __weak APIReferenceViewController *weakSelf = self;
-    [[ParticleWalletAPI getEvmService] createTransactionFrom:from to:to value:nil contractParams:contractParams type:@"0x2" nonce:@"0x0" gasFeeLevel:GasFeeLevelMedium action:ActionNormal successHandler:^(NSString * transaction) {
+    [[ParticleWalletAPI getEvmService] createTransactionFrom:from to:to value:nil contractParams:contractParams type:@"0x2" gasFeeLevel:GasFeeLevelMedium action:ActionNormal successHandler:^(NSString * transaction) {
             NSLog(@"%@", transaction);
             [ParticleAuthService signAndSendTransaction:transaction successHandler:^(NSString * signature) {
                 NSLog(@"%@", signature);
@@ -202,7 +203,7 @@
     
 
 - (IBAction)openWallet {
-    [PNRouter navigatorWalletWithDisplay:DisplayToken];
+    [PNRouter navigatorWalletWithDisplay:DisplayToken hiddenBackButton:YES animated:YES];
 }
 
 - (IBAction)openSendToken {

@@ -38,23 +38,30 @@
     NSMutableDictionary *heco = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *aurora = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *harmony = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *kcc = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *platon = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *optimism = [[NSMutableDictionary alloc] init];
     
-    [solana setObject:@[@"mainnet", @"testnet", @"devnet"] forKey:@"Solana"];
-    [ethereum setObject:@[@"mainnet", @"kovan"] forKey:@"Ethereum"];
-    [bsc setObject:@[@"mainnet", @"testnet"] forKey:@"Bsc"];
-    [polygon setObject:@[@"mainnet", @"testnet"] forKey:@"Polygon"];
+    [solana setObject:@[@"mainnet", @"testnet", @"devnet"] forKey:@"solana"];
+    [ethereum setObject:@[@"mainnet", @"goerli"] forKey:@"ethereum"];
+    [bsc setObject:@[@"mainnet", @"testnet"] forKey:@"bsc"];
+    [polygon setObject:@[@"mainnet", @"mumbai"] forKey:@"polygon"];
     
-    [avalanche setObject:@[@"mainnet", @"testnet"] forKey:@"Avalanche"];
-    [fantom setObject:@[@"mainnet", @"testnet"] forKey:@"Fantom"];
-    [arbitrum setObject:@[@"mainnet", @"testnet"] forKey:@"Arbitrum"];
-    [moonBeam setObject:@[@"mainnet", @"testnet"] forKey:@"MoonBeam"];
+    [avalanche setObject:@[@"mainnet", @"testnet"] forKey:@"avalanche"];
+    [fantom setObject:@[@"mainnet", @"testnet"] forKey:@"fantom"];
+    [arbitrum setObject:@[@"mainnet", @"testnet"] forKey:@"arbitrum"];
+    [moonBeam setObject:@[@"mainnet", @"testnet"] forKey:@"moonbeam"];
     
-    [moonRiver setObject:@[@"mainnet", @"testnet"] forKey:@"MoonRiver"];
-    [heco setObject:@[@"mainnet", @"testnet"] forKey:@"Heco"];
-    [aurora setObject:@[@"mainnet", @"testnet"] forKey:@"Aurora"];
-    [harmony setObject:@[@"mainnet", @"testnet"] forKey:@"Harmony"];
+    [moonRiver setObject:@[@"mainnet", @"testnet"] forKey:@"moonriver"];
+    [heco setObject:@[@"mainnet", @"testnet"] forKey:@"heco"];
+    [aurora setObject:@[@"mainnet", @"testnet"] forKey:@"aurora"];
+    [harmony setObject:@[@"mainnet", @"testnet"] forKey:@"harmony"];
     
-    [self.data addObjectsFromArray:@[solana, ethereum, bsc, polygon, avalanche, fantom, arbitrum, moonBeam, moonRiver, heco, aurora, harmony]];
+    [kcc setObject:@[@"mainnet", @"testnet"] forKey:@"kcc"];
+    [platon setObject:@[@"mainnet", @"testnet"] forKey:@"platon"];
+    [optimism setObject:@[@"mainnet", @"goerli"] forKey:@"optimism"];
+    
+    [self.data addObjectsFromArray:@[solana, ethereum, bsc, polygon, avalanche, fantom, arbitrum, moonBeam, moonRiver, heco, aurora, harmony, kcc, platon,optimism]];
 }
 
 - (void)configureTableView {
@@ -103,11 +110,11 @@
     NSMutableDictionary *dict = self.data[indexPath.section];
     NSArray *array = [[dict allValues] firstObject];
     NSString *network = array[indexPath.row];
-    NSString *name = [[dict allKeys] firstObject];
+    NSString *name = [[[dict allKeys] firstObject] lowercaseString];
     
     NSLog(@"%@, %@", name, network);
     ChainInfo *chainInfo;
-    if ([name  isEqual: @"Solana"]) {
+    if ([name  isEqual: @"solana"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo solana:SolanaNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
@@ -115,71 +122,89 @@
         } else if ([network  isEqual: @"devnet"]) {
             chainInfo = [ChainInfo solana:SolanaNetworkDevnet];
         }
-    } else if ([name  isEqual: @"Ethereum"]) {
+    } else if ([name  isEqual: @"ethereum"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo ethereum:EthereumNetworkMainnet];
-        } else if ([network  isEqual: @"kovan"]) {
-            chainInfo = [ChainInfo ethereum:EthereumNetworkKovan];
+        } else if ([network  isEqual: @"goerli"]) {
+            chainInfo = [ChainInfo ethereum:EthereumNetworkGoerli];
         }
-    } else if ([name  isEqual: @"Bsc"]) {
+    } else if ([name  isEqual: @"bsc"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo bsc:BscNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
             chainInfo = [ChainInfo bsc:BscNetworkTestnet];
         }
-    } else if ([name  isEqual: @"Polygon"]) {
+    } else if ([name  isEqual: @"polygon"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo polygon:PolygonNetworkMainnet];
-        } else if ([network  isEqual: @"testnet"]) {
+        } else if ([network  isEqual: @"mumbai"]) {
             chainInfo = [ChainInfo polygon:PolygonNetworkMumbai];
         }
-    } else if ([name  isEqual: @"Avalanche"]) {
+    } else if ([name  isEqual: @"avalanche"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo avalanche:AvalancheNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
             chainInfo = [ChainInfo avalanche:AvalancheNetworkTestnet];
         }
-    } else if ([name  isEqual: @"Fantom"]) {
+    } else if ([name  isEqual: @"fantom"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo fantom:FantomNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
             chainInfo = [ChainInfo fantom:FantomNetworkTestnet];
         }
-    } else if ([name  isEqual: @"Arbitrum"]) {
+    } else if ([name  isEqual: @"arbitrum"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo arbitrum:ArbitrumNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
             chainInfo = [ChainInfo arbitrum:ArbitrumNetworkTestnet];
         }
-    } else if ([name  isEqual: @"MoonBeam"]) {
+    } else if ([name  isEqual: @"moonbeam"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo moonbeam:MoonbeamNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
             chainInfo = [ChainInfo moonbeam:MoonbeamNetworkTestnet];
         }
-    } else if ([name  isEqual: @"MoonRiver"]) {
+    } else if ([name  isEqual: @"moonriver"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo moonriver:MoonriverNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
             chainInfo = [ChainInfo moonriver:MoonriverNetworkTestnet];
         }
-    } else if ([name  isEqual: @"Heco"]) {
+    } else if ([name  isEqual: @"heco"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo heco:HecoNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
             chainInfo = [ChainInfo heco:HecoNetworkTestnet];
         }
-    } else if ([name  isEqual: @"Aurora"]) {
+    } else if ([name  isEqual: @"aurora"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo aurora:AuroraNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
             chainInfo = [ChainInfo aurora:AuroraNetworkTestnet];
         }
-    } else if ([name  isEqual: @"Harmony"]) {
+    } else if ([name  isEqual: @"harmony"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo harmony:HarmonyNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
             chainInfo = [ChainInfo harmony:HarmonyNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"platon"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo platON:PlatONNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo platON:PlatONNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"kcc"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo kcc:KccNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo kcc:KccNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"optimism"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo optimism:OptimismNetworkMainnet];
+        } else if ([network  isEqual: @"goerli"]) {
+            chainInfo = [ChainInfo optimism:OptimismNetworkGoerli];
         }
     }
     [ParticleNetwork setChainInfo:chainInfo];
