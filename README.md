@@ -30,9 +30,9 @@ Your project must target these platform versions or later:
 iOS 13
 
 
-## Getting Started
+## 🔧 Getting Started
 
-* Clone the repo.
+* Clone the repo. open Demo folder.
 * Replace ParticelNetwork.info with your project info in the [Dashboard](https://dashboard.particle.network/#/login).
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -57,12 +57,17 @@ your scheme url should be "pn" + your project app id.
 
 * Add Privacy - Camera Usage Description in your info.plist file
 
-## Build
+## 💿 Build
 ```
 pod install --repo-update
 ```
 
-## Features
+## 🚴‍♂️ Other Demo
+ParticleAuthDemo is a pure project with only ParticleAuthService, 
+show how to integrate ParticleAuthService with a few code.
+ParticleAuthDemo_Scene is a pure project with only ParticleAuthService and start from SceneDelegate.swift, 
+show how to integrate ParticleAuthService when app start from SceneDelagate.swift with a few code.
+## 🔬 Features
 
 1. Auth login with email, phone, facebook, google, apple etc.
 2. Logout.
@@ -70,7 +75,7 @@ pod install --repo-update
 4. Change Chain Id.
 5. Check our official dev docs: https://docs.particle.network/
 
-## Docs
+## 📄 Docs
 1. https://docs.particle.network/auth-service/sdks/ios
 2. https://docs.particle.network/wallet-service/sdks/ios
 
@@ -90,7 +95,7 @@ end
 
 2. Run Xcode with Rosetta.
 
-## Give Feedback
+## 💼 Give Feedback
 Please report bugs or issues to [particle-ios/issues](https://github.com/Particle-Network/particle-ios/issues)
 
 You can also join our [Discord](https://discord.gg/2y44qr6CR2).

@@ -1,0 +1,465 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B046FCE6028B69C3210F050 /* Pods_ParticleAuthDemo_Scene.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10DA9D10CB242048A5EE5A25 /* Pods_ParticleAuthDemo_Scene.framework */; };
+		5F2F77702913713E0000A2AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F776F2913713E0000A2AE /* AppDelegate.swift */; };
+		5F2F77722913713E0000A2AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F77712913713E0000A2AE /* SceneDelegate.swift */; };
+		5F2F77742913713E0000A2AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2F77732913713E0000A2AE /* ViewController.swift */; };
+		5F2F77772913713E0000A2AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F77752913713E0000A2AE /* Main.storyboard */; };
+		5F2F77792913713F0000A2AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F77782913713F0000A2AE /* Assets.xcassets */; };
+		5F2F777C2913713F0000A2AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F777A2913713F0000A2AE /* LaunchScreen.storyboard */; };
+		5F2F7784291372120000A2AE /* ParticleNetwork-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F2F7783291372120000A2AE /* ParticleNetwork-Info.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		10DA9D10CB242048A5EE5A25 /* Pods_ParticleAuthDemo_Scene.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParticleAuthDemo_Scene.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F2F776C2913713E0000A2AE /* ParticleAuthDemo_Scene.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParticleAuthDemo_Scene.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F2F776F2913713E0000A2AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F2F77712913713E0000A2AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5F2F77732913713E0000A2AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F2F77762913713E0000A2AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F2F77782913713F0000A2AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F2F777B2913713F0000A2AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F2F777D2913713F0000A2AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F2F7783291372120000A2AE /* ParticleNetwork-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ParticleNetwork-Info.plist"; sourceTree = "<group>"; };
+		E7C455D9BCC8E3CE3C6BB9AF /* Pods-ParticleAuthDemo_Scene.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParticleAuthDemo_Scene.release.xcconfig"; path = "Target Support Files/Pods-ParticleAuthDemo_Scene/Pods-ParticleAuthDemo_Scene.release.xcconfig"; sourceTree = "<group>"; };
+		F3703E2454C076C2BFC477F4 /* Pods-ParticleAuthDemo_Scene.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParticleAuthDemo_Scene.debug.xcconfig"; path = "Target Support Files/Pods-ParticleAuthDemo_Scene/Pods-ParticleAuthDemo_Scene.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F2F77692913713E0000A2AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B046FCE6028B69C3210F050 /* Pods_ParticleAuthDemo_Scene.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		548B04516FDE998C6571758B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10DA9D10CB242048A5EE5A25 /* Pods_ParticleAuthDemo_Scene.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F2F77632913713E0000A2AE = {
+			isa = PBXGroup;
+			children = (
+				5F2F776E2913713E0000A2AE /* ParticleAuthDemo_Scene */,
+				5F2F776D2913713E0000A2AE /* Products */,
+				854731737B66E713AF7ECABF /* Pods */,
+				548B04516FDE998C6571758B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5F2F776D2913713E0000A2AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F2F776C2913713E0000A2AE /* ParticleAuthDemo_Scene.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F2F776E2913713E0000A2AE /* ParticleAuthDemo_Scene */ = {
+			isa = PBXGroup;
+			children = (
+				5F2F7783291372120000A2AE /* ParticleNetwork-Info.plist */,
+				5F2F776F2913713E0000A2AE /* AppDelegate.swift */,
+				5F2F77712913713E0000A2AE /* SceneDelegate.swift */,
+				5F2F77732913713E0000A2AE /* ViewController.swift */,
+				5F2F77752913713E0000A2AE /* Main.storyboard */,
+				5F2F77782913713F0000A2AE /* Assets.xcassets */,
+				5F2F777A2913713F0000A2AE /* LaunchScreen.storyboard */,
+				5F2F777D2913713F0000A2AE /* Info.plist */,
+			);
+			path = ParticleAuthDemo_Scene;
+			sourceTree = "<group>";
+		};
+		854731737B66E713AF7ECABF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3703E2454C076C2BFC477F4 /* Pods-ParticleAuthDemo_Scene.debug.xcconfig */,
+				E7C455D9BCC8E3CE3C6BB9AF /* Pods-ParticleAuthDemo_Scene.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F2F776B2913713E0000A2AE /* ParticleAuthDemo_Scene */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F2F77802913713F0000A2AE /* Build configuration list for PBXNativeTarget "ParticleAuthDemo_Scene" */;
+			buildPhases = (
+				0F353D3B38E7981D0B5F9F66 /* [CP] Check Pods Manifest.lock */,
+				5F2F77682913713E0000A2AE /* Sources */,
+				5F2F77692913713E0000A2AE /* Frameworks */,
+				5F2F776A2913713E0000A2AE /* Resources */,
+				722CD893FB381949A9052745 /* [CP] Embed Pods Frameworks */,
+				165F3C6DEC6B198148E8A580 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParticleAuthDemo_Scene;
+			productName = ParticleAuthDemo_Scene;
+			productReference = 5F2F776C2913713E0000A2AE /* ParticleAuthDemo_Scene.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F2F77642913713E0000A2AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					5F2F776B2913713E0000A2AE = {
+						CreatedOnToolsVersion = 14.0;
+					};
+				};
+			};
+			buildConfigurationList = 5F2F77672913713E0000A2AE /* Build configuration list for PBXProject "ParticleAuthDemo_Scene" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F2F77632913713E0000A2AE;
+			productRefGroup = 5F2F776D2913713E0000A2AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F2F776B2913713E0000A2AE /* ParticleAuthDemo_Scene */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F2F776A2913713E0000A2AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F2F777C2913713F0000A2AE /* LaunchScreen.storyboard in Resources */,
+				5F2F77792913713F0000A2AE /* Assets.xcassets in Resources */,
+				5F2F77772913713E0000A2AE /* Main.storyboard in Resources */,
+				5F2F7784291372120000A2AE /* ParticleNetwork-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0F353D3B38E7981D0B5F9F66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ParticleAuthDemo_Scene-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		165F3C6DEC6B198148E8A580 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParticleAuthDemo_Scene/Pods-ParticleAuthDemo_Scene-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParticleAuthDemo_Scene/Pods-ParticleAuthDemo_Scene-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ParticleAuthDemo_Scene/Pods-ParticleAuthDemo_Scene-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		722CD893FB381949A9052745 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParticleAuthDemo_Scene/Pods-ParticleAuthDemo_Scene-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ParticleAuthDemo_Scene/Pods-ParticleAuthDemo_Scene-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ParticleAuthDemo_Scene/Pods-ParticleAuthDemo_Scene-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F2F77682913713E0000A2AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F2F77742913713E0000A2AE /* ViewController.swift in Sources */,
+				5F2F77702913713E0000A2AE /* AppDelegate.swift in Sources */,
+				5F2F77722913713E0000A2AE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5F2F77752913713E0000A2AE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F2F77762913713E0000A2AE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F2F777A2913713F0000A2AE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F2F777B2913713F0000A2AE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F2F777E2913713F0000A2AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5F2F777F2913713F0000A2AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F2F77812913713F0000A2AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3703E2454C076C2BFC477F4 /* Pods-ParticleAuthDemo_Scene.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4Z5S6BJZ8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ParticleAuthDemo_Scene/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = network.particle.auth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development network.particle.auth";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5F2F77822913713F0000A2AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7C455D9BCC8E3CE3C6BB9AF /* Pods-ParticleAuthDemo_Scene.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4Z5S6BJZ8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ParticleAuthDemo_Scene/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = network.particle.auth;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development network.particle.auth";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F2F77672913713E0000A2AE /* Build configuration list for PBXProject "ParticleAuthDemo_Scene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F2F777E2913713F0000A2AE /* Debug */,
+				5F2F777F2913713F0000A2AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F2F77802913713F0000A2AE /* Build configuration list for PBXNativeTarget "ParticleAuthDemo_Scene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F2F77812913713F0000A2AE /* Debug */,
+				5F2F77822913713F0000A2AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F2F77642913713E0000A2AE /* Project object */;
+}
