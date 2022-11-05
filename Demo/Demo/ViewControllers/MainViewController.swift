@@ -173,14 +173,12 @@ class MainViewController: UIViewController {
             guard let self = self else { return }
             switch result {
             case .failure(let error):
-                if let error = error as? ParticleNetwork.Error {
-                    if case .invalidResponse(let responseError) = error {
-                        if responseError.code == ResponseError.userCancel.code {
-                            // user cancel, do nothing.
-                        } else {
-                            let title = responseError.code?.description ?? ""
-                            self.showToast(title: title, message: responseError.message)
-                        }
+                if let responseError = error as? ParticleNetwork.ResponseError {
+                    if responseError.code == ParticleNetwork.ResponseError.userCancel.code {
+                        // user cancel, do nothing.
+                    } else {
+                        let title = responseError.code?.description ?? ""
+                        self.showToast(title: title, message: responseError.message)
                     }
                 }
             case .success(let account):

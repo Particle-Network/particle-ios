@@ -145,7 +145,7 @@ class APIReferenceViewController: UIViewController {
         ParticleWalletAPI.getEvmService().writeContract(contractParams: params, from: from).flatMap { transaction -> Single<String> in
             let adapters = ParticleConnect.getAdapterByAddress(publicAddress: from)
             
-            guard let adapter = adapters.first else { return .error(ParticleNetwork.Error.invalidData(reason: "adapter is nil")) }
+            guard let adapter = adapters.first else { return .error(ParticleNetwork.ResponseError(code: nil, message: "adapter is nil")) }
             return adapter.signAndSendTransaction(publicAddress: from, transaction: transaction)
         }.subscribe {
             [weak self] result in
@@ -165,7 +165,7 @@ class APIReferenceViewController: UIViewController {
             let adapters = ParticleConnect.getAllAdapters().filter {
                 $0.walletType == .metaMask
             }
-            guard let adapter = adapters.first else { return .error(ParticleNetwork.Error.invalidData(reason: "adapter is nil")) }
+            guard let adapter = adapters.first else { return .error(ParticleNetwork.ResponseError(code: nil, message: "adapter is nil")) }
             return adapter.signAndSendTransaction(publicAddress: from, transaction: transaction)
         }.subscribe {
             [weak self] result in
@@ -320,9 +320,8 @@ class APIReferenceViewController: UIViewController {
             case .success(let signature):
                 print(signature)
             }
-        }.disposed(by: bag)
+        }.disposed(by: self.bag)
     }
-   
 }
 
 extension APIReferenceViewController {

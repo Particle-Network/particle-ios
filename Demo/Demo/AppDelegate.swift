@@ -55,13 +55,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         // Custom Wallet GUI
-        ParticleWalletGUI.showTestNetwork(false)
-        ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
-        ParticleWalletGUI.showManageWallet(true)
+        // Control if show test network
+        ParticleWalletGUI.showTestNetwork(true)
+        
+        // Control support chains
+//        ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
+        
+        // Control if show manage wallet
+//        ParticleWalletGUI.showManageWallet(true)
 
-        // You can disable pay feature, default is true
+        // Control disable pay feature
 //        ParticleWalletGUI.enablePay(false)
-        // You can disable swap feature, default is true
+        // Control disable swap feature
 //        ParticleWalletGUI.enableSwap(false)
         
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
