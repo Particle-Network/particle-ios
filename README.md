@@ -21,6 +21,7 @@ Please select right SDK version.
 | ParticleAuthService          | 0.8.4        | 0.8.3.1 |
 | ParticleWalletAPI            | 0.8.4        | 0.8.3.1 |
 | ParticleWalletGUI            | 0.8.4        | 0.8.3.1 |
+| ParticleWalletConnect        | 0.8.4        | 0.8.3.1 |
 
 
 Make sure that your project meets the following requirements:
