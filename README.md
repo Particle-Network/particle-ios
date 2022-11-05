@@ -15,12 +15,12 @@ Xcode 13.3.1 or higher
 ### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version.
 
 Please select right SDK version.
-| Xcode version                | 13.3.1~13.4.1 | 14.0     |
+| Xcode version                | 13.3.1~13.4.1 | 14.0~14.0.1     |
 |------------------------------|---------------|----------|
-| ParticleNetworkBase          | 0.7.21        | 0.7.20.1 |
-| ParticleAuthService          | 0.7.21        | 0.7.20.1 |
-| ParticleWalletAPI            | 0.7.21        | 0.7.20.1 |
-| ParticleWalletGUI            | 0.7.21        | 0.7.20.1 |
+| ParticleNetworkBase          | 0.8.4        | 0.8.3.1 |
+| ParticleAuthService          | 0.8.4        | 0.8.3.1 |
+| ParticleWalletAPI            | 0.8.4        | 0.8.3.1 |
+| ParticleWalletGUI            | 0.8.4        | 0.8.3.1 |
 
 
 Make sure that your project meets the following requirements:
