@@ -14,6 +14,7 @@ import ParticleAuthService
 import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletGUI
+import ParticleWalletConnect
 import UIKit
 
 @main
@@ -21,9 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
         // init ParticleNetwork
-        
+
         let dAppData = DAppMetaData(
             name: "Particle Connect",
             icon: URL(string: "https://connect.particle.network/icons/512.png")!,
@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             TrustConnectAdapter(),
             GnosisConnectAdapter()
         ]
-        
+
         if ParticleNetwork.getDevEnv() == .production {
             adapters.append(EVMConnectAdapter())
             adapters.append(SolanaConnectAdapter())
@@ -53,14 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: dAppData) {
             adapters
         }
-        
+
         // Custom Wallet GUI
         // Control if show test network
         ParticleWalletGUI.showTestNetwork(true)
-        
+
         // Control support chains
 //        ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
-        
+
         // Control if show manage wallet
 //        ParticleWalletGUI.showManageWallet(true)
 
@@ -69,6 +69,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Control disable swap feature
 //        ParticleWalletGUI.enableSwap(false)
         
+        // Initialize particle wallet connect sdk
+        ParticleWalletConnect.initialize(
+            WalletMetaData(name: "Particle Wallet",
+                           icon: URL(string: "https://connect.particle.network/icons/512.png")!,
+                           url: URL(string: "https://particle.network")!,
+                           description: nil))
+        // Control if disable wallet connect feature.
+        // If disable wallet conenct feature, you dont need to initialize particle Wallet Connect.
+        ParticleWalletGUI.supportWalletConnect(true)
+
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootVC
@@ -76,8 +86,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-    
+
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        return ParticleConnect.handleUrl(url)
+        // if open Wallet Connect in GUI, you should call this method to handle wallet connect
+        // You need paste your app scheme, GUI will return true if it can reslove the url with your scheme, otherwise return false.
+        if ParticleWalletGUI.handleWalletConnectUrl(url, withScheme: "particlewallet") {
+            return true
+        } else {
+            return ParticleConnect.handleUrl(url)
+        }
     }
 }

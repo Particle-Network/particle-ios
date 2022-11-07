@@ -17,11 +17,11 @@ Xcode 13.3.1 or higher
 Please select right SDK version.
 | Xcode version                | 13.3.1~13.4.1 | 14.0~14.0.1     |
 |------------------------------|---------------|----------|
-| ParticleNetworkBase          | 0.8.4        | 0.8.3.1 |
-| ParticleAuthService          | 0.8.4        | 0.8.3.1 |
-| ParticleWalletAPI            | 0.8.4        | 0.8.3.1 |
-| ParticleWalletGUI            | 0.8.4        | 0.8.3.1 |
-| ParticleWalletConnect        | 0.8.4        | 0.8.3.1 |
+| ParticleNetworkBase          | 0.8.5        | 0.8.5.1 |
+| ParticleAuthService          | 0.8.5        | 0.8.5.1 |
+| ParticleWalletAPI            | 0.8.5        | 0.8.5.1 |
+| ParticleWalletGUI            | 0.8.5        | 0.8.5.1 |
+| ParticleWalletConnect        | 0.8.5        | 0.8.5.1 |
 
 
 Make sure that your project meets the following requirements:
@@ -64,10 +64,11 @@ pod install --repo-update
 ```
 
 ## 🚴‍♂️ Other Demo
-ParticleAuthDemo is a pure project with only ParticleAuthService, 
-show how to integrate ParticleAuthService with a few code.
-ParticleAuthDemo_Scene is a pure project with only ParticleAuthService and start from SceneDelegate.swift, 
-show how to integrate ParticleAuthService when app start from SceneDelagate.swift with a few code.
+`ParticleAuthDemo` show how to integrate ParticleAuthService with a few code.
+
+`ParticleAuthDemo_Scene` start from SceneDelegate.swift, show how to integrate ParticleAuthService when app start from SceneDelagate.swift with a few code.
+
+`ParticleWalletConnectDemo` show how to integrate with ParticleWalletConnect, it use ParticleAuthService to handle request from dapp.
 ## 🔬 Features
 
 1. Auth login with email, phone, facebook, google, apple etc.
