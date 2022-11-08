@@ -12,17 +12,27 @@ Install the following:
 
 Xcode 13.3.1 or higher
 
-### We have released new version for Xcode 14, if you want to develop with Xcode 14, you should specify version.
 
-Please select right SDK version.
-| Xcode version                | 13.3.1~13.4.1 | 14.0~14.0.1 | 14.1 |
-|------------------------------|---------------|----------|---------|
-| ParticleNetworkBase          | 0.8.5         | 0.8.5.1 | 0.8.5.2 |
-| ParticleAuthService          | 0.8.5         | 0.8.5.1 | 0.8.5.2 |
-| ParticleWalletAPI            | 0.8.5         | 0.8.5.1 | 0.8.5.2 |
-| ParticleWalletGUI            | 0.8.5         | 0.8.5.1 | 0.8.5.2 |
-| ParticleWalletConnect        | 0.8.5         | 0.8.5.1 | 0.8.5.2 |
+| Xcode version                | 13.3.1 ~ 14.1 | 
+|------------------------------|---------------|
+| ParticleNetworkBase          | 0.8.6         |
+| ParticleAuthService          | 0.8.6         |
+| ParticleWalletAPI            | 0.8.6         |
+| ParticleWalletGUI            | 0.8.6         |
+| ParticleWalletConnect        | 0.8.6         | 
 
+###  🧂 Update Podfile
+From 0.8.6, we start to build SDK with XCFramework, that request copy the following text into Podfile.
+
+```ruby
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+    config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      end
+    end
+   end
+```
 
 Make sure that your project meets the following requirements:
 
@@ -81,19 +91,6 @@ pod install --repo-update
 1. https://docs.particle.network/auth-service/sdks/ios
 2. https://docs.particle.network/wallet-service/sdks/ios
 
-
-## ARM64 Simulator support
-For everyone with an M1 (Silicon) device who want run their projects on a simulator, There are two solutions.
-1. Set arm64 as excluding architecture for Any iOS Simulator SDK. add the following to Podfile
-```ruby
-post_install do |installer|
-  installer.pods_project.build_configurations.each do |config|
-    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-    config.build_settings["ARCHS[sdk=iphonesimulator*]"] = "x86_64"
-    config.build_settings["ARCHS[sdk=iphoneos*]"] = "arm64"
-  end
-end
-```
 
 2. Run Xcode with Rosetta.
 
