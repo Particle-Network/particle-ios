@@ -49,7 +49,7 @@
     
     [avalanche setObject:@[@"mainnet", @"testnet"] forKey:@"avalanche"];
     [fantom setObject:@[@"mainnet", @"testnet"] forKey:@"fantom"];
-    [arbitrum setObject:@[@"mainnet", @"testnet"] forKey:@"arbitrum"];
+    [arbitrum setObject:@[@"mainnet", @"goerli"] forKey:@"arbitrum"];
     [moonBeam setObject:@[@"mainnet", @"testnet"] forKey:@"moonbeam"];
     
     [moonRiver setObject:@[@"mainnet", @"testnet"] forKey:@"moonriver"];
@@ -155,8 +155,8 @@
     } else if ([name  isEqual: @"arbitrum"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo arbitrum:ArbitrumNetworkMainnet];
-        } else if ([network  isEqual: @"testnet"]) {
-            chainInfo = [ChainInfo arbitrum:ArbitrumNetworkTestnet];
+        } else if ([network  isEqual: @"goerli"]) {
+            chainInfo = [ChainInfo arbitrum:ArbitrumNetworkGoerli];
         }
     } else if ([name  isEqual: @"moonbeam"]) {
         if ([network  isEqual: @"mainnet"]) {

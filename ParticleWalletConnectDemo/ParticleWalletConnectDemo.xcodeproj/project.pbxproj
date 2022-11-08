@@ -237,7 +237,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ParticleWalletConnectDemo/Pods-ParticleWalletConnectDemo-resources.sh",
-				"${PODS_ROOT}/ParticleAuthService/Frameworks/ParticleAuthService/ParticleAuthService.bundle",
+				"${PODS_ROOT}/ParticleAuthService/XCFrameworks/ParticleAuthService/ParticleAuthService.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -402,7 +402,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9CE5FAEC2933436664BD17B0 /* Pods-ParticleWalletConnectDemo.debug.xcconfig */;
 			buildSettings = {
-				"ARCHS[sdk=iphonesimulator*]" = x86_64;
+				"ARCHS[sdk=iphonesimulator*]" = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;

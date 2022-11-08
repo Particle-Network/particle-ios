@@ -95,22 +95,31 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
         return configuration
     }
+    
+    func transmit(method: String, params: [Encodable], successHandler: @escaping (Data?) -> Void, failureHandler: @escaping (Error) -> Void) {
+        ParticleProvider.request(method: method, params: params).subscribe { data in
+            successHandler(data)
+        } onFailure: { error in
+            failureHandler(error)
+        }.disposed(by: bag)
+    }
 }
 
 extension ViewController {
+    
     func request(topic: String, method: String, params: [Encodable], completion: @escaping (Result<Data?>) -> Void) {
         // call ParticleProvider to handle request from dapp
         // also you can interrupt method by yourself
-        ParticleProvider.request(method: method, params: params).subscribe { [weak self] result in
-            switch result {
-            case .failure(let error):
-                if let responseError = error as? ParticleNetwork.ResponseError {
-                    completion(.failure(ParticleWalletConnect.ResponseError(code: responseError.code, message: responseError.message, data: responseError.data)))
-                }
-            case .success(let data):
-                completion(.success(data))
-            }
-        }.disposed(by: bag)
+        
+        transmit(method: method, params: params) { data in
+            completion(.success(data))
+        } failureHandler: { error in
+            print(error)
+//            if let responseError = error as? ParticleNetwork.ResponseError {
+//                let err: ParticleWalletConnect.ResponseError = ParticleWalletConnect.ResponseError(code: responseError.code, message: responseError.message, data: responseError.data)
+//                completion(.failure(responseError))
+//            }
+        }
     }
     
     func shouldStartSession(_ session: WalletConnectSwift.Session, completion: @escaping (String, Int) -> Void) {
