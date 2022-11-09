@@ -107,7 +107,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController {
     
-    func request(topic: String, method: String, params: [Encodable], completion: @escaping (Result<Data?>) -> Void) {
+    func request(topic: String, method: String, params: [Encodable], completion: @escaping (WCResult<Data?>) -> Void) {
         // call ParticleProvider to handle request from dapp
         // also you can interrupt method by yourself
         
@@ -115,10 +115,10 @@ extension ViewController {
             completion(.success(data))
         } failureHandler: { error in
             print(error)
-//            if let responseError = error as? ParticleNetwork.ResponseError {
-//                let err: ParticleWalletConnect.ResponseError = ParticleWalletConnect.ResponseError(code: responseError.code, message: responseError.message, data: responseError.data)
-//                completion(.failure(responseError))
-//            }
+            if let responseError = error as? ParticleNetwork.ResponseError {
+                let err: WCResponseError = WCResponseError(code: responseError.code, message: responseError.message, data: responseError.data)
+                completion(.failure(err))
+            }
         }
     }
     

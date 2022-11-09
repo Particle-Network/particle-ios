@@ -1,4 +1,36 @@
 ## Release Notes
+
+### 0.8.8
+Fix bugs
+
+### 0.8.6
+Particle SDKs from 0.8.6 and Connect SDKs from 0.1.32, built with XCFramework, you don’t need to specify version for different Xcode.
+Benefit from XCFramework, you could test with simulator in both M1(arm64) and Inter(x86_64)
+
+But you need to add some code in Podfile
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+    config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+      end
+    end
+   end
+
+| Xcode version                | 13.3.1~14.1|
+|------------------------------|---------------|
+| ParticleNetworkBase          | 0.8.6         |
+| ParticleAuthService          | 0.8.6         |
+| ParticleWalletAPI            | 0.8.6         |
+| ParticleWalletGUI            | 0.8.6         | 
+| ParticleWalletConnect        | 0.8.6         |
+| ConnectCommon                | 0.1.32        |
+| ParticleConnect              | 0.1.32        |
+| ConnectWalletConnectAdapter  | 0.1.32        | 
+| ConnectEVMConnectAdapter     | 0.1.32        |
+| ConnectPhantomConnectAdapter | 0.1.32        |
+| ConnectSolanaConnectAdapter  | 0.1.32        |
+
 ### 0.8.5
 We have released new SDK,  `ParticleWalletConnect`, that support wallet connect as a wallet, we provider a demo in github, show how to integrate with `ParticleWalletConnect`, scan qrcode and handle request from dapp.
 https://github.com/Particle-Network/particle-ios/tree/main/ParticleWalletConnectDemo
