@@ -4,11 +4,11 @@ platform :ios, '13.0'
 target 'Demo' do
   use_frameworks!
   source 'https://github.com/CocoaPods/Specs.git'
-    pod 'ParticleWalletGUI', '0.8.10'
-    pod 'ParticleWalletAPI', '0.8.10'
-    pod 'ParticleNetworkBase', '0.8.10'
-    pod 'ParticleAuthService', '0.8.10'
-    pod 'ParticleWalletConnect', '0.8.10'
+    pod 'ParticleWalletGUI', '0.8.11'
+    pod 'ParticleWalletAPI', '0.8.11'
+    pod 'ParticleNetworkBase', '0.8.11'
+    pod 'ParticleAuthService', '0.8.11'
+    pod 'ParticleWalletConnect', '0.8.11'
     
     pod 'ParticleConnect', '0.1.35'
     pod 'ConnectWalletConnectAdapter', '0.1.35'
