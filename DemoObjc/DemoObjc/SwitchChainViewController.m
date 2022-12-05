@@ -41,6 +41,8 @@
     NSMutableDictionary *kcc = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *platon = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *optimism = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *tron = [[NSMutableDictionary alloc] init];
+    
     
     [solana setObject:@[@"mainnet", @"testnet", @"devnet"] forKey:@"solana"];
     [ethereum setObject:@[@"mainnet", @"goerli"] forKey:@"ethereum"];
@@ -60,8 +62,9 @@
     [kcc setObject:@[@"mainnet", @"testnet"] forKey:@"kcc"];
     [platon setObject:@[@"mainnet", @"testnet"] forKey:@"platon"];
     [optimism setObject:@[@"mainnet", @"goerli"] forKey:@"optimism"];
+    [tron setObject:@[@"mainnet", @"shasta", @"nile"] forKey:@"tron"];
     
-    [self.data addObjectsFromArray:@[solana, ethereum, bsc, polygon, avalanche, fantom, arbitrum, moonBeam, moonRiver, heco, aurora, harmony, kcc, platon,optimism]];
+    [self.data addObjectsFromArray:@[solana, ethereum, bsc, polygon, avalanche, fantom, arbitrum, moonBeam, moonRiver, heco, aurora, harmony, kcc, platon, optimism, tron]];
 }
 
 - (void)configureTableView {
@@ -205,6 +208,14 @@
             chainInfo = [ChainInfo optimism:OptimismNetworkMainnet];
         } else if ([network  isEqual: @"goerli"]) {
             chainInfo = [ChainInfo optimism:OptimismNetworkGoerli];
+        }
+    } else if ([name  isEqual:@"tron"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo tron:TronNetworkMainnet];
+        } else if ([network  isEqual: @"shasta"]) {
+            chainInfo = [ChainInfo tron:TronNetworkShasta];
+        } else if ([network  isEqual: @"nile"]) {
+            chainInfo = [ChainInfo tron:TronNetworkNile];
         }
     }
     [ParticleNetwork setChainInfo:chainInfo];

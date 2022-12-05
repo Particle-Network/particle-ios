@@ -1,5 +1,6 @@
 PODS:
-  - Alamofire (5.6.2)
+  - Alamofire (5.6.4)
+  - BigInt (5.2.0)
   - CryptoSwift (1.5.1)
   - libwebp (1.2.3):
     - libwebp/demux (= 1.2.3)
@@ -10,7 +11,7 @@ PODS:
   - libwebp/mux (1.2.3):
     - libwebp/demux
   - libwebp/webp (1.2.3)
-  - ParticleAuthService (0.8.8):
+  - ParticleAuthService (0.8.14):
     - CryptoSwift (~> 1.5.1)
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
@@ -18,9 +19,10 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleNetworkBase (0.8.8):
+  - ParticleNetworkBase (0.8.14):
+    - BigInt (~> 5.2.0)
     - CryptoSwift (~> 1.5.1)
-  - ParticleWalletConnect (0.8.8):
+  - ParticleWalletConnect (0.8.14):
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -49,15 +51,16 @@ PODS:
     - CryptoSwift (~> 1.5)
 
 DEPENDENCIES:
-  - ParticleAuthService (= 0.8.8)
-  - ParticleNetworkBase (= 0.8.8)
-  - ParticleWalletConnect (= 0.8.8)
+  - ParticleAuthService (= 0.8.14)
+  - ParticleNetworkBase (= 0.8.14)
+  - ParticleWalletConnect (= 0.8.14)
   - SDWebImage
   - SDWebImageWebPCoder
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - BigInt
     - CryptoSwift
     - libwebp
     - ParticleAuthService
@@ -74,12 +77,13 @@ SPEC REPOS:
     - WalletConnectSwift
 
 SPEC CHECKSUMS:
-  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  BigInt: f668a80089607f521586bbe29513d708491ef2f7
   CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
   libwebp: 60305b2e989864154bd9be3d772730f08fc6a59c
-  ParticleAuthService: b01c5888ef7ec32ad18cd10d90fb3f4f45ae80f8
-  ParticleNetworkBase: fdbdf5f3af15799581e1d668c408028cd48bd2d0
-  ParticleWalletConnect: 55694aa3e893f41c076df93821cadc71670e3b42
+  ParticleAuthService: a7ff2a5e09ac4ff0226db97ccd7a046c92e3940c
+  ParticleNetworkBase: 292dcc294ba6844a51066262a43de519cfafe8e9
+  ParticleWalletConnect: 0f6efec3d0f274603ce59c6611f0d57c1a313915
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -90,6 +94,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   WalletConnectSwift: 6309bf3011b0b30e3e9d1e7449535302a9240f71
 
-PODFILE CHECKSUM: 2d5dce7cc738b6b6e0a72bbf685ec7c7f3251117
+PODFILE CHECKSUM: e0080c52f3d09ea39300869a7b993c9b268327a1
 
 COCOAPODS: 1.11.3
