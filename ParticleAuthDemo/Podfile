@@ -4,8 +4,8 @@ platform :ios, '13.0'
 target 'ParticleAuthDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-	pod 'ParticleAuthService', '0.8.14'
-	pod 'ParticleNetworkBase', '0.8.14'
+	pod 'ParticleAuthService', '0.8.15'
+	pod 'ParticleNetworkBase', '0.8.15'
   # Pods for ParticleAuthDemo
 
 end
