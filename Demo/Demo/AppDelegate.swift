@@ -69,6 +69,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Control disable swap feature
 //        ParticleWalletGUI.enableSwap(false)
         
+        // show language setting in setting page
+        ParticleWalletGUI.showLanguageSetting(true)
+        // show appearance setting in setting page
+        ParticleWalletGUI.showAppearanceSetting(true)
+        // Set language
+//        ParticleWalletGUI.setLanguage(.en)
+        // Set user interface style
+//        ParticleNetwork.setInterfaceStyle(.unspecified)
+        
         // Initialize particle wallet connect sdk
         ParticleWalletConnect.initialize(
             WalletMetaData(name: "Particle Wallet",
