@@ -322,6 +322,16 @@ class APIReferenceViewController: UIViewController {
             }
         }.disposed(by: self.bag)
     }
+    
+    func tronAddressExample() {
+        // convert tron base58 address to hex address
+        let tronAddressHex = TronFormatAddress.toHex("TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto")
+        print(tronAddressHex) // 0x2648cfe97e33345300db8154670347b08643570b
+
+        // convert hex address to tron base58 address
+        let tronAddressBase58 = TronFormatAddress.fromHex("0x2648cfe97e33345300db8154670347b08643570b")
+        print(tronAddressBase58) // TDTduRew1o2ZqP9wiDPVEqdywMQdNC4hto
+    }
 }
 
 extension APIReferenceViewController {
