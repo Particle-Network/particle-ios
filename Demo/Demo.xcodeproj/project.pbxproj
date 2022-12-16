@@ -22,6 +22,10 @@
 		5FC3E83F28C5CA5F0016F095 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3E83D28C5CA5F0016F095 /* AppConfig.swift */; };
 		5FC3E84E28C5CD5A0016F095 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3E84928C5CD5A0016F095 /* Localizable.strings */; };
 		5FC3E84F28C5CD5A0016F095 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3E84C28C5CD5A0016F095 /* Localizable.strings */; };
+		5FCA94CF294C5D63003BB9E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA94C7294C5D63003BB9E0 /* Localizable.strings */; };
+		5FCA94D0294C5D63003BB9E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA94CA294C5D63003BB9E0 /* Localizable.strings */; };
+		5FCA94D1294C5D63003BB9E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA94CD294C5D63003BB9E0 /* Localizable.strings */; };
+		5FCA94D3294C5E19003BB9E0 /* customUIConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA94D2294C5D71003BB9E0 /* customUIConfig.json */; };
 		C2629DC01FDB31881DB558DC /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D560A8CCB763F838B477B3C5 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +48,10 @@
 		5FC3E83D28C5CA5F0016F095 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		5FC3E84A28C5CD5A0016F095 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		5FC3E84D28C5CD5A0016F095 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
+		5FCA94C8294C5D63003BB9E0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Localizable.strings; sourceTree = "<group>"; };
+		5FCA94CB294C5D63003BB9E0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = Localizable.strings; sourceTree = "<group>"; };
+		5FCA94CE294C5D63003BB9E0 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = Localizable.strings; sourceTree = "<group>"; };
+		5FCA94D2294C5D71003BB9E0 /* customUIConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = customUIConfig.json; sourceTree = "<group>"; };
 		D560A8CCB763F838B477B3C5 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C580C9B8731EE4CD4BC48D /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +89,10 @@
 		3BE71C25282D16C300E29FD4 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				5FCA94D2294C5D71003BB9E0 /* customUIConfig.json */,
+				5FCA94C6294C5D63003BB9E0 /* ja.lproj */,
+				5FCA94CC294C5D63003BB9E0 /* ko.lproj */,
+				5FCA94C9294C5D63003BB9E0 /* zh-Hant.lproj */,
 				5FC3E84828C5CD5A0016F095 /* en.lproj */,
 				5FC3E84B28C5CD5A0016F095 /* zh-Hans.lproj */,
 				5FC3E83B28C5CA5F0016F095 /* Models */,
@@ -157,6 +169,30 @@
 			path = "zh-Hans.lproj";
 			sourceTree = "<group>";
 		};
+		5FCA94C6294C5D63003BB9E0 /* ja.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				5FCA94C7294C5D63003BB9E0 /* Localizable.strings */,
+			);
+			path = ja.lproj;
+			sourceTree = "<group>";
+		};
+		5FCA94C9294C5D63003BB9E0 /* zh-Hant.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				5FCA94CA294C5D63003BB9E0 /* Localizable.strings */,
+			);
+			path = "zh-Hant.lproj";
+			sourceTree = "<group>";
+		};
+		5FCA94CC294C5D63003BB9E0 /* ko.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				5FCA94CD294C5D63003BB9E0 /* Localizable.strings */,
+			);
+			path = ko.lproj;
+			sourceTree = "<group>";
+		};
 		75F493D6DEE568790CD046AE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +256,9 @@
 				en,
 				Base,
 				"zh-Hans",
+				ko,
+				ja,
+				"zh-Hant",
 			);
 			mainGroup = 3BE71C1A282D16C300E29FD4;
 			productRefGroup = 3BE71C24282D16C300E29FD4 /* Products */;
@@ -239,7 +278,11 @@
 				5FC3E84E28C5CD5A0016F095 /* Localizable.strings in Resources */,
 				5FC3E84F28C5CD5A0016F095 /* Localizable.strings in Resources */,
 				3BE71C33282D16C500E29FD4 /* LaunchScreen.storyboard in Resources */,
+				5FCA94CF294C5D63003BB9E0 /* Localizable.strings in Resources */,
+				5FCA94D3294C5E19003BB9E0 /* customUIConfig.json in Resources */,
+				5FCA94D1294C5D63003BB9E0 /* Localizable.strings in Resources */,
 				3BE71C30282D16C500E29FD4 /* Assets.xcassets in Resources */,
+				5FCA94D0294C5D63003BB9E0 /* Localizable.strings in Resources */,
 				3BE71C2E282D16C300E29FD4 /* Main.storyboard in Resources */,
 				3B19D521284FA4E200211FA4 /* ParticleNetwork-Info.plist in Resources */,
 			);
@@ -354,6 +397,30 @@
 			isa = PBXVariantGroup;
 			children = (
 				5FC3E84D28C5CD5A0016F095 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5FCA94C7294C5D63003BB9E0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FCA94C8294C5D63003BB9E0 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5FCA94CA294C5D63003BB9E0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FCA94CB294C5D63003BB9E0 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5FCA94CD294C5D63003BB9E0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5FCA94CE294C5D63003BB9E0 /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

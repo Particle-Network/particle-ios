@@ -78,6 +78,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Set user interface style
 //        ParticleNetwork.setInterfaceStyle(.unspecified)
         
+        // There is two way to set custom UI
+        // 1.You can set custom ui json path to enable custom UI
+        // In demo, make sure customUIConfig.json is mark Target Membership Demo.
+//        if let path = Bundle.main.path(forResource: "customUIConfig", ofType: "json") {
+//            try! ParticleWalletGUI.loadCustomUI(path: path)
+//        }
+        
+        // 2.Another way to set custom ui is pass json string
+//        let jsonString = ""
+//        try! ParticleWalletGUI.loadCustomUIJsonString(jsonString)
+        
         // Initialize particle wallet connect sdk
         ParticleWalletConnect.initialize(
             WalletMetaData(name: "Particle Wallet",

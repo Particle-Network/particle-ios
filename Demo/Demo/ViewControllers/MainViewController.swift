@@ -17,7 +17,6 @@ import ParticleNetworkBase
 import ParticleWalletAPI
 import ParticleWalletGUI
 import RxSwift
-import SwiftUI
 import UIKit
 
 class MainViewController: UIViewController {
@@ -46,9 +45,12 @@ class MainViewController: UIViewController {
     @IBOutlet var logoBottomConstraint: NSLayoutConstraint!
     @IBOutlet var collectionView: CarouselCollectionView!
     @IBOutlet var pageControl: UIPageControl!
-    
-    lazy var data: [MainDataModel] = (0 ... 3).map {
-        MainDataModel(imageName: "main_image_\($0)", message: NSLocalizedString("main message \($0)", comment: "main_message"))
+  
+    var data: [MainDataModel] {
+        return (0 ... 3).map {
+            let string = self.getString(by: "main message \($0)")
+            return MainDataModel(imageName: "main_image_\($0)", message: string)
+        }
     }
     
     override func viewDidLoad() {
@@ -67,6 +69,10 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        collectionView.reloadData()
+        emailButton.setTitle(getString(by: "login with").replacingOccurrences(of: "%@", with: getString(by: "email")), for: .normal)
+        
+        metamaskButton.setTitle(getString(by: "login with").replacingOccurrences(of: "%@", with: getString(by: "MetaMask")), for: .normal)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -138,14 +144,14 @@ class MainViewController: UIViewController {
         } else {
             logoBottomConstraint.constant = 7
         }
-        
-        emailButton.setTitle(NSLocalizedString("login with", comment: "login with").replacingOccurrences(of: "%@", with: NSLocalizedString("email", comment: "email")), for: .normal)
-        
-        metamaskButton.setTitle(NSLocalizedString("login with", comment: "login with").replacingOccurrences(of: "%@", with: NSLocalizedString("MetaMask", comment: "MetaMask")), for: .normal)
     }
     
     @IBAction func loginWithEmail() {
+//        if AccountChecker.hasAccount() {
+//        openWallet(animated: true)
+//        } else {
         login(type: .email)
+//        }
     }
     
     @IBAction func loginWithMetaMask() {
@@ -169,7 +175,8 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginMore() {
-        PNRouter.navigatorLoginList().subscribe { [weak self] result in
+        let supportTypes = LoginListSupportType.allCases
+        PNRouter.navigatorLoginList(supportTypes: supportTypes).subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
@@ -188,11 +195,12 @@ class MainViewController: UIViewController {
         }.disposed(by: bag)
     }
     
-    private func login(type: LoginType, supportAuthType: [SupportAuthType] = [SupportAuthType.all], loginFormMode: Bool = false) {
-        ParticleAuthService.login(type: type, supportAuthType: supportAuthType, loginFormMode: loginFormMode).subscribe { [weak self] result in
+    private func login(type: LoginType, account: String? = nil, supportAuthType: [SupportAuthType] = [SupportAuthType.all], loginFormMode: Bool = false) {
+        ParticleAuthService.login(type: type, account: account, supportAuthType: supportAuthType, loginFormMode: loginFormMode).subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
+                
                 print(error)
             case .success(let userinfo):
                 print(userinfo)
@@ -210,7 +218,7 @@ class MainViewController: UIViewController {
         if adapter.walletType == .walletConnect {
             single = (adapter as! WalletConnectAdapter).connectWithQrCode(from: self)
         } else {
-            single = adapter.connect(.none)
+            single = adapter.connect(ConnectConfig.none)
         }
         single.subscribe { [weak self] result in
             guard let self = self else { return }
@@ -233,38 +241,6 @@ class MainViewController: UIViewController {
     }
 }
 
-// unity helpers
-extension MainViewController {
-    func getUserInfo() -> String {
-        guard let userInfo = ParticleAuthService.getUserInfo() else { return "" }
-        let statusModel = UnityStatusModel(status: true, json: userInfo)
-        let data = try! JSONEncoder().encode(statusModel)
-        let json = String(data: data, encoding: .utf8)
-        return json ?? ""
-    }
-    
-    func getChainInfo() -> String {
-        let chainInfo = ParticleNetwork.getChainInfo()
-        return ["chain_name": chainInfo.name, "chain_id": chainInfo.chainId, "chain_id_name": chainInfo.network].jsonString() ?? ""
-    }
-}
-
-struct UnityStatusModel<T: Codable>: Codable {
-    let status: Bool
-    let json: T
-}
-
-extension Dictionary {
-    /// - Parameter prettify: set true to prettify string (default is false).
-    /// - Returns: optional JSON String (if applicable).
-    func jsonString(prettify: Bool = false) -> String? {
-        guard JSONSerialization.isValidJSONObject(self) else { return nil }
-        let options = (prettify == true) ? JSONSerialization.WritingOptions.prettyPrinted : JSONSerialization.WritingOptions()
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: self, options: options) else { return nil }
-        return String(data: jsonData, encoding: .utf8)
-    }
-}
-
 extension MainViewController: CarouselCollectionViewDataSource {
     var numberOfItems: Int {
         return data.count
@@ -284,5 +260,13 @@ extension MainViewController: CarouselCollectionViewDataSource {
     func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, didDisplayItemAt index: Int) {
         pageControl.currentPage = index
         messageLabel.text = data[index].message
+    }
+    
+    func getString(by key: String) -> String {
+        let language = ParticleNetwork.getLanguage().rawValue
+        let path = Bundle.main.path(forResource: language, ofType: "lproj")
+        let bundle = Bundle(path: path!)!
+        let string = bundle.localizedString(forKey: key, value: nil, table: nil)
+        return string
     }
 }
