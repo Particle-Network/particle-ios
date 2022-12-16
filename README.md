@@ -15,11 +15,11 @@ Xcode 13.3.1 or higher
 
 | Xcode version                | 13.3.1 ~ 14.2 | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 0.9.1         |
-| ParticleAuthService          | 0.9.1         |
-| ParticleWalletAPI            | 0.9.1         |
-| ParticleWalletGUI            | 0.9.1         |
-| ParticleWalletConnect        | 0.9.1         | 
+| ParticleNetworkBase          | 0.9.2         |
+| ParticleAuthService          | 0.9.2         |
+| ParticleWalletAPI            | 0.9.2         |
+| ParticleWalletGUI            | 0.9.2         |
+| ParticleWalletConnect        | 0.9.2         | 
 
 ###  🧂 Update Podfile
 From 0.8.6, we start to build SDK with XCFramework, that request copy the following text into Podfile.
