@@ -171,23 +171,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithMetaMask() {
-        if isDevelopMode {
-            //        PNRouter.navigatorDappBrowser(url: URL(string: "opensea.io"))
-                    
-            ParticleAuthService.setChainInfo(.polygon(.mainnet)).subscribe { result in
-                switch result {
-                case .failure:
-                    break
-                case .success:
-                    //                PNRouter.navigatorSwap(swapConfig: .init(fromTokenAddress: nil, toTokenAddress: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174", fromTokenAmount: BInt(1000000000000000)))
-                            
-                    //                PNRouter.navigatorSwap(swapConfig: .init(fromTokenAddress: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174", toTokenAddress: "native", fromTokenAmount: BInt(10000)))
-                    PNRouter.navigatorSwap(swapConfig: .init(fromTokenAddress: nil, toTokenAddress: nil, fromTokenAmount: nil))
-                }
-            }.disposed(by: bag)
-        } else {
-            connect(walletType: .metaMask)
-        }
+        connect(walletType: .metaMask)
     }
     
     @IBAction func loginWithGoogle() {
