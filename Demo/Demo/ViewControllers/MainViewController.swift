@@ -46,6 +46,12 @@ class MainViewController: UIViewController {
     @IBOutlet var collectionView: CarouselCollectionView!
     @IBOutlet var pageControl: UIPageControl!
   
+    // control develop mode
+    // before build ipa, set false
+    var isDevelopMode: Bool {
+        return false
+    }
+
     var data: [MainDataModel] {
         return (0 ... 3).map {
             let string = self.getString(by: "main message \($0)")
@@ -58,13 +64,16 @@ class MainViewController: UIViewController {
         
         setUI()
         
-        if AccountChecker.hasAccount() {
-            view.subviews.forEach {
-                if $0 != bgView {
-                    $0.isHidden = true
+        if isDevelopMode {
+        } else {
+            if AccountChecker.hasAccount() {
+                view.subviews.forEach {
+                    if $0 != bgView {
+                        $0.isHidden = true
+                    }
                 }
-            }
-        } else {}
+            } else {}
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,12 +87,15 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if AccountChecker.hasAccount() {
-            openWallet(animated: false)
+        if isDevelopMode {
         } else {
-            view.subviews.forEach {
-                if $0 != bgView {
-                    $0.isHidden = false
+            if AccountChecker.hasAccount() {
+                openWallet(animated: false)
+            } else {
+                view.subviews.forEach {
+                    if $0 != bgView {
+                        $0.isHidden = false
+                    }
                 }
             }
         }
@@ -147,15 +159,35 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginWithEmail() {
-//        if AccountChecker.hasAccount() {
-//        openWallet(animated: true)
-//        } else {
-        login(type: .email)
-//        }
+        if isDevelopMode {
+            if AccountChecker.hasAccount() {
+                openWallet(animated: true)
+            } else {
+                login(type: .email)
+            }
+        } else {
+            login(type: .email)
+        }
     }
     
     @IBAction func loginWithMetaMask() {
-        connect(walletType: .metaMask)
+        if isDevelopMode {
+            //        PNRouter.navigatorDappBrowser(url: URL(string: "opensea.io"))
+                    
+            ParticleAuthService.setChainInfo(.polygon(.mainnet)).subscribe { result in
+                switch result {
+                case .failure:
+                    break
+                case .success:
+                    //                PNRouter.navigatorSwap(swapConfig: .init(fromTokenAddress: nil, toTokenAddress: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174", fromTokenAmount: BInt(1000000000000000)))
+                            
+                    //                PNRouter.navigatorSwap(swapConfig: .init(fromTokenAddress: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174", toTokenAddress: "native", fromTokenAmount: BInt(10000)))
+                    PNRouter.navigatorSwap(swapConfig: .init(fromTokenAddress: nil, toTokenAddress: nil, fromTokenAmount: nil))
+                }
+            }.disposed(by: bag)
+        } else {
+            connect(walletType: .metaMask)
+        }
     }
     
     @IBAction func loginWithGoogle() {
@@ -203,7 +235,7 @@ class MainViewController: UIViewController {
                 
                 print(error)
             case .success(let userinfo):
-                print(userinfo)
+                print(userinfo as Any)
                 self.openWallet(animated: true)
             }
         }.disposed(by: bag)
@@ -230,14 +262,18 @@ class MainViewController: UIViewController {
                     self.showToast(title: code == nil ? "" : String(code!), message: message)
                 }
             case .success(let account):
-                print(account)
+                print(account as Any)
                 self.openWallet(animated: true)
             }
         }.disposed(by: bag)
     }
     
     private func openWallet(animated: Bool) {
-        PNRouter.navigatorWallet(hiddenBackButton: true, animated: animated)
+        if isDevelopMode {
+            PNRouter.navigatorWallet(hiddenBackButton: false, animated: animated)
+        } else {
+            PNRouter.navigatorWallet(hiddenBackButton: true, animated: animated)
+        }
     }
 }
 

@@ -1,9 +1,11 @@
 "main message 0" = "一個錢包管理多鏈資產";
-"main message 1" = "在線數據，實時更新";
-"main message 2" = "適合您所有 NFT 的美麗家園";
-"main message 3" = "更容易進入區塊鏈世界";
+"main message 1" = "線上數據，即時更新";
+"main message 2" = "查看你的NFT資產";
+"main message 3" = "輕鬆進入區塊鏈世界";
 
-"login with" = "%@ 登錄";
-"email" = "電子郵件";
-"phone number" = "電話號碼";
+"login with" = "使用%@登入";
+"email" = "郵箱";
+"phone number" = "手機號";
+
+
 

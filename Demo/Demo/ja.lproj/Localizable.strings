@@ -1,9 +1,10 @@
 "main message 0" = "1つのウォレットでマルチチェーン資産を管理";
 "main message 1" = "オンラインデータ、リアルタイム更新";
-"main message 2" = "「すべてのNFTの美しい家」";
-"main message 3" = "ブロックチェーンの世界に入りやすくする";
+"main message 2" = "あなたのNFT資産を見る";
+"main message 3" = "ブロックチェーンの世界に簡単にアクセス";
 
-"login with" = "%@でログイン";
-"email" = "電子メール";
-"phone number" = "電話番号";
+"login with" = "%@を使用したログイン";
+"email" = "メールボックス";
+"phone number" = "携帯番号";
+
 
