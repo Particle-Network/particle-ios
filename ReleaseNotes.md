@@ -1,8 +1,5 @@
 ## Release Notes
 
-### 0.9.8
-Support more chains, support dapp browser.
-
 ### 0.8.8
 Fix bugs
 
