@@ -13,8 +13,8 @@ import ConnectWalletConnectAdapter
 import ParticleAuthService
 import ParticleConnect
 import ParticleNetworkBase
-import ParticleWalletGUI
 import ParticleWalletConnect
+import ParticleWalletGUI
 import UIKit
 
 @main
@@ -41,13 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             GnosisConnectAdapter()
         ]
 
-        if ParticleNetwork.getDevEnv() == .production {
-            adapters.append(EVMConnectAdapter())
-            adapters.append(SolanaConnectAdapter())
-        } else {
-            adapters.append(EVMConnectAdapter(rpcUrl: "http://api-debug.app-link.network/evm-chain/rpc/"))
-            adapters.append(SolanaConnectAdapter(rpcUrl: "http://api-debug.app-link.network/solana/rpc/"))
-        }
+        adapters.append(EVMConnectAdapter())
+        adapters.append(SolanaConnectAdapter())
 
         // select a network
         ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: dAppData) {
@@ -68,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        ParticleWalletGUI.enablePay(false)
         // Control disable swap feature
 //        ParticleWalletGUI.enableSwap(false)
-        
+
         // show language setting in setting page
         ParticleWalletGUI.showLanguageSetting(true)
         // show appearance setting in setting page
@@ -77,18 +72,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        ParticleWalletGUI.setLanguage(.en)
         // Set user interface style
 //        ParticleNetwork.setInterfaceStyle(.unspecified)
-        
+
         // There is two way to set custom UI
         // 1.You can set custom ui json path to enable custom UI
         // In demo, make sure customUIConfig.json is mark Target Membership Demo.
 //        if let path = Bundle.main.path(forResource: "customUIConfig", ofType: "json") {
 //            try! ParticleWalletGUI.loadCustomUI(path: path)
 //        }
-        
+
         // 2.Another way to set custom ui is pass json string
 //        let jsonString = ""
 //        try! ParticleWalletGUI.loadCustomUIJsonString(jsonString)
-        
+
         // Initialize particle wallet connect sdk
         ParticleWalletConnect.initialize(
             WalletMetaData(name: "Particle Wallet",
