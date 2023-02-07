@@ -23,6 +23,7 @@ Xcode 13.3.1 or higher
 
 ### 🔌 Podfile request
 From 0.9.12, you should add more in podfile
+If you use PartcleWalletGUI, you need add this one.
 ```ruby
 pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
 ```
