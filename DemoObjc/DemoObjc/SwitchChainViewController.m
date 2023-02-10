@@ -112,7 +112,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSMutableDictionary *dict = self.data[indexPath.section];
     NSArray *array = [[dict allValues] firstObject];
-    NSString *network = array[indexPath.row];
+    NSString *network = [array[indexPath.row] lowercaseString];
     NSString *name = [[[dict allKeys] firstObject] lowercaseString];
     
     NSLog(@"%@, %@", name, network);
@@ -156,8 +156,10 @@
             chainInfo = [ChainInfo fantom:FantomNetworkTestnet];
         }
     } else if ([name  isEqual: @"arbitrum"]) {
-        if ([network  isEqual: @"mainnet"]) {
-            chainInfo = [ChainInfo arbitrum:ArbitrumNetworkMainnet];
+        if ([network  isEqual: @"one"]) {
+            chainInfo = [ChainInfo arbitrum:ArbitrumNetworkOne];
+        } else if ([network  isEqual: @"nova"]) {
+            chainInfo = [ChainInfo arbitrum:ArbitrumNetworkNova];
         } else if ([network  isEqual: @"goerli"]) {
             chainInfo = [ChainInfo arbitrum:ArbitrumNetworkGoerli];
         }
@@ -218,6 +220,9 @@
             chainInfo = [ChainInfo tron:TronNetworkNile];
         }
     }
+    
+    
+    
     [ParticleNetwork setChainInfo:chainInfo];
     
     NSString *message = [NSString stringWithFormat:@"current network is %@ - %@", name, network];

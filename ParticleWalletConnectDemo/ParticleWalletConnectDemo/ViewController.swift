@@ -129,7 +129,7 @@ extension ViewController {
         
             // control if connect
             // in demo, present a alert
-            let message = session.dAppInfo.peerMeta.name + "\n" + session.dAppInfo.peerMeta.url.absoluteString
+            let message = (session.dAppInfo.peerMeta.name ?? "") + "\n" + (session.dAppInfo.peerMeta.url?.absoluteString ?? "")
             let vc = UIAlertController(title: "Connect dapp", message: message, preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             let connectAction = UIAlertAction(title: "Connect", style: .default) { _ in
