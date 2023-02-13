@@ -10,8 +10,10 @@
             "name": "Ethereum"
         }
     ],
-    "displayTokenAddresses": ["0x6b175474e89094c44da98b954eede"],
-    "displayNFTContractAddresses": ["0x6b175474e89094c44da98b954eede"],
+    "displayTokenAddresses": ["0xaFF4481D10270F50f203E0763e2597776068CBc5"],
+    "displayNFTContractAddresses": ["0x894A6637DFde120b27B7EFEa7a913C6fC2fBaF21"],
+    "priorityTokenAddresses": ["0x6b175474e89094c44da98b954eede"],
+    "priorityNFTContractAddresses": ["0x6b175474e89094c44da98b954eede"],
     "fiatCoin": "USD",
     "evmSupportWalletConnect": true,
     "supportUIModeSwitch": true,
@@ -30,12 +32,12 @@
             "#e5e5e5",
             [
               ["#ffffff00", "#ffffff00"],
-              ["#ffffff00", "#ffffff00"],
-            ],
+              ["#ffffff00", "#ffffff00"]
+            ]
           ],
        "messageColor": ["#7DD5F9", "#ed5d51"],
        "borderGlowColors": ["#7bd5f940", "#323233"],
-       "modalMaskBackgroundColor": "#B31430b3",
+       "modalMaskBackgroundColor": "#B31430b3"
     },
     
     "dark": {
@@ -51,12 +53,13 @@
             "#14152e",
             [
               ["#e6b1f766", "#e6b1f700"],
-              ["#7dd5f94d", "#7dd5f900"],
-            ],
+              ["#7dd5f94d", "#7dd5f900"]
+            ]
           ],
        "messageColor": ["#7DD5F9", "#ed5d51"],
        "borderGlowColors": ["#7bd5f940", "#323233"],
-       "modalMaskBackgroundColor": "#B31430b3",
-    },
+       "modalMaskBackgroundColor": "#B31430b3"
+    }
 }
+
 
