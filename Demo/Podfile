@@ -4,11 +4,11 @@ platform :ios, '13.0'
 target 'Demo' do
   use_frameworks!
   source 'https://github.com/CocoaPods/Specs.git'
-    pod 'ParticleWalletGUI', '0.10.0'
-    pod 'ParticleWalletAPI', '0.10.0'
-    pod 'ParticleNetworkBase', '0.10.0'
-    pod 'ParticleAuthService', '0.10.0'
-    pod 'ParticleWalletConnect', '0.10.0'
+    pod 'ParticleWalletGUI', '0.10.1'
+    pod 'ParticleWalletAPI', '0.10.1'
+    pod 'ParticleNetworkBase', '0.10.1'
+    pod 'ParticleAuthService', '0.10.1'
+    pod 'ParticleWalletConnect', '0.10.1'
     
     pod 'ParticleConnect', '0.1.47'
     pod 'ConnectWalletConnectAdapter', '0.1.47'
@@ -17,7 +17,9 @@ target 'Demo' do
     pod 'ConnectPhantomAdapter', '0.1.47'
     pod 'ConnectCommon', '0.1.47'
     
+    # if you use ParticleWalletGUI, you need add this line.
     pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
+    # if you use ParticleWalletConnect or ConnectWalletConnectAdapter, you need add this line
     pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
 end
 
