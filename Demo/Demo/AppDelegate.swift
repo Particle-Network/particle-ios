@@ -52,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Custom Wallet GUI
         // Control if show test network
         ParticleWalletGUI.showTestNetwork(true)
-
         // Control support chains
 //        ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
 

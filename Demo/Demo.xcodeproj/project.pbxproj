@@ -623,7 +623,7 @@
 				INFOPLIST_FILE = Demo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Particle Wallet";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "We needs to take photos for QRCode";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to take photos for QR Code";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Album permission is required to access your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -665,7 +665,7 @@
 				INFOPLIST_FILE = Demo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Particle Wallet";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_NSCameraUsageDescription = "We needs to take photos for QRCode";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need to take photos for QR Code";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Album permission is required to access your photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
