@@ -44,6 +44,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         adapters.append(EVMConnectAdapter())
         adapters.append(SolanaConnectAdapter())
 
+        let moreAdapterClasses: [WalletConnectAdapter.Type] =
+            [ZerionConnectAdapter.self,
+             MathConnectAdapter.self,
+             OmniConnectAdapter.self,
+             Inch1ConnectAdapter.self,
+             ZengoConnectAdapter.self,
+             AlphaConnectAdapter.self,
+             BitpieConnectAdapter.self
+            ]
+
+        adapters.append(contentsOf: moreAdapterClasses.map {
+            $0.init()
+        })
+
+        
         // select a network
         ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: dAppData) {
             adapters

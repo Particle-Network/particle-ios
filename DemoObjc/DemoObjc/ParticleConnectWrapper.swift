@@ -26,17 +26,29 @@ public class ParticleConnectWrapper: NSObject {
             WalletConnectAdapter(),
             RainbowConnectAdapter(),
             BitkeepConnectAdapter(),
-            ImtokenConnectAdapter()
+            ImtokenConnectAdapter(),
+            TrustConnectAdapter(),
+            GnosisConnectAdapter()
         ]
 
-        if ParticleNetwork.getDevEnv() == .production {
-            adapters.append(EVMConnectAdapter())
-            adapters.append(SolanaConnectAdapter())
-        } else {
-            adapters.append(EVMConnectAdapter(rpcUrl: "http://api-debug.app-link.network/evm-chain/rpc/"))
-            adapters.append(SolanaConnectAdapter(rpcUrl: "http://api-debug.app-link.network/solana/rpc/"))
-        }
+        adapters.append(EVMConnectAdapter())
+        adapters.append(SolanaConnectAdapter())
 
+        let moreAdapterClasses: [WalletConnectAdapter.Type] =
+            [ZerionConnectAdapter.self,
+             MathConnectAdapter.self,
+             OmniConnectAdapter.self,
+             Inch1ConnectAdapter.self,
+             ZengoConnectAdapter.self,
+             AlphaConnectAdapter.self,
+             BitpieConnectAdapter.self
+            ]
+
+        adapters.append(contentsOf: moreAdapterClasses.map {
+            $0.init()
+        })
+
+        
         ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: dAppData) {
             adapters
         }

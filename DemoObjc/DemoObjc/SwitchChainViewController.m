@@ -42,7 +42,16 @@
     NSMutableDictionary *platon = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *optimism = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *tron = [[NSMutableDictionary alloc] init];
-    
+    NSMutableDictionary *okc = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *thunderCore = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *cronos = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *oasisEmerald = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *gnosis = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *celo = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *klaytn = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *scroll = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *zkSync = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *metis = [[NSMutableDictionary alloc] init];
     
     [solana setObject:@[@"mainnet", @"testnet", @"devnet"] forKey:@"solana"];
     [ethereum setObject:@[@"mainnet", @"goerli"] forKey:@"ethereum"];
@@ -51,7 +60,7 @@
     
     [avalanche setObject:@[@"mainnet", @"testnet"] forKey:@"avalanche"];
     [fantom setObject:@[@"mainnet", @"testnet"] forKey:@"fantom"];
-    [arbitrum setObject:@[@"mainnet", @"goerli"] forKey:@"arbitrum"];
+    [arbitrum setObject:@[@"one", @"nova", @"goerli"] forKey:@"arbitrum"];
     [moonBeam setObject:@[@"mainnet", @"testnet"] forKey:@"moonbeam"];
     
     [moonRiver setObject:@[@"mainnet", @"testnet"] forKey:@"moonriver"];
@@ -63,6 +72,17 @@
     [platon setObject:@[@"mainnet", @"testnet"] forKey:@"platon"];
     [optimism setObject:@[@"mainnet", @"goerli"] forKey:@"optimism"];
     [tron setObject:@[@"mainnet", @"shasta", @"nile"] forKey:@"tron"];
+    
+    [okc setObject:@[@"mainnet", @"testnet"] forKey:@"okc"];
+    [thunderCore setObject:@[@"mainnet", @"testnet"] forKey:@"thunderCore"];
+    [cronos setObject:@[@"mainnet", @"testnet"] forKey:@"cronos"];
+    [oasisEmerald setObject:@[@"mainnet", @"testnet"] forKey:@"oasisEmerald"];
+    [gnosis setObject:@[@"mainnet", @"testnet"] forKey:@"gnosis"];
+    [celo setObject:@[@"mainnet", @"testnet"] forKey:@"celo"];
+    [klaytn setObject:@[@"mainnet", @"testnet"] forKey:@"klaytn"];
+    [scroll setObject:@[@"testnetL1", @"testnetL2"] forKey:@"scroll"];
+    [zkSync setObject:@[@"mainnet", @"testnet"] forKey:@"zkSync"];
+    [metis setObject:@[@"mainnet", @"goerli"] forKey:@"metis"];
     
     [self.data addObjectsFromArray:@[solana, ethereum, bsc, polygon, avalanche, fantom, arbitrum, moonBeam, moonRiver, heco, aurora, harmony, kcc, platon, optimism, tron]];
 }
@@ -219,9 +239,67 @@
         } else if ([network  isEqual: @"nile"]) {
             chainInfo = [ChainInfo tron:TronNetworkNile];
         }
+    } else if ([name  isEqual: @"okc"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo okc:OKCNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo okc:OKCNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"thunderCore"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo thunderCore:ThunderCoreNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo thunderCore:ThunderCoreNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"cronos"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo cronos:CronosNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo cronos:CronosNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"oasisEmerald"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo oasisEmerald:OasisEmeraldNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo oasisEmerald:OasisEmeraldNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"gnosis"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo gnosis:GnosisNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo gnosis:GnosisNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"celo"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo celo:CeloNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo celo:CeloNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"klaytn"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo klaytn:KlaytnNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo klaytn:KlaytnNetworkTestnet];
+        }
+    } else if ([name  isEqual: @"scroll"]) {
+        if ([network  isEqual: @"testnetL1"]) {
+            chainInfo = [ChainInfo scroll:ScrollNetworkTestnetL1];
+        } else if ([network  isEqual: @"testnetL2"]) {
+            chainInfo = [ChainInfo scroll:ScrollNetworkTestnetL2];
+        }
+    } else if ([name  isEqual: @"zkSync"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo zkSyncV2:ZkSyncV2NetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo zkSyncV2:ZkSyncV2NetworkTestnet];
+        }
+    } else if ([name  isEqual: @"metis"]) {
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo metis:MetisNetworkMainnet];
+        } else if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo metis:MetisNetworkGoerli];
+        }
     }
-    
-    
     
     [ParticleNetwork setChainInfo:chainInfo];
     
@@ -234,7 +312,6 @@
     }]];
     
     [self presentViewController:alert animated:YES completion:nil];
-    
     
 }
 

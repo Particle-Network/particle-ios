@@ -11,7 +11,7 @@ PODS:
   - libwebp/mux (1.2.4):
     - libwebp/demux
   - libwebp/webp (1.2.4)
-  - ParticleAuthService (0.10.0):
+  - ParticleAuthService (0.10.3):
     - CryptoSwift
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
@@ -19,10 +19,10 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleNetworkBase (0.10.0):
+  - ParticleNetworkBase (0.10.3):
     - BigInt (~> 5.2.0)
     - CryptoSwift
-  - ParticleWalletConnect (0.10.0):
+  - ParticleWalletConnect (0.10.3):
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -51,9 +51,9 @@ PODS:
     - CryptoSwift (~> 1.5)
 
 DEPENDENCIES:
-  - ParticleAuthService (= 0.10.0)
-  - ParticleNetworkBase (= 0.10.0)
-  - ParticleWalletConnect (= 0.10.0)
+  - ParticleAuthService (= 0.10.3)
+  - ParticleNetworkBase (= 0.10.3)
+  - ParticleWalletConnect (= 0.10.3)
   - SDWebImage
   - SDWebImageWebPCoder
   - WalletConnectSwift (from `https://github.com/SunZhiC/WalletConnectSwift`, branch `master`)
@@ -91,9 +91,9 @@ SPEC CHECKSUMS:
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
   CryptoSwift: 562f8eceb40e80796fffc668b0cad9313284cfa6
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
-  ParticleAuthService: 5989e60849a0cc355e8cd6d891990d3fe2161059
-  ParticleNetworkBase: e2445bb903401b61ce1a572ecb32c5ebcea1faa8
-  ParticleWalletConnect: b37bfef28fcfdc8c4ed73d104c9699af22cad84f
+  ParticleAuthService: 0970cbe89cd3170aeb2d534bc34688ea99538b30
+  ParticleNetworkBase: f42f5a7bad3afb7c127bbdef53f5c6d910b5d793
+  ParticleWalletConnect: 2ec91074cfdd3286e4fae9de5eb18dbf0eb86fcd
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -104,6 +104,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   WalletConnectSwift: 6309bf3011b0b30e3e9d1e7449535302a9240f71
 
-PODFILE CHECKSUM: 727193519af498d74b6d027952bf0b39d3555e06
+PODFILE CHECKSUM: 6d67e0a48db057b7004a1e2c22dc296dcdd3b905
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0
