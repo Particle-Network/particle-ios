@@ -10,16 +10,16 @@ This repository contains [Auth Service](https://docs.particle.network/auth-servi
 # Prerequisites
 Install the following:
 
-Xcode 13.3.1 or higher
+Xcode 14.1 or higher
 
 
-| Xcode version                | 13.3.1 ~ 14.2 | 
+| Xcode version                | 14.1 or higher | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 0.10.3         |
-| ParticleAuthService          | 0.10.3         |
-| ParticleWalletAPI            | 0.10.3         |
-| ParticleWalletGUI            | 0.10.3         |
-| ParticleWalletConnect        | 0.10.3         | 
+| ParticleNetworkBase          | 0.11.0         |
+| ParticleAuthService          | 0.11.0         |
+| ParticleWalletAPI            | 0.11.0         |
+| ParticleWalletGUI            | 0.11.0         |
+| ParticleWalletConnect        | 0.11.0         | 
 
 ### 🔌 Podfile request
 From 0.9.12, you should add more in podfile
@@ -102,8 +102,6 @@ pod install --repo-update
 1. https://docs.particle.network/auth-service/sdks/ios
 2. https://docs.particle.network/wallet-service/sdks/ios
 
-
-2. Run Xcode with Rosetta.
 
 ## 💼 Give Feedback
 Please report bugs or issues to [particle-ios/issues](https://github.com/Particle-Network/particle-ios/issues)

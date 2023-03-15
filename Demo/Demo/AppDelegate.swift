@@ -108,6 +108,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If disable wallet conenct feature, you dont need to initialize particle Wallet Connect.
         ParticleWalletGUI.supportWalletConnect(true)
 
+        
+        ParticleAuthService.setSecurityAccountConfig(config: .init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootVC
