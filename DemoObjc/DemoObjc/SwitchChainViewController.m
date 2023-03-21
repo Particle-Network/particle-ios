@@ -282,21 +282,19 @@
             chainInfo = [ChainInfo klaytn:KlaytnNetworkTestnet];
         }
     } else if ([name  isEqual: @"scroll"]) {
-        if ([network  isEqual: @"testnetL1"]) {
-            chainInfo = [ChainInfo scroll:ScrollNetworkTestnetL1];
-        } else if ([network  isEqual: @"testnetL2"]) {
-            chainInfo = [ChainInfo scroll:ScrollNetworkTestnetL2];
+        if ([network  isEqual: @"testnet"]) {
+            chainInfo = [ChainInfo scroll:ScrollNetworkTestnet];
         }
     } else if ([name  isEqual: @"zkSync"]) {
         if ([network  isEqual: @"mainnet"]) {
-            chainInfo = [ChainInfo zkSyncV2:ZkSyncV2NetworkMainnet];
+            chainInfo = [ChainInfo zkSync:ZkSyncNetworkMainnet];
         } else if ([network  isEqual: @"testnet"]) {
-            chainInfo = [ChainInfo zkSyncV2:ZkSyncV2NetworkTestnet];
+            chainInfo = [ChainInfo zkSync:ZkSyncNetworkTestnet];
         }
     } else if ([name  isEqual: @"metis"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo metis:MetisNetworkMainnet];
-        } else if ([network  isEqual: @"testnet"]) {
+        } else if ([network  isEqual: @"goerli"]) {
             chainInfo = [ChainInfo metis:MetisNetworkGoerli];
         }
     }
