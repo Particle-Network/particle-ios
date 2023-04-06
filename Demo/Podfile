@@ -17,6 +17,7 @@ target 'Demo' do
     pod 'ConnectPhantomAdapter', '0.1.51'
     pod 'ConnectCommon', '0.1.51'
     
+    pod 'CryptoSwift', '1.6.0'
     # if you use ParticleWalletGUI, you need add this line.
     pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
     # if you use ParticleWalletConnect or ConnectWalletConnectAdapter, you need add this line
@@ -42,4 +43,14 @@ post_install do |installer|
           end
         end
       end
+        
+        
+      installer.generated_projects.each do |project|
+            project.targets.each do |target|
+                target.build_configurations.each do |config|
+                    config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+                 end
+            end
+     end
+        
 end

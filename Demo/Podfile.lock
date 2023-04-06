@@ -37,7 +37,7 @@ PODS:
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
     - WalletConnectSwift
-  - CryptoSwift (1.5.1)
+  - CryptoSwift (1.6.0)
   - GenericJSON (2.0.2)
   - GLTFSceneKit (0.3.0)
   - GRDB.swift (5.26.1):
@@ -138,6 +138,7 @@ DEPENDENCIES:
   - ConnectPhantomAdapter (= 0.1.51)
   - ConnectSolanaAdapter (= 0.1.51)
   - ConnectWalletConnectAdapter (= 0.1.51)
+  - CryptoSwift (= 1.6.0)
   - ParticleAuthService (= 0.11.4)
   - ParticleConnect (= 0.1.51)
   - ParticleNetworkBase (= 0.11.4)
@@ -208,7 +209,7 @@ SPEC CHECKSUMS:
   ConnectPhantomAdapter: 336daf192b89c4a23f2dfdb3271e757ba8ded002
   ConnectSolanaAdapter: 44294eccd4b9b1410ab09236e7d18270d81c3a80
   ConnectWalletConnectAdapter: 02acccb1c0afab335dd1aafe3f73317f0d666a69
-  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
+  CryptoSwift: 562f8eceb40e80796fffc668b0cad9313284cfa6
   GenericJSON: 79a840eeb77030962e8cf02a62d36bd413b67626
   GLTFSceneKit: d1b437c514ba2aed5555afb0fddd64e030612d57
   GRDB.swift: e98cd55ec99dea5da99355d588149063e4cfa0eb
@@ -238,6 +239,6 @@ SPEC CHECKSUMS:
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
   WalletConnectSwift: 6309bf3011b0b30e3e9d1e7449535302a9240f71
 
-PODFILE CHECKSUM: c5912b9ae5127f45c3251d42357d945bf75ef21f
+PODFILE CHECKSUM: 5c806dd572afde14c848e586eedcbe02bd93a9f3
 
 COCOAPODS: 1.12.0
