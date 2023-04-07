@@ -15,14 +15,14 @@ Xcode 14.1 or higher
 
 | Xcode version                | 14.1 or higher | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 0.11.4         |
-| ParticleAuthService          | 0.11.4         |
-| ParticleWalletAPI            | 0.11.4         |
-| ParticleWalletGUI            | 0.11.4         |
-| ParticleWalletConnect        | 0.11.4         | 
+| ParticleNetworkBase          | 0.12.0         |
+| ParticleAuthService          | 0.12.0         |
+| ParticleWalletAPI            | 0.12.0         |
+| ParticleWalletGUI            | 0.12.0         |
+| ParticleWalletConnect        | 0.12.0         | 
 
 ### 🔌 Podfile request
-From 0.9.12, you should add more in podfile
+From 0.9.12, you should add more in Podfile
 If you use PartcleWalletGUI, you need add this one.
 ```ruby
 pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
@@ -30,6 +30,7 @@ pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :bran
 If you use PartcleWalletConnect or ConenctWalletConnectAdapter, you need add this one.
 ```ruby
 pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
+pod 'SwiftMessages', :git => 'https://github.com/SunZhiC/SwiftMessages', :branch => 'master'
 ```
 
 ###  🧂 Update Podfile

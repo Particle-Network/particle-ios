@@ -13,11 +13,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>metamask</string>
@@ -34,5 +29,10 @@
 		<string>awallet</string>
 		<string>bitpie</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
