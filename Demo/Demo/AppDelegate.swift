@@ -16,6 +16,7 @@ import ParticleNetworkBase
 import ParticleWalletConnect
 import ParticleWalletGUI
 import UIKit
+import ParticleBiconomy
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -105,9 +106,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                            url: URL(string: "https://particle.network")!,
                            description: nil))
         // Control if disable wallet connect feature.
-        // If disable wallet conenct feature, you dont need to initialize particle Wallet Connect.
+        // If disable wallet connect feature, you dont need to initialize particle Wallet Connect.
         ParticleWalletGUI.supportWalletConnect(true)
 
+        // Initialize Biconomy service
+        BiconomyService.initialize(version: .v1_0_0, dappApiKeys: [:])
+        // create a biconomy service
+        let biconomyService = BiconomyService()
+        // set it to ParticleNetwork
+        ParticleNetwork.setBiconomyService(biconomyService)
+        
         
         ParticleAuthService.setSecurityAccountConfig(config: .init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
