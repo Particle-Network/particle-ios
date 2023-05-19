@@ -5,9 +5,9 @@ target 'ParticleWalletConnectDemo' do
 source 'https://github.com/CocoaPods/Specs.git'
 
   use_frameworks!
-pod 'ParticleNetworkBase', '0.12.0'
-pod 'ParticleWalletConnect', '0.12.0'
-pod 'ParticleAuthService', '0.12.0'
+pod 'ParticleNetworkBase', '0.13.2'
+pod 'ParticleWalletConnect', '0.13.2'
+pod 'ParticleAuthService', '0.13.2'
 
 pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
 

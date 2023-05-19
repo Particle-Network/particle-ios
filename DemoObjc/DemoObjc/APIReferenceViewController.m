@@ -233,8 +233,8 @@
     NSString *mintAddress = @"";
     NSString *toAddress = @"";
     NSString *tokenId = @"";
-    NSInteger amount = 1;
-    NFTSendConfig *config = [[NFTSendConfig alloc] initWithAddress:mintAddress toAddress:toAddress tokenId:tokenId amount:amount];
+    NSString *amount = @"1";
+    NFTSendConfig *config = [[NFTSendConfig alloc] initWithAddress:mintAddress toAddress:toAddress tokenId:tokenId amountString:amount];
     [PNRouter navigatorNFTSendWithNftSendConfig:config];
 }
 
