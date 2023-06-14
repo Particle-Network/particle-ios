@@ -15,12 +15,12 @@ Xcode 14.1 or higher
 
 | Xcode version                | 14.1 or higher | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 0.13.3         |
-| ParticleAuthService          | 0.13.3         |
-| ParticleWalletAPI            | 0.13.3         |
-| ParticleWalletGUI            | 0.13.3         |
-| ParticleWalletConnect        | 0.13.3         | 
-| ParticleBiconomy             | 0.13.3         | 
+| ParticleNetworkBase          | 0.13.4         |
+| ParticleAuthService          | 0.13.4         |
+| ParticleWalletAPI            | 0.13.4         |
+| ParticleWalletGUI            | 0.13.4         |
+| ParticleWalletConnect        | 0.13.4         | 
+| ParticleBiconomy             | 0.13.4         | 
 
 ### 🔌 Podfile request
 From 0.9.12, you should add more in Podfile

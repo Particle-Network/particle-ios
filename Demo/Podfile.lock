@@ -55,7 +55,7 @@ PODS:
     - libwebp/demux
   - libwebp/webp (1.2.4)
   - MJRefresh (3.7.5)
-  - ParticleAuthService (0.13.3):
+  - ParticleAuthService (0.13.5):
     - CryptoSwift
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
@@ -63,12 +63,12 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleBiconomy (0.13.3):
+  - ParticleBiconomy (0.13.5):
     - ParticleNetworkBase
   - ParticleConnect (0.1.53):
     - ConnectCommon
     - ParticleAuthService
-  - ParticleNetworkBase (0.13.3):
+  - ParticleNetworkBase (0.13.5):
     - BigInt (~> 5.2.0)
     - CryptoSwift
     - RxAlamofire (~> 6.1.1)
@@ -76,7 +76,7 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletAPI (0.13.3):
+  - ParticleWalletAPI (0.13.5):
     - CryptoSwift
     - GRDB.swift (= 5.26.1)
     - ParticleNetworkBase
@@ -85,14 +85,14 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletConnect (0.13.3):
+  - ParticleWalletConnect (0.13.5):
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.5.0)
     - RxSwift (= 6.5.0)
     - SwiftyUserDefaults (~> 5.3.0)
     - WalletConnectSwift
-  - ParticleWalletGUI (0.13.3):
+  - ParticleWalletGUI (0.13.5):
     - ConnectEVMAdapter
     - ConnectPhantomAdapter
     - ConnectSolanaAdapter
@@ -121,9 +121,9 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
-  - SDWebImage (5.15.8):
-    - SDWebImage/Core (= 5.15.8)
-  - SDWebImage/Core (5.15.8)
+  - SDWebImage (5.16.0):
+    - SDWebImage/Core (= 5.16.0)
+  - SDWebImage/Core (5.16.0)
   - SDWebImageWebPCoder (0.11.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.15)
@@ -146,13 +146,13 @@ DEPENDENCIES:
   - ConnectPhantomAdapter (= 0.1.53)
   - ConnectSolanaAdapter (= 0.1.53)
   - ConnectWalletConnectAdapter (= 0.1.53)
-  - ParticleAuthService (= 0.13.3)
-  - ParticleBiconomy (= 0.13.3)
+  - ParticleAuthService (= 0.13.5)
+  - ParticleBiconomy (= 0.13.5)
   - ParticleConnect (= 0.1.53)
-  - ParticleNetworkBase (= 0.13.3)
-  - ParticleWalletAPI (= 0.13.3)
-  - ParticleWalletConnect (= 0.13.3)
-  - ParticleWalletGUI (= 0.13.3)
+  - ParticleNetworkBase (= 0.13.5)
+  - ParticleWalletAPI (= 0.13.5)
+  - ParticleWalletConnect (= 0.13.5)
+  - ParticleWalletGUI (= 0.13.5)
   - SkeletonView (from `https://github.com/SunZhiC/SkeletonView.git`, branch `main`)
   - SwiftMessages (from `https://github.com/SunZhiC/SwiftMessages`, branch `master`)
   - WalletConnectSwift (from `https://github.com/SunZhiC/WalletConnectSwift`, branch `master`)
@@ -232,18 +232,18 @@ SPEC CHECKSUMS:
   JXSegmentedView: fec0d335355b6e019c494fe2e030bde8a36d2df6
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
-  ParticleAuthService: 0e1f0fec7613f1bd7da5bfed2c0b134242f90ef8
-  ParticleBiconomy: f93ff2c54012c2a705ef81e5f9584c8259248226
+  ParticleAuthService: 3c23f50e6c0e919c473cee57be7156dc6b40fa0c
+  ParticleBiconomy: 0a8fd3486d3b56243aa6343ac3afc7d772f6e945
   ParticleConnect: 9f0144cb2631dd407a930447161e7ee6548f44fa
-  ParticleNetworkBase: c8ed86d5c5309fd775b3bcef1162bbaf7a08b3a3
-  ParticleWalletAPI: 1521c7cf599aee699f81b5af57b2dc35a45c5975
-  ParticleWalletConnect: a4d1c4ba20edef7b0e19eca74d4ef420f1c3b263
-  ParticleWalletGUI: ceef7287b6de56a1c87b32929a5674ed99734fc7
+  ParticleNetworkBase: 7e8ad8ed3e91a066fcd0d20a7b79a146bf66611b
+  ParticleWalletAPI: a9dfcbc6430485ed0eacd59ce90c164715a6ea6e
+  ParticleWalletConnect: 6978720392081fb7af58bc545737c40def92832d
+  ParticleWalletGUI: 0a5ee3ed8aaa1be13eb62035cda5f742e4844362
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SDWebImage: cb032eba469c54e0000e78bcb0a13cdde0a52798
+  SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
   SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
@@ -255,6 +255,6 @@ SPEC CHECKSUMS:
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
   WalletConnectSwift: 6309bf3011b0b30e3e9d1e7449535302a9240f71
 
-PODFILE CHECKSUM: 54fbbec9ed9c20ad8358b71f1fad9e402db453dd
+PODFILE CHECKSUM: 8331b8753dd97f854626e9532948b88e42c44240
 
 COCOAPODS: 1.12.0
