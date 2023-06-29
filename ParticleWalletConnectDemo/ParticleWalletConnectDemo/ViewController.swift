@@ -18,14 +18,18 @@ class ViewController: UIViewController, ParticleWalletConnectDelegate {
     @IBOutlet var tableView: UITableView!
     
     let bag = DisposeBag()
-    var sessions: [Session] = []
+    var dapps: [DappMetaData] = []
     let cellIdentifier = "sessionCell"
+    
+    lazy var pwc = ParticleWalletConnect()
+    
+    var userInfo: UserInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 //        tableView.allowsSelection = false
         // Set ParticleWalletConnect delegate
-        ParticleWalletConnect.shared.delegate = self
+        pwc.delegate = self
         // set SDWebImage to support webp format.
         let webpCoder = SDImageWebPCoder.shared
         SDImageCodersManager.shared.addCoder(webpCoder)
@@ -36,11 +40,13 @@ class ViewController: UIViewController, ParticleWalletConnectDelegate {
     
     @IBAction func loginParticle() {
         ParticleAuthService.login(type: .email).subscribe { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let userInfo):
                 print(userInfo)
+                self.userInfo = userInfo
             }
         }.disposed(by: bag)
     }
@@ -49,13 +55,24 @@ class ViewController: UIViewController, ParticleWalletConnectDelegate {
         let vc = ScanViewController()
         vc.scanHandler = { [weak self] code in
             guard let self = self else { return }
-            ParticleWalletConnect.shared.connect(code: code)
+            
+            do {
+                try self.pwc.connect(code: code)
+            } catch {
+                print(error)
+            }
         }
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func loadData() {
-        sessions = ParticleWalletConnect.shared.getAllSessions()
+        guard let publicAddress = userInfo?.wallets.first(where: {
+            $0.chainName == "evm_chain"
+        })?.publicAddress else {
+            print("no evm address")
+            return
+        }
+        dapps = pwc.getAllDapps(publicAddress: publicAddress)
         tableView.reloadData()
     }
 }
@@ -66,29 +83,36 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sessions.count
+        return dapps.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         cell.selectionStyle = .none
-        let name = sessions[indexPath.row].dAppInfo.peerMeta.name
-        let url = sessions[indexPath.row].dAppInfo.peerMeta.url
-        let icon = sessions[indexPath.row].dAppInfo.peerMeta.icons.first
+        let dapp = dapps[indexPath.row]
+        let name = dapp.name
+        let icon = dapp.icons.first
         cell.textLabel?.text = name
-        cell.imageView?.sd_setImage(with: icon)
+        if let icon = icon, let iconUrl = URL(string: icon) {
+            cell.imageView?.sd_setImage(with: iconUrl)
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
         -> UISwipeActionsConfiguration?
     {
-        let session = sessions[indexPath.row]
+        let dapp = dapps[indexPath.row]
         let deleteAction = UIContextualAction(style: .destructive, title: "Disconnect", handler: { _, _,
                 _ in
             
-            ParticleWalletConnect.shared.disconnect(session: session)
-            ParticleWalletConnect.shared.removeSession(by: session.url.topic)
+            do {
+                try self.pwc.disconnect(topic: dapp.topic)
+            } catch {
+                print(error)
+            }
+           
+            self.pwc.removeSession(by: dapp.topic)
             self.loadData()
         })
         
@@ -106,7 +130,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ViewController {
-    
     func request(topic: String, method: String, params: [Encodable], completion: @escaping (WCResult<Data?>) -> Void) {
         // call ParticleProvider to handle request from dapp
         // also you can interrupt method by yourself
@@ -116,10 +139,40 @@ extension ViewController {
         } failureHandler: { error in
             print(error)
             if let responseError = error as? ParticleNetwork.ResponseError {
-                let err: WCResponseError = WCResponseError(code: responseError.code, message: responseError.message, data: responseError.data)
+                let err = WCResponseError(code: responseError.code, message: responseError.message, data: responseError.data)
                 completion(.failure(err))
             }
         }
+    }
+    
+    func shouldConnectDapp(_ dappMetaData: DappMetaData, completion: @escaping (String, Int) -> Void) {
+        DispatchQueue.main.async {
+            let chainId = ParticleNetwork.getChainInfo().chainId
+            let publicAddress = ParticleAuthService.getAddress()
+        
+            // control if connect
+            // in demo, present a alert
+            let message = dappMetaData.name + "\n" + dappMetaData.url
+            let vc = UIAlertController(title: "Connect dapp", message: message, preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+            let connectAction = UIAlertAction(title: "Connect", style: .default) { _ in
+                completion(publicAddress, chainId)
+                self.loadData()
+            }
+        
+            vc.addAction(cancelAction)
+            vc.addAction(connectAction)
+        
+            self.present(vc, animated: true)
+        }
+    }
+    
+    func didConnectDapp(_ topic: String) {
+        print("Did connect dapp \(topic)")
+    }
+    
+    func didDisconnectDapp(_ topic: String) {
+        print("Did disconnect dapp \(topic)")
     }
     
     func shouldStartSession(_ session: WalletConnectSwift.Session, completion: @escaping (String, Int) -> Void) {
@@ -142,13 +195,5 @@ extension ViewController {
         
             self.present(vc, animated: true)
         }
-    }
-    
-    func didConnectSession(_ session: WalletConnectSwift.Session) {
-        print("Did connect session \(session)")
-    }
-    
-    func didDisconnect(_ session: WalletConnectSwift.Session) {
-        print("Did disconnect session \(session)")
     }
 }

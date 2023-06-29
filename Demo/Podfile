@@ -4,23 +4,22 @@ platform :ios, '13.0'
 target 'Demo' do
   use_frameworks!
   source 'https://github.com/CocoaPods/Specs.git'
-    pod 'ParticleWalletGUI', '0.13.5'
-    pod 'ParticleWalletAPI', '0.13.5'
-    pod 'ParticleNetworkBase', '0.13.5'
-    pod 'ParticleAuthService', '0.13.5'
-    pod 'ParticleWalletConnect', '0.13.5'
-    pod 'ParticleBiconomy', '0.13.5'
+    pod 'ParticleWalletGUI', '0.14.0'
+    pod 'ParticleWalletAPI', '0.14.0'
+    pod 'ParticleNetworkBase', '0.14.0'
+    pod 'ParticleAuthService', '0.14.0'
+    pod 'ParticleWalletConnect', '0.14.0'
+    pod 'ParticleBiconomy', '0.14.0'
     
-    pod 'ParticleConnect', '0.1.53'
-    pod 'ConnectWalletConnectAdapter', '0.1.53'
-    pod 'ConnectEVMAdapter', '0.1.53'
-    pod 'ConnectSolanaAdapter', '0.1.53'
-    pod 'ConnectPhantomAdapter', '0.1.53'
-    pod 'ConnectCommon', '0.1.53'
+    pod 'ParticleConnect', '0.2.0'
+    pod 'ConnectWalletConnectAdapter', '0.2.0'
+    pod 'ConnectEVMAdapter', '0.2.0'
+    pod 'ConnectSolanaAdapter', '0.2.0'
+    pod 'ConnectPhantomAdapter', '0.2.0'
+    pod 'ConnectCommon', '0.2.0'
     
     # if you use ParticleWalletGUI, you need add this line.
     pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
-    
     # if you use ParticleWalletConnect or ConnectWalletConnectAdapter, you need add this line
     pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
     pod 'SwiftMessages', :git => 'https://github.com/SunZhiC/SwiftMessages', :branch => 'master'

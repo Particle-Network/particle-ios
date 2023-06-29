@@ -198,8 +198,6 @@
     } else if ([name  isEqual: @"heco"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo heco:HecoNetworkMainnet];
-        } else if ([network  isEqual: @"testnet"]) {
-            chainInfo = [ChainInfo heco:HecoNetworkTestnet];
         }
     } else if ([name  isEqual: @"aurora"]) {
         if ([network  isEqual: @"mainnet"]) {

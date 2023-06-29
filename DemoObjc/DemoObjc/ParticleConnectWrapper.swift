@@ -17,7 +17,7 @@ import ParticleWalletGUI
 
 public class ParticleConnectWrapper: NSObject {
     @objc public static func initParticleConnect() {
-        let dAppData = DAppMetaData(name: "Test", icon: URL(string: "https://static.particle.network/wallet-icons/Particle.png")!, url: URL(string: "https://static.particle.network")!)
+        
 
         var adapters: [ConnectAdapter] = [
             MetaMaskConnectAdapter(),
@@ -49,7 +49,7 @@ public class ParticleConnectWrapper: NSObject {
         })
 
         
-        ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: dAppData) {
+        ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: .standard) {
             adapters
         }
 
