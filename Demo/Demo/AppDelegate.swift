@@ -33,8 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             RainbowConnectAdapter(),
             BitkeepConnectAdapter(),
             ImtokenConnectAdapter(),
-            TrustConnectAdapter(),
-            GnosisConnectAdapter()
+            TrustConnectAdapter()
         ]
 
         adapters.append(EVMConnectAdapter())
