@@ -11,7 +11,7 @@ PODS:
   - libwebp/mux (1.2.4):
     - libwebp/demux
   - libwebp/webp (1.2.4)
-  - ParticleAuthService (0.14.3):
+  - ParticleAuthService (0.14.5):
     - CryptoSwift
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
@@ -19,7 +19,7 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleNetworkBase (0.14.3):
+  - ParticleNetworkBase (0.14.5):
     - BigInt (~> 5.2.0)
     - CryptoSwift
     - RxAlamofire (~> 6.1.1)
@@ -27,12 +27,12 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletConnect (0.14.3):
+  - ParticleWalletConnect (0.14.5):
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.5.0)
     - RxSwift (= 6.5.0)
-    - Starscream (= 3.1.1)
+    - Starscream (= 4.0.4)
     - SwiftyUserDefaults (~> 5.3.0)
     - WalletConnectSwift
     - WalletConnectSwiftV2
@@ -53,7 +53,7 @@ PODS:
   - SDWebImageWebPCoder (0.11.0):
     - libwebp (~> 1.0)
     - SDWebImage/Core (~> 5.15)
-  - Starscream (3.1.1)
+  - Starscream (4.0.4)
   - SwiftyJSON (5.0.1)
   - SwiftyUserDefaults (5.3.0)
   - WalletConnectSwift (1.7.0):
@@ -85,12 +85,13 @@ PODS:
     - WalletConnectSwiftV2/WalletConnectUtils
 
 DEPENDENCIES:
-  - ParticleAuthService (= 0.14.3)
-  - ParticleNetworkBase (= 0.14.3)
-  - ParticleWalletConnect (= 0.14.3)
+  - ParticleAuthService (= 0.14.5)
+  - ParticleNetworkBase (= 0.14.5)
+  - ParticleWalletConnect (= 0.14.5)
   - SDWebImage
   - SDWebImageWebPCoder
   - WalletConnectSwift (from `https://github.com/SunZhiC/WalletConnectSwift`, branch `master`)
+  - WalletConnectSwiftV2 (= 1.6.10)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -127,21 +128,21 @@ SPEC CHECKSUMS:
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
   CryptoSwift: e71dbe5bbb7a945e365d4b9034dbccf28d033a8f
   libwebp: f62cb61d0a484ba548448a4bd52aabf150ff6eef
-  ParticleAuthService: 3c462c6fa38223b9506ab7f95a05a3d7c6bf5873
-  ParticleNetworkBase: 652a148026225c37e37a63d0951597b983f75838
-  ParticleWalletConnect: 16179e6e87047af866c208eaa3b32fb441a7c1f7
+  ParticleAuthService: 76ec631dec6a5d49afee99009aac1b77c966403e
+  ParticleNetworkBase: 20b2deb9b7639055e066d7cc9abb81a408eea744
+  ParticleWalletConnect: 5a178d95d738be703beb645ef79b6a3fdda454f6
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   SDWebImageWebPCoder: 295a6573c512f54ad2dd58098e64e17dcf008499
-  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   WalletConnectSwift: 6309bf3011b0b30e3e9d1e7449535302a9240f71
   WalletConnectSwiftV2: 2dbca2dd7bdc3c95b4029d0b63576e40d2787589
 
-PODFILE CHECKSUM: 6a47bb16abf20c5546d277d8e16e208a330b6d8e
+PODFILE CHECKSUM: 31895f38f2c0cb091acdbba7ac6ccf8090c5b102
 
 COCOAPODS: 1.12.0

@@ -148,29 +148,29 @@ PODS:
   - TweetNacl (1.0.2)
   - WalletConnectSwift (1.7.0):
     - CryptoSwift (~> 1.5)
-  - WalletConnectSwiftV2 (1.6.8):
-    - WalletConnectSwiftV2/WalletConnect (= 1.6.8)
-  - WalletConnectSwiftV2/Commons (1.6.8)
-  - WalletConnectSwiftV2/HTTPClient (1.6.8)
-  - WalletConnectSwiftV2/JSONRPC (1.6.8):
+  - WalletConnectSwiftV2 (1.6.10):
+    - WalletConnectSwiftV2/WalletConnect (= 1.6.10)
+  - WalletConnectSwiftV2/Commons (1.6.10)
+  - WalletConnectSwiftV2/HTTPClient (1.6.10)
+  - WalletConnectSwiftV2/JSONRPC (1.6.10):
     - WalletConnectSwiftV2/Commons
-  - WalletConnectSwiftV2/WalletConnect (1.6.8):
+  - WalletConnectSwiftV2/WalletConnect (1.6.10):
     - WalletConnectSwiftV2/WalletConnectPairing
     - WalletConnectSwiftV2/WalletConnectVerify
-  - WalletConnectSwiftV2/WalletConnectJWT (1.6.8):
+  - WalletConnectSwiftV2/WalletConnectJWT (1.6.10):
     - WalletConnectSwiftV2/WalletConnectKMS
-  - WalletConnectSwiftV2/WalletConnectKMS (1.6.8):
+  - WalletConnectSwiftV2/WalletConnectKMS (1.6.10):
     - WalletConnectSwiftV2/WalletConnectUtils
-  - WalletConnectSwiftV2/WalletConnectNetworking (1.6.8):
+  - WalletConnectSwiftV2/WalletConnectNetworking (1.6.10):
     - WalletConnectSwiftV2/HTTPClient
     - WalletConnectSwiftV2/WalletConnectRelay
-  - WalletConnectSwiftV2/WalletConnectPairing (1.6.8):
+  - WalletConnectSwiftV2/WalletConnectPairing (1.6.10):
     - WalletConnectSwiftV2/WalletConnectNetworking
-  - WalletConnectSwiftV2/WalletConnectRelay (1.6.8):
+  - WalletConnectSwiftV2/WalletConnectRelay (1.6.10):
     - WalletConnectSwiftV2/WalletConnectJWT
-  - WalletConnectSwiftV2/WalletConnectUtils (1.6.8):
+  - WalletConnectSwiftV2/WalletConnectUtils (1.6.10):
     - WalletConnectSwiftV2/JSONRPC
-  - WalletConnectSwiftV2/WalletConnectVerify (1.6.8):
+  - WalletConnectSwiftV2/WalletConnectVerify (1.6.10):
     - WalletConnectSwiftV2/WalletConnectNetworking
     - WalletConnectSwiftV2/WalletConnectUtils
 
@@ -190,7 +190,7 @@ DEPENDENCIES:
   - SkeletonView (from `https://github.com/SunZhiC/SkeletonView.git`, branch `main`)
   - SwiftMessages (from `https://github.com/SunZhiC/SwiftMessages`, branch `master`)
   - WalletConnectSwift (from `https://github.com/SunZhiC/WalletConnectSwift`, branch `master`)
-  - WalletConnectSwiftV2 (= 1.6.8)
+  - WalletConnectSwiftV2 (= 1.6.10)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -296,8 +296,8 @@ SPEC CHECKSUMS:
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
   WalletConnectSwift: 6309bf3011b0b30e3e9d1e7449535302a9240f71
-  WalletConnectSwiftV2: 8e726c471ba6ed4337978f7410c8d0c652d5c53b
+  WalletConnectSwiftV2: 2dbca2dd7bdc3c95b4029d0b63576e40d2787589
 
-PODFILE CHECKSUM: f3dfffd764ab0f748e7ffdc6b4aaaf0002328518
+PODFILE CHECKSUM: 94e6eb40c787cdd0bb00f8ca65068656cbc2da4c
 
 COCOAPODS: 1.12.0

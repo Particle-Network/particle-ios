@@ -19,7 +19,7 @@ target 'Demo' do
     pod 'ConnectCommon', '0.2.4'
     
     
-    pod 'WalletConnectSwiftV2', '1.6.8'
+    pod 'WalletConnectSwiftV2', '1.6.10'
     
     # if you use ParticleWalletGUI, you need add this line.
     pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
