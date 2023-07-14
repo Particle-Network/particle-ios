@@ -9,6 +9,7 @@ import ConnectCommon
 import ConnectEVMAdapter
 import ConnectPhantomAdapter
 import ConnectSolanaAdapter
+import ParticleAuthAdapter
 import ConnectWalletConnectAdapter
 import Foundation
 import ParticleConnect
@@ -21,14 +22,13 @@ public class ParticleConnectWrapper: NSObject {
 
         var adapters: [ConnectAdapter] = [
             MetaMaskConnectAdapter(),
-            ParticleConnectAdapter(),
+            ParticleAuthAdapter(),
             PhantomConnectAdapter(),
             WalletConnectAdapter(),
             RainbowConnectAdapter(),
             BitkeepConnectAdapter(),
             ImtokenConnectAdapter(),
-            TrustConnectAdapter(),
-            GnosisConnectAdapter()
+            TrustConnectAdapter()
         ]
 
         adapters.append(EVMConnectAdapter())

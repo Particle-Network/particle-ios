@@ -22,13 +22,8 @@ class APIReferenceViewController: UIViewController {
     var mask: UIView?
     var loading: UIActivityIndicatorView?
     
-    @IBOutlet var enablePayButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let enablePay = ParticleWalletGUI.getEnablePay()
-        self.enablePayButton.setTitle("ENABLE PAY " + (enablePay ? "TRUE" : "FALSE"), for: .normal)
     }
     
     @IBAction func signAndSendTransaction() {
@@ -546,15 +541,6 @@ extension APIReferenceViewController {
     func hideLoading() {
         self.mask?.isHidden = true
         self.loading?.stopAnimating()
-    }
-}
-
-extension APIReferenceViewController {
-    @IBAction func enablePayClick() {
-        var enablePay = ParticleWalletGUI.getEnablePay()
-        enablePay = !enablePay
-        ParticleWalletGUI.enablePay(enablePay)
-        self.enablePayButton.setTitle("ENABLE PAY " + (enablePay ? "TRUE" : "FALSE"), for: .normal)
     }
 }
 

@@ -211,8 +211,8 @@ class MainViewController: UIViewController {
         }.disposed(by: bag)
     }
     
-    private func login(type: LoginType, account: String? = nil, supportAuthType: [SupportAuthType] = [SupportAuthType.all], loginFormMode: Bool = false) {
-        ParticleAuthService.login(type: type, account: account, supportAuthType: supportAuthType, loginFormMode: loginFormMode).subscribe { [weak self] result in
+    private func login(type: LoginType, account: String? = nil, supportAuthType: [SupportAuthType] = [SupportAuthType.all]) {
+        ParticleAuthService.login(type: type, account: account, supportAuthType: supportAuthType).subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):

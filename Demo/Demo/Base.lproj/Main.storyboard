@@ -29,12 +29,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UI Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLm-7W-v3P">
-                                <rect key="frame" x="42.000000000000007" y="684" width="118.66666666666669" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-fp-QES">
                                 <rect key="frame" x="40" y="104" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -181,34 +175,16 @@
                                     <action selector="close:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kMO-iZ-DPV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X82-sD-BkJ">
-                                <rect key="frame" x="40" y="724" width="334" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="rIF-jB-rn4"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="zm0-22-eY0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="ENABLE PAY">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="enablePayClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ah1-0V-ZIe"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9eT-Ak-RdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="1Ah-v7-I3q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bhA-fG-jAf" secondAttribute="trailing" constant="40" id="2XM-hZ-yoi"/>
-                            <constraint firstItem="X82-sD-BkJ" firstAttribute="top" secondItem="eLm-7W-v3P" secondAttribute="bottom" constant="10" id="5Cc-u0-Ag3"/>
                             <constraint firstItem="0g2-fp-QES" firstAttribute="top" secondItem="RKA-hc-f1a" secondAttribute="bottom" constant="10" id="5Cl-A9-KDP"/>
                             <constraint firstItem="H1Q-or-ehA" firstAttribute="top" secondItem="RqP-8e-AiG" secondAttribute="bottom" constant="10" id="5k4-NY-EzA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9eT-Ak-RdL" secondAttribute="trailing" constant="40" id="81h-vW-hkG"/>
                             <constraint firstItem="H1Q-or-ehA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="952-15-CTz"/>
-                            <constraint firstItem="X82-sD-BkJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="9GE-h6-gc8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YTg-Pe-noI" secondAttribute="trailing" constant="40" id="9cM-r1-Oy3"/>
                             <constraint firstItem="bhA-fG-jAf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="BYC-pB-e9s"/>
                             <constraint firstItem="ymD-Pr-hMz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="CzQ-aq-yHH"/>
@@ -222,17 +198,14 @@
                             <constraint firstItem="RqP-8e-AiG" firstAttribute="top" secondItem="ymD-Pr-hMz" secondAttribute="bottom" constant="10" id="RnA-Ph-jnC"/>
                             <constraint firstItem="0g2-fp-QES" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="UZz-Z7-AN7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RqP-8e-AiG" secondAttribute="trailing" constant="40" id="XBC-Cz-s7a"/>
-                            <constraint firstItem="eLm-7W-v3P" firstAttribute="top" secondItem="9eT-Ak-RdL" secondAttribute="bottom" constant="10" id="XM5-JW-9AV"/>
                             <constraint firstItem="c9V-fe-jVE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="aBj-S8-DHU"/>
                             <constraint firstItem="YTg-Pe-noI" firstAttribute="top" secondItem="V1f-91-dMv" secondAttribute="bottom" constant="10" id="aiY-Uc-h0J"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X82-sD-BkJ" secondAttribute="trailing" constant="40" id="awO-wK-gCw"/>
                             <constraint firstItem="RqP-8e-AiG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="eUu-DT-pGt"/>
                             <constraint firstItem="YTg-Pe-noI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="gnf-hP-9TT"/>
                             <constraint firstItem="RKA-hc-f1a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="iCD-Dx-pM6"/>
                             <constraint firstItem="P4U-n9-QMu" firstAttribute="trailing" secondItem="0g2-fp-QES" secondAttribute="trailing" id="jUP-i8-Lr9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="V1f-91-dMv" secondAttribute="trailing" constant="40" id="nJF-VF-NLM"/>
                             <constraint firstItem="RKA-hc-f1a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="omH-KB-jtr"/>
-                            <constraint firstItem="eLm-7W-v3P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="q7Y-1S-dIH"/>
                             <constraint firstItem="WTK-6v-3eq" firstAttribute="top" secondItem="bhA-fG-jAf" secondAttribute="bottom" constant="10" id="qF2-Dq-Tlg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WTK-6v-3eq" secondAttribute="trailing" constant="40" id="rot-EL-aIj"/>
                             <constraint firstItem="9eT-Ak-RdL" firstAttribute="top" secondItem="YTg-Pe-noI" secondAttribute="bottom" constant="10" id="vb9-Ug-IBQ"/>
@@ -242,9 +215,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YRo-sN-eGY"/>
-                    <connections>
-                        <outlet property="enablePayButton" destination="X82-sD-BkJ" id="H1J-tW-1E6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

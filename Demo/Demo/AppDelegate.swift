@@ -10,6 +10,7 @@ import ConnectEVMAdapter
 import ConnectPhantomAdapter
 import ConnectSolanaAdapter
 import ConnectWalletConnectAdapter
+import ParticleAuthAdapter
 import ParticleAuthService
 import ParticleBiconomy
 import ParticleConnect
@@ -27,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         var adapters: [ConnectAdapter] = [
             MetaMaskConnectAdapter(),
-            ParticleConnectAdapter(),
+            ParticleAuthAdapter(),
             PhantomConnectAdapter(),
             WalletConnectAdapter(),
             RainbowConnectAdapter(),
@@ -63,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Custom Wallet GUI
         // Control if show test network
-        ParticleWalletGUI.showTestNetwork(true)
+        ParticleWalletGUI.setShowTestNetwork(true)
         // Control support chains
 //        ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
 
@@ -76,9 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        ParticleWalletGUI.enableSwap(false)
 
         // show language setting in setting page
-        ParticleWalletGUI.showLanguageSetting(true)
+        ParticleWalletGUI.setShowLanguageSetting(true)
         // show appearance setting in setting page
-        ParticleWalletGUI.showAppearanceSetting(true)
+        ParticleWalletGUI.setShowAppearanceSetting(true)
         // Set language
 //        ParticleWalletGUI.setLanguage(.en)
         // Set user interface style
@@ -105,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParticleWalletConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
         // Control if disable wallet connect feature.
         // If disable wallet connect feature, you dont need to initialize particle Wallet Connect.
-        ParticleWalletGUI.supportWalletConnect(true)
+        ParticleWalletGUI.setSupportWalletConnect(true)
 
         // Initialize Biconomy service
         BiconomyService.initialize(version: .v1_0_0, dappApiKeys: [:])
@@ -114,7 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set it to ParticleNetwork
         ParticleNetwork.setBiconomyService(biconomyService)
 
-        ParticleAuthService.setSecurityAccountConfig(config: .init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
+        ParticleNetwork.setSecurityAccountConfig(config: .init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = rootVC

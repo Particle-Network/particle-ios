@@ -12,7 +12,6 @@ import RxSwift
 import SDWebImage
 import SDWebImageWebPCoder
 import UIKit
-import WalletConnectSwift
 
 class ViewController: UIViewController, ParticleWalletConnectDelegate {
     @IBOutlet var tableView: UITableView!
@@ -106,13 +105,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .destructive, title: "Disconnect", handler: { _, _,
                 _ in
             
-            do {
-                try self.pwc.disconnect(topic: dapp.topic)
-            } catch {
-                print(error)
+            Task {
+                do {
+                    try await self.pwc.disconnect(topic: dapp.topic)
+                } catch {
+                    print(error)
+                }
             }
            
-            self.pwc.removeSession(by: dapp.topic)
             self.loadData()
         })
         
@@ -173,27 +173,5 @@ extension ViewController {
     
     func didDisconnectDapp(_ topic: String) {
         print("Did disconnect dapp \(topic)")
-    }
-    
-    func shouldStartSession(_ session: WalletConnectSwift.Session, completion: @escaping (String, Int) -> Void) {
-        DispatchQueue.main.async {
-            let chainId = ParticleNetwork.getChainInfo().chainId
-            let publicAddress = ParticleAuthService.getAddress()
-        
-            // control if connect
-            // in demo, present a alert
-            let message = (session.dAppInfo.peerMeta.name ?? "") + "\n" + (session.dAppInfo.peerMeta.url?.absoluteString ?? "")
-            let vc = UIAlertController(title: "Connect dapp", message: message, preferredStyle: .alert)
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-            let connectAction = UIAlertAction(title: "Connect", style: .default) { _ in
-                completion(publicAddress, chainId)
-                self.loadData()
-            }
-        
-            vc.addAction(cancelAction)
-            vc.addAction(connectAction)
-        
-            self.present(vc, animated: true)
-        }
     }
 }

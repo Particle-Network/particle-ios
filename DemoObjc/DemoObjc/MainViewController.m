@@ -98,7 +98,8 @@
 - (void)login:(LoginType)type {
     
     NSArray *supportAuthTypes = @[[SupportAuthType google], [SupportAuthType facebook], [SupportAuthType apple]];
-    [ParticleAuthService loginWithType:type account:nil supportAuthType:supportAuthTypes loginFormMode:NO socialLoginPrompt: SocialLoginPromptNull successHandler:^(UserInfo * userInfo) {
+    
+    [ParticleAuthService loginWithType:type account:nil supportAuthType:supportAuthTypes socialLoginPrompt: SocialLoginPromptNull authorization: nil successHandler:^(UserInfo * userInfo) {
         NSLog(@"%@", userInfo);
         [self showLogin:NO];
     } failureHandler:^(NSError * error) {

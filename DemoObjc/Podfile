@@ -5,24 +5,22 @@ target 'DemoObjc' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 source 'https://github.com/CocoaPods/Specs.git'
-    pod 'ParticleWalletGUI', '0.14.5'
-    pod 'ParticleWalletAPI', '0.14.5'
-    pod 'ParticleNetworkBase', '0.14.5'
-    pod 'ParticleAuthService', '0.14.5'
-    pod 'ParticleWalletConnect', '0.14.5'
-    pod 'ParticleBiconomy', '0.14.5'
+    pod 'ParticleWalletGUI', '0.15.1'
+    pod 'ParticleWalletAPI', '0.15.1'
+    pod 'ParticleNetworkBase', '0.15.1'
+    pod 'ParticleAuthService', '0.15.1'
+    pod 'ParticleWalletConnect', '0.15.1'
+    pod 'ParticleBiconomy', '0.15.1'
     
-    pod 'ParticleConnect', '0.2.4'
-    pod 'ConnectWalletConnectAdapter', '0.2.4'
-    pod 'ConnectEVMAdapter', '0.2.4'
-    pod 'ConnectSolanaAdapter', '0.2.4'
-    pod 'ConnectPhantomAdapter', '0.2.4'
-    pod 'ConnectCommon', '0.2.4'
-    
-    pod 'WalletConnectSwiftV2', '1.6.10'
+    pod 'ParticleAuthAdapter', '0.2.5'
+    pod 'ParticleConnect', '0.2.5'
+    pod 'ConnectWalletConnectAdapter', '0.2.5'
+    pod 'ConnectEVMAdapter', '0.2.5'
+    pod 'ConnectSolanaAdapter', '0.2.5'
+    pod 'ConnectPhantomAdapter', '0.2.5'
+    pod 'ConnectCommon', '0.2.5'
     
     pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
-    pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
     pod 'SwiftMessages', :git => 'https://github.com/SunZhiC/SwiftMessages', :branch => 'master'
 end
 
