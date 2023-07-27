@@ -19,7 +19,6 @@
 		5FC3E83928C5C9200016F095 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3E82E28C5C9200016F095 /* MainViewController.swift */; };
 		5FC3E83A28C5C9200016F095 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3E83028C5C9200016F095 /* Extensions.swift */; };
 		5FC3E83E28C5CA5F0016F095 /* MainDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3E83C28C5CA5F0016F095 /* MainDataModel.swift */; };
-		5FC3E83F28C5CA5F0016F095 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC3E83D28C5CA5F0016F095 /* AppConfig.swift */; };
 		5FC3E84E28C5CD5A0016F095 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3E84928C5CD5A0016F095 /* Localizable.strings */; };
 		5FC3E84F28C5CD5A0016F095 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FC3E84C28C5CD5A0016F095 /* Localizable.strings */; };
 		5FCA94CF294C5D63003BB9E0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5FCA94C7294C5D63003BB9E0 /* Localizable.strings */; };
@@ -45,7 +44,6 @@
 		5FC3E82E28C5C9200016F095 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5FC3E83028C5C9200016F095 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5FC3E83C28C5CA5F0016F095 /* MainDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDataModel.swift; sourceTree = "<group>"; };
-		5FC3E83D28C5CA5F0016F095 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		5FC3E84A28C5CD5A0016F095 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		5FC3E84D28C5CD5A0016F095 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
 		5FCA94C8294C5D63003BB9E0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = Localizable.strings; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				5FC3E83C28C5CA5F0016F095 /* MainDataModel.swift */,
-				5FC3E83D28C5CA5F0016F095 /* AppConfig.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,7 +352,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FC3E83E28C5CA5F0016F095 /* MainDataModel.swift in Sources */,
-				5FC3E83F28C5CA5F0016F095 /* AppConfig.swift in Sources */,
 				5FC3E83228C5C9200016F095 /* CarouselCollectionView.swift in Sources */,
 				5FC3E83A28C5C9200016F095 /* Extensions.swift in Sources */,
 				3BE660F7283377CF006F464B /* APIReferenceViewController.swift in Sources */,
@@ -581,7 +577,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.14.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = network.particle.auth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development network.particle.auth";
@@ -622,7 +618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.14.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = network.particle.auth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development network.particle.auth";

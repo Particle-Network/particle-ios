@@ -15,12 +15,12 @@ Xcode 14.1 or higher
 
 | Xcode version                | 14.1 or higher | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 0.15.1         |
-| ParticleAuthService          | 0.15.1         |
-| ParticleWalletAPI            | 0.15.1         |
-| ParticleWalletGUI            | 0.15.1         |
-| ParticleWalletConnect        | 0.15.1         | 
-| ParticleBiconomy             | 0.15.1         | 
+| ParticleNetworkBase          | 1.0.0         |
+| ParticleAuthService          | 1.0.0         |
+| ParticleWalletAPI            | 1.0.0         |
+| ParticleWalletGUI            | 1.0.0         |
+| ParticleWalletConnect        | 1.0.0         | 
+| ParticleBiconomy             | 1.0.0         | 
 
 ### Migrating to WalletConnect v2
 Starting from version 0.14.0, WalletConnectV2 is supported.
