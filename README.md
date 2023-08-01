@@ -15,12 +15,12 @@ Xcode 14.1 or higher
 
 | Xcode version                | 14.1 or higher | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 1.0.0         |
-| ParticleAuthService          | 1.0.0         |
-| ParticleWalletAPI            | 1.0.0         |
-| ParticleWalletGUI            | 1.0.0         |
-| ParticleWalletConnect        | 1.0.0         | 
-| ParticleBiconomy             | 1.0.0         | 
+| ParticleNetworkBase          | 1.0.1         |
+| ParticleAuthService          | 1.0.1         |
+| ParticleWalletAPI            | 1.0.1         |
+| ParticleWalletGUI            | 1.0.1         |
+| ParticleWalletConnect        | 1.0.1         | 
+| ParticleBiconomy             | 1.0.1         | 
 
 ### Migrating to WalletConnect v2
 Starting from version 0.14.0, WalletConnectV2 is supported.
@@ -54,7 +54,7 @@ Make sure that your project meets the following requirements:
 
 Your project must target these platform versions or later:
 
-iOS 13
+iOS 14
 
 
 ## 🔧 Getting Started
@@ -82,7 +82,7 @@ your scheme url should be "pn" + your project app id.
     for example, if you project app id is "63bfa427-cf5f-4742-9ff1-e8f5a1b9826f", you scheme url is "pn63bfa427-cf5f-4742-9ff1-e8f5a1b9826f".
 ![image](https://user-images.githubusercontent.com/18244874/168455432-f25796b0-3a6a-4fa7-8ec6-adc5f8a0c46e.png)
 
-* Add Privacy - Camera Usage Description in your info.plist file
+* Add Privacy - Camera Usage Description to your info.plist file
 
 ## 💿 Build
 ```
