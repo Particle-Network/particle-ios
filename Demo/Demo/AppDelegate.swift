@@ -66,33 +66,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Control if show test network
         ParticleWalletGUI.setShowTestNetwork(true)
         // Control support chains
-//        ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
+//        ParticleWalletGUI.setSupportChain([.bsc, .arbitrum, .harmony])
 
         // Control if show manage wallet
 //        ParticleWalletGUI.showManageWallet(true)
 
         // Control disable pay feature
-//        ParticleWalletGUI.enablePay(false)
+//        ParticleWalletGUI.setPayDisabled(true)
         // Control disable swap feature
-//        ParticleWalletGUI.enableSwap(false)
+//        ParticleWalletGUI.setSwapDisabled(true)
 
         // show language setting in setting page
         ParticleWalletGUI.setShowLanguageSetting(true)
         // show appearance setting in setting page
         ParticleWalletGUI.setShowAppearanceSetting(true)
-        // Set language
-//        ParticleWalletGUI.setLanguage(.en)
-        // Set user interface style
-//        ParticleNetwork.setInterfaceStyle(.unspecified)
+        // Set appearance
+//        ParticleNetwork.setAppearance(.unspecified)
 
-        // There is two way to set custom UI
-        // 1.You can set custom ui json path to enable custom UI
-        // In demo, make sure customUIConfig.json is mark Target Membership Demo.
-//        if let path = Bundle.main.path(forResource: "customUIConfig", ofType: "json") {
-//            try! ParticleWalletGUI.loadCustomUI(path: path)
-//        }
-
-        // 2.Another way to set custom ui is pass json string
+        // Set custom ui is pass json string
 //        let jsonString = ""
 //        try! ParticleWalletGUI.loadCustomUIJsonString(jsonString)
 
