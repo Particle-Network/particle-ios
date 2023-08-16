@@ -5,8 +5,8 @@ target 'ParticleAuthDemo_Scene' do
   # Comment the next line if you don't want to use dynamic frameworks
 source 'https://github.com/CocoaPods/Specs.git'
   use_frameworks!
-	pod 'ParticleAuthService', '1.0.2'
-	pod 'ParticleNetworkBase', '1.0.2'
+	pod 'ParticleAuthService', '1.0.3'
+	pod 'ParticleNetworkBase', '1.0.3'
   # Pods for ParticleAuthDemo_Scene
 
 end

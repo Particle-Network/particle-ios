@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParticleWalletGUI.setSupportWalletConnect(true)
 
         // Initialize Biconomy service
-        BiconomyService.initialize(version: .v1_0_0, dappApiKeys: [:])
+        BiconomyService.initialize(dappApiKeys: [:])
         // create a biconomy service
         let biconomyService = BiconomyService()
         // set it to ParticleNetwork
