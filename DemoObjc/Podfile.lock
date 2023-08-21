@@ -65,7 +65,7 @@ PODS:
   - ParticleAuthAdapter (0.2.9):
     - ConnectCommon
     - ParticleAuthService
-  - ParticleAuthService (1.0.3):
+  - ParticleAuthService (1.0.6):
     - CryptoSwift
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
@@ -73,11 +73,11 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleBiconomy (1.0.3):
+  - ParticleBiconomy (1.0.6):
     - ParticleNetworkBase
   - ParticleConnect (0.2.9):
     - ConnectCommon
-  - ParticleNetworkBase (1.0.3):
+  - ParticleNetworkBase (1.0.6):
     - Base58.swift
     - BigInt (~> 5.2.0)
     - CryptoSwift
@@ -86,7 +86,7 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletAPI (1.0.3):
+  - ParticleWalletAPI (1.0.6):
     - CryptoSwift
     - GRDB.swift (= 6.16.0)
     - ParticleNetworkBase
@@ -95,7 +95,7 @@ PODS:
     - RxSwift (= 6.5.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletConnect (1.0.3):
+  - ParticleWalletConnect (1.0.6):
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.5.0)
@@ -103,7 +103,7 @@ PODS:
     - Starscream (= 4.0.4)
     - SwiftyUserDefaults (~> 5.3.0)
     - WalletConnectSwiftV2 (= 1.6.14)
-  - ParticleWalletGUI (1.0.3):
+  - ParticleWalletGUI (1.0.6):
     - ConnectEVMAdapter
     - ConnectPhantomAdapter
     - ConnectSolanaAdapter
@@ -198,13 +198,13 @@ DEPENDENCIES:
   - ConnectSolanaAdapter (= 0.2.9)
   - ConnectWalletConnectAdapter (= 0.2.9)
   - ParticleAuthAdapter (= 0.2.9)
-  - ParticleAuthService (= 1.0.3)
-  - ParticleBiconomy (= 1.0.3)
+  - ParticleAuthService (= 1.0.6)
+  - ParticleBiconomy (= 1.0.6)
   - ParticleConnect (= 0.2.9)
-  - ParticleNetworkBase (= 1.0.3)
-  - ParticleWalletAPI (= 1.0.3)
-  - ParticleWalletConnect (= 1.0.3)
-  - ParticleWalletGUI (= 1.0.3)
+  - ParticleNetworkBase (= 1.0.6)
+  - ParticleWalletAPI (= 1.0.6)
+  - ParticleWalletConnect (= 1.0.6)
+  - ParticleWalletGUI (= 1.0.6)
   - SkeletonView (from `https://github.com/SunZhiC/SkeletonView.git`, branch `main`)
   - SwiftMessages (from `https://github.com/SunZhiC/SwiftMessages`, branch `master`)
 
@@ -284,13 +284,13 @@ SPEC CHECKSUMS:
   metamask-ios-sdk: 3c7b575d49b947cdf03ca1c766a9dec9f2c50b90
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   ParticleAuthAdapter: f0fab6f809f39709ab7b294c7d68db39eab66463
-  ParticleAuthService: 71d4b62dddc0deff0565602ad19a4a976a8ade5c
-  ParticleBiconomy: 196a1eaf14e15bb2ee5efb069b0122339e62b134
+  ParticleAuthService: 632009f0b286e395ac6db50af852775547ba278c
+  ParticleBiconomy: 962bd6483918f53a3084fa0ac215f03cf5d83c4b
   ParticleConnect: d7400c9895d6d553125205cd48d02f69ebe64b9f
-  ParticleNetworkBase: a10f842cdae7c0bfcf0874ab4b958616b68e7941
-  ParticleWalletAPI: fc57560aa3a02eafecb9e717c9a2dcee925471ae
-  ParticleWalletConnect: 821307740b41d1287a78c0a926df1d5b69b27742
-  ParticleWalletGUI: 3344f1f125593dd70fdbb1809c0b72b15fc810c7
+  ParticleNetworkBase: 4ce39f867a7fa05e237b2082e908caf78b340be0
+  ParticleWalletAPI: 595dce613978a45ba46f29c84815e43b733f5ee3
+  ParticleWalletConnect: f07823dde36fba724b66a90bc5e4252c2542a8f4
+  ParticleWalletGUI: 7d8abe757ee03cd0185d7940b1c80cfee057f591
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -309,6 +309,6 @@ SPEC CHECKSUMS:
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
   WalletConnectSwiftV2: 66aef6e7bbe881c465e6bce164f61c5bbf61d796
 
-PODFILE CHECKSUM: abaf69d6d1015cf818163ebfb2bbea0f04698394
+PODFILE CHECKSUM: 94993a8dc2a37f79ad9f3cdfe0e72914f1b79746
 
 COCOAPODS: 1.12.1
