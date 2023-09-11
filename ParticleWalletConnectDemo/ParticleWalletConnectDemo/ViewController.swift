@@ -139,8 +139,7 @@ extension ViewController {
         } failureHandler: { error in
             print(error)
             if let responseError = error as? ParticleNetwork.ResponseError {
-                let err = WCResponseError(code: responseError.code, message: responseError.message, data: responseError.data)
-                completion(.failure(err))
+                completion(.failure(responseError))
             }
         }
     }
