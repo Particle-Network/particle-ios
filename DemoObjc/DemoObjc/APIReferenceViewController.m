@@ -208,7 +208,7 @@
 
 - (IBAction)openSendToken {
     TokenSendConfig *config = [[TokenSendConfig alloc] initWithTokenAddress:nil toAddress:nil amountString:nil];
-    [PNRouter navigatorTokenSendWithTokenSendConfig:config];
+    [PNRouter navigatorTokenSendWithTokenSendConfig:config modalStyle: ParticleGUIModalStylePageSheet];
 }
 
 - (IBAction)openReceiveToken {

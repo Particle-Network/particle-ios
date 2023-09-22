@@ -12,7 +12,7 @@ import ConnectSolanaAdapter
 import ConnectWalletConnectAdapter
 import ParticleAuthAdapter
 import ParticleAuthService
-import ParticleBiconomy
+import ParticleAA
 import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletConnect
@@ -99,12 +99,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If disable wallet connect feature, you dont need to initialize particle Wallet Connect.
         ParticleWalletGUI.setSupportWalletConnect(true)
 
-        // Initialize Biconomy service
-        BiconomyService.initialize(dappApiKeys: [:])
-        // create a biconomy service
-        let biconomyService = BiconomyService()
+        // Initialize AA service
+        AAService.initialize(dappApiKeys: [:])
+        // create a aa service
+        let aaService = AAService()
         // set it to ParticleNetwork
-        ParticleNetwork.setBiconomyService(biconomyService)
+        ParticleNetwork.setAAService(aaService)
 
         ParticleNetwork.setSecurityAccountConfig(config: .init(promptSettingWhenSign: 1, promptMasterPasswordSettingWhenLogin: 2))
         let rootVC = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
