@@ -41,7 +41,7 @@ public class ParticleConnectWrapper: NSObject {
              Inch1ConnectAdapter.self,
              ZengoConnectAdapter.self,
              AlphaConnectAdapter.self,
-             BitpieConnectAdapter.self
+             OKXConnectAdapter.self
             ]
 
         adapters.append(contentsOf: moreAdapterClasses.map {
@@ -54,9 +54,9 @@ public class ParticleConnectWrapper: NSObject {
         }
 
         // Custom your wallet
-        ParticleWalletGUI.showTestNetwork(false)
-        ParticleWalletGUI.supportChain([.bsc, .arbitrum, .harmony])
-        ParticleWalletGUI.showManageWallet(true)
+        ParticleWalletGUI.setShowTestNetwork(false)
+        ParticleWalletGUI.setSupportChain([.bsc, .arbitrum, .harmony])
+        ParticleWalletGUI.setShowManageWallet(true)
     }
     
     @objc public static func handleUrl(url: URL) -> Bool {

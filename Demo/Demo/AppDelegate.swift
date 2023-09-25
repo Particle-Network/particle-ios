@@ -10,9 +10,9 @@ import ConnectEVMAdapter
 import ConnectPhantomAdapter
 import ConnectSolanaAdapter
 import ConnectWalletConnectAdapter
+import ParticleAA
 import ParticleAuthAdapter
 import ParticleAuthService
-import ParticleAA
 import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletConnect
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              Inch1ConnectAdapter.self,
              ZengoConnectAdapter.self,
              AlphaConnectAdapter.self,
-             BitpieConnectAdapter.self]
+             OKXConnectAdapter.self]
 
         adapters.append(contentsOf: moreAdapterClasses.map {
             $0.init()
