@@ -35,11 +35,6 @@ If you use PartcleWalletGUI, you need add this one.
 ```ruby
 pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
 ```
-If you use PartcleWalletConnect or ConenctWalletConnectAdapter, you need add this one.
-```ruby
-pod 'WalletConnectSwift', :git => 'https://github.com/SunZhiC/WalletConnectSwift', :branch => 'master'
-pod 'SwiftMessages', :git => 'https://github.com/SunZhiC/SwiftMessages', :branch => 'master'
-```
 
 ###  🧂 Update Podfile
 From 0.8.6, we start to build SDK with XCFramework, that request copy the following text into Podfile.
