@@ -54,11 +54,12 @@ class ViewController: UIViewController, ParticleWalletConnectDelegate {
         let vc = ScanViewController()
         vc.scanHandler = { [weak self] code in
             guard let self = self else { return }
-            
-            do {
-                try self.pwc.connect(code: code)
-            } catch {
-                print(error)
+            Task {
+                do {
+                    try await self.pwc.connect(code: code)
+                } catch {
+                    print(error)
+                }
             }
         }
         navigationController?.pushViewController(vc, animated: true)
