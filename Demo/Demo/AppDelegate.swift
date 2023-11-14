@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParticleWalletGUI.setSupportWalletConnect(true)
 
         // Initialize AA service
-        AAService.initialize(dappApiKeys: [:])
+        AAService.initialize(name: .biconomy, version: .v1_0_0, biconomyApiKeys: [:])
         // create a aa service
         let aaService = AAService()
         // set it to ParticleNetwork

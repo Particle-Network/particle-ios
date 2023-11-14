@@ -192,9 +192,7 @@
     } else if ([name  isEqual: @"moonriver"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo moonriver:MoonriverNetworkMainnet];
-        } else if ([network  isEqual: @"testnet"]) {
-            chainInfo = [ChainInfo moonriver:MoonriverNetworkTestnet];
-        }
+        } 
     } else if ([name  isEqual: @"heco"]) {
         if ([network  isEqual: @"mainnet"]) {
             chainInfo = [ChainInfo heco:HecoNetworkMainnet];
@@ -280,8 +278,8 @@
             chainInfo = [ChainInfo klaytn:KlaytnNetworkTestnet];
         }
     } else if ([name  isEqual: @"scroll"]) {
-        if ([network  isEqual: @"testnet"]) {
-            chainInfo = [ChainInfo scroll:ScrollNetworkTestnet];
+        if ([network  isEqual: @"mainnet"]) {
+            chainInfo = [ChainInfo scroll:ScrollNetworkMainnet];
         }
     } else if ([name  isEqual: @"zkSync"]) {
         if ([network  isEqual: @"mainnet"]) {
