@@ -1,13 +1,11 @@
-# Uncomment the next line to define a global platform for your project
 platform :ios, '14.0'
-
-target 'ParticleWalletConnectDemo' do
 source 'https://github.com/CocoaPods/Specs.git'
 
+target 'ParticleWalletConnectDemo' do
   use_frameworks!
-pod 'ParticleNetworkBase', '1.3.5'
-pod 'ParticleWalletConnect', '1.3.5'
-pod 'ParticleAuthService', '1.3.5'
+pod 'ParticleNetworkBase', '1.3.6'
+pod 'ParticleWalletConnect', '1.3.6'
+pod 'ParticleAuthService', '1.3.6'
 
 pod 'SDWebImage'
 pod 'SDWebImageWebPCoder'

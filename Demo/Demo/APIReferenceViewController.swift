@@ -9,6 +9,7 @@ import ConnectCommon
 import ConnectEVMAdapter
 import ConnectWalletConnectAdapter
 import Foundation
+import ParticleAA
 import ParticleAuthService
 import ParticleConnect
 import ParticleNetworkBase
@@ -555,5 +556,100 @@ extension APIReferenceViewController {
         return """
         YOUR CONTRACT DATA
         """
+    }
+}
+
+extension APIReferenceViewController {
+    func sendTransactionInAA() async throws {
+        let aa = ParticleNetwork.getAAService()!
+                
+        let chainInfo = ParticleNetwork.getChainInfo()
+        let eoaAddress = ""
+        let transaction = ""
+        let wholeFeeQuote = try await aa.rpcGetFeeQuotes(eoaAddress: eoaAddress, transactions: [transaction], chainInfo: chainInfo).value
+            
+        if wholeFeeQuote.gasless != nil {
+            // There are two ways to send gasless
+            // 1, call adapter or ParticleAuthService, requires one transaction
+            let txHash1 = try await ParticleAuthService.signAndSendTransaction(transaction, feeMode: .gasless, chainInfo: chainInfo).value
+            // 2, call aa, support multi transactions, requires implement MessageSigner delegate.
+            let txHash2 = try await aa.quickSendTransactions([transaction], feeMode: .gasless, messageSigner: self, wholeFeeQuote: wholeFeeQuote, chainInfo: chainInfo).value
+        } else {
+            // you cant gasless
+        }
+            
+        let nativeFeeQuote = AA.FeeQuote(json: wholeFeeQuote.native.feeQuote, tokenPaymasterAddress: nil)
+        if nativeFeeQuote.isEnoughForPay {
+            // There are two ways to send, pay token
+            // 1, call adapter or ParticleAuthService, requires one transaction
+            let txHash1 = try await ParticleAuthService.signAndSendTransaction(transaction, feeMode: .native, chainInfo: chainInfo).value
+            // 2, call aa, support multi transactions, requires implement MessageSigner delegate.
+            let txHash2 = try await aa.quickSendTransactions([transaction], feeMode: .native, messageSigner: self, wholeFeeQuote: wholeFeeQuote, chainInfo: chainInfo).value
+        } else {
+            // you dont have enough native to pay
+        }
+
+        if let token = wholeFeeQuote.token {
+            let tokenPaymasterAddress = token.tokenPaymasterAddress
+            let tokenFeeQuotes = token.feeQuotes.map {
+                AA.FeeQuote(json: $0, tokenPaymasterAddress: tokenPaymasterAddress)
+            }.filter {
+                // filter out balance >= fee
+                $0.isEnoughForPay
+            }
+            if tokenFeeQuotes.count > 0 {
+                // select a feeQuote, here we select the first one.
+                let feeQuote = tokenFeeQuotes[0]
+                // There are two ways to send, pay token
+                // 1, call adapter or ParticleAuthService, requires one transaction
+                let txHash1 = try await ParticleAuthService.signAndSendTransaction(transaction, feeMode: .token(feeQuote), chainInfo: chainInfo).value
+                // 2, call aa, support multi transactions, requires implement MessageSigner delegate.
+                let txHash2 = try await aa.quickSendTransactions([transaction], feeMode: .token(feeQuote), messageSigner: self, wholeFeeQuote: wholeFeeQuote, chainInfo: chainInfo).value
+            } else {
+                // you can't select token to pay
+            }
+        }
+    }
+}
+
+extension APIReferenceViewController: MessageSigner {
+    func signMessage(_ message: String, chainInfo: ParticleNetworkBase.ParticleNetwork.ChainInfo?) -> RxSwift.Single<String> {
+        // if you are using ParticleAuthService
+        return ParticleAuthService.signMessage(message, chainInfo: chainInfo)
+        
+        // if you are using ParticleConnectService
+        // get current adapter by walletType and publicAddress
+        // here we assume currentWalletType is Metamask
+        
+        let currentWalletType = WalletType.metaMask
+        let publicAddress = "0x123..."
+        let adapters = ParticleConnect.getAllAdapters().filter {
+            $0.walletType == currentWalletType
+        }
+        if let adapter = adapters.first {
+            return adapter.signMessage(publicAddress: publicAddress, message: message)
+        } else {
+            return .error(NSError(domain: "", code: 0))
+        }
+    }
+    
+    func getEoaAddress() -> String {
+        // if you are using ParticleAuthService
+        return ParticleAuthService.getAddress()
+        
+        // if you are using ParticleConnectService
+        let publicAddress = "0x123..."
+        return publicAddress
+    }
+}
+
+
+extension APIReferenceViewController {
+    func getSmartAccountAddress() async throws {
+        let aa = ParticleNetwork.getAAService()!
+        let eoaAddress = ""
+        let chainInfo = ParticleNetwork.getChainInfo()
+        let smartAccount = try await aa.getSmartAccount(by: eoaAddress, chainInfo: chainInfo).value
+        print(smartAccount.smartAccountAddress)
     }
 }
