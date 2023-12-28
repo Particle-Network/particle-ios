@@ -6,9 +6,8 @@
 //
 
 #import "MainViewController.h"
-#import "SwitchChainViewController.h"
 #import "APIReferenceViewController.h"
-
+#import "DemoObjc-Swift.h"
 @import ParticleAuthService;
 @import ParticleNetworkBase;
 @import ParticleWalletGUI;
@@ -127,6 +126,7 @@
     vc.selectHandler = ^{
         [weakSelf updateUI];
     };
+    
     self.modalPresentationStyle = UIModalPresentationPageSheet;
     [self presentViewController:vc animated:true completion:nil];
 }

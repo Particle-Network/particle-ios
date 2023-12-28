@@ -54,13 +54,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
 
         // select a network
-        ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: .standard) {
+        ParticleConnect.initialize(env: .debug, chainInfo: .ethereum, dAppData: .standard) {
             adapters
         }
 
         // set wallet connect v2 project id to ParticleConnectSDK, used when connect as a dapp.
         ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
-        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum(.mainnet), .polygon(.mainnet)])
+        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .polygon])
 
         // Custom Wallet GUI
         // Control if show test network
@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ParticleWalletGUI.setSupportWalletConnect(true)
 
         // Initialize AA service
-        AAService.initialize(name: .biconomy, version: .v1_0_0, biconomyApiKeys: [:])
+        AAService.initialize(name: AA.AccountName.biconomyV1, biconomyApiKeys: [:])
         // create a aa service
         let aaService = AAService()
         // set it to ParticleNetwork

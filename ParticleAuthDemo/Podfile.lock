@@ -4,21 +4,21 @@ PODS:
     - BigInt
   - BigInt (5.2.0)
   - CryptoSwift (1.8.0)
-  - ParticleAuthService (1.3.7):
+  - ParticleAuthService (1.3.8):
     - CryptoSwift
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
-    - RxCocoa (= 6.5.0)
-    - RxSwift (= 6.5.0)
+    - RxCocoa (= 6.6.0)
+    - RxSwift (= 6.6.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleNetworkBase (1.3.7):
+  - ParticleNetworkBase (1.3.8):
     - Base58.swift
     - BigInt (~> 5.2.0)
     - CryptoSwift
     - RxAlamofire (~> 6.1.1)
-    - RxCocoa (= 6.5.0)
-    - RxSwift (= 6.5.0)
+    - RxCocoa (= 6.6.0)
+    - RxSwift (= 6.6.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
   - RxAlamofire (6.1.1):
@@ -26,18 +26,18 @@ PODS:
   - RxAlamofire/Core (6.1.1):
     - Alamofire (~> 5.4)
     - RxSwift (~> 6.0)
-  - RxCocoa (6.5.0):
-    - RxRelay (= 6.5.0)
-    - RxSwift (= 6.5.0)
-  - RxRelay (6.5.0):
-    - RxSwift (= 6.5.0)
-  - RxSwift (6.5.0)
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxSwift (6.6.0)
   - SwiftyJSON (5.0.1)
   - SwiftyUserDefaults (5.3.0)
 
 DEPENDENCIES:
-  - ParticleAuthService (= 1.3.7)
-  - ParticleNetworkBase (= 1.3.7)
+  - ParticleAuthService (= 1.3.8)
+  - ParticleNetworkBase (= 1.3.8)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -59,15 +59,15 @@ SPEC CHECKSUMS:
   Base58.swift: e0e16655f9db843b8cd367593ed6f7d90d136b7f
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
   CryptoSwift: 52aaf3fce7337552863b1d952e408085f0e65030
-  ParticleAuthService: 280333190ee191d57a25575900eb2936c44c79f1
-  ParticleNetworkBase: 4401070e90f59cbf4ae57c522cbff9691bfe33b7
+  ParticleAuthService: 8a104aa3e2b1ace6348a813d29e6d0e7e28a3e27
+  ParticleNetworkBase: e2dd4be2c5b1a0fec3ca356dfa1d7a6b880fcb34
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
-  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
-  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
-  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
 
-PODFILE CHECKSUM: 15015a18755d23d331793f2d0f2322d5c4da8598
+PODFILE CHECKSUM: 6dba60f2ed9187ff0356a30162d299f3a2276183
 
 COCOAPODS: 1.12.1

@@ -37,8 +37,9 @@
 }
 
 - (IBAction)signAndSendTransaction {
-    Chain *chain = [ParticleNetwork getChainInfo].chain;
-    if (chain == [Chain solana]) {
+    ChainType chainType = [[ParticleNetwork getChainInfo] chainType];
+    
+    if (chainType == ChainTypeSolana) {
         [self sendTransactionSolana];
     } else {
         // [self sendNativeEVM];
@@ -122,8 +123,9 @@
 - (IBAction)signTransaction {
     NSString *transaction;
     
-    Chain *chain = [ParticleNetwork getChainInfo].chain;
-    if (chain == [Chain solana]) {
+    ChainType chainType = [[ParticleNetwork getChainInfo] chainType];
+    
+    if (chainType == ChainTypeSolana) {
         transaction = @"87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu";
         
     } else {
@@ -144,8 +146,9 @@
     NSString *message;
     NSString *hello;
     
-    Chain *chain = [ParticleNetwork getChainInfo].chain;
-    if (chain == [Chain solana]) {
+    ChainType chainType = [[ParticleNetwork getChainInfo] chainType];
+    
+    if (chainType == ChainTypeSolana) {
         message = @"87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu";
         
     } else {
@@ -182,8 +185,9 @@
     NSData *encoded = [NSJSONSerialization dataWithJSONObject:dataArray options:NSJSONWritingFragmentsAllowed error:nil];
     
     
-    Chain *chain = [ParticleNetwork getChainInfo].chain;
-    if (chain == [Chain solana]) {
+    ChainType chainType = [[ParticleNetwork getChainInfo] chainType];
+    
+    if (chainType == ChainTypeSolana) {
         message = @"";
         
     } else {

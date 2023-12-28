@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Initialize Particle Network
-        ParticleNetwork.initialize(config: .init(chainInfo: .ethereum(.mainnet), devEnv: .debug))
+        ParticleNetwork.initialize(config: .init(chainInfo: .ethereum, devEnv: .debug))
         
         return true
     }

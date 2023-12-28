@@ -230,12 +230,8 @@ class MainViewController: UIViewController {
             $0.walletType == walletType
         }.first!
         
-        var single: Single<Account?>
-        if adapter.walletType == .walletConnect {
-            single = (adapter as! WalletConnectAdapter).connectWithQrCode(from: self)
-        } else {
-            single = adapter.connect(ConnectConfig.none)
-        }
+        let single: Single<Account?> = adapter.connect(ConnectConfig.none)
+        
         single.subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {

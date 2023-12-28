@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // initialize Particle network
-        ParticleNetwork.initialize(config: .init(chainInfo: .ethereum(.mainnet), devEnv: .debug))
+        ParticleNetwork.initialize(config: .init(chainInfo: .ethereum, devEnv: .debug))
 
         // initialize Particle wallet connect
         // pass your wallet information

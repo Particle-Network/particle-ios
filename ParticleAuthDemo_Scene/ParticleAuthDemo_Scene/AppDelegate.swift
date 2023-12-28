@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // Initialize Particle Network
-        ParticleNetwork.initialize(config: .init(chainInfo: .ethereum(.mainnet), devEnv: .debug))
+        ParticleNetwork.initialize(config: .init(chainInfo: .ethereum, devEnv: .debug))
         
         return true
     }

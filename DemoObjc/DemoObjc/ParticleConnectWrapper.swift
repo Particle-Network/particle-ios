@@ -46,13 +46,13 @@ public class ParticleConnectWrapper: NSObject {
             $0.init()
         })
 
-        ParticleConnect.initialize(env: .debug, chainInfo: .ethereum(.mainnet), dAppData: .standard) {
+        ParticleConnect.initialize(env: .debug, chainInfo: .ethereum, dAppData: .standard) {
             adapters
         }
 
         // Custom your wallet
         ParticleWalletGUI.setShowTestNetwork(false)
-        ParticleWalletGUI.setSupportChain([.bsc, .arbitrum, .harmony])
+        ParticleWalletGUI.setSupportChain([.bnbChain, .arbitrumOne, .harmony])
         ParticleWalletGUI.setShowManageWallet(true)
         // Initialize particle wallet connect sdk
         ParticleWalletConnect.initialize(

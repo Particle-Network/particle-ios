@@ -28,7 +28,7 @@ class APIReferenceViewController: UIViewController {
     }
     
     @IBAction func signAndSendTransaction() {
-        switch ParticleNetwork.getChainInfo().chain {
+        switch ParticleNetwork.getChainInfo().chainType {
         case .solana:
             let transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
             
@@ -214,7 +214,7 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func signTransaction() {
         var transaction = ""
-        switch ParticleNetwork.getChainInfo().chain {
+        switch ParticleNetwork.getChainInfo().chainType {
         case .solana:
             transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
         default:
@@ -234,7 +234,7 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func signMessage() {
         var message = ""
-        switch ParticleNetwork.getChainInfo().chain {
+        switch ParticleNetwork.getChainInfo().chainType {
         case .solana:
             // "hello world" encoded to base58
             message = "StV1DL6CwTryKyV"
@@ -259,7 +259,7 @@ class APIReferenceViewController: UIViewController {
     
     @IBAction func signTypedData() {
         var message = ""
-        switch ParticleNetwork.getChainInfo().chain {
+        switch ParticleNetwork.getChainInfo().chainType {
         case .solana:
             message = ""
         default:

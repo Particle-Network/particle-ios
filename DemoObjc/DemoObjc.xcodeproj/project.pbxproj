@@ -16,9 +16,9 @@
 		3BCD640C2861738A00AE4428 /* ParticleNetwork-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BCD640B2861738A00AE4428 /* ParticleNetwork-Info.plist */; };
 		3BCD64182861D84100AE4428 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD64172861D84100AE4428 /* MainViewController.m */; };
 		3BCD641B2861D85500AE4428 /* APIReferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD641A2861D85500AE4428 /* APIReferenceViewController.m */; };
-		3BCD641E2861D86000AE4428 /* SwitchChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCD641D2861D86000AE4428 /* SwitchChainViewController.m */; };
 		3BEB77622862CB320000DBEB /* NSData+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB77612862CB320000DBEB /* NSData+Extensions.m */; };
 		5F2722E528A601310057BFD0 /* ParticleConnectWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2722E428A601310057BFD0 /* ParticleConnectWrapper.swift */; };
+		5F30B9462B3D9D5A00936F5B /* SwitchChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F30B9452B3D9D5A00936F5B /* SwitchChainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,13 +36,12 @@
 		3BCD64172861D84100AE4428 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3BCD64192861D85500AE4428 /* APIReferenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIReferenceViewController.h; sourceTree = "<group>"; };
 		3BCD641A2861D85500AE4428 /* APIReferenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIReferenceViewController.m; sourceTree = "<group>"; };
-		3BCD641C2861D86000AE4428 /* SwitchChainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchChainViewController.h; sourceTree = "<group>"; };
-		3BCD641D2861D86000AE4428 /* SwitchChainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitchChainViewController.m; sourceTree = "<group>"; };
 		3BEB77602862CB320000DBEB /* NSData+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+Extensions.h"; sourceTree = "<group>"; };
 		3BEB77612862CB320000DBEB /* NSData+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extensions.m"; sourceTree = "<group>"; };
 		539EF46C9583DAC8172BAFD1 /* Pods-DemoObjc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoObjc.debug.xcconfig"; path = "Target Support Files/Pods-DemoObjc/Pods-DemoObjc.debug.xcconfig"; sourceTree = "<group>"; };
 		5F2722E328A601300057BFD0 /* DemoObjc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoObjc-Bridging-Header.h"; sourceTree = "<group>"; };
 		5F2722E428A601310057BFD0 /* ParticleConnectWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleConnectWrapper.swift; sourceTree = "<group>"; };
+		5F30B9452B3D9D5A00936F5B /* SwitchChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchChainViewController.swift; sourceTree = "<group>"; };
 		91E6D42ED12625F8CFD07B35 /* Pods-DemoObjc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoObjc.release.xcconfig"; path = "Target Support Files/Pods-DemoObjc/Pods-DemoObjc.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,8 +90,7 @@
 				3BCD64172861D84100AE4428 /* MainViewController.m */,
 				3BCD64192861D85500AE4428 /* APIReferenceViewController.h */,
 				3BCD641A2861D85500AE4428 /* APIReferenceViewController.m */,
-				3BCD641C2861D86000AE4428 /* SwitchChainViewController.h */,
-				3BCD641D2861D86000AE4428 /* SwitchChainViewController.m */,
+				5F30B9452B3D9D5A00936F5B /* SwitchChainViewController.swift */,
 				3BEB77602862CB320000DBEB /* NSData+Extensions.h */,
 				3BEB77612862CB320000DBEB /* NSData+Extensions.m */,
 				5F2722E428A601310057BFD0 /* ParticleConnectWrapper.swift */,
@@ -253,11 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BEB77622862CB320000DBEB /* NSData+Extensions.m in Sources */,
-				3BCD641E2861D86000AE4428 /* SwitchChainViewController.m in Sources */,
 				5F2722E528A601310057BFD0 /* ParticleConnectWrapper.swift in Sources */,
 				3BCD63F42861729700AE4428 /* AppDelegate.m in Sources */,
 				3BCD64052861729A00AE4428 /* main.m in Sources */,
 				3BCD641B2861D85500AE4428 /* APIReferenceViewController.m in Sources */,
+				5F30B9462B3D9D5A00936F5B /* SwitchChainViewController.swift in Sources */,
 				3BCD64182861D84100AE4428 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +423,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = network.particle.auth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";
@@ -468,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = network.particle.auth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.particle.wallet.demo";
