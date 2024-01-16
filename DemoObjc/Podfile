@@ -3,20 +3,20 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'DemoObjc' do
   use_frameworks!
-    pod 'ParticleWalletGUI', '1.3.9'
-    pod 'ParticleWalletAPI', '1.3.9'
-    pod 'ParticleNetworkBase', '1.3.9'
-    pod 'ParticleAuthService', '1.3.9'
-    pod 'ParticleWalletConnect', '1.3.9'
-    pod 'ParticleAA', '1.3.9'
+    pod 'ParticleWalletGUI', '1.3.10'
+    pod 'ParticleWalletAPI', '1.3.10'
+    pod 'ParticleNetworkBase', '1.3.10'
+    pod 'ParticleAuthService', '1.3.10'
+    pod 'ParticleWalletConnect', '1.3.10'
+    pod 'ParticleAA', '1.3.10'
     
-    pod 'ParticleAuthAdapter', '0.2.15'
-    pod 'ParticleConnect', '0.2.15'
-    pod 'ConnectWalletConnectAdapter', '0.2.15'
-    pod 'ConnectEVMAdapter', '0.2.15'
-    pod 'ConnectSolanaAdapter', '0.2.15'
-    pod 'ConnectPhantomAdapter', '0.2.15'
-    pod 'ConnectCommon', '0.2.15'
+    pod 'ParticleAuthAdapter', '0.2.16'
+    pod 'ParticleConnect', '0.2.16'
+    pod 'ConnectWalletConnectAdapter', '0.2.16'
+    pod 'ConnectEVMAdapter', '0.2.16'
+    pod 'ConnectSolanaAdapter', '0.2.16'
+    pod 'ConnectPhantomAdapter', '0.2.16'
+    pod 'ConnectCommon', '0.2.16'
     
     pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
 end

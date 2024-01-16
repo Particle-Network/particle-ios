@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .init(name: "Particle Wallet Connect Demo",
                   icon: URL(string: "https://connect.particle.network/icons/512.png")!,
                   url: URL(string: "https://github.com/Particle-Network/particle-ios")!,
-                  description: "This is demo for Particle Wallet Connect SDK"))
+                  description: "This is demo for Particle Wallet Connect SDK", redirectUniversalLink: nil))
         ParticleWalletConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
 
         return true

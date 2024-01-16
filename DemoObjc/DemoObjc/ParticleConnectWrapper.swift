@@ -59,7 +59,8 @@ public class ParticleConnectWrapper: NSObject {
             WalletMetaData(name: "Particle Wallet",
                            icon: URL(string: "https://connect.particle.network/icons/512.png")!,
                            url: URL(string: "https://particle.network")!,
-                           description: nil))
+                           description: "Particle Wallet",
+                           redirectUniversalLink: nil))
         // set wallet connect v2 project id to ParticleWalletConnect, used when connect as a wallet.
         ParticleWalletConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
     }
