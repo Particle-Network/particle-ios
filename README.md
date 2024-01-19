@@ -48,7 +48,7 @@ post_install do |installer|
     end
    end
 ```
-
+guide
 Make sure that your project meets the following requirements:
 
 Your project must target these platform versions or later:
@@ -56,7 +56,7 @@ Your project must target these platform versions or later:
 iOS 14
 
 
-## 🔧 Getting Started
+# 🔧 Getting Started
 
 * Clone the repo. open Demo folder.
 * Replace ParticelNetwork.info with your project info in the [Dashboard](https://dashboard.particle.network/#/login).
@@ -89,11 +89,15 @@ pod install --repo-update
 ```
 
 ## 🚴‍♂️ Other Demo
-`ParticleAuthDemo` show how to integrate ParticleAuthService with a few code.
 
-`ParticleAuthDemo_Scene` start from SceneDelegate.swift, show how to integrate ParticleAuthService when app start from SceneDelagate.swift with a few code.
+- **GuideSeries:** follow [iOS Guide](https://docs.particle.network/getting-started/platform-specific-guides/ios/social-login-+-embeded-wallet) step to step, add ParticleSDK to your project.
+  
+- **ParticleAuthDemo** show how to integrate ParticleAuthService with a few code.
+  
+- **ParticleAuthDemo_Scene** start from SceneDelegate.swift, show how to integrate ParticleAuthService when app start from SceneDelagate.swift with a few code.
+  
+- **ParticleWalletConnectDemo** show how to integrate with ParticleWalletConnect, it use ParticleAuthService to handle request from dapp.
 
-`ParticleWalletConnectDemo` show how to integrate with ParticleWalletConnect, it use ParticleAuthService to handle request from dapp.
 ## 🔬 Features
 
 1. Auth login with email, phone, facebook, google, apple etc.
@@ -105,7 +109,7 @@ pod install --repo-update
 ## 📄 Docs
 1. https://docs.particle.network/auth-service/sdks/ios
 2. https://docs.particle.network/wallet-service/sdks/ios
-
+3. https://docs.particle.network/developers/account-abstraction/sdks/ios
 
 ## 💼 Give Feedback
 Please report bugs or issues to [particle-ios/issues](https://github.com/Particle-Network/particle-ios/issues)
