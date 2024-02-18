@@ -16,7 +16,7 @@ PODS:
   - libwebp/sharpyuv (1.3.1)
   - libwebp/webp (1.3.1):
     - libwebp/sharpyuv
-  - ParticleAuthService (1.3.11):
+  - ParticleAuthService (1.3.12):
     - CryptoSwift
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
@@ -24,7 +24,7 @@ PODS:
     - RxSwift (= 6.6.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleNetworkBase (1.3.11):
+  - ParticleNetworkBase (1.3.12):
     - Base58.swift
     - BigInt (~> 5.2.0)
     - CryptoSwift
@@ -33,7 +33,7 @@ PODS:
     - RxSwift (= 6.6.0)
     - SwiftyJSON (~> 5.0)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletConnect (1.3.11):
+  - ParticleWalletConnect (1.3.12):
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.6.0)
@@ -102,9 +102,9 @@ PODS:
     - WalletConnectSwiftV2/WalletConnectUtils
 
 DEPENDENCIES:
-  - ParticleAuthService (= 1.3.11)
-  - ParticleNetworkBase (= 1.3.11)
-  - ParticleWalletConnect (= 1.3.11)
+  - ParticleAuthService (= 1.3.12)
+  - ParticleNetworkBase (= 1.3.12)
+  - ParticleWalletConnect (= 1.3.12)
   - SDWebImage
   - SDWebImageWebPCoder
 
@@ -135,9 +135,9 @@ SPEC CHECKSUMS:
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
   CryptoSwift: b9c701d6f5011df23794dbf7f2e480a77835d83d
   libwebp: 33dc822fbbf4503668d09f7885bbfedc76c45e96
-  ParticleAuthService: 65b0a4ee56d407fe9224e02454f8a2243ed7b19e
-  ParticleNetworkBase: 8a93c1d53af58521a14fde66036a6513aec77182
-  ParticleWalletConnect: 7882549f10ff0ecef8f94d67081056229dc7abd6
+  ParticleAuthService: 19fdf36d324eeef8aa4672ea971bd5a58a54300b
+  ParticleNetworkBase: 464ff21feb77bdb7aaa115fc2a30d96e30bb1ad1
+  ParticleWalletConnect: cb7a9139a2a6c2b52b81b50ee7a91eca16062091
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
@@ -149,6 +149,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: 63f80248cf5bfb3458825d9a78f2eb7e1293a040
   WalletConnectSwiftV2: 7927408d80bff4b00297b8018477a4492c9e52a4
 
-PODFILE CHECKSUM: 0bacebbe77b92e04c41090290b91201c179c2c05
+PODFILE CHECKSUM: 13823c1ec005075b5725ea5c94c0263e06dfadce
 
 COCOAPODS: 1.14.3

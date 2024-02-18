@@ -3,9 +3,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'ParticleWalletConnectDemo' do
   use_frameworks!
-pod 'ParticleNetworkBase', '1.3.11'
-pod 'ParticleWalletConnect', '1.3.11'
-pod 'ParticleAuthService', '1.3.11'
+pod 'ParticleNetworkBase', '1.3.12'
+pod 'ParticleWalletConnect', '1.3.12'
+pod 'ParticleAuthService', '1.3.12'
 
 pod 'SDWebImage'
 pod 'SDWebImageWebPCoder'
