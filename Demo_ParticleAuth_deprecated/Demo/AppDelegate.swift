@@ -11,12 +11,13 @@ import ConnectPhantomAdapter
 import ConnectSolanaAdapter
 import ConnectWalletConnectAdapter
 import ParticleAA
+import ParticleAuthAdapter
+import ParticleAuthService
 import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletConnect
 import ParticleWalletGUI
 import UIKit
-import AuthCoreAdapter
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         var adapters: [ConnectAdapter] = [
             MetaMaskConnectAdapter(),
-            AuthCoreAdapter(),
+            ParticleAuthAdapter(),
             PhantomConnectAdapter(),
             WalletConnectAdapter(),
             RainbowConnectAdapter(),
@@ -65,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Control if show test network
         ParticleWalletGUI.setShowTestNetwork(true)
         // Control support chains
-//        ParticleWalletGUI.setSupportChain([.bnbChain, .arbitrum, .harmony])
+//        ParticleWalletGUI.setSupportChain([.bsc, .arbitrum, .harmony])
 
         // Control if show manage wallet
 //        ParticleWalletGUI.showManageWallet(true)

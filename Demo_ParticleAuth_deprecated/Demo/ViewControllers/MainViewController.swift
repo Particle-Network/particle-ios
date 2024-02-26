@@ -5,13 +5,13 @@
 //  Created by link on 2022/5/13.
 //
 
-import AuthCoreAdapter
 import ConnectCommon
 import ConnectEVMAdapter
 import ConnectPhantomAdapter
 import ConnectSolanaAdapter
 import ConnectWalletConnectAdapter
 import Foundation
+import ParticleAuthService
 import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletAPI
@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
     // control develop mode
     // before build ipa, set false
     var isDevelopMode: Bool {
-        return true
+        return false
     }
 
     var data: [MainDataModel] {
@@ -211,17 +211,28 @@ class MainViewController: UIViewController {
         }.disposed(by: bag)
     }
     
-    private func login(type: LoginType, account: String? = nil, supportAuthType: [SupportAuthType] = [SupportAuthType.all], loginFormMode: Bool = false, socialLoginPrompt: SocialLoginPrompt? = nil, authorization: LoginAuthorization? = nil) {
-        connect(walletType: .authCore, connectConfig: .init(loginType: type, account: account, code: nil, socialLoginPrompt: socialLoginPrompt))
+    private func login(type: LoginType, account: String? = nil, supportAuthType: [SupportAuthType] = [SupportAuthType.all]) {
+        ParticleAuthService.login(type: type, account: account, supportAuthType: supportAuthType).subscribe { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .failure(let error):
+                
+                print(error)
+            case .success(let userinfo):
+                print(userinfo as Any)
+                self.openWallet(animated: true)
+            }
+        }.disposed(by: bag)
     }
-    
-    private func connect(walletType: WalletType, connectConfig: ParticleAuthCoreConfig? = nil) {
+
+    private func connect(walletType: WalletType) {
         let adapter = ParticleConnect.getAllAdapters().filter {
             $0.walletType == walletType
         }.first!
         
-//        AuthCoreAdapter
-        adapter.connect(connectConfig).subscribe { [weak self] result in
+        let single: Single<Account?> = adapter.connect(ConnectConfig.none)
+        
+        single.subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
@@ -236,7 +247,7 @@ class MainViewController: UIViewController {
             }
         }.disposed(by: bag)
     }
-
+    
     private func openWallet(animated: Bool) {
         if isDevelopMode {
             PNRouter.navigatorWallet(hiddenBackButton: false, animated: animated)
@@ -260,10 +271,6 @@ extension MainViewController: CarouselCollectionViewDataSource {
 
     func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, didSelectItemAt index: Int) {
         print("Did select item at \(index)")
-        
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "APIReferenceViewController") as! APIReferenceViewController
-        vc.modalPresentationStyle = .pageSheet
-        present(vc, animated: true)
     }
 
     func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, didDisplayItemAt index: Int) {

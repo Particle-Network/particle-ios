@@ -1,0 +1,65 @@
+{
+    "supportAddToken": true,
+    "supportChains": [
+        {
+            "id": 1,
+            "name": "Ethereum"
+        },
+        {
+            "id": 5,
+            "name": "Ethereum"
+        }
+    ],
+    "displayTokenAddresses": ["0xaFF4481D10270F50f203E0763e2597776068CBc5"],
+    "displayNFTContractAddresses": ["0x894A6637DFde120b27B7EFEa7a913C6fC2fBaF21"],
+    "priorityTokenAddresses": ["0x6b175474e89094c44da98b954eede"],
+    "priorityNFTContractAddresses": ["0x6b175474e89094c44da98b954eede"],
+    "fiatCoin": "USD",
+    "evmSupportWalletConnect": true,
+    "supportUIModeSwitch": true,
+    "supportLanguageSwitch": true,
+    
+    "light": {
+       "colorAccent": "#386ef2",
+       "colorPrimary": "#ffffff",
+       "colorOnPrimary": "#ffffff",
+       "primaryButtonBackgroundColors": ["#000000", "#000000"],
+       "primaryButtonTextColor": "#ffffff",
+       "primaryIconButtonBackgroundColors": ["#dfe9fd", "#dfe9fd"],
+       "primaryIconButtonIconColor": "#2D6AF6",
+       "cancelButtonBackgroundColor": "#666666",
+       "backgroundColors": [
+            "#e5e5e5",
+            [
+              ["#ffffff00", "#ffffff00"],
+              ["#ffffff00", "#ffffff00"]
+            ]
+          ],
+       "messageColor": ["#7DD5F9", "#ed5d51"],
+       "borderGlowColors": ["#7bd5f940", "#323233"],
+       "modalMaskBackgroundColor": "#B31430b3"
+    },
+    
+    "dark": {
+       "colorAccent": "#7DD5F9",
+       "colorPrimary": "#21213a",
+       "colorOnPrimary": "#171728",
+       "primaryButtonBackgroundColors": ["#5ED7FF", "#E89DE7"],
+       "primaryIconButtonBackgroundColors": ["#5ED7FF", "#E89DE7"],
+       "primaryIconButtonIconColor": "#FFFFFF",
+       "primaryButtonTextColor": "#0A1161",
+       "cancelButtonBackgroundColor": "#666666",
+       "backgroundColors": [
+            "#14152e",
+            [
+              ["#e6b1f766", "#e6b1f700"],
+              ["#7dd5f94d", "#7dd5f900"]
+            ]
+          ],
+       "messageColor": ["#7DD5F9", "#ed5d51"],
+       "borderGlowColors": ["#7bd5f940", "#323233"],
+       "modalMaskBackgroundColor": "#B31430b3"
+    }
+}
+
+

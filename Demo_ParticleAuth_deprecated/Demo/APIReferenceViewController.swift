@@ -10,6 +10,7 @@ import ConnectEVMAdapter
 import ConnectWalletConnectAdapter
 import Foundation
 import ParticleAA
+import ParticleAuthService
 import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletAPI
@@ -21,37 +22,17 @@ class APIReferenceViewController: UIViewController {
     let bag = DisposeBag()
     var mask: UIView?
     var loading: UIActivityIndicatorView?
-    var publicAddress: String?
-    var walletType: WalletType = .authCore
-    var adapter: ConnectAdapter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let adapter = ParticleConnect.getAllAdapters().first {
-            $0.walletType == self.walletType
-        }!
-        self.adapter = adapter
-        
-        // get evm address
-        self.publicAddress = adapter.getAccounts().filter {
-            $0.publicAddress.isValidEVMAddress()
-        }.first?.publicAddress
-        
-        if self.publicAddress == nil {
-            print("not login with authCore")
-        }
     }
     
     @IBAction func signAndSendTransaction() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
         switch ParticleNetwork.getChainInfo().chainType {
         case .solana:
             let transaction = "87PYtzaf2kzTwVq1ckrGzYDEi47ThJTu4ycMth8M3yrAfs7DWWwxFGjWMy8Pr6GAgu21VsJSb8ipKLBguwGFRJPJ6E586MvJcVSo1u6UTYGodUqay8bYmUcb3hq6ezPKnUrAuKyzDoW5WT1R1K62yYR8XTwxttoWdu5Qx3AZL8qa3F7WobW5WDGRT4fS8TsXSxWbVYMfWgdu"
             
-            adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction).subscribe { [weak self] result in
+            ParticleAuthService.signAndSendTransaction(transaction).subscribe { [weak self] result in
                 switch result {
                 case .failure(let error):
                     print(error)
@@ -76,13 +57,8 @@ class APIReferenceViewController: UIViewController {
     }
     
     func signAllTransaction() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         let transactions: [String] = []
-        
-        adapter.signAllTransactions(publicAddress: publicAddress, transactions: transactions).subscribe { [weak self] result in
+        ParticleAuthService.signAllTransactions(transactions).subscribe { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -93,20 +69,16 @@ class APIReferenceViewController: UIViewController {
     }
     
     func sendNativeEVM() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         showLoading()
         // firstly, make sure current user has some native token for test there methods
         // send 0.0001 native from self to receiver
-        let sender = publicAddress
+        let sender = ParticleAuthService.getAddress()
         let receiver = "0xAC6d81182998EA5c196a4424EA6AB250C7eb175b"
         let amount = BDouble(0.0001 * pow(10, 18)).rounded()
         
         ParticleWalletAPI.getEvmService().createTransaction(from: sender, to: receiver, value: amount.toHexString(), contractParams: nil).flatMap { transaction -> Single<String> in
             print(transaction)
-            return adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction)
+            return ParticleAuthService.signAndSendTransaction(transaction)
         }.subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -120,14 +92,10 @@ class APIReferenceViewController: UIViewController {
     }
     
     func sendErc20Token() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         showLoading()
         // firstly, make sure current user has some native token and erc20 token for test there methods
         // send 0.0001 erc20 token from self to receiver
-        let from = publicAddress
+        let from = ParticleAuthService.getAddress()
         // this token's decimals is 18, convert 0.0001 to minimum unit
         let amount = BDouble(0.0001 * pow(10, 18)).rounded()
         // this is your token contract address
@@ -141,7 +109,7 @@ class APIReferenceViewController: UIViewController {
         // and value could be nil.
         ParticleWalletAPI.getEvmService().createTransaction(from: from, to: contractAddress, value: nil, contractParams: contractParams).flatMap { transaction -> Single<String> in
             print(transaction)
-            return adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction)
+            return ParticleAuthService.signAndSendTransaction(transaction)
         }.subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -155,14 +123,10 @@ class APIReferenceViewController: UIViewController {
     }
     
     func sendErc721NFT() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         showLoading()
         // firstly, make sure current user has some native token and the NFT for test there methods
         // send 1 erc721 NFT from self to receiver
-        let from = publicAddress
+        let from = ParticleAuthService.getAddress()
         // this is your nft contract address
         let contractAddress = "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
         // this is receiver address
@@ -176,7 +140,7 @@ class APIReferenceViewController: UIViewController {
         // and value could be nil.
         ParticleWalletAPI.getEvmService().createTransaction(from: from, to: contractAddress, value: nil, contractParams: contractParams).flatMap { transaction -> Single<String> in
             print(transaction)
-            return adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction)
+            return ParticleAuthService.signAndSendTransaction(transaction)
         }.subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -190,14 +154,10 @@ class APIReferenceViewController: UIViewController {
     }
     
     func sendErc1155NFT() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         showLoading()
         // firstly, make sure current user has some native token and the NFT for test there methods
         // send 10 erc1155 NFT from self to receiver
-        let from = publicAddress
+        let from = ParticleAuthService.getAddress()
         // this is your nft contract address
         let contractAddress = "0xD18e451c11A6852Fb92291Dc59bE35a59d143836"
         // this is receiver address
@@ -213,7 +173,7 @@ class APIReferenceViewController: UIViewController {
         // and value could be nil.
         ParticleWalletAPI.getEvmService().createTransaction(from: from, to: contractAddress, value: nil, contractParams: contractParams).flatMap { transaction -> Single<String> in
             print(transaction)
-            return adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction)
+            return ParticleAuthService.signAndSendTransaction(transaction)
         }.subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -227,12 +187,8 @@ class APIReferenceViewController: UIViewController {
     }
     
     func sendCustomContractFunction() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         showLoading()
-        let from = publicAddress
+        let from = ParticleAuthService.getAddress()
         let to = "YOUR_CONTRACT_ADDRESS"
         
         let contractAddress = "YOUR_CONTRACT_ADDRESS"
@@ -243,7 +199,7 @@ class APIReferenceViewController: UIViewController {
         
         ParticleWalletAPI.getEvmService().createTransaction(from: from, to: to, value: nil, contractParams: contractParams).flatMap { transaction -> Single<String> in
             print(transaction)
-            return adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction)
+            return ParticleAuthService.signAndSendTransaction(transaction)
         }.subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -257,10 +213,6 @@ class APIReferenceViewController: UIViewController {
     }
     
     @IBAction func signTransaction() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         var transaction = ""
         switch ParticleNetwork.getChainInfo().chainType {
         case .solana:
@@ -270,7 +222,7 @@ class APIReferenceViewController: UIViewController {
         }
         
         if transaction.isEmpty { return }
-        adapter.signTransaction(publicAddress: publicAddress, transaction: transaction).subscribe { [weak self] result in
+        ParticleAuthService.signTransaction(transaction).subscribe { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -281,10 +233,6 @@ class APIReferenceViewController: UIViewController {
     }
     
     @IBAction func signMessage() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         var message = ""
         switch ParticleNetwork.getChainInfo().chainType {
         case .solana:
@@ -299,7 +247,7 @@ class APIReferenceViewController: UIViewController {
         
         if message.isEmpty { return }
         
-        adapter.signMessage(publicAddress: publicAddress, message: message).subscribe { [weak self] result in
+        ParticleAuthService.signMessage(message).subscribe { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -310,10 +258,6 @@ class APIReferenceViewController: UIViewController {
     }
     
     @IBAction func signTypedData() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         var message = ""
         switch ParticleNetwork.getChainInfo().chainType {
         case .solana:
@@ -328,7 +272,7 @@ class APIReferenceViewController: UIViewController {
         
         if message.isEmpty { return }
         
-        adapter.signTypedData(publicAddress: publicAddress, data: message).subscribe { [weak self] result in
+        ParticleAuthService.signTypedData(message, version: .v1).subscribe { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -370,6 +314,55 @@ class APIReferenceViewController: UIViewController {
         if let url = URL(string: "app.uniswap.org") {
             PNRouter.navigatorDappBrowser(url: url)
         }
+    }
+    
+    @IBAction func airdrop() {
+        if ParticleAuthService.getAddress().isEmpty { return }
+        let airdropHandler: (AirdropType) -> Void = { [weak self] airdropType in
+            guard let self = self else { return }
+            ParticleWalletAPI.getSolanaService().rpc(method: "enhancedAirdrop", params: [airdropType.rawValue, ParticleAuthService.getAddress()]).subscribe { result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let json):
+                    print(json)
+                }
+            }.disposed(by: self.bag)
+        }
+        
+        let alert = UIAlertController(title: "AirDrop", message: nil, preferredStyle: .actionSheet)
+            
+        alert.addAction(UIAlertAction(title: AirdropType.tokens.rawValue, style: .default, handler: { _ in
+            airdropHandler(AirdropType.tokens)
+        }))
+            
+        alert.addAction(UIAlertAction(title: AirdropType.png_nft.rawValue, style: .default, handler: { _ in
+            airdropHandler(AirdropType.png_nft)
+                
+        }))
+
+        alert.addAction(UIAlertAction(title: AirdropType.jpg_nft.rawValue, style: .default, handler: { _ in
+            
+            airdropHandler(AirdropType.jpg_nft)
+        }))
+        
+        alert.addAction(UIAlertAction(title: AirdropType.gif_nft.rawValue, style: .default, handler: { _ in
+            airdropHandler(AirdropType.gif_nft)
+            
+        }))
+        alert.addAction(UIAlertAction(title: AirdropType.gltf_nft.rawValue, style: .default, handler: { _ in
+            
+            airdropHandler(AirdropType.gltf_nft)
+        }))
+        alert.addAction(UIAlertAction(title: AirdropType.glb_nft.rawValue, style: .default, handler: { _ in
+            airdropHandler(AirdropType.glb_nft)
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+        }))
+        
+        present(alert, animated: true, completion: {})
     }
     
     func erc20Transfer() {
@@ -481,17 +474,13 @@ class APIReferenceViewController: UIViewController {
     }
     
     func deployContract() {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         let data = getContractData()
-        let from = publicAddress
+        let from = ParticleAuthService.getAddress()
         let to = ""
         ParticleWalletAPI.getEvmService().createTransaction(from: from, to: to, data: data).flatMap {
             transaction -> Single<String> in
             print("transaction = \(transaction)")
-            return adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction)
+            return ParticleAuthService.signAndSendTransaction(transaction)
         }.subscribe { [weak self] result in
             switch result {
             case .failure(let error):
@@ -572,10 +561,6 @@ extension APIReferenceViewController {
 
 extension APIReferenceViewController {
     func sendTransactionInAA() async throws {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return
-        }
-        
         let aa = ParticleNetwork.getAAService()!
                 
         let chainInfo = ParticleNetwork.getChainInfo()
@@ -586,7 +571,7 @@ extension APIReferenceViewController {
         if wholeFeeQuote.gasless != nil {
             // There are two ways to send gasless
             // 1, call adapter or ParticleAuthService, requires one transaction
-            let txHash1 = try await adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction, feeMode: .gasless, chainInfo: chainInfo).value
+            let txHash1 = try await ParticleAuthService.signAndSendTransaction(transaction, feeMode: .gasless, chainInfo: chainInfo).value
             // 2, call aa, support multi transactions, requires implement MessageSigner delegate.
             let txHash2 = try await aa.quickSendTransactions([transaction], feeMode: .gasless, messageSigner: self, wholeFeeQuote: wholeFeeQuote, chainInfo: chainInfo).value
         } else {
@@ -597,7 +582,7 @@ extension APIReferenceViewController {
         if nativeFeeQuote.isEnoughForPay {
             // There are two ways to send, pay token
             // 1, call adapter or ParticleAuthService, requires one transaction
-            let txHash1 = try await adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction, feeMode: .native, chainInfo: chainInfo).value
+            let txHash1 = try await ParticleAuthService.signAndSendTransaction(transaction, feeMode: .native, chainInfo: chainInfo).value
             // 2, call aa, support multi transactions, requires implement MessageSigner delegate.
             let txHash2 = try await aa.quickSendTransactions([transaction], feeMode: .native, messageSigner: self, wholeFeeQuote: wholeFeeQuote, chainInfo: chainInfo).value
         } else {
@@ -617,7 +602,7 @@ extension APIReferenceViewController {
                 let feeQuote = tokenFeeQuotes[0]
                 // There are two ways to send, pay token
                 // 1, call adapter or ParticleAuthService, requires one transaction
-                let txHash1 = try await adapter.signAndSendTransaction(publicAddress: publicAddress, transaction: transaction, feeMode: .token(feeQuote), chainInfo: chainInfo).value
+                let txHash1 = try await ParticleAuthService.signAndSendTransaction(transaction, feeMode: .token(feeQuote), chainInfo: chainInfo).value
                 // 2, call aa, support multi transactions, requires implement MessageSigner delegate.
                 let txHash2 = try await aa.quickSendTransactions([transaction], feeMode: .token(feeQuote), messageSigner: self, wholeFeeQuote: wholeFeeQuote, chainInfo: chainInfo).value
             } else {
@@ -629,17 +614,35 @@ extension APIReferenceViewController {
 
 extension APIReferenceViewController: MessageSigner {
     func signMessage(_ message: String, chainInfo: ParticleNetworkBase.ParticleNetwork.ChainInfo?) -> RxSwift.Single<String> {
-        guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
-            return .error(ParticleNetwork.ResponseError(code: nil,
-                                                        message: "not login with authCore"))
+        // if you are using ParticleAuthService
+        return ParticleAuthService.signMessage(message, chainInfo: chainInfo)
+        
+        // if you are using ParticleConnectService
+        // get current adapter by walletType and publicAddress
+        // here we assume currentWalletType is Metamask
+        
+        let currentWalletType = WalletType.metaMask
+        let publicAddress = "0x123..."
+        let adapters = ParticleConnect.getAllAdapters().filter {
+            $0.walletType == currentWalletType
         }
-        return adapter.signMessage(publicAddress: publicAddress, message: message)
+        if let adapter = adapters.first {
+            return adapter.signMessage(publicAddress: publicAddress, message: message)
+        } else {
+            return .error(NSError(domain: "", code: 0))
+        }
     }
     
     func getEoaAddress() -> String {
-        return publicAddress ?? ""
+        // if you are using ParticleAuthService
+        return ParticleAuthService.getAddress()
+        
+        // if you are using ParticleConnectService
+        let publicAddress = "0x123..."
+        return publicAddress
     }
 }
+
 
 extension APIReferenceViewController {
     func getSmartAccountAddress() async throws {

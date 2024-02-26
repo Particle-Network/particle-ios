@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lQf-0j-PTw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lQf-0j-PTw">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--Reference View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="APIReferenceViewController" id="BYZ-38-t0r" customClass="APIReferenceViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="APIReferenceViewController" customModule="Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="SIGN AND SEND TRANSACTION">
+                                <state key="normal" title="SIGN AND SENDTRANSACTION">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -134,6 +134,21 @@
                                     <action selector="openTransactionRecords" destination="BYZ-38-t0r" eventType="touchUpInside" id="wvc-8q-wAg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eT-Ak-RdL">
+                                <rect key="frame" x="40" y="624" width="334" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3bz-hX-gqD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="19"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="AIR DROP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="airdrop" destination="BYZ-38-t0r" eventType="touchUpInside" id="49P-iU-6vj"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqP-8e-AiG">
                                 <rect key="frame" x="40" y="284" width="334" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -164,9 +179,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9eT-Ak-RdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="1Ah-v7-I3q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bhA-fG-jAf" secondAttribute="trailing" constant="40" id="2XM-hZ-yoi"/>
                             <constraint firstItem="0g2-fp-QES" firstAttribute="top" secondItem="RKA-hc-f1a" secondAttribute="bottom" constant="10" id="5Cl-A9-KDP"/>
                             <constraint firstItem="H1Q-or-ehA" firstAttribute="top" secondItem="RqP-8e-AiG" secondAttribute="bottom" constant="10" id="5k4-NY-EzA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9eT-Ak-RdL" secondAttribute="trailing" constant="40" id="81h-vW-hkG"/>
                             <constraint firstItem="H1Q-or-ehA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="952-15-CTz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YTg-Pe-noI" secondAttribute="trailing" constant="40" id="9cM-r1-Oy3"/>
                             <constraint firstItem="bhA-fG-jAf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="BYC-pB-e9s"/>
@@ -191,6 +208,7 @@
                             <constraint firstItem="RKA-hc-f1a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="omH-KB-jtr"/>
                             <constraint firstItem="WTK-6v-3eq" firstAttribute="top" secondItem="bhA-fG-jAf" secondAttribute="bottom" constant="10" id="qF2-Dq-Tlg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WTK-6v-3eq" secondAttribute="trailing" constant="40" id="rot-EL-aIj"/>
+                            <constraint firstItem="9eT-Ak-RdL" firstAttribute="top" secondItem="YTg-Pe-noI" secondAttribute="bottom" constant="10" id="vb9-Ug-IBQ"/>
                             <constraint firstItem="P4U-n9-QMu" firstAttribute="centerY" secondItem="RKA-hc-f1a" secondAttribute="centerY" id="x0i-9K-tTk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0g2-fp-QES" secondAttribute="trailing" constant="40" id="xrB-Ph-7MI"/>
                             <constraint firstItem="WTK-6v-3eq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="zTi-Y5-a7K"/>
@@ -331,7 +349,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="YgF-4k-7c2">
-                                <rect key="frame" x="140.33333333333331" y="463.33333333333331" width="133.33333333333331" height="25.666666666666686"/>
+                                <rect key="frame" x="140.33333333333337" y="463.33333333333331" width="133.66666666666663" height="26"/>
                             </pageControl>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hZJ-p9-Efw">
                                 <rect key="frame" x="121.66666666666669" y="862" width="171" height="17"/>
@@ -407,13 +425,13 @@
         <image name="main_logo" width="171.33332824707031" height="17"/>
         <image name="more_wallet" width="43" height="43"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
