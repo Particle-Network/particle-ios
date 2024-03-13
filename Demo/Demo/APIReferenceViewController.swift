@@ -504,7 +504,7 @@ class APIReferenceViewController: UIViewController {
     
     func openBuyCrypto() {
         let walletAddress = "YOUR WALLET ADDRESS"
-        let network: OpenBuyNetwork = .ethereum
+        let network: ParticleNetwork.ChainInfo = .ethereum
         let cryptoCoin = "ETH"
         let fiatCoin = "USD"
         let fiatAmt = 1000

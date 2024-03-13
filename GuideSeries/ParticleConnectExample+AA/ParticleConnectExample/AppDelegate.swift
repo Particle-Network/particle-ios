@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AlphaConnectAdapter(),
             OKXConnectAdapter(),
         ]
-        ParticleConnect.initialize(env: .debug, chainInfo: .polygon(.mumbai)) {
+        ParticleConnect.initialize(env: .debug, chainInfo: .polygon) {
             adapters
         }
         ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             [80001: "hYZIwIsf2.e18c790b-cafb-4c4e-a438-0289fc25dba1"]
 
         //
-        AAService.initialize(name: .biconomy, version: .v1_0_0, biconomyApiKeys: biconomyApiKeys)
+        AAService.initialize(name: .biconomyV1, biconomyApiKeys: biconomyApiKeys)
         let aaService = AAService()
         ParticleNetwork.setAAService(aaService)
         aaService.enableAAMode()

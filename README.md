@@ -20,16 +20,16 @@ iOS 14 or higher
 
 | Xcode version                | 15.0 or higher | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 1.3.12         |
-| ParticleWalletAPI            | 1.3.12         |
-| ParticleWalletGUI            | 1.3.12         |
-| ParticleWalletConnect        | 1.3.12         | 
-| ParticleAA                   | 1.3.12         | 
-| ParticleAuthCore             | 1.3.8          |
-| ParticleMPCCore              | 1.3.8          |
-| AuthCoreAdapter              | 1.3.8          |
-| Thresh                       | 1.3.8          |
-| ParticleAuthService(deprecated)         | 1.3.12         |
+| ParticleNetworkBase          | 1.3.20        |
+| ParticleWalletAPI            | 1.3.20        |
+| ParticleWalletGUI            | 1.3.20        |
+| ParticleWalletConnect        | 1.3.20        | 
+| ParticleAA                   | 1.3.20        | 
+| ParticleAuthCore             | 1.3.9          |
+| ParticleMPCCore              | 1.3.9          |
+| AuthCoreAdapter              | 1.3.9          |
+| Thresh                       | 1.3.9          |
+| ParticleAuthService(deprecated)         | 1.3.20        |
 
 ### Migrating to WalletConnect v2
 Starting from version 0.14.0, WalletConnectV2 is supported.
