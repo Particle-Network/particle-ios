@@ -120,29 +120,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
         return configuration
     }
-    
-    func transmit(method: String, params: [Encodable], successHandler: @escaping (Data?) -> Void, failureHandler: @escaping (Error) -> Void) {
-        ParticleProvider.request(method: method, params: params).subscribe { data in
-            successHandler(data)
-        } onFailure: { error in
-            failureHandler(error)
-        }.disposed(by: bag)
-    }
 }
 
 extension ViewController {
     func request(topic: String, method: String, params: [Encodable], completion: @escaping (WCResult<Data?>) -> Void) {
-        // call ParticleProvider to handle request from dapp
+        // call ParticleSDK to handle request from dapp
         // also you can interrupt method by yourself
         
-        transmit(method: method, params: params) { data in
-            completion(.success(data))
-        } failureHandler: { error in
-            print(error)
-            if let responseError = error as? ParticleNetwork.ResponseError {
-                completion(.failure(responseError))
-            }
-        }
     }
     
     func shouldConnectDapp(_ dappMetaData: DappMetaData, completion: @escaping (String, Int) -> Void) {

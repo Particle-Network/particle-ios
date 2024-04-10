@@ -3,9 +3,14 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'ParticleWalletConnectDemo' do
   use_frameworks!
-pod 'ParticleNetworkBase', '1.3.20'
-pod 'ParticleWalletConnect', '1.3.20'
-pod 'ParticleAuthService', '1.3.20'
+pod 'ParticleNetworkBase', '1.4.0'
+pod 'ParticleWalletConnect', '1.4.0'
+pod 'ParticleAuthService', '1.4.0'
+
+# from 1.14.0 you need add this line.
+pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'
+# from 1.14.0, if you need ParticleWalletConnect, you should add this line.
+pod 'WalletConnectSwiftV2', :git => 'https://github.com/SunZhiC/WalletConnectSwiftV2.git', :branch => 'particle'
 
 pod 'SDWebImage'
 pod 'SDWebImageWebPCoder'
@@ -25,6 +30,14 @@ post_install do |installer|
       resource_bundle_target.build_configurations.each do |config|
         config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'
       end
+    end
+  end
+  
+  installer.generated_projects.each do |project|
+    project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+         end
     end
   end
   

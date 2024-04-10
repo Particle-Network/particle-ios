@@ -3,9 +3,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'ParticleAuthDemo_Scene' do
   use_frameworks!
-	pod 'ParticleAuthService', '1.3.20'
-	pod 'ParticleNetworkBase', '1.3.20'
+	pod 'ParticleAuthService', '1.4.0'
+	pod 'ParticleNetworkBase', '1.4.0'
 
+  # from 1.14.0 you need add this line.
+  pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'
 end
 
 

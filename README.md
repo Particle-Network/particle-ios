@@ -20,16 +20,28 @@ iOS 14 or higher
 
 | Xcode version                | 15.0 or higher | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 1.3.21        |
-| ParticleWalletAPI            | 1.3.21        |
-| ParticleWalletGUI            | 1.3.21        |
-| ParticleWalletConnect        | 1.3.21        | 
-| ParticleAA                   | 1.3.21        | 
-| ParticleAuthCore             | 1.3.10          |
-| ParticleMPCCore              | 1.3.10          |
-| AuthCoreAdapter              | 1.3.10          |
-| Thresh                       | 1.3.10          |
-| ParticleAuthService(deprecated)         | 1.3.21        |
+| ParticleNetworkBase          | 1.4.0        |
+| ParticleWalletAPI            | 1.4.0        |
+| ParticleWalletGUI            | 1.4.0        |
+| ParticleWalletConnect        | 1.4.0        | 
+| ParticleAA                   | 1.4.0        | 
+| ParticleAuthCore             | 1.4.0          |
+| ParticleMPCCore              | 1.4.0          |
+| AuthCoreAdapter              | 1.4.0          |
+| Thresh                       | 1.4.0          |
+| ParticleAuthService(deprecated)         | 1.4.0        |
+
+## 🎯 Support Apple Privacy Manifests
+From version 1.4.0, all SDKs have been adapted to Apple's privacy requirements.
+
+The following third-party SDKs require the use of specific versions.
+```ruby
+pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'
+# if you need ParticleWalletConnect, you should add this line.
+pod 'WalletConnectSwiftV2', :git => 'https://github.com/SunZhiC/WalletConnectSwiftV2.git', :branch => 'particle'
+# if you need ParticleAuthCore or ParticleWalletGUI, you should add this line.
+pod 'SkeletonView', :git => 'https://github.com/SunZhiC/SkeletonView.git', :branch => 'main'
+```
 
 ### Migrating to WalletConnect v2
 Starting from version 0.14.0, WalletConnectV2 is supported.

@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         aaService.enableAAMode()
         // Set wallet connect chains,
         // Note metamask only support one chain for each connection.
-        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumGoerli, .polygon, .polygonMumbai])
+        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumSepolia, .polygon, .polygonMumbai])
 
         ParticleWalletConnect.initialize(
             WalletMetaData(name: "Particle Wallet",

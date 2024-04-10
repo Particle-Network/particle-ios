@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         aaService.enableAAMode()
         // Set wallet connect chains,
         // Note metamask only support one chain for each connection.
-//        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum(.mainnet), .ethereum(.goerli), .polygon(.mainnet), .polygon(.mumbai)])
+        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumSepolia, .polygon, .polygonMumbai])
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
