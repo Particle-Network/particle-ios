@@ -5,10 +5,10 @@ target 'ParticleConnectExample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'ParticleNetworkBase', '1.4.0'
-  pod 'ParticleAuthService', '1.4.0'
-  pod 'ParticleWalletAPI', '1.4.0'
-  pod 'ParticleAA', '1.4.0'
+  pod 'ParticleNetworkBase', '1.4.1'
+  pod 'ParticleAuthService', '1.4.1'
+  pod 'ParticleWalletAPI', '1.4.1'
+  pod 'ParticleAA', '1.4.1'
   
   pod 'ConnectCommon', '0.2.19'
   pod 'ConnectEVMAdapter', '0.2.19'
