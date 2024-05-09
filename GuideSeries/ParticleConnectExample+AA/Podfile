@@ -5,18 +5,18 @@ target 'ParticleConnectExample' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'ParticleNetworkBase', '1.4.1'
-  pod 'ParticleAuthService', '1.4.1'
-  pod 'ParticleWalletAPI', '1.4.1'
-  pod 'ParticleAA', '1.4.1'
+  pod 'ParticleNetworkBase', '1.4.2'
+  pod 'ParticleAuthService', '1.4.2'
+  pod 'ParticleWalletAPI', '1.4.2'
+  pod 'ParticleAA', '1.4.2'
   
-  pod 'ConnectCommon', '0.2.19'
-  pod 'ConnectEVMAdapter', '0.2.19'
-  pod 'ConnectSolanaAdapter', '0.2.19'
-  pod 'ConnectWalletConnectAdapter', '0.2.19'
-  pod 'ConnectPhantomAdapter', '0.2.19'
-  pod 'ParticleConnect', '0.2.19'
-  pod 'ParticleAuthAdapter', '0.2.19'
+  pod 'ConnectCommon', '0.2.20'
+  pod 'ConnectEVMAdapter', '0.2.20'
+  pod 'ConnectSolanaAdapter', '0.2.20'
+  pod 'ConnectWalletConnectAdapter', '0.2.20'
+  pod 'ConnectPhantomAdapter', '0.2.20'
+  pod 'ParticleConnect', '0.2.20'
+  pod 'ParticleAuthAdapter', '0.2.20'
 
   # from 1.14.0 you need add this line.
   pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'

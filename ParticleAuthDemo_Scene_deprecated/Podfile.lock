@@ -4,9 +4,9 @@ PODS:
     - BigInt
   - BigInt (5.2.0)
   - CryptoSwift (1.8.2)
-  - ParticleAuthService (1.4.1):
+  - ParticleAuthService (1.4.2):
     - ParticleNetworkBase
-  - ParticleNetworkBase (1.4.1):
+  - ParticleNetworkBase (1.4.2):
     - Alamofire (~> 5.9.0)
     - Base58.swift
     - BigInt (~> 5.2.0)
@@ -31,8 +31,8 @@ PODS:
   - SwiftyUserDefaults (5.3.0)
 
 DEPENDENCIES:
-  - ParticleAuthService (= 1.4.1)
-  - ParticleNetworkBase (= 1.4.1)
+  - ParticleAuthService (= 1.4.2)
+  - ParticleNetworkBase (= 1.4.2)
   - SwiftyUserDefaults (from `https://github.com/SunZhiC/SwiftyUserDefaults.git`, branch `master`)
 
 SPEC REPOS:
@@ -64,8 +64,8 @@ SPEC CHECKSUMS:
   Base58.swift: e0e16655f9db843b8cd367593ed6f7d90d136b7f
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
   CryptoSwift: c63a805d8bb5e5538e88af4e44bb537776af11ea
-  ParticleAuthService: a8b0c2f559874ade8d64009022b178273cfbf179
-  ParticleNetworkBase: bda74560734051eb7eeed39ad69f38fb517f405e
+  ParticleAuthService: a809d86e06d07754e41a1a17bdaf60f335fc606a
+  ParticleNetworkBase: e0f8a57d3d0381476a3ba0be60ecf3c2f5d425a0
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
@@ -73,6 +73,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   SwiftyUserDefaults: dd5dce66fb01565a82c3618b835f0546987eb683
 
-PODFILE CHECKSUM: 75938eb1ca8a91c50eea1d9ce01a74305ad3f9b9
+PODFILE CHECKSUM: 3165d8606b7e02843256f026f334db99948aacc6
 
 COCOAPODS: 1.15.2
