@@ -27,24 +27,17 @@ public class ParticleConnectWrapper: NSObject {
             RainbowConnectAdapter(),
             BitkeepConnectAdapter(),
             ImtokenConnectAdapter(),
-            TrustConnectAdapter()
+            TrustConnectAdapter(),
+            ZerionConnectAdapter(),
+            MathConnectAdapter(),
+            Inch1ConnectAdapter(),
+            ZengoConnectAdapter(),
+            AlphaConnectAdapter(),
+            OKXConnectAdapter()
         ]
 
         adapters.append(EVMConnectAdapter())
         adapters.append(SolanaConnectAdapter())
-
-        let moreAdapterClasses: [WalletConnectAdapter.Type] =
-            [ZerionConnectAdapter.self,
-             MathConnectAdapter.self,
-             OmniConnectAdapter.self,
-             Inch1ConnectAdapter.self,
-             ZengoConnectAdapter.self,
-             AlphaConnectAdapter.self,
-             OKXConnectAdapter.self]
-
-        adapters.append(contentsOf: moreAdapterClasses.map {
-            $0.init()
-        })
 
         ParticleConnect.initialize(env: .debug, chainInfo: .ethereum, dAppData: .standard) {
             adapters

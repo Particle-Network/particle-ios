@@ -5,6 +5,7 @@
 //  Created by link on 2022/5/12.
 //
 
+import AuthCoreAdapter
 import ConnectCommon
 import ConnectEVMAdapter
 import ConnectPhantomAdapter
@@ -16,7 +17,6 @@ import ParticleNetworkBase
 import ParticleWalletConnect
 import ParticleWalletGUI
 import UIKit
-import AuthCoreAdapter
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,24 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             RainbowConnectAdapter(),
             BitkeepConnectAdapter(),
             ImtokenConnectAdapter(),
-            TrustConnectAdapter()
+            TrustConnectAdapter(),
+            ZerionConnectAdapter(),
+            MathConnectAdapter(),
+            Inch1ConnectAdapter(),
+            ZengoConnectAdapter(),
+            AlphaConnectAdapter(),
+            OKXConnectAdapter()
         ]
 
         adapters.append(EVMConnectAdapter())
         adapters.append(SolanaConnectAdapter())
-
-        let moreAdapterClasses: [WalletConnectAdapter.Type] =
-            [ZerionConnectAdapter.self,
-             MathConnectAdapter.self,
-             OmniConnectAdapter.self,
-             Inch1ConnectAdapter.self,
-             ZengoConnectAdapter.self,
-             AlphaConnectAdapter.self,
-             OKXConnectAdapter.self]
-
-        adapters.append(contentsOf: moreAdapterClasses.map {
-            $0.init()
-        })
 
         // select a network
         ParticleConnect.initialize(env: .debug, chainInfo: .ethereum, dAppData: .standard) {
