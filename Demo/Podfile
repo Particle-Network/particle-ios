@@ -9,11 +9,11 @@ target 'Demo' do
     pod 'ParticleMPCCore', '1.4.7'
     pod 'Thresh', '1.4.7'
   
-    pod 'ParticleWalletGUI', '1.4.6'
-    pod 'ParticleWalletAPI', '1.4.6'
-    pod 'ParticleNetworkBase', '1.4.6'
-    pod 'ParticleWalletConnect', '1.4.6'
-    pod 'ParticleAA', '1.4.6'
+    pod 'ParticleWalletGUI', '1.4.9'
+    pod 'ParticleWalletAPI', '1.4.9'
+    pod 'ParticleNetworkBase', '1.4.9'
+    pod 'ParticleWalletConnect', '1.4.9'
+    pod 'ParticleAA', '1.4.9'
     
     pod 'ParticleConnect', '0.2.24'
     pod 'ConnectWalletConnectAdapter', '0.2.24'

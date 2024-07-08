@@ -16,9 +16,9 @@ PODS:
   - libwebp/sharpyuv (1.3.1)
   - libwebp/webp (1.3.1):
     - libwebp/sharpyuv
-  - ParticleAuthService (1.4.5):
+  - ParticleAuthService (1.4.9):
     - ParticleNetworkBase
-  - ParticleNetworkBase (1.4.5):
+  - ParticleNetworkBase (1.4.9):
     - Alamofire (~> 5.9.0)
     - Base58.swift
     - BigInt (~> 5.2.0)
@@ -28,7 +28,7 @@ PODS:
     - RxSwift (= 6.6.0)
     - SwiftyJSON (~> 5.0.1)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleWalletConnect (1.4.5):
+  - ParticleWalletConnect (1.4.9):
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.6.0)
@@ -97,9 +97,9 @@ PODS:
     - WalletConnectSwiftV2/WalletConnectUtils
 
 DEPENDENCIES:
-  - ParticleAuthService (= 1.4.5)
-  - ParticleNetworkBase (= 1.4.5)
-  - ParticleWalletConnect (= 1.4.5)
+  - ParticleAuthService (= 1.4.9)
+  - ParticleNetworkBase (= 1.4.9)
+  - ParticleWalletConnect (= 1.4.9)
   - SDWebImage
   - SDWebImageWebPCoder
   - SwiftyUserDefaults (from `https://github.com/SunZhiC/SwiftyUserDefaults.git`, branch `master`)
@@ -146,9 +146,9 @@ SPEC CHECKSUMS:
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
   CryptoSwift: c63a805d8bb5e5538e88af4e44bb537776af11ea
   libwebp: 33dc822fbbf4503668d09f7885bbfedc76c45e96
-  ParticleAuthService: e5ad4a05d1b78d91e535865bab8c987b737ea82c
-  ParticleNetworkBase: 7b427b1707165203039826cd8bb79b12b7f62c37
-  ParticleWalletConnect: 175c802441f42754095f821252d62146a45333d3
+  ParticleAuthService: 7f732bdfe93e74197cbd4c8f0cc03fb9f8b6cceb
+  ParticleNetworkBase: 5d112d15d6b0a593725e338b23fefd334de79e98
+  ParticleWalletConnect: 517479509742dbe12337ef1f69da378164cab53f
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
@@ -160,6 +160,6 @@ SPEC CHECKSUMS:
   SwiftyUserDefaults: dd5dce66fb01565a82c3618b835f0546987eb683
   WalletConnectSwiftV2: a3e9870da851a1608e79d4583668e87ffea6a72d
 
-PODFILE CHECKSUM: bb82054bc18132b17ee8d24663754857b67c3696
+PODFILE CHECKSUM: 98523a15d01d0071d16cf0b3a62ecfc5eff60369
 
 COCOAPODS: 1.15.2

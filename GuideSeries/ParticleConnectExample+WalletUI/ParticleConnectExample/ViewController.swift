@@ -6,7 +6,7 @@
 //
 
 import ConnectCommon
-import ParticleAuthService
+import ParticleAuthCore
 import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletAPI
@@ -37,14 +37,10 @@ class ViewController: UIViewController {
                 self.account = account
                 print(account)
                 print(account?.smartAccount?.smartAccountAddress)
-                // when walletType is particle or authCore,
-                // if you need token, uuid or others, try getUserInfo.
-                // in particle auth service.
-                // let userInfo = ParticleAuthService.getUserInfo()
-                //
+
                 // in auth core,
-                // let auth = Auth()
-                // let userInfo = auth.getUserInfo()
+                let auth = Auth()
+                let userInfo = auth.getUserInfo()
             case .failure(let error):
                 print(error)
             }
@@ -63,7 +59,7 @@ class ViewController: UIViewController {
                 self.account = account
                 print(account)
                 print(account?.smartAccount?.smartAccountAddress)
-                // there are no more user infos when connect with third wallets, like metamask, trust...
+            // there are no more user infos when connect with third wallets, like metamask, trust...
             case .failure(let error):
                 print(error)
             }
@@ -258,7 +254,7 @@ class ViewController: UIViewController {
         let config: NFTDetailsConfig = .init(address: nftAddress, tokenId: tokenId)
         PNRouter.navigatorNFTDetails(nftDetailsConfig: config)
     }
-    
+
     @IBAction func openNFTSend() {
         let nftAddress = "0xb3a07Fa38804810a14bB8877AF69Ab547502D321"
         let toAddress = "0x0000000000000000000000000000000000000000"

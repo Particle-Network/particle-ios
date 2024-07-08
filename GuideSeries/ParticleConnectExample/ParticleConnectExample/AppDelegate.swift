@@ -5,12 +5,12 @@
 //  Created by link on 16/11/2023.
 //
 
+import AuthCoreAdapter
 import ConnectCommon
 import ConnectEVMAdapter
 import ConnectPhantomAdapter
 import ConnectSolanaAdapter
 import ConnectWalletConnectAdapter
-import ParticleAuthAdapter
 import ParticleConnect
 import UIKit
 
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func particleInit() {
         let adapters: [ConnectAdapter] = [
-            ParticleAuthAdapter(),
+            AuthCoreAdapter(),
             MetaMaskConnectAdapter(),
             PhantomConnectAdapter(),
             WalletConnectAdapter(),
@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             TrustConnectAdapter(),
             ZerionConnectAdapter(),
             MathConnectAdapter(),
-            OmniConnectAdapter(),
             Inch1ConnectAdapter(),
             ZengoConnectAdapter(),
             AlphaConnectAdapter(),
@@ -46,14 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SolanaConnectAdapter(),
             EVMConnectAdapter()
         ]
-        ParticleConnect.initialize(env: .debug, chainInfo: .polygonMumbai) {
+        ParticleConnect.initialize(env: .debug, chainInfo: .polygonAmoy) {
             adapters
         }
         ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
 
         // Set wallet connect chains,
         // Note metamask only support one chain for each connection.
-        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumSepolia, .polygon, .polygonMumbai])
+        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumSepolia, .polygon, .polygonAmoy])
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {

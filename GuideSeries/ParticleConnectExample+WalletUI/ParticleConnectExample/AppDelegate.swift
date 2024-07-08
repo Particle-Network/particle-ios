@@ -9,7 +9,7 @@ import ConnectCommon
 import ConnectPhantomAdapter
 import ConnectWalletConnectAdapter
 import ParticleAA
-import ParticleAuthAdapter
+import AuthCoreAdapter
 import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletConnect
@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func particleInit() {
         let adapters: [ConnectAdapter] = [
-            ParticleAuthAdapter(),
+            AuthCoreAdapter(),
             MetaMaskConnectAdapter(),
             PhantomConnectAdapter(),
             WalletConnectAdapter(),
@@ -39,29 +39,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             TrustConnectAdapter(),
             ZerionConnectAdapter(),
             MathConnectAdapter(),
-            OmniConnectAdapter(),
             Inch1ConnectAdapter(),
             ZengoConnectAdapter(),
             AlphaConnectAdapter(),
             OKXConnectAdapter(),
         ]
-        ParticleConnect.initialize(env: .debug, chainInfo: .polygonMumbai) {
+        ParticleConnect.initialize(env: .debug, chainInfo: .polygonAmoy) {
             adapters
         }
         ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
 
-        // set your biconomy api keys
-        let biconomyApiKeys =
-            [80001: "hYZIwIsf2.e18c790b-cafb-4c4e-a438-0289fc25dba1"]
-
-        //
-        AAService.initialize(name: .biconomyV1, biconomyApiKeys: biconomyApiKeys)
+        AAService.initialize(name: .biconomyV2, biconomyApiKeys: [:])
         let aaService = AAService()
         ParticleNetwork.setAAService(aaService)
         aaService.enableAAMode()
         // Set wallet connect chains,
         // Note metamask only support one chain for each connection.
-        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumSepolia, .polygon, .polygonMumbai])
+        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumSepolia, .polygon, .polygonAmoy])
 
         ParticleWalletConnect.initialize(
             WalletMetaData(name: "Particle Wallet",

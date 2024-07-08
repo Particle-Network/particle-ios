@@ -3,20 +3,20 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'DemoObjc' do
   use_frameworks!
-    pod 'ParticleWalletGUI', '1.4.5'
-    pod 'ParticleWalletAPI', '1.4.5'
-    pod 'ParticleNetworkBase', '1.4.5'
-    pod 'ParticleAuthService', '1.4.5'
-    pod 'ParticleWalletConnect', '1.4.5'
-    pod 'ParticleAA', '1.4.5'
+    pod 'ParticleWalletGUI', '1.4.9'
+    pod 'ParticleWalletAPI', '1.4.9'
+    pod 'ParticleNetworkBase', '1.4.9'
+    pod 'ParticleAuthService', '1.4.9'
+    pod 'ParticleWalletConnect', '1.4.9'
+    pod 'ParticleAA', '1.4.9'
     
-    pod 'ParticleAuthAdapter', '0.2.22'
-    pod 'ParticleConnect', '0.2.22'
-    pod 'ConnectWalletConnectAdapter', '0.2.22'
-    pod 'ConnectEVMAdapter', '0.2.22'
-    pod 'ConnectSolanaAdapter', '0.2.22'
-    pod 'ConnectPhantomAdapter', '0.2.22'
-    pod 'ConnectCommon', '0.2.22'
+    pod 'ParticleAuthAdapter', '0.2.24'
+    pod 'ParticleConnect', '0.2.24'
+    pod 'ConnectWalletConnectAdapter', '0.2.24'
+    pod 'ConnectEVMAdapter', '0.2.24'
+    pod 'ConnectSolanaAdapter', '0.2.24'
+    pod 'ConnectPhantomAdapter', '0.2.24'
+    pod 'ConnectCommon', '0.2.24'
     
     # from 1.14.0 you need add this line.
     pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'

@@ -6,7 +6,7 @@
 //
 
 import ConnectCommon
-import ParticleAuthService
+import ParticleAuthCore
 import ParticleConnect
 import ParticleNetworkBase
 import ParticleWalletAPI
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
 
     @IBAction func connectParticle() {
         let adapter = ParticleConnect.getAllAdapters().filter {
-            $0.walletType == .particle
+            $0.walletType == .authCore
         }.first!
 
         let authConfig: ParticleAuthConfig = .init(loginType: .google)
@@ -37,14 +37,9 @@ class ViewController: UIViewController {
                 self.account = account
                 print(account)
 
-            // when walletType is particle or authCore,
-            // if you need token, uuid or others, try getUserInfo.
-            // in particle auth service.
-            // let userInfo = ParticleAuthService.getUserInfo()
-            //
-            // in auth core,
-            // let auth = Auth()
-            // let userInfo = auth.getUserInfo()
+                // in auth core,
+                let auth = Auth()
+                let userInfo = auth.getUserInfo()
             case .failure(let error):
                 print(error)
             }

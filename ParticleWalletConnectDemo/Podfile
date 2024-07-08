@@ -3,9 +3,9 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'ParticleWalletConnectDemo' do
   use_frameworks!
-pod 'ParticleNetworkBase', '1.4.5'
-pod 'ParticleWalletConnect', '1.4.5'
-pod 'ParticleAuthService', '1.4.5'
+pod 'ParticleNetworkBase', '1.4.9'
+pod 'ParticleWalletConnect', '1.4.9'
+pod 'ParticleAuthService', '1.4.9'
 
 # from 1.14.0 you need add this line.
 pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'
