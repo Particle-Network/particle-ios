@@ -20,16 +20,16 @@ iOS 14 or higher
 
 | Xcode version                | 15.0 or higher | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 1.4.9        |
-| ParticleWalletAPI            | 1.4.9        |
-| ParticleWalletGUI            | 1.4.9        |
-| ParticleWalletConnect        | 1.4.9        | 
-| ParticleAA                   | 1.4.9        | 
-| ParticleAuthCore             | 1.4.7          |
-| ParticleMPCCore              | 1.4.7          |
-| AuthCoreAdapter              | 1.4.7          |
-| Thresh                       | 1.4.7          |
-| ParticleAuthService(deprecated)         | 1.4.9        |
+| ParticleNetworkBase          | 1.4.10        |
+| ParticleWalletAPI            | 1.4.10        |
+| ParticleWalletGUI            | 1.4.10        |
+| ParticleWalletConnect        | 1.4.10        | 
+| ParticleAA                   | 1.4.10        | 
+| ParticleAuthCore             | 1.4.9          |
+| ParticleMPCCore              | 1.4.9          |
+| AuthCoreAdapter              | 1.4.9          |
+| Thresh                       | 1.4.9          |
+| ParticleAuthService(deprecated)         | 1.4.10        |
 
 ## 🎯 Support Apple Privacy Manifests
 From version 1.4.0, all SDKs have been adapted to Apple's privacy requirements.

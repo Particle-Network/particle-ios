@@ -39,11 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Inch1ConnectAdapter(),
             ZengoConnectAdapter(),
             AlphaConnectAdapter(),
-            OKXConnectAdapter()
+            OKXConnectAdapter(),
+            EVMConnectAdapter(),
+            SolanaConnectAdapter()
         ]
-
-        adapters.append(EVMConnectAdapter())
-        adapters.append(SolanaConnectAdapter())
 
         // select a network
         ParticleConnect.initialize(env: .debug, chainInfo: .ethereum, dAppData: .standard) {

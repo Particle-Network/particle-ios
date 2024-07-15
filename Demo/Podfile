@@ -4,23 +4,23 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'Demo' do
   use_frameworks!
   
-    pod 'AuthCoreAdapter', '1.4.7'
-    pod 'ParticleAuthCore', '1.4.7'
-    pod 'ParticleMPCCore', '1.4.7'
-    pod 'Thresh', '1.4.7'
+    pod 'AuthCoreAdapter', '1.4.9'
+    pod 'ParticleAuthCore', '1.4.9'
+    pod 'ParticleMPCCore', '1.4.9'
+    pod 'Thresh', '1.4.9'
   
-    pod 'ParticleWalletGUI', '1.4.9'
-    pod 'ParticleWalletAPI', '1.4.9'
-    pod 'ParticleNetworkBase', '1.4.9'
-    pod 'ParticleWalletConnect', '1.4.9'
-    pod 'ParticleAA', '1.4.9'
+    pod 'ParticleWalletGUI', '1.4.10'
+    pod 'ParticleWalletAPI', '1.4.10'
+    pod 'ParticleNetworkBase', '1.4.10'
+    pod 'ParticleWalletConnect', '1.4.10'
+    pod 'ParticleAA', '1.4.10'
     
-    pod 'ParticleConnect', '0.2.24'
-    pod 'ConnectWalletConnectAdapter', '0.2.24'
-    pod 'ConnectEVMAdapter', '0.2.24'
-    pod 'ConnectSolanaAdapter', '0.2.24'
-    pod 'ConnectPhantomAdapter', '0.2.24'
-    pod 'ConnectCommon', '0.2.24'
+    pod 'ParticleConnect', '0.2.26'
+    pod 'ConnectWalletConnectAdapter', '0.2.26'
+    pod 'ConnectEVMAdapter', '0.2.26'
+    pod 'ConnectSolanaAdapter', '0.2.26'
+    pod 'ConnectPhantomAdapter', '0.2.26'
+    pod 'ConnectCommon', '0.2.26'
     
     # from 1.14.0 you need add this line.
     pod 'SwiftyUserDefaults', :git => 'https://github.com/SunZhiC/SwiftyUserDefaults.git', :branch => 'master'
