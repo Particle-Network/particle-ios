@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/github/license/Particle-Network/particle-ios)](https://github.com/Particle-Network/particle-ios/blob/main/LICENSE.txt)
 
 
-This repository contains [Auth Service](https://docs.particle.network/auth-service/introduction) and [Wallet Service](https://docs.particle.network/wallet-service/introduction) sample source. It supports Solana and all EVM-compatiable chains now, more chains and more features coming soon! Learn more visit [Particle Network](https://docs.particle.network/).
+This repository contains [Auth Service](https://developers.particle.network/api-reference/auth/mobile-sdks/ios) and [Wallet Service](https://developers.particle.network/api-reference/wallet/mobile/ios) sample source. It supports Solana and all EVM-compatiable chains now, more chains and more features coming soon! Learn more visit [Particle Network](https://developers.particle.network/).
 
 #### Note
 Please note that the AuthCore SDKs only support `ios-arm64` (iOS devices). We currently do not support `ios-x86_64-simulator` (Intel chip simulators) and  `ios-arm64-simulator` (M-series chip simulators).
@@ -101,7 +101,7 @@ pod install --repo-update
 
 ## 🚴‍♂️ Other Demo
 
-- **GuideSeries:** follow [iOS Guide](https://docs.particle.network/getting-started/platform-specific-guides/ios/social-login-+-embeded-wallet) step to step, add ParticleSDK to your project.
+- **GuideSeries:** follow [iOS Guide](https://developers.particle.network/guides/wallet-as-a-service/waas/mobile-quickstart) step to step, add ParticleSDK to your project.
   
 - **ParticleWalletConnectDemo** show how to integrate with ParticleWalletConnect, it use ParticleAuthService to handle request from dapp.
 - **ParticleAuthDemo_deprecated** show how to integrate ParticleAuthService with a few code.
@@ -118,9 +118,10 @@ pod install --repo-update
 5. Check our official dev docs: https://developers.particle.network/
 
 ## 📄 Docs
-1. https://developers.particle.network/reference/auth-ios
-2. https://developers.particle.network/reference/wallet-ios
-3. https://developers.particle.network/reference/aa-ios
+1. https://developers.particle.network/api-reference/connect/mobile/ios
+2. https://developers.particle.network/api-reference/auth/mobile-sdks/ios
+3. https://developers.particle.network/api-reference/wallet/mobile/ios
+4. https://developers.particle.network/api-reference/aa/sdks/mobile/ios
 
 ## 💼 Give Feedback
 Please report bugs or issues to [particle-ios/issues](https://github.com/Particle-Network/particle-ios/issues)
