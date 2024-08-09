@@ -25,13 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // init ParticleNetwork
 
-        var adapters: [ConnectAdapter] = [
+        let adapters: [ConnectAdapter] = [
             MetaMaskConnectAdapter(),
             AuthCoreAdapter(),
             PhantomConnectAdapter(),
             WalletConnectAdapter(),
             RainbowConnectAdapter(),
-            BitkeepConnectAdapter(),
+            BitgetConnectAdapter(),
             ImtokenConnectAdapter(),
             TrustConnectAdapter(),
             ZerionConnectAdapter(),
@@ -45,13 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ]
 
         // select a network
-        ParticleConnect.initialize(env: .debug, chainInfo: .ethereum, dAppData: .standard) {
-            adapters
-        }
+        ParticleConnect.initialize(env: .debug, chainInfo: .ethereum, dAppData: .standard, adapters: adapters)
+
+        ParticleWalletGUI.setAdapters(ParticleConnect.getAllAdapters())
 
         // set wallet connect v2 project id to ParticleConnectSDK, used when connect as a dapp.
         ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
-        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .polygon])
+//        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .polygon])
 
         // Custom Wallet GUI
         // Control if show test network

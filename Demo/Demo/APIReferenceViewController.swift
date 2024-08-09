@@ -12,6 +12,7 @@ import Foundation
 import ParticleAA
 import ParticleConnect
 import ParticleNetworkBase
+import ParticleNetworkChains
 import ParticleWalletAPI
 import ParticleWalletGUI
 import RxSwift
@@ -428,9 +429,10 @@ class APIReferenceViewController: UIViewController {
     }
     
     func readContract() {
+        let from = ""
         // example for evm read contract
         let params = ContractParams.customAbiEncodeFunctionCall(contractAddress: "0xd000f000aa1f8accbd5815056ea32a54777b2fc4", methodName: "balanceOf", params: ["0xBbc1CA8776EfDeC12C75e218C64e96ce52aC6671"])
-        ParticleWalletAPI.getEvmService().readContract(contractParams: params).subscribe {
+        ParticleWalletAPI.getEvmService().readContract(from: from, value: "0x", contractParams: params).subscribe {
             [weak self] result in
                 switch result {
                 case .failure(let error):
@@ -504,7 +506,7 @@ class APIReferenceViewController: UIViewController {
     
     func openBuyCrypto() {
         let walletAddress = "YOUR WALLET ADDRESS"
-        let network: ParticleNetwork.ChainInfo = .ethereum
+        let network: ChainInfo = .ethereum
         let cryptoCoin = "ETH"
         let fiatCoin = "USD"
         let fiatAmt = 1000
@@ -628,7 +630,7 @@ extension APIReferenceViewController {
 }
 
 extension APIReferenceViewController: MessageSigner {
-    func signMessage(_ message: String, chainInfo: ParticleNetworkBase.ParticleNetwork.ChainInfo?) -> RxSwift.Single<String> {
+    func signMessage(_ message: String, chainInfo: ChainInfo?) -> RxSwift.Single<String> {
         guard let publicAddress = self.publicAddress, let adapter = self.adapter else {
             return .error(ParticleNetwork.ResponseError(code: nil,
                                                         message: "not login with authCore"))
@@ -637,7 +639,7 @@ extension APIReferenceViewController: MessageSigner {
     }
     
     func getEoaAddress() -> String {
-        return publicAddress ?? ""
+        return self.publicAddress ?? ""
     }
 }
 

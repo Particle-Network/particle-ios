@@ -5,11 +5,11 @@
 //  Created by link on 16/11/2023.
 //
 
+import AuthCoreAdapter
 import ConnectCommon
 import ConnectPhantomAdapter
 import ConnectWalletConnectAdapter
 import ParticleAA
-import AuthCoreAdapter
 import ParticleConnect
 import ParticleNetworkBase
 import UIKit
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PhantomConnectAdapter(),
             WalletConnectAdapter(),
             RainbowConnectAdapter(),
-            BitkeepConnectAdapter(),
+            BitgetConnectAdapter(),
             ImtokenConnectAdapter(),
             TrustConnectAdapter(),
             ZerionConnectAdapter(),
@@ -43,9 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AlphaConnectAdapter(),
             OKXConnectAdapter(),
         ]
-        ParticleConnect.initialize(env: .debug, chainInfo: .polygon) {
-            adapters
-        }
+        ParticleConnect.initialize(env: .debug, chainInfo: .polygon, adapters: adapters)
         ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
 
         AAService.initialize(name: .biconomyV2, biconomyApiKeys: [:])
@@ -54,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         aaService.enableAAMode()
         // Set wallet connect chains,
         // Note metamask only support one chain for each connection.
-        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumSepolia, .polygon, .polygonAmoy])
+//        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .ethereumSepolia, .polygon, .polygonAmoy])
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {

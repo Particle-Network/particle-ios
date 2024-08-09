@@ -28,7 +28,7 @@ class ViewController: UIViewController {
             $0.walletType == .authCore
         }.first!
 
-        let authConfig: ParticleAuthConfig = .init(loginType: .google)
+        let authConfig: ParticleAuthCoreConfig = .init(loginType: .google, socialLoginPrompt: .selectAccount)
 
         adapter.connect(authConfig).subscribe { [weak self] result in
             guard let self = self else { return }
@@ -156,7 +156,7 @@ extension ViewController {
         // for example, you should convert your int to a hex string, start with 0x
         let params = [account.publicAddress]
         let contractParams = ContractParams.customAbiEncodeFunctionCall(contractAddress: contractAddress, methodName: methodName, params: params)
-        ParticleWalletAPI.getEvmService().readContract(contractParams: contractParams).subscribe { result in
+        ParticleWalletAPI.getEvmService().readContract(from: account.publicAddress, value: "0x", contractParams: contractParams).subscribe { result in
             switch result {
             case .failure(let error):
                 print(error)

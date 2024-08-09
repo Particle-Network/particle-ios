@@ -9,6 +9,7 @@ import ConnectCommon
 import ParticleAuthCore
 import ParticleConnect
 import ParticleNetworkBase
+import ParticleNetworkChains
 import ParticleWalletAPI
 import ParticleWalletGUI
 import RxSwift
@@ -26,17 +27,17 @@ class ViewController: UIViewController {
 
     @IBAction func connectParticle() {
         let adapter = ParticleConnect.getAllAdapters().filter {
-            $0.walletType == .particle
+            $0.walletType == .authCore
         }.first!
 
-        let authConfig: ParticleAuthConfig = .init(loginType: .google)
+        let authConfig: ParticleAuthCoreConfig = .init(loginType: .google, socialLoginPrompt: .selectAccount)
+
         adapter.connect(authConfig).subscribe { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let account):
                 self.account = account
                 print(account)
-                print(account?.smartAccount?.smartAccountAddress)
 
                 // in auth core,
                 let auth = Auth()
@@ -58,7 +59,7 @@ class ViewController: UIViewController {
             case .success(let account):
                 self.account = account
                 print(account)
-                print(account?.smartAccount?.smartAccountAddress)
+                print(account.smartAccount?.smartAccountAddress)
             // there are no more user infos when connect with third wallets, like metamask, trust...
             case .failure(let error):
                 print(error)
@@ -265,7 +266,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MessageSigner {
-    func signMessage(_ message: String, chainInfo: ParticleNetworkBase.ParticleNetwork.ChainInfo?) -> RxSwift.Single<String> {
+    func signMessage(_ message: String, chainInfo: ChainInfo?) -> RxSwift.Single<String> {
         guard let account = self.account else {
             print("you didn't connect any account")
             return .error(ParticleNetwork.ResponseError(code: nil, message: "you didn't connect any account"))

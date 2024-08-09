@@ -7,6 +7,9 @@
 
 This repository contains [Auth Service](https://developers.particle.network/api-reference/auth/mobile-sdks/ios) and [Wallet Service](https://developers.particle.network/api-reference/wallet/mobile/ios) sample source. It supports Solana and all EVM-compatiable chains now, more chains and more features coming soon! Learn more visit [Particle Network](https://developers.particle.network/).
 
+![image](/images/connectkit-mobile.svg)
+
+
 #### Note
 Please note that the AuthCore SDKs only support `ios-arm64` (iOS devices). We currently do not support `ios-x86_64-simulator` (Intel chip simulators) and  `ios-arm64-simulator` (M-series chip simulators).
 
@@ -20,16 +23,16 @@ iOS 14 or higher
 
 | Xcode version                | 15.0 or higher | 
 |------------------------------|---------------|
-| ParticleNetworkBase          | 1.4.10        |
-| ParticleWalletAPI            | 1.4.10        |
-| ParticleWalletGUI            | 1.4.10        |
-| ParticleWalletConnect        | 1.4.10        | 
-| ParticleAA                   | 1.4.10        | 
-| ParticleAuthCore             | 1.4.9          |
-| ParticleMPCCore              | 1.4.9          |
-| AuthCoreAdapter              | 1.4.9          |
-| Thresh                       | 1.4.9          |
-| ParticleAuthService(deprecated)         | 1.4.10        |
+| ParticleNetworkBase          | 2.0.0        |
+| ParticleWalletAPI            | 2.0.0        |
+| ParticleWalletGUI            | 2.0.0        |
+| ParticleWalletConnect        | 2.0.0        | 
+| ParticleAA                   | 2.0.0        | 
+| ParticleAuthCore             | 2.0.0          |
+| ParticleMPCCore              | 2.0.0          |
+| AuthCoreAdapter              | 2.0.0          |
+| Thresh                       | 2.0.0          |
+| ParticleAuthService(deprecated)         | 2.0.0        |
 
 ## 🎯 Support Apple Privacy Manifests
 From version 1.4.0, all SDKs have been adapted to Apple's privacy requirements.

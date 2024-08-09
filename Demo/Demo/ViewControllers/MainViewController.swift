@@ -6,50 +6,49 @@
 //
 
 import AuthCoreAdapter
+import Base58_swift
 import ConnectCommon
-import ConnectEVMAdapter
-import ConnectPhantomAdapter
-import ConnectSolanaAdapter
-import ConnectWalletConnectAdapter
 import Foundation
+import ParticleAuthCore
 import ParticleConnect
+import ParticleConnectKit
 import ParticleNetworkBase
+import ParticleNetworkChains
 import ParticleWalletAPI
 import ParticleWalletGUI
 import RxSwift
+import SwiftUI
 import UIKit
 
+class Counter: ObservableObject {
+    @Published var selectedItems: Set<ChainInfo> = Set()
+}
+
 class MainViewController: UIViewController {
+    var counter: Counter = .init()
+
     private let bag = DisposeBag()
     @IBOutlet var bgView: UIImageView!
-    @IBOutlet var stackView: UIStackView!
-    
     @IBOutlet var emailButton: UIButton!
-    @IBOutlet var metamaskButton: UIButton!
-    
-    @IBOutlet var googleButton: UIButton!
-    @IBOutlet var facebookButton: UIButton!
-    @IBOutlet var appleButton: UIButton!
-    @IBOutlet var discordButton: UIButton!
-    @IBOutlet var moreButton: UIButton!
-    
+
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
-    
+
     @IBOutlet var logoImageView: UIImageView!
-    
+
     @IBOutlet var titleTopConstraint: NSLayoutConstraint!
-    @IBOutlet var stackBottomConstarint: NSLayoutConstraint!
     @IBOutlet var collecionViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet var collecionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var logoBottomConstraint: NSLayoutConstraint!
     @IBOutlet var collectionView: CarouselCollectionView!
     @IBOutlet var pageControl: UIPageControl!
-  
+
+    let auth = Auth()
     // control develop mode
     // before build ipa, set false
     var isDevelopMode: Bool {
-        return true
+        return false
+//        return true
     }
 
     var data: [MainDataModel] {
@@ -58,46 +57,39 @@ class MainViewController: UIViewController {
             return MainDataModel(imageName: "main_image_\($0)", message: string)
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setUI()
-        
+
         if isDevelopMode {
         } else {
             if AccountChecker.hasAccount() {
-                view.subviews.forEach {
-                    if $0 != bgView {
-                        $0.isHidden = true
+                for subview in view.subviews {
+                    if subview != bgView {
+                        subview.isHidden = true
                     }
                 }
             } else {}
         }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
-        emailButton.setTitle(getString(by: "login with").replacingOccurrences(of: "%@", with: getString(by: "email")), for: .normal)
-        
-        metamaskButton.setTitle(getString(by: "login with").replacingOccurrences(of: "%@", with: getString(by: "MetaMask")), for: .normal)
+        emailButton.setTitle(getString(by: "login or sign up"), for: .normal)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         if isDevelopMode {
+            ParticleConnect.setWalletConnectV2SupportChainInfos(Array(counter.selectedItems))
         } else {
             if AccountChecker.hasAccount() {
                 openWallet(animated: false)
-            } else {
-                view.subviews.forEach {
-                    if $0 != bgView {
-                        $0.isHidden = false
-                    }
-                }
-            }
+            } else {}
         }
     }
 
@@ -108,94 +100,78 @@ class MainViewController: UIViewController {
         collectionView.register(MainCollectionCell.self, forCellWithReuseIdentifier: NSStringFromClass(MainCollectionCell.self))
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
-        
+
         collectionView.isAutoscrollEnabled = true
-        
+
         collectionView.autoscrollTimeInterval = 2.0
-        
+
         var width: CGFloat
-        if UIScreen.main.bounds.height <= 667 {
+        if UIScreen.main.bounds.height <= 736 {
             // CarouselCollectionView itemSize set float will cause error.
             // easy solution is set int number.
             width = CGFloat(Int(UIScreen.main.bounds.size.width * 0.8))
+            titleTopConstraint.constant = 10
         } else {
             width = UIScreen.main.bounds.size.width
+            titleTopConstraint.constant = UIScreen.main.bounds.height * 0.0714
         }
-        
+
         collecionViewWidthConstraint.constant = width
         let height = CGFloat(Int(width * 340.0 / 375.0))
         collecionViewHeightConstraint.constant = height
-        
+
         collectionView.flowLayout.itemSize = CGSize(width: width, height: height)
         collectionView.flowLayout.sectionInset = .zero
         collectionView.reloadData()
-        
-        stackBottomConstarint.constant = UIScreen.main.bounds.height * 0.064
-        titleTopConstraint.constant = UIScreen.main.bounds.height * 0.0714
-        
-        [emailButton, metamaskButton].forEach {
-            $0!.layer.cornerRadius = 22.5
-            $0!.layer.masksToBounds = true
-            
-            $0!.imageView!.snp.makeConstraints { make in
+
+        for item in [emailButton] {
+            item!.layer.cornerRadius = 18
+            item!.layer.masksToBounds = true
+
+            item!.imageView!.snp.makeConstraints { make in
                 make.width.height.equalTo(37)
                 make.centerY.equalToSuperview()
                 make.left.equalToSuperview().inset(17)
             }
-            
-            $0!.titleLabel!.snp.makeConstraints { make in
+
+            item!.titleLabel!.snp.makeConstraints { make in
                 make.centerX.centerY.equalToSuperview()
             }
-            
-            $0!.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-            $0!.titleLabel?.textAlignment = .center
+
+            item!.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+            item!.titleLabel?.textAlignment = .center
         }
-        
+
         if UIApplication.shared.windows[0].safeAreaInsets.bottom != 0 {
             logoBottomConstraint.constant = 17
         } else {
             logoBottomConstraint.constant = 7
         }
     }
-    
+
     @IBAction func loginWithEmail() {
-        if isDevelopMode {
-            if AccountChecker.hasAccount() {
-                openWallet(animated: true)
+        let connectOptions: [ConnectOption] = [.email, .phone, .social, .wallet]
+        let socialProviders: [EnableSocialProvider] = [.google, .apple, .discord, .twitter, .facebook, .github, .microsoft, .twitch, .linkedin]
+        let wallets: [String] = ["MetaMask", "OKX", "Phantom", "Trust", "Bitget", "WalletConnect"]
+
+        let walletProviders = wallets.map {
+            if $0.lowercased() == "metamask" {
+                EnableWalletProvider(name: $0, state: .recommended)
             } else {
-                login(type: .email)
+                EnableWalletProvider(name: $0, state: .none)
             }
-        } else {
-            login(type: .email)
         }
-    }
-    
-    @IBAction func loginWithMetaMask() {
-        connect(walletType: .metaMask)
-    }
-    
-    @IBAction func loginWithGoogle() {
-        login(type: .google)
-    }
-    
-    @IBAction func loginWithApple() {
-        login(type: .apple)
-    }
-    
-    @IBAction func loginWithFacebook() {
-        login(type: .facebook)
-    }
-    
-    @IBAction func loginWithDiscord() {
-        login(type: .discord)
-    }
-    
-    @IBAction func loginMore() {
-        let supportTypes = LoginListSupportType.allCases
-        PNRouter.navigatorLoginList(supportTypes: supportTypes).subscribe { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .failure(let error):
+
+        let layoutOptions = AdditionalLayoutOptions(isCollapseWalletList: false, isSplitEmailAndSocial: true, isSplitEmailAndPhone: false, isHideContinueButton: false)
+        let designOptions = DesignOptions(icon: .local(UIImage(named: "particle_icon")!))
+
+        let config = ConnectKitConfig(connectOptions: connectOptions, socialProviders: socialProviders, walletProviders: walletProviders, additionalLayoutOptions: layoutOptions, designOptions: designOptions)
+        Task {
+            do {
+                let account = try await ParticleConnectUI.connect(config: config).value
+                print(account as Any)
+                self.openWallet(animated: true)
+            } catch {
                 if let responseError = error as? ParticleNetwork.ResponseError {
                     if responseError.code == ParticleNetwork.ResponseError.userCancel.code {
                         // user cancel, do nothing.
@@ -204,37 +180,9 @@ class MainViewController: UIViewController {
                         self.showToast(title: title, message: responseError.message)
                     }
                 }
-            case .success(let account):
-                print(account)
-                self.openWallet(animated: true)
+                print(error)
             }
-        }.disposed(by: bag)
-    }
-    
-    private func login(type: LoginType, account: String? = nil, supportAuthType: [SupportAuthType] = [SupportAuthType.all], loginFormMode: Bool = false, socialLoginPrompt: SocialLoginPrompt? = nil, authorization: LoginAuthorization? = nil) {
-        connect(walletType: .authCore, connectConfig: .init(loginType: type, account: account, code: nil, socialLoginPrompt: socialLoginPrompt))
-    }
-    
-    private func connect(walletType: WalletType, connectConfig: ParticleAuthCoreConfig? = nil) {
-        let adapter = ParticleConnect.getAllAdapters().filter {
-            $0.walletType == walletType
-        }.first!
-        
-//        AuthCoreAdapter
-        adapter.connect(connectConfig).subscribe { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .failure(let error):
-                if let connectError = error as? ConnectError {
-                    let message = connectError.message
-                    let code = connectError.code
-                    self.showToast(title: code == nil ? "" : String(code!), message: message)
-                }
-            case .success(let account):
-                print(account as Any)
-                self.openWallet(animated: true)
-            }
-        }.disposed(by: bag)
+        }
     }
 
     private func openWallet(animated: Bool) {
@@ -251,31 +199,95 @@ extension MainViewController: CarouselCollectionViewDataSource {
         return data.count
     }
 
-    func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, cellForItemAt index: Int, fakeIndexPath: IndexPath) -> UICollectionViewCell {
+    func carouselCollectionView(_: CarouselCollectionView, cellForItemAt index: Int, fakeIndexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NSStringFromClass(MainCollectionCell.self), for: fakeIndexPath) as! MainCollectionCell
         let model = data[index]
         cell.imageView.image = UIImage(named: model.imageName)!
         return cell
     }
 
-    func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, didSelectItemAt index: Int) {
+    func carouselCollectionView(_: CarouselCollectionView, didSelectItemAt index: Int) {
+        if isDevelopMode == false { return }
         print("Did select item at \(index)")
-        
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "APIReferenceViewController") as! APIReferenceViewController
-        vc.modalPresentationStyle = .pageSheet
-        present(vc, animated: true)
+
+//        let vc = AuthServiceTestViewController()
+//        let vc = ConnectServiceTestViewController()
+//        let vc = APIServiceTestViewController()
+//        let vc = WalletServiceTestViewController()
+//        let vc = EVMAPIReqeustViewController()
+//        let vc = SolanaAPIRequestViewController()
+//        let vc = UIHostingController(rootView: ChainListView(counter: counter))
+//        vc.modalPresentationStyle = .pageSheet
+//        present(vc, animated: true)
     }
 
-    func carouselCollectionView(_ carouselCollectionView: CarouselCollectionView, didDisplayItemAt index: Int) {
+    func carouselCollectionView(_: CarouselCollectionView, didDisplayItemAt index: Int) {
         pageControl.currentPage = index
         messageLabel.text = data[index].message
     }
-    
+
     func getString(by key: String) -> String {
         let language = ParticleNetwork.getLanguage().rawValue
         let path = Bundle.main.path(forResource: language, ofType: "lproj")
         let bundle = Bundle(path: path!)!
         let string = bundle.localizedString(forKey: key, value: nil, table: nil)
         return string
+    }
+
+    func test() {
+//        ParticleAuthService.login(type: .google).subscribe { result in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let userInfo):
+//                print(userInfo)
+//            }
+//        }.disposed(by: bag)
+
+//        ParticleAuthService.login(type: .jwt, account: "your jwt").subscribe { result in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let userInfo):
+//                print(userInfo)
+//            }
+//        }.disposed(by: bag)
+
+//        ParticleAuthService.login(type: .email, authorization: .init(message: "Hello Particle", isUnique: false)).subscribe { result in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let userInfo):
+//                print(userInfo)
+//            }
+//        }.disposed(by: bag)
+
+//        ParticleAuthService.signMessage("Hello Particle").subscribe { result in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let signature):
+//                print(signature)
+//            }
+//        }.disposed(by: bag)
+
+//        ParticleAuthService.fastLogout().subscribe { result in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success:
+//                print("success")
+//            }
+//        }.disposed(by: bag)
+
+//        let transaction = ""
+//        ParticleAuthService.signAndSendTransaction(transaction).subscribe { result in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let signature):
+//                print(signature)
+//            }
+//        }.disposed(by: bag)
     }
 }

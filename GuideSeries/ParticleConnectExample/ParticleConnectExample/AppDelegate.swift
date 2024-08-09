@@ -12,6 +12,7 @@ import ConnectPhantomAdapter
 import ConnectSolanaAdapter
 import ConnectWalletConnectAdapter
 import ParticleConnect
+import ParticleNetworkChains
 import UIKit
 
 @main
@@ -33,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             PhantomConnectAdapter(),
             WalletConnectAdapter(),
             RainbowConnectAdapter(),
-            BitkeepConnectAdapter(),
+            BitgetConnectAdapter(),
             ImtokenConnectAdapter(),
             TrustConnectAdapter(),
             ZerionConnectAdapter(),
@@ -45,9 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             SolanaConnectAdapter(),
             EVMConnectAdapter()
         ]
-        ParticleConnect.initialize(env: .debug, chainInfo: .polygonAmoy) {
-            adapters
-        }
+        ParticleConnect.initialize(env: .debug, chainInfo: .ethereumSepolia, adapters: adapters)
         ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
 
         // Set wallet connect chains,
