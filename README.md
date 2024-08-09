@@ -23,6 +23,7 @@ iOS 14 or higher
 
 | Xcode version                | 15.0 or higher | 
 |------------------------------|---------------|
+| ParticleConnectKit         | 2.0.0        |
 | ParticleNetworkBase          | 2.0.0        |
 | ParticleWalletAPI            | 2.0.0        |
 | ParticleWalletGUI            | 2.0.0        |
