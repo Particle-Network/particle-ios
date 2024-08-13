@@ -4,19 +4,19 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'Demo' do
   use_frameworks!
   
-    pod 'AuthCoreAdapter', '2.0.0'
-    pod 'ParticleAuthCore', '2.0.0'
-    pod 'ParticleMPCCore', '2.0.0'
-    pod 'Thresh', '2.0.0'
+    pod 'AuthCoreAdapter', '2.0.1'
+    pod 'ParticleAuthCore', '2.0.1'
+    pod 'ParticleMPCCore', '2.0.1'
+    pod 'Thresh', '2.0.1'
 
-    pod 'ParticleConnectKit', '2.0.0'
+    pod 'ParticleConnectKit', '2.0.1'
   
-    pod 'ParticleWalletGUI', '2.0.0'
-    pod 'ParticleWalletAPI', '2.0.0'
-    pod 'ParticleNetworkBase', '2.0.0'
-    pod 'ParticleNetworkChains', '2.0.0'
-    pod 'ParticleWalletConnect', '2.0.0'
-    pod 'ParticleAA', '2.0.0'
+    pod 'ParticleWalletGUI', '2.0.1'
+    pod 'ParticleWalletAPI', '2.0.1'
+    pod 'ParticleNetworkBase', '2.0.1'
+    pod 'ParticleNetworkChains', '2.0.1'
+    pod 'ParticleWalletConnect', '2.0.1'
+    pod 'ParticleAA', '2.0.1'
     
     pod 'ParticleConnect', '2.0.0'
     pod 'ConnectWalletConnectAdapter', '2.0.0'
@@ -54,7 +54,14 @@ post_install do |installer|
         end
       end
         
-      
+        installer.generated_projects.each do |project|
+          project.targets.each do |target|
+              target.build_configurations.each do |config|
+                  config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '14.0'
+               end
+          end
+        end
+        
       installer.pods_project.targets.each do |target|
               target.build_configurations.each do |config|
               xcconfig_path = config.base_configuration_reference.real_path
