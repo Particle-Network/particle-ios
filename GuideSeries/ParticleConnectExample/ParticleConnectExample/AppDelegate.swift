@@ -47,7 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             EVMConnectAdapter()
         ]
         ParticleConnect.initialize(env: .debug, chainInfo: .ethereumSepolia, adapters: adapters)
-        ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
 
         // Set wallet connect chains,
         // Note metamask only support one chain for each connection.

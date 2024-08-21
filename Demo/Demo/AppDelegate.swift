@@ -49,8 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         ParticleWalletGUI.setAdapters(ParticleConnect.getAllAdapters())
 
-        // set wallet connect v2 project id to ParticleConnectSDK, used when connect as a dapp.
-        ParticleConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
 //        ParticleConnect.setWalletConnectV2SupportChainInfos([.ethereum, .polygon])
 
         // Custom Wallet GUI
@@ -85,14 +83,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                            url: URL(string: "https://particle.network")!,
                            description: "Particle Wallet",
                            redirectUniversalLink: nil))
-        // set wallet connect v2 project id to ParticleWalletConnect, used when connect as a wallet.
-        ParticleWalletConnect.setWalletConnectV2ProjectId("75ac08814504606fc06126541ace9df6")
+                           
         // Control if disable wallet connect feature.
         // If disable wallet connect feature, you dont need to initialize particle Wallet Connect.
         ParticleWalletGUI.setSupportWalletConnect(true)
 
         // Initialize AA service
-        AAService.initialize(name: AA.AccountName.biconomyV1, biconomyApiKeys: [:])
+        AAService.initialize(name: AA.AccountName.biconomyV1)
         // create a aa service
         let aaService = AAService()
         // set it to ParticleNetwork
