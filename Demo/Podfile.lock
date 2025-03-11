@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.9.1)
-  - AuthCoreAdapter (2.0.7):
+  - AuthCoreAdapter (2.0.8):
     - ConnectCommon
     - ParticleAuthCore
   - AWSCore (2.34.2)
@@ -9,19 +9,19 @@ PODS:
   - Base58.swift (1.0.2):
     - BigInt
   - BigInt (5.2.0)
-  - ConnectCommon (2.0.6):
+  - ConnectCommon (2.0.8):
     - BigInt (~> 5.2.0)
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
     - secp256k1.swift (~> 0.1)
     - TweetNacl
-  - ConnectEVMAdapter (2.0.6):
+  - ConnectEVMAdapter (2.0.8):
     - ConnectCommon
-  - ConnectPhantomAdapter (2.0.6):
+  - ConnectPhantomAdapter (2.0.8):
     - ConnectCommon
-  - ConnectSolanaAdapter (2.0.6):
+  - ConnectSolanaAdapter (2.0.8):
     - ConnectCommon
-  - ConnectWalletConnectAdapter (2.0.6):
+  - ConnectWalletConnectAdapter (2.0.8):
     - ConnectCommon
     - SDWebImage (~> 5.19.0)
     - SDWebImageWebPCoder
@@ -49,9 +49,9 @@ PODS:
   - libwebp/webp (1.5.0):
     - libwebp/sharpyuv
   - MJRefresh (3.7.9)
-  - ParticleAA (2.0.6):
+  - ParticleAA (2.0.9):
     - ParticleNetworkBase
-  - ParticleAuthCore (2.0.7):
+  - ParticleAuthCore (2.0.8):
     - AWSKMS (~> 2.34.2)
     - ParticleMPCCore
     - ParticleNetworkBase
@@ -61,9 +61,9 @@ PODS:
     - SnapKit (~> 5.7.1)
     - SwiftMessages
     - Then
-  - ParticleConnect (2.0.6):
+  - ParticleConnect (2.0.8):
     - ConnectCommon
-  - ParticleConnectKit (2.0.7):
+  - ParticleConnectKit (2.0.8):
     - AuthCoreAdapter
     - ConnectCommon
     - ConnectPhantomAdapter
@@ -71,11 +71,11 @@ PODS:
     - ParticleAuthCore
     - ParticleConnect
     - SnapKit (~> 5.7.1)
-  - ParticleMPCCore (2.0.7):
+  - ParticleMPCCore (2.0.8):
     - Base58.swift
     - CryptoSwift (~> 1.8.1)
     - Thresh
-  - ParticleNetworkBase (2.0.6):
+  - ParticleNetworkBase (2.0.9):
     - Alamofire (~> 5.9.0)
     - Base58.swift
     - BigInt (~> 5.2.0)
@@ -86,11 +86,11 @@ PODS:
     - RxSwift (= 6.8.0)
     - SwiftyJSON (~> 5.0.1)
     - SwiftyUserDefaults (~> 5.3.0)
-  - ParticleNetworkChains (2.0.6)
-  - ParticleWalletAPI (2.0.6):
+  - ParticleNetworkChains (2.0.8)
+  - ParticleWalletAPI (2.0.9):
     - GRDB.swift (~> 6.24.1)
-    - ParticleNetworkBase
-  - ParticleWalletConnect (2.0.6):
+    - ParticleNetworkBase (~> 2.0.9)
+  - ParticleWalletConnect (2.0.9):
     - ParticleNetworkBase
     - RxAlamofire (~> 6.1.1)
     - RxCocoa (= 6.8.0)
@@ -98,7 +98,7 @@ PODS:
     - Starscream (= 3.1.1)
     - SwiftyUserDefaults (~> 5.3.0)
     - WalletConnectSwiftV2
-  - ParticleWalletGUI (2.0.6):
+  - ParticleWalletGUI (2.0.9):
     - GLTFSceneKit
     - JXPagingView/Paging (~> 2.1.3)
     - JXSegmentedView (~> 1.3.3)
@@ -141,7 +141,7 @@ PODS:
   - SwiftyJSON (5.0.2)
   - SwiftyUserDefaults (5.3.0)
   - Then (3.0.0)
-  - Thresh (2.0.7)
+  - Thresh (2.0.8)
   - TweetNacl (1.0.2)
   - WalletConnectSwiftV2 (1.9.9):
     - WalletConnectSwiftV2/WalletConnect (= 1.9.9)
@@ -184,25 +184,25 @@ PODS:
     - WalletConnectSwiftV2/WalletConnectUtils
 
 DEPENDENCIES:
-  - AuthCoreAdapter (= 2.0.7)
-  - ConnectCommon (= 2.0.6)
-  - ConnectEVMAdapter (= 2.0.6)
-  - ConnectPhantomAdapter (= 2.0.6)
-  - ConnectSolanaAdapter (= 2.0.6)
-  - ConnectWalletConnectAdapter (= 2.0.6)
-  - ParticleAA (= 2.0.6)
-  - ParticleAuthCore (= 2.0.7)
-  - ParticleConnect (= 2.0.6)
-  - ParticleConnectKit (= 2.0.7)
-  - ParticleMPCCore (= 2.0.7)
-  - ParticleNetworkBase (= 2.0.6)
-  - ParticleNetworkChains (= 2.0.6)
-  - ParticleWalletAPI (= 2.0.6)
-  - ParticleWalletConnect (= 2.0.6)
-  - ParticleWalletGUI (= 2.0.6)
+  - AuthCoreAdapter (= 2.0.8)
+  - ConnectCommon (= 2.0.8)
+  - ConnectEVMAdapter (= 2.0.8)
+  - ConnectPhantomAdapter (= 2.0.8)
+  - ConnectSolanaAdapter (= 2.0.8)
+  - ConnectWalletConnectAdapter (= 2.0.8)
+  - ParticleAA (= 2.0.9)
+  - ParticleAuthCore (= 2.0.8)
+  - ParticleConnect (= 2.0.8)
+  - ParticleConnectKit (= 2.0.8)
+  - ParticleMPCCore (= 2.0.8)
+  - ParticleNetworkBase (= 2.0.9)
+  - ParticleNetworkChains (= 2.0.8)
+  - ParticleWalletAPI (= 2.0.9)
+  - ParticleWalletConnect (= 2.0.9)
+  - ParticleWalletGUI (= 2.0.9)
   - SkeletonView (from `https://github.com/SunZhiC/SkeletonView.git`, branch `main`)
   - SwiftyUserDefaults (from `https://github.com/SunZhiC/SwiftyUserDefaults.git`, branch `master`)
-  - Thresh (= 2.0.7)
+  - Thresh (= 2.0.8)
   - WalletConnectSwiftV2 (from `https://github.com/SunZhiC/WalletConnectSwiftV2.git`, branch `particle`)
 
 SPEC REPOS:
@@ -270,21 +270,21 @@ CHECKOUT OPTIONS:
     :commit: 4b59143af80ebdc7e9811de521afcc33084c3e4e
     :git: https://github.com/SunZhiC/SwiftyUserDefaults.git
   WalletConnectSwiftV2:
-    :commit: 97efd12113d94eee69c5efb7607aa3853a2d7fd9
+    :commit: 2ef4cf3fea27613cb6d78eac9e6653559754b298
     :git: https://github.com/SunZhiC/WalletConnectSwiftV2.git
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
-  AuthCoreAdapter: ce4d8b666e027aac27814aea077b8cc7a7b5d3aa
+  AuthCoreAdapter: dcb46af27cac77ea7a6d49078e168232fda66383
   AWSCore: 13649d9063a6807ec37bde35c8f2da329d63d4e2
   AWSKMS: 311bb0cb71967273de5f4657875b9f2484ec13c2
   Base58.swift: e0e16655f9db843b8cd367593ed6f7d90d136b7f
   BigInt: f668a80089607f521586bbe29513d708491ef2f7
-  ConnectCommon: b338dd5d8984fb91afa1dd886841bdfa33bafd5f
-  ConnectEVMAdapter: 32b37e81e131871e023c0d2c8f8a7de07e26686c
-  ConnectPhantomAdapter: 725f86af1307c1d85d7e097fe24ba72a4aa45064
-  ConnectSolanaAdapter: c650eb93d7d69ea7cb7f8535f6c66e705f48a5d3
-  ConnectWalletConnectAdapter: 2bc9a21d13f664e316635e97318f455e423a2f28
+  ConnectCommon: 2cab474488181e12aef536418c876486ecb77e06
+  ConnectEVMAdapter: 047d73b416412fe244f6bca7ac3d95d41813b667
+  ConnectPhantomAdapter: 60a0af93bad6dab6e3cac78ad2be71241cee9e5b
+  ConnectSolanaAdapter: f50a7a2046e8c395d71f9e9b65b009ce8d7a47c1
+  ConnectWalletConnectAdapter: adfb11885bf30648fa50dd54cab4f8842ef2803c
   CryptoSwift: e64e11850ede528a02a0f3e768cec8e9d92ecb90
   GLTFSceneKit: d1b437c514ba2aed5555afb0fddd64e030612d57
   GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
@@ -292,16 +292,16 @@ SPEC CHECKSUMS:
   JXSegmentedView: 651b60fcf705258ba9395edd53876dbd2853fb68
   libwebp: 02b23773aedb6ff1fd38cec7a77b81414c6842a8
   MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
-  ParticleAA: 16ca4e9519eba57c6d50e8076d6e065ba549c506
-  ParticleAuthCore: 640a0b222826be1d1a5da0dc2c5e17724cab06ef
-  ParticleConnect: 5b9303ea4dc30f1d861d17200a60d3e348b3e6b1
-  ParticleConnectKit: 89708b809c97fdb0c0feb55090ab2bb6a6d7b2ba
-  ParticleMPCCore: 75e69f5edcfded063266b37f0396207e6aa123fa
-  ParticleNetworkBase: ef00f31cf31f0907ee4a7b2897191927cad09ca8
-  ParticleNetworkChains: b3dd47e1ca875b87d4cf51ec7e58634dee2bc7f9
-  ParticleWalletAPI: 954559846f455cd3038603d5c891f7cc1898a177
-  ParticleWalletConnect: 98784762ead563222066d37e9ae2530a2d54e485
-  ParticleWalletGUI: 2e264386a743617072360c7c228c2853f949c24c
+  ParticleAA: e45fce8b1f7e71d23d7e35bd2e8a2d00bdb680a2
+  ParticleAuthCore: 25ae5e6039d382ebaa3396447a0e870f52f0a81a
+  ParticleConnect: 6f9454bf2b88d7d48941dec45d96a659fefb1459
+  ParticleConnectKit: 7ae524e7453db196914d6e21ac4d1eef75861b04
+  ParticleMPCCore: e36d4a7a4eadea7dbe4febf58bbbeff7965b226b
+  ParticleNetworkBase: 5ce24e26efda2e0503732a3f5cec7a51e3d22219
+  ParticleNetworkChains: 4a0591e63bd32214e875cc5906abdedbdc262cba
+  ParticleWalletAPI: 3f20b1fbdd984451066813b73e8d3aa400826ac5
+  ParticleWalletConnect: 8f6540b5f3d47f1fc73fdab1b09e935a12f76387
+  ParticleWalletGUI: 7cc3d1c4f6aebee4c5b91dc15b8470a32b340b59
   RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
@@ -317,10 +317,10 @@ SPEC CHECKSUMS:
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   SwiftyUserDefaults: dd5dce66fb01565a82c3618b835f0546987eb683
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
-  Thresh: 347f50768a88f339992ed2efc06fbb4e45eb8df7
+  Thresh: d312b23ba58504b73f6b8ae0decacc3d3ff54ff4
   TweetNacl: 3abf4d1d2082b0114e7a67410e300892448951e6
   WalletConnectSwiftV2: b78645eddc498582fdf37eb7e5a5642abf659896
 
-PODFILE CHECKSUM: ee6c264fbbf115b1db087379bdbcd448b8027fda
+PODFILE CHECKSUM: 63343f73ce1f7ae024489735c8e4f1557f944ee9
 
 COCOAPODS: 1.16.2

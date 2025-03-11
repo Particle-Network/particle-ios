@@ -17,22 +17,21 @@ Please note that the AuthCore SDKs only support `ios-arm64` (iOS devices). We cu
 # Prerequisites
 Install the following:
 
-Xcode 15.0 or higher
-iOS 14 or higher
+iOS 15.6 or higher
 
 
-| Xcode version                   | 15.0 or higher |
+| iOS version                   | 15.6 or higher |
 | ------------------------------- | -------------- |
-| ParticleConnectKit              | 2.0.4          |
-| ParticleNetworkBase             | 2.0.4          |
-| ParticleWalletAPI               | 2.0.4          |
-| ParticleWalletGUI               | 2.0.4          |
-| ParticleWalletConnect           | 2.0.4          |
-| ParticleAA                      | 2.0.4          |
-| ParticleAuthCore                | 2.0.4          |
-| ParticleMPCCore                 | 2.0.4          |
-| AuthCoreAdapter                 | 2.0.4          |
-| Thresh                          | 2.0.4          |
+| ParticleConnectKit              | 2.0.8          |
+| ParticleNetworkBase             | 2.0.9          |
+| ParticleWalletAPI               | 2.0.9          |
+| ParticleWalletGUI               | 2.0.9          |
+| ParticleWalletConnect           | 2.0.9          |
+| ParticleAA                      | 2.0.9          |
+| ParticleAuthCore                | 2.0.8          |
+| ParticleMPCCore                 | 2.0.8          |
+| AuthCoreAdapter                 | 2.0.8          |
+| Thresh                          | 2.0.8          |
 | ParticleAuthService(deprecated) | ---            |
 
 ## 🎯 Support Apple Privacy Manifests
